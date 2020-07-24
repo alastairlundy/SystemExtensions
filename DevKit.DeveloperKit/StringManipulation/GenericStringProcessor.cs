@@ -23,10 +23,19 @@ SOFTWARE.
     */
 
 namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
-{
+{    
+    /// <summary>
+    /// 
+    /// </summary>
     public class GenericStringProcessor
     {
-
+        
+        /// <summary>
+        /// Capitalizes the specified letter in the word.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="word"></param>
+        /// <returns></returns>
         public string CapitalizeALetterInAWord(int index, string word)
         {
             string result = "";
@@ -47,11 +56,15 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
             return result;
         }
         
+        /// <summary>
+        /// Capitalizes the first letter in a word.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
         public string CapitalizeFirstLetter(string word)
         {
            return CapitalizeALetterInAWord(0, word);
         }
-        
         
     }
 }

@@ -1,9 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevKit.DeveloperKit", "DevKit.DeveloperKit.csproj", "{23848F65-5FDD-4D47-B8D4-0707FAEAC533}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevKit.DeveloperKit", "DevKit.DeveloperKit.csproj", "{34110A2B-783B-4E11-AEB1-FBBA8732AC0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevKit.DeveloperKit", "DevKit.DeveloperKit.csproj", "{73313244-2E67-40B4-9129-3F82E7366A15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +9,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{23848F65-5FDD-4D47-B8D4-0707FAEAC533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23848F65-5FDD-4D47-B8D4-0707FAEAC533}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23848F65-5FDD-4D47-B8D4-0707FAEAC533}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23848F65-5FDD-4D47-B8D4-0707FAEAC533}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34110A2B-783B-4E11-AEB1-FBBA8732AC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34110A2B-783B-4E11-AEB1-FBBA8732AC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34110A2B-783B-4E11-AEB1-FBBA8732AC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34110A2B-783B-4E11-AEB1-FBBA8732AC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73313244-2E67-40B4-9129-3F82E7366A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73313244-2E67-40B4-9129-3F82E7366A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73313244-2E67-40B4-9129-3F82E7366A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73313244-2E67-40B4-9129-3F82E7366A15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -24,9 +24,6 @@ SOFTWARE.
 
 using System.Collections.Generic;
 
-using AluminiumTech.DevKit.DeprecationKit.DeveloperKit;
-
-
 namespace AluminiumTech.DevKit.DeveloperKit
 {
     /// <summary>
@@ -56,31 +53,21 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// Converts a HashMapV2 object to a HashMapWrapper object.
-        ///  DEPRECATION NOTICE: This functionality is deprecated and will be removed in a future version.
-        /// /// </summary>
-        /// <param name="hashMapWrapper"></param>
-        public void ImportHashMapWrapper(HashMapWrapper<TKey, TValue> hashMapWrapper)
-        {
-            foreach (KeyValuePair<TKey, TValue> pairs in hashMapWrapper.ToList())
-            {
-                Add(pairs);
-            }
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="dictionary"></param>
         public void ImportDictionary(Dictionary<TKey, TValue> dictionary)
         {
-           HashMapWrapper<TKey, TValue> hashMapWrapper = new HashMapWrapper<TKey, TValue>();
-           hashMapWrapper.ImportDictionary(dictionary);
-           ImportHashMapWrapper(hashMapWrapper);
+            foreach (TKey k in dictionary.Keys)
+            {
+                KeyValuePair<TKey, TValue> pair = new KeyValuePair<TKey, TValue>(k, dictionary[k]);
+
+                Add(pair);
+            }
         }
 
     /// <summary>
-    /// 
+    /// Adds a KeyValuePair to the HashMap.
     /// </summary>
     /// <param name="pair"></param>
         public void Add(KeyValuePair<TKey, TValue> pair)
@@ -89,7 +76,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Adds a Key and a Value to the HashMap.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -100,7 +87,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Gets the value associated with a key.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -119,7 +106,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Gets the value associated with a key or returns a default value.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="defaultValue"></param>
@@ -156,7 +143,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Remove a KeyValuePair from the HashMap.
         /// </summary>
         /// <param name="pair"></param>
         public void Remove(KeyValuePair<TKey, TValue> pair)
@@ -165,7 +152,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Remove a Key and a Value from a HashMap.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -176,7 +163,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Remove all instances of a Key in a HashMap.
         /// </summary>
         /// <param name="key"></param>
         public void Remove(TKey key)
@@ -191,7 +178,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// 
+        /// Remove all instances of a Value in a HashMap.
         /// </summary>
         /// <param name="value"></param>
         public void Remove(TValue value)
@@ -258,23 +245,6 @@ namespace AluminiumTech.DevKit.DeveloperKit
             }
 
             return dictionary;
-        }
-        
-        /// <summary>
-        /// Converts a HashMapV2 object to a HashMapWrapper object.
-        /// DEPRECATION NOTICE: This functionality is deprecated and will be removed in a future version.
-        /// </summary>
-        /// <returns></returns>
-        public HashMapWrapper<TKey, TValue> ToHashMapWrapper()
-        {
-            HashMapWrapper<TKey, TValue> hashMapWrapper = new HashMapWrapper<TKey, TValue>();
-
-            foreach (KeyValuePair<TKey, TValue> pairs in list)
-            {
-                hashMapWrapper.Put(pairs.Key, pairs.Value);
-            }
-
-            return hashMapWrapper;
         }
     }
 }

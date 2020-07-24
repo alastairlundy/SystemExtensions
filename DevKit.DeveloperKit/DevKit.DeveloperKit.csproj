@@ -6,6 +6,7 @@
     <AssemblyVersion></AssemblyVersion>
     <FileVersion></FileVersion>
     <PackageVersion>1.2.0.0</PackageVersion>
+    <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DevKit.DeprecationKit\DevKit.DeprecationKit.csproj" />
+
   </ItemGroup>
 </Project>
