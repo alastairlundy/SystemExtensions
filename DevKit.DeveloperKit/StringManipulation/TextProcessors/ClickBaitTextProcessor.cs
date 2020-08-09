@@ -22,49 +22,29 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
-{    
-    /// <summary>
-    /// 
-    /// </summary>
-    public class GenericStringProcessor
+namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
+{
+    public class ClickBaitTextProcessor : GenericStringProcessor
     {
-
+        
         /// <summary>
-        /// Capitalizes the specified letter in the word.
+        /// 
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="word"></param>
+        /// <param name="phrase"></param>
         /// <returns></returns>
-        public string CapitalizeALetterInAWord(int index, string word)
+        public string RemoveClickBait(string phrase)
         {
-            string result = "";
-            char[] chars = word.ToCharArray();
-            
-            for(int i = 0; i < chars.Length; i++)
+            string[] words = phrase.Split();
+
+            phrase = "";
+            phrase += CapitalizeFirstLetter(words[0]);
+
+            for (int index = 1; index < words.Length; index++)
             {
-                if (i.Equals(index))
-                {
-                   result += chars[index].ToString().ToUpper();
-                }
-                else
-                {
-                    result += chars[index].ToString().ToLower();
-                }
+                phrase += words[index].ToLower();
             }
-
-            return result;
+            
+            return phrase;
         }
-        
-        /// <summary>
-        /// Capitalizes the first letter in a word.
-        /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
-        public string CapitalizeFirstLetter(string word)
-        {
-           return CapitalizeALetterInAWord(0, word);
-        }
-        
     }
 }

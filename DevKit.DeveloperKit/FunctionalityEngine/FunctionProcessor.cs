@@ -68,14 +68,6 @@ namespace AluminiumTech.DevKit.DeveloperKit.FunctionalityEngine
              {
                  for (int index = 0; index < listOfActionsAndPriorities.Count; index++)
                  {
-                     if (pair.Value.Equals(PriorityLevel.EmergencyPriority))
-                     {
-                         actionsQueue.Enqueue(pair.Key);
-                     }
-                 }
-
-                 for (int index = 0; index < listOfActionsAndPriorities.Count; index++)
-                 {
                      if (pair.Value.Equals(PriorityLevel.HighPriority))
                      {
                          actionsQueue.Enqueue(pair.Key);

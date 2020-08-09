@@ -26,7 +26,6 @@ namespace AluminiumTech.DevKit.DeveloperKit.enums
 {
     public enum PriorityLevel
     {
-        EmergencyPriority,
         HighPriority,
         MediumPriority,
         LowPriority
