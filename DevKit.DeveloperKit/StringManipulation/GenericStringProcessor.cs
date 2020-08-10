@@ -23,13 +23,79 @@ SOFTWARE.
     */
 
 namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
-{    
+{
     /// <summary>
     /// 
     /// </summary>
     public class GenericStringProcessor
     {
+        public readonly string[] AlphabetLower = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+        public readonly string[] SpecialCharacters = { "!", "#", "~", "_", "=", "(", ")", "%", "$", ";", ":", "{", "}", "[", "]" };
+        
+        /// <summary>
+        /// Returns whether a character is an upper case letter or not.
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public bool IsCharacterAnUpperCaseLetter(char c)
+        {
+            foreach (string s in AlphabetLower)
+            {
+                if (c.ToString().Equals(s.ToUpper()))
+                {
+                    
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        /// <summary>
+        /// Returns whether or not a character is a lower case letter or not.
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public bool IsCharacterALowerCaseLetter(char c)
+        {
+            foreach (string s in AlphabetLower){
+                if (c.ToString().Equals(s.ToLower()))
+                {
+                    
+                }
+                else
+                {
+                    return false;
+                }
+            }
 
+            return true;
+        }
+
+        /// <summary>
+        /// Returns whether or not a character is a special character or not.
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        public bool IsCharacterASpecialCharacter(char c)
+        {
+            foreach (string s in SpecialCharacters)
+            {
+                if (c.ToString().Equals(s))
+                {
+                    
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        
         /// <summary>
         /// Capitalizes the specified letter in the word.
         /// </summary>
