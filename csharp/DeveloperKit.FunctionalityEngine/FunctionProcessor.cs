@@ -24,10 +24,10 @@ SOFTWARE.
 
 using System;
 using System.Collections.Generic;
-
 using System.Threading.Tasks;
 
 using AluminiumTech.DevKit.DeveloperKit.enums;
+// ReSharper disable All
 
 namespace AluminiumTech.DevKit.DeveloperKit.FunctionalityEngine
 {
@@ -44,16 +44,16 @@ namespace AluminiumTech.DevKit.DeveloperKit.FunctionalityEngine
 
              List<Task> listOfTasks = new List<Task>();
 
-             foreach (Action action in actionQueue)
+             foreach (var action in actionQueue)
              {
                  listOfTasks.Add(new Task(action));
              }
 
-             Task[] tasks = listOfTasks.ToArray();
+             var tasks = listOfTasks.ToArray();
 
-             for (int index = 0; index < tasks.Length; index++)
+             foreach (var task in tasks)
              {
-                 tasks[index].Start();
+                 task.Start();
              }
              
              Task.WaitAll(tasks);
@@ -93,26 +93,47 @@ namespace AluminiumTech.DevKit.DeveloperKit.FunctionalityEngine
 
              return actionsQueue;
         }
-
-        protected DateTime TimeSpanToDateTime(TimeSpan delay)
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="delay"></param>
+        /// <returns></returns>
+        public DateTime TimeSpanToDateTime(TimeSpan delay)
         {
             DateTime functionExecutionTime = DateTime.UtcNow;
             functionExecutionTime = functionExecutionTime.Add(delay);
             return functionExecutionTime;
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="delay"></param>
         public void DelayExecutionOfFunction(Action action, TimeSpan delay)
         {
             DelayExecutionOfFunction(action, TimeSpanToDateTime(delay));
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="date"></param>
         public void DelayExecutionOfFunction(Action action, DateTime date)
         { 
-            DelayExecutionofFunction(action, date).Start();
-            DelayExecutionofFunction(action, date).Wait();
+            DelayExecutionOfFunctionTask(action, date).Start();
+            DelayExecutionOfFunctionTask(action, date).Wait();
         }
-
-        public async Task DelayExecutionofFunction(Action action, DateTime date)
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public async Task DelayExecutionOfFunctionTask(Action action, DateTime date)
         {
             await Task.Delay(date.TimeOfDay);
             action.Invoke();
