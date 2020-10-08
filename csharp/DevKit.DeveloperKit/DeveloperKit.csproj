@@ -1,26 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>AluminiumTech.DevKit.DeveloperKit</RootNamespace>
     <AssemblyVersion></AssemblyVersion>
     <FileVersion></FileVersion>
     <PackageVersion>1.2.0.0</PackageVersion>
     <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="enums\" />
-    <Folder Include="FunctionalityEngine\" />
-    <Folder Include="StringManipulation\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
-    <PackageReference Include="PlatformKit" Version="2.0.0-beta4" />
   </ItemGroup>
 
   <ItemGroup>
-
+    <ProjectReference Include="..\DeveloperKit.FunctionalityEngine\DeveloperKit.FunctionalityEngine.csproj" />
+    <ProjectReference Include="..\DeveloperKit.StringManipulation\DeveloperKit.StringManipulation.csproj" />
   </ItemGroup>
 </Project>

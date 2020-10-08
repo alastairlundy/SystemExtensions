@@ -66,10 +66,10 @@ namespace AluminiumTech.DevKit.DeveloperKit
             }
         }
 
-    /// <summary>
-    /// Adds a KeyValuePair to the HashMap.
-    /// </summary>
-    /// <param name="pair"></param>
+        /// <summary>
+        /// Adds a KeyValuePair to the HashMap.
+        /// </summary>
+        /// <param name="pair"></param>
         public void Add(KeyValuePair<TKey, TValue> pair)
         {
             list.Add(pair);

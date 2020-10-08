@@ -22,10 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
     */
 
-using System.Collections.Generic;
+using AluminiumVision.BusinessLogic;
 
 namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class SarcasmTextProcessor : GenericStringProcessor
     {
 
@@ -35,29 +38,23 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
         }
         
         /// <summary>
-        /// Takes a word in sArCaSm Text and converts it back into regular text.
+        /// Takes a series of words in sArCaSm Text and converts each word back into regular text.
         /// </summary>
-        /// <param name="sarcasmText"></param>
+        /// <param name="phrase"></param>
         /// <returns></returns>
-        public string ConvertSarcasmWordToRegularText(string sarcasmText)
+        public string ConvertSarcasmTextToRegularText(string phrase)
         {
-            return CapitalizeFirstLetter(sarcasmText);
-        }
-        
-        /// <summary>
-        /// Takes an array of sArCaSm Text and converts each word back into regular text.
-        /// </summary>
-        /// <param name="words"></param>
-        /// <returns></returns>
-        public string[] ConvertSarcasmPhraseToRegularText(string[] words)
-        {
-            string result = "";
-            foreach (string word in words)
-            { 
-                result += word;
+            var words = phrase.Split();
+            phrase = "";
+
+            phrase += CapitalizeFirstLetter(words[0]);
+            
+            for(int index = 1; index < words.Length; index++)
+            {
+                phrase += words[index];
             }
 
-            return ConvertSarcasmWordToRegularText(result).Split(' ');
+            return phrase;
         }
         
         /// <summary>
@@ -68,7 +65,6 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
         public string ConvertWordToSarcasmText(string word)
         {
             string result = "";
-
             char[] chars = word.ToCharArray();
 
             for (int index = 0; index < chars.Length; index++)
@@ -91,15 +87,17 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
         /// </summary>
         /// <param name="phrase"></param>
         /// <returns></returns>
-        public string[] ConvertPhraseToSarcasmText(string[] phrase)
+        public string ConvertPhraseToSarcasmText(string phrase)
         {
-            List<string> listOfWords = new List<string>();
-            foreach (string word in phrase)
+            var words = phrase.Split();
+            phrase = "";
+            
+            for (int index = 0; index < words.Length; index++)
             {
-                listOfWords.Add(ConvertWordToSarcasmText(word));
+                phrase += ConvertWordToSarcasmText(words[index]);
             }
 
-            return listOfWords.ToArray();
+            return phrase;
         }
     }
 }
