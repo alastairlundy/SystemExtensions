@@ -5,12 +5,17 @@
 #ifndef DEVKIT_HASHMAPV2_HPP
 #define DEVKIT_HASHMAPV2_HPP
 
-#include "ObjectList.hpp"
+#include "../ObjectList/ObjectList.hpp"
 
-#include "../KeyValuePair.hpp"
+#include "../../KeyValuePair.hpp"
 
 namespace AluminiumTech::DeveloperKit {
 
+    /**
+     * A class that wraps around ObjectList and KeyValuePair to act similarly to the HashMap class in Java.
+     * @tparam Key
+     * @tparam Value
+     */
     template<typename Key, typename Value>
     class HashMapV2 {
 

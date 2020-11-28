@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/StringManipulation/StringFormatter.hpp
+string
+-
+../Types/Lists/HashMapV2.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/Lists/HashMapV2.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/DateTime/Date/Date.cpp
+Date.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/DateTime/Date/Date.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/DateTime/Date/Date.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/Version/Version.cpp
+Version.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/Version/Version.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/DeveloperTypes/Version/Version.hpp
+string
+-
+concepts
+-
+../../../StringManipulation/StringFormatter.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/StringManipulation/StringFormatter.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/KeyValuePair.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/Lists/HashMapV2.hpp
+ObjectList.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/Lists/ObjectList.hpp
+../KeyValuePair.hpp
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/KeyValuePair.hpp
+
+/Users/alastairlundy/Documents/Gitlab/developerkit/cpp/Types/Lists/ObjectList.hpp
+vector
+-
+

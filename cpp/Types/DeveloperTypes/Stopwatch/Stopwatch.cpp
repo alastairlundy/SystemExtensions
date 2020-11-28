@@ -67,7 +67,7 @@ void AluminiumTech::DeveloperKit::Stopwatch::reset() {
  * Returns the elapsed milliseconds.
  * @return
  */
-long long AluminiumTech::DeveloperKit::Stopwatch::getElapsedMilliseconds() {
+int64_t AluminiumTech::DeveloperKit::Stopwatch::getElapsedMilliseconds() {
     long long milliseconds = 0;
 
     for(auto item : durationMilliseconds.toVector()){

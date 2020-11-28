@@ -8,7 +8,7 @@
 #include <chrono>
 
 #include "../DateTime/Time/Time.hpp"
-#include "../../Lists/ObjectList.hpp"
+#include "../../Lists/ObjectList/ObjectList.hpp"
 
 namespace AluminiumTech::DeveloperKit{
     /**
@@ -27,7 +27,7 @@ namespace AluminiumTech::DeveloperKit{
 
             void reset();
 
-           long long getElapsedMilliseconds();
+           int64_t getElapsedMilliseconds();
 
             AluminiumTech::DeveloperKit::Time getElapsedTime();
 
@@ -38,7 +38,7 @@ namespace AluminiumTech::DeveloperKit{
             std::chrono::time_point<std::chrono::high_resolution_clock> startTimePoint;
             std::chrono::time_point<std::chrono::high_resolution_clock> endTimePoint;
 
-            AluminiumTech::DeveloperKit::ObjectList<long long> durationMilliseconds;
+            AluminiumTech::DeveloperKit::ObjectList<int64_t> durationMilliseconds;
 
         private:
 

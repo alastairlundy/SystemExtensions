@@ -5,7 +5,7 @@
 #define DEVELOPERKIT_CLICKBAITTEXTPROCESSOR_HPP
 
 
-#include "../GenericStringProcessor.hpp"
+#include "../../GenericStringProcessor.hpp"
 
 namespace AluminiumTech::DeveloperKit{
     class ClickBaitTextProcessor : GenericStringProcessor{

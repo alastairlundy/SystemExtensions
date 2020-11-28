@@ -5,7 +5,7 @@
 #include "StringFormatter.hpp"
 
 #include "../enums&constants/StringConstants.hpp"
-#include "../Types/Lists/ObjectList.hpp"
+#include "../Types/Lists/ObjectList/ObjectList.hpp"
 
 /**
  *

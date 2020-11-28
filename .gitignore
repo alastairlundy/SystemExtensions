@@ -339,4 +339,14 @@ ASALocalRun/
 
 .DS_Store
 
-cpp/cmake-build-debug/
+*.dylib
+
+cpp/cmake-build-debug/CMakeFiles/Progress/
+
+cpp/cmake-build-debug/CMakeFiles/DeveloperKit.dir/progress.make
+
+*.bin
+
+*.out
+
+cpp/cmake-build-debug/CMakeFiles/clion-log.txt

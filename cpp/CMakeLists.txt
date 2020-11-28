@@ -5,16 +5,16 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_library(DeveloperKit SHARED
 
-        Types/Lists/HashMapV2.hpp
-        Types/Lists/HashMapV2.cpp
+        Types/Lists/HashMap/HashMapV2.hpp
+        Types/Lists/HashMap/HashMapV2.cpp
 
         Types/KeyValuePair.hpp
 
         Types/DeveloperTypes/Version/Version.hpp
         Types/DeveloperTypes/Version/Version.cpp
 
-        Types/Lists/ObjectList.hpp
-        Types/Lists/ObjectList.cpp
+        Types/Lists/ObjectList/ObjectList.hpp
+        Types/Lists/ObjectList/ObjectList.cpp
 
         StringManipulation/StringFormatter.hpp
         StringManipulation/StringFormatter.cpp
@@ -22,16 +22,16 @@ add_library(DeveloperKit SHARED
         StringManipulation/GenericStringProcessor.hpp
         StringManipulation/GenericStringProcessor.cpp
 
-        StringManipulation/TextProcessors/SarcasmTextProcessor.hpp
-        StringManipulation/TextProcessors/SarcasmTextProcessor.cpp
+        StringManipulation/TextProcessors/SarcasmProcessing/SarcasmTextProcessor.hpp
+        StringManipulation/TextProcessors/SarcasmProcessing/SarcasmTextProcessor.cpp
 
         enums&constants/StringConstants.hpp
 
         StringManipulation/deps/ResultsAveraging.cpp
         StringManipulation/deps/ResultsAveraging.hpp
 
-        StringManipulation/TextProcessors/ClickBaitTextProcessor.cpp
-        StringManipulation/TextProcessors/ClickBaitTextProcessor.hpp
+        StringManipulation/TextProcessors/ClickBaitProcessing/ClickBaitTextProcessor.cpp
+        StringManipulation/TextProcessors/ClickBaitProcessing/ClickBaitTextProcessor.hpp
 
         Types/DeveloperTypes/DateTime/Date/Date.cpp
         Types/DeveloperTypes/DateTime/Date/Date.hpp

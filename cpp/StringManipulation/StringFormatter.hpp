@@ -6,7 +6,7 @@
 #define DEVKIT_STRINGFORMATTER_HPP
 
 #include <string>
-#include "../Types/Lists/HashMapV2.hpp"
+#include "../Types/Lists/HashMap/HashMapV2.hpp"
 
 namespace AluminiumTech::DeveloperKit {
 
