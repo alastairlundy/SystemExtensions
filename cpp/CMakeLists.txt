@@ -16,11 +16,11 @@ add_library(DeveloperKit SHARED
         Types/Lists/ObjectList/ObjectList.hpp
         Types/Lists/ObjectList/ObjectList.cpp
 
-        StringManipulation/StringFormatter.hpp
-        StringManipulation/StringFormatter.cpp
+        StringManipulation/TextProcessors/StringFormatter/StringFormatter.hpp
+        StringManipulation/TextProcessors/StringFormatter/StringFormatter.cpp
 
-        StringManipulation/GenericStringProcessor.hpp
-        StringManipulation/GenericStringProcessor.cpp
+        StringManipulation/TextProcessors/GenericStringProcessing/GenericStringProcessor.hpp
+        StringManipulation/TextProcessors/GenericStringProcessing/GenericStringProcessor.cpp
 
         StringManipulation/TextProcessors/SarcasmProcessing/SarcasmTextProcessor.hpp
         StringManipulation/TextProcessors/SarcasmProcessing/SarcasmTextProcessor.cpp

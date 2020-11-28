@@ -4,8 +4,8 @@
 
 #include "StringFormatter.hpp"
 
-#include "../enums&constants/StringConstants.hpp"
-#include "../Types/Lists/ObjectList/ObjectList.hpp"
+#include "../../../enums&constants/StringConstants.hpp"
+#include "../../../Types/Lists/ObjectList/ObjectList.hpp"
 
 /**
  *

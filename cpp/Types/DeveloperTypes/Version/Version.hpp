@@ -9,7 +9,7 @@
 
 #include <concepts>
 
-#include "../../../StringManipulation/StringFormatter.hpp"
+#include "../../../StringManipulation/StringFormatter/StringFormatter.hpp"
 
 namespace AluminiumTech::DeveloperKit {
 

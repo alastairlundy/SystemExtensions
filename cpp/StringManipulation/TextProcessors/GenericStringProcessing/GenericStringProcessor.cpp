@@ -4,7 +4,7 @@
 
 #include "GenericStringProcessor.hpp"
 
-#include "../enums&constants/StringConstants.hpp"
+#include "../../../enums&constants/StringConstants.hpp"
 
 /**
  * Capitalizes the first letter in a word.
