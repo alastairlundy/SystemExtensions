@@ -6,6 +6,7 @@
 #define DEVKIT_GENERICSTRINGPROCESSOR_HPP
 
 #include "StringFormatter.hpp"
+#include "deps/ResultsAveraging.hpp"
 
 namespace AluminiumTech::DeveloperKit {
 
@@ -15,9 +16,6 @@ namespace AluminiumTech::DeveloperKit {
     class GenericStringProcessor {
 
     public:
-        GenericStringProcessor();
-        ~GenericStringProcessor();
-
         std::string capitalizeALetterInAWord(int index, std::string word);
         std::string capitalizeFirstLetterOfWord(std::string word);
 
@@ -27,10 +25,12 @@ namespace AluminiumTech::DeveloperKit {
 
         bool isWordTitleCase(std::string word);
 
-        bool basicTitleCaseDetection(std::string word);
+        bool basicTitleCaseDetection(const std::string& phrase);
+        std::string phraseToTitleCase(std::string phrase);
 
     protected:
         AluminiumTech::DeveloperKit::StringFormatter stringFormatter;
+        AluminiumTech::DeveloperKit::ResultsAveraging resultsAveraging;
 
     private:
 

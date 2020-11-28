@@ -33,9 +33,14 @@ add_library(DeveloperKit SHARED
         StringManipulation/TextProcessors/ClickBaitTextProcessor.cpp
         StringManipulation/TextProcessors/ClickBaitTextProcessor.hpp
 
+        Types/DeveloperTypes/DateTime/Date/Date.cpp
+        Types/DeveloperTypes/DateTime/Date/Date.hpp
 
-        StringManipulation/StringFormatter.hpp StringManipulation/StringFormatter.cpp
-        StringManipulation/GenericStringProcessor.hpp StringManipulation/GenericStringProcessor.cpp
+        Types/DeveloperTypes/DateTime/Time/Time.cpp
+        Types/DeveloperTypes/DateTime/Time/Time.hpp
+
+        Types/DeveloperTypes/DateTime/DateTime.hpp
+        Types/DeveloperTypes/DateTime/DateTime.cpp
 
         Types/DeveloperTypes/Stopwatch/Stopwatch.hpp
         Types/DeveloperTypes/Stopwatch/Stopwatch.cpp)
