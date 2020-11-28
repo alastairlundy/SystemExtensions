@@ -4,8 +4,6 @@
 
 #include "SarcasmTextProcessor.hpp"
 
-#include <utility>
-
 /**
  *
  * @param word
