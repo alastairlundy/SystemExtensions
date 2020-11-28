@@ -85,21 +85,12 @@ float AluminiumTech::DeveloperKit::ResultsAveraging::floatDifference(float A, fl
     return A > B ? A - B : B - A;
 }
 
-int AluminiumTech::DeveloperKit::ResultsAveraging::intDifference(int A, int B) {
-//https://stackoverflow.com/questions/10589559/shortest-way-to-calculate-difference-between-two-numbers
-    return A > B ? A - B : B - A;
-}
-
-long AluminiumTech::DeveloperKit::ResultsAveraging::longDifference(long A, long B) {
+int_least8_t AluminiumTech::DeveloperKit::ResultsAveraging::intDifference(int_least8_t A, int_least8_t B) {
 //https://stackoverflow.com/questions/10589559/shortest-way-to-calculate-difference-between-two-numbers
     return A > B ? A - B : B - A;
 }
 
 double AluminiumTech::DeveloperKit::ResultsAveraging::doubleDifference(double A, double B) {
 //https://stackoverflow.com/questions/10589559/shortest-way-to-calculate-difference-between-two-numbers
-    return A > B ? A - B : B - A;
-}
-
-long long AluminiumTech::DeveloperKit::ResultsAveraging::longlongDifference(long long int A, long long B) {
     return A > B ? A - B : B - A;
 }

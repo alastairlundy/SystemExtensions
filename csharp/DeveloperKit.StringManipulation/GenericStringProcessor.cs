@@ -38,7 +38,7 @@ namespace AluminiumVision.BusinessLogic
         
         public GenericStringProcessor()
         {
-         resultsAveraging = new ResultsAveraging();
+            resultsAveraging = new ResultsAveraging();
         }
         
         /// <summary>
@@ -111,7 +111,7 @@ namespace AluminiumVision.BusinessLogic
                 letterCapitalization[index] = IsCharacterALowerCaseLetter(letters[index]);
             }
 
-            return resultsAveraging.IsAllNegative(letterCapitalization);
+            return resultsAveraging.IsAllPositive(letterCapitalization);
         }
         
         /// <summary>
