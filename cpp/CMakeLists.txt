@@ -10,8 +10,8 @@ add_library(DeveloperKit SHARED
 
         Types/KeyValuePair.hpp
 
-        Types/DeveloperTypes/Version/Version.hpp
-        Types/DeveloperTypes/Version/Version.cpp
+      ##  Types/DeveloperTypes/Version/Version.hpp
+      ##  Types/DeveloperTypes/Version/Version.cpp
 
         Types/Lists/ObjectList/ObjectList.hpp
         Types/Lists/ObjectList/ObjectList.cpp
@@ -40,7 +40,6 @@ add_library(DeveloperKit SHARED
         Types/DeveloperTypes/DateTime/Time/Time.hpp
 
         Types/DeveloperTypes/DateTime/DateTime.hpp
-        Types/DeveloperTypes/DateTime/DateTime.cpp
 
         Types/DeveloperTypes/Stopwatch/Stopwatch.hpp
         Types/DeveloperTypes/Stopwatch/Stopwatch.cpp)

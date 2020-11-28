@@ -5,8 +5,11 @@
 #ifndef DEVKIT_GENERICSTRINGPROCESSOR_HPP
 #define DEVKIT_GENERICSTRINGPROCESSOR_HPP
 
-#include "StringFormatter/StringFormatter.hpp"
+
 #include "../../deps/ResultsAveraging.hpp"
+#include "../StringFormatter/StringFormatter.hpp"
+
+#include <string>
 
 namespace AluminiumTech::DeveloperKit {
 

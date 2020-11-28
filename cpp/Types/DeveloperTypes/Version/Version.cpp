@@ -46,22 +46,11 @@ AluminiumTech::DeveloperKit::Version::Version(std::string versionString) {
     }
 }
 
-/**
- *
- * @param version
- */
-AluminiumTech::DeveloperKit::Version::Version(const AluminiumTech::DeveloperKit::Version &version) {
-   major = version.major;
-   minor = version.minor;
-   build = version.build;
-   revision = version.revision;
-   api_level = 1;
-}
-
 /*
  * Converts what would individually make up a Version into a Version.
  */
-AluminiumTech::DeveloperKit::Version::Version(int Major, int Minor, int Build, int Revision) {
+template<typename T> requires std::integral<T>
+AluminiumTech::DeveloperKit::Version::Version(T Major, T Minor, T Build, T Revision) {
     major = Major;
     minor = Minor;
     build = Build;

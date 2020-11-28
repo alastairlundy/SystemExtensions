@@ -32,17 +32,17 @@ bool AluminiumTech::DeveloperKit::ClickBaitTextProcessor::basicClickBaitDetectio
 
     auto wordsSplit = stringFormatter.split_toObjectList(phrase);
 
-    bool wordCapitalization[wordsSplit.count];
+    ObjectList<bool> wordCapitalization;
 
     for(int index = 1; index < wordsSplit.count; index++){
 
-        std::string word = wordsSplit[index];
-        wordCapitalization[index] = isCharacterAnUpperCaseLetter(word[0]);
+        std::string word = wordsSplit.get(index);
+        wordCapitalization.add(isCharacterAnUpperCaseLetter(word[0]));
 
     }
 
     for(int index = 0; index < sizeof(wordCapitalization); index++){
-        if(wordCapitalization[index] == true){
+        if(wordCapitalization.get(index) == true){
             return true;
         }
     }

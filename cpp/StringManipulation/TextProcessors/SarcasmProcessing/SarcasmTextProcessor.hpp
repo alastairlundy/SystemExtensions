@@ -6,7 +6,6 @@
 #define DEVKIT_SARCASMTEXTPROCESSOR_HPP
 
 
-#include "../../StringFormatter/StringFormatter.hpp"
 #include "../GenericStringProcessing/GenericStringProcessor.hpp"
 
 #include <string>

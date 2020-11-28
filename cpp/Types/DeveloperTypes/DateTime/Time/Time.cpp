@@ -248,11 +248,11 @@ AluminiumTech::DeveloperKit::Time::difference(AluminiumTech::DeveloperKit::Time 
                                                 AluminiumTech::DeveloperKit::Time timeB) {
     AluminiumTech::DeveloperKit::Time time;
 
-    auto hoursDifference = resultsAveraging.longlongDifference(timeA.getHours(), timeB.getHours());
-    auto minutesDifference = resultsAveraging.longlongDifference(timeA.getMinutes(), timeB.getMinutes());
-    auto secondsDifference = resultsAveraging.longlongDifference(timeA.getSeconds(), timeB.getSeconds());
-    auto millisecondsDifference = resultsAveraging.longlongDifference(timeA.getMilliseconds(), timeB.getMilliseconds());
-    auto nanosecondDifference = resultsAveraging.longlongDifference(timeA.getNanoseconds(), timeB.getNanoseconds());
+    int64_t hoursDifference = resultsAveraging.intDifference(timeA.getHours(), timeB.getHours());
+    int64_t minutesDifference = resultsAveraging.intDifference(timeA.getMinutes(), timeB.getMinutes());
+    int64_t secondsDifference = resultsAveraging.intDifference(timeA.getSeconds(), timeB.getSeconds());
+    int64_t millisecondsDifference = resultsAveraging.intDifference(timeA.getMilliseconds(), timeB.getMilliseconds());
+    int64_t nanosecondDifference = resultsAveraging.intDifference(timeA.getNanoseconds(), timeB.getNanoseconds());
 
     time.addNanoseconds(nanosecondDifference);
     time.addMilliseconds(millisecondsDifference);

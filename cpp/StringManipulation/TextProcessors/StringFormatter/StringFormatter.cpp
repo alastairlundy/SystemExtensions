@@ -390,13 +390,13 @@ std::string AluminiumTech::DeveloperKit::StringFormatter::toString(char* string)
  * @return
  */
 char* AluminiumTech::DeveloperKit::StringFormatter::toString(std::string string) {
-    char newString[string.length()];
+    ObjectList<char> newString;
 
     for(int index = 0; index < string.length(); index++){
-        newString[index]  = string[index];
+        newString.add(string[index]);
     }
 
-    return reinterpret_cast<char *>(*newString);
+    return reinterpret_cast<char *>(newString.toArray());
 }
 
 /**
