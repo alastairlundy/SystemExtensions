@@ -5,7 +5,7 @@
 #ifndef DEVKIT_OBJECTLIST_HPP
 #define DEVKIT_OBJECTLIST_HPP
 
-#include <list>
+#include <vector>
 
 namespace AluminiumTech::DeveloperKit {
 
@@ -16,8 +16,6 @@ namespace AluminiumTech::DeveloperKit {
     class ObjectList {
 
     public:
-        ObjectList();
-
         ~ObjectList();
 
         int count;
@@ -26,18 +24,16 @@ namespace AluminiumTech::DeveloperKit {
 
         void clear();
 
-        Object get(int index);
+        Object get(int32_t index);
 
         int indexOf(Object object);
 
         void add(Object object);
 
         void remove(Object object);
-
         void remove(int index);
 
         void replace(int index, Object newObject);
-
         void replace(Object oldObject, Object newObject);
 
         std::vector<Object> toVector();

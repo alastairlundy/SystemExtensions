@@ -120,7 +120,7 @@ Value AluminiumTech::DeveloperKit::HashMapV2<Key, Value>::getValueFromPairOrDefa
 }
 
 /**
- *
+ * Returns the KeyValuePair associated with the key by cross-referencing all pairs with the key
  * @tparam Key
  * @tparam Value
  * @param key
@@ -137,15 +137,36 @@ AluminiumTech::DeveloperKit::KeyValuePair<Key, Value> AluminiumTech::DeveloperKi
     }
 }
 
-template<typename Key, typename Value>
-AluminiumTech::DeveloperKit::HashMapV2<Key, Value>::HashMapV2() {
-
-}
-
+/**
+ * Clears all objects.
+ * @tparam Key
+ * @tparam Value
+ */
 template<typename Key, typename Value>
 AluminiumTech::DeveloperKit::HashMapV2<Key, Value>::~HashMapV2() {
-    for(auto& a : objectList){
-        delete a;
-    }
+    objectList.clear();
+}
+
+/**
+ * Returns the length of the ObjectList that HashMapV2 wraps around.
+ * @tparam Key
+ * @tparam Value
+ * @return
+ */
+template<typename Key, typename Value>
+int AluminiumTech::DeveloperKit::HashMapV2<Key, Value>::length() {
+    return objectList.count;
+}
+
+/**
+ * Returns the HashMapV2's ObjectList object form.
+ * @tparam Key
+ * @tparam Value
+ * @return
+ */
+template<typename Key, typename Value>
+AluminiumTech::DeveloperKit::ObjectList<AluminiumTech::DeveloperKit::KeyValuePair<Key, Value>>
+AluminiumTech::DeveloperKit::HashMapV2<Key, Value>::toObjectList() {
+    return objectList;
 }
 

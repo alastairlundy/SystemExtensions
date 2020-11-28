@@ -44,7 +44,7 @@ int AluminiumTech::DeveloperKit::ObjectList<Object>::indexOf(Object object) {
 
 template<typename Object>
 void AluminiumTech::DeveloperKit::ObjectList<Object>::add(Object object) {
-    vec.insert(object);
+    vec.assign(1, object);
     incrementCount();
 }
 
@@ -98,15 +98,6 @@ Object* AluminiumTech::DeveloperKit::ObjectList<Object>::toArray() {
 }
 
 template<typename Object>
-AluminiumTech::DeveloperKit::ObjectList<Object>::ObjectList() {
-
-}
-
-template<typename Object>
 AluminiumTech::DeveloperKit::ObjectList<Object>::~ObjectList() {
-    for(auto& a : vec){
-        delete a;
-    }
-
-    delete vec;
+    vec.clear();
 }

@@ -5,15 +5,40 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_library(DeveloperKit SHARED
 
-        HashMapV2.hpp HashMapV2.cpp
-        KeyValuePair.hpp
-        Version.hpp Version.cpp
-        ObjectList.hpp ObjectList.cpp
+        Types/Lists/HashMapV2.hpp
+        Types/Lists/HashMapV2.cpp
+
+        Types/KeyValuePair.hpp
+
+        Types/DeveloperTypes/Version/Version.hpp
+        Types/DeveloperTypes/Version/Version.cpp
+
+        Types/Lists/ObjectList.hpp
+        Types/Lists/ObjectList.cpp
+
+        StringManipulation/StringFormatter.hpp
+        StringManipulation/StringFormatter.cpp
+
+        StringManipulation/GenericStringProcessor.hpp
+        StringManipulation/GenericStringProcessor.cpp
+
+        StringManipulation/TextProcessors/SarcasmTextProcessor.hpp
+        StringManipulation/TextProcessors/SarcasmTextProcessor.cpp
+
+        enums&constants/StringConstants.hpp
+
+        StringManipulation/deps/ResultsAveraging.cpp
+        StringManipulation/deps/ResultsAveraging.hpp
+
+        StringManipulation/TextProcessors/ClickBaitTextProcessor.cpp
+        StringManipulation/TextProcessors/ClickBaitTextProcessor.hpp
+
 
         StringManipulation/StringFormatter.hpp StringManipulation/StringFormatter.cpp
         StringManipulation/GenericStringProcessor.hpp StringManipulation/GenericStringProcessor.cpp
 
-        StringManipulation/TextProcessors/SarcasmTextProcessor.hpp StringManipulation/TextProcessors/SarcasmTextProcessor.cpp enums&constants/StringConstants.hpp)
+        Types/DeveloperTypes/Stopwatch/Stopwatch.hpp
+        Types/DeveloperTypes/Stopwatch/Stopwatch.cpp)
 
 install(TARGETS DeveloperKit DESTINATION lib)
 
