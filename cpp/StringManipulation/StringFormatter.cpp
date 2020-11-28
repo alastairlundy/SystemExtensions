@@ -5,6 +5,7 @@
 #include "StringFormatter.hpp"
 
 #include "../enums&constants/StringConstants.hpp"
+#include "../Types/Lists/ObjectList.hpp"
 
 /**
  *
@@ -174,7 +175,6 @@ bool AluminiumTech::DeveloperKit::StringFormatter::contains(char* containedIn, c
     int numberOfContainedLetters = 0;
 
     for(int containedInIndex = 0; containedInIndex < sizeof(containedIn); containedInIndex++){
-
 
         for(int largerStringIndex = 0; largerStringIndex < sizeof(largerString); largerStringIndex++){
 
@@ -367,10 +367,11 @@ int AluminiumTech::DeveloperKit::StringFormatter::getNumberOfSpecifiedCharacters
     return numberOfNumbers;
 }
 
-AluminiumTech::DeveloperKit::StringFormatter::StringFormatter() {
-
-}
-
+/**
+ * Converts a C String to an std String.
+ * @param string
+ * @return
+ */
 std::string AluminiumTech::DeveloperKit::StringFormatter::toString(char* string) {
     int length = strlen(string);
 
@@ -384,7 +385,7 @@ std::string AluminiumTech::DeveloperKit::StringFormatter::toString(char* string)
 }
 
 /**
- *
+ * Converts an std String to a C String.
  * @param string
  * @return
  */
@@ -396,4 +397,205 @@ char* AluminiumTech::DeveloperKit::StringFormatter::toString(std::string string)
     }
 
     return reinterpret_cast<char *>(*newString);
+}
+
+/**
+ * Replaces a character in a word with a new character.
+ * @param word
+ * @param oldCharacter
+ * @param newCharacter
+ * @return
+ */
+std::string
+AluminiumTech::DeveloperKit::StringFormatter::replaceCharacter(std::string word, char oldCharacter, char newCharacter) {
+    for(char c : word){
+        if(equals(c, oldCharacter)){
+            c = newCharacter;
+        }
+    }
+    return word;
+}
+
+/**
+ * Replaces a series of characters in order with a series of new characters.
+ * @param word
+ * @param oldString
+ * @param newString
+ * @return
+ */
+std::string
+AluminiumTech::DeveloperKit::StringFormatter::replace(const std::string& word, char *oldString, char *newString) {
+    auto oldStringAuto = toString(oldString);
+    auto newStringAuto = toString(newString);
+
+    return replace(word, oldStringAuto, newStringAuto);
+
+}
+
+/**
+ * Replaces a series of chracters in order with a series of new characters.
+ * @param word
+ * @param oldString
+ * @param newString
+ * @return
+ */
+std::string
+AluminiumTech::DeveloperKit::StringFormatter::replace(std::string word, const std::string& oldString, std::string newString) {
+    bool isThere = contains(oldString, word);
+
+    if(isThere){
+        auto positions = indexOfCharactersWithinString(word, oldString);
+
+        int numberOfCharactersInOrder = 0;
+        int previousCharacterPosition = positions.get(0).value;
+
+        for(int index = 0; index < positions.length(); index++) {
+            KeyValuePair<char, int> position = positions.get(index);
+
+            auto character = position.key;
+            auto characterPosition = position.value;
+
+            if(characterPosition >= 0 && characterPosition < word.length()){
+                word[characterPosition] = newString[index];
+
+               if(index > 0){
+                   if(characterPosition == (previousCharacterPosition + 1) &&
+                           ((positions.get(positions.length() - 1).value - positions.get(0).value)
+                           == oldString.length())){
+                       numberOfCharactersInOrder++;
+                   }
+
+                   previousCharacterPosition = characterPosition;
+               }
+            }
+        }
+
+    }
+
+    return word;
+}
+
+/**
+ *
+ * @param string
+ * @param c
+ * @return
+ */
+int AluminiumTech::DeveloperKit::StringFormatter::indexOfCharacter(char *string, char character) {
+    for(int index = 0; index < getLength(string); index++){
+        if(equals(string[index], character)){
+            return index;
+        }
+    }
+    return -1;
+}
+
+/**
+ *
+ * @param string
+ * @param character
+ * @return
+ */
+int AluminiumTech::DeveloperKit::StringFormatter::indexOfCharacter(std::string string, char character) {
+    for(int index = 0; index < string.length(); index++){
+        if(equals(string[index], character)){
+            return index;
+        }
+    }
+    return -1;
+}
+
+/**
+ *
+ * @param string
+ * @param characters
+ * @return
+ */
+AluminiumTech::DeveloperKit::HashMapV2<char, int> AluminiumTech::DeveloperKit::StringFormatter::indexOfCharactersWithinString(char *string, char *characters) {
+    auto convertedString = toString(string);
+    auto convertedChars = toString(characters);
+
+    return indexOfCharactersWithinString(convertedString, convertedChars);
+}
+
+/**
+ * Gets the positions of various characters in a String Array.
+ * @param string
+ * @param characters
+ * @return
+ */
+AluminiumTech::DeveloperKit::HashMapV2<char, int> AluminiumTech::DeveloperKit::StringFormatter::indexOfCharactersWithinString(const std::string& string, char *characters) {
+    auto convertedChars = toString(characters);
+
+   return indexOfCharactersWithinString(string, convertedChars);
+}
+
+/**
+ * Gets the positions of various characters in a String.
+ * @param string
+ * @param characters
+ * @return
+ */
+AluminiumTech::DeveloperKit::HashMapV2<char, int> AluminiumTech::DeveloperKit::StringFormatter::indexOfCharactersWithinString(const std::string& string,const std::string& characters) {
+    AluminiumTech::DeveloperKit::HashMapV2<char, int> positions;
+
+    for(char character : characters){
+        positions.put(character, indexOfCharacter(string, character));
+    }
+
+    return positions;
+}
+
+/**
+ * Splits up a string into multiple strings where there are spaces and returns as an array of Strings.
+ * @param string
+ * @return
+ */
+std::string *AluminiumTech::DeveloperKit::StringFormatter::split_toArray(const std::string& string) {
+    return split_toArray(' ', string);
+}
+
+/**
+ * Splits up a string into multiple strings where there the delimiter char is and returns as an array of strings.
+ * @param delimiterChar
+ * @param string
+ * @return
+ */
+std::string *AluminiumTech::DeveloperKit::StringFormatter::split_toArray(char delimiterChar, const std::string& string) {
+    return split_toObjectList(delimiterChar, string).toArray();
+}
+
+/**
+ * Splits up a string into multiple strings where there are spaces and returns as an ObjectList.
+ * @param string
+ * @return
+ */
+AluminiumTech::DeveloperKit::ObjectList<std::string>
+AluminiumTech::DeveloperKit::StringFormatter::split_toObjectList(const std::string& string) {
+    return split_toObjectList(' ', string);
+}
+
+/**
+ * Splits up a string into multiple strings where there the delimiter char is and returns as an ObjectList.
+ * @param delimiterChar
+ * @param string
+ * @return
+ */
+AluminiumTech::DeveloperKit::ObjectList<std::string>
+AluminiumTech::DeveloperKit::StringFormatter::split_toObjectList(char delimiterChar, const std::string& string) {
+    ObjectList<std::string> list;
+
+    std::string tempString;
+
+    for(char index : string){
+        if(equals(index, delimiterChar)){
+            list.add(tempString);
+            tempString.clear();
+        }
+        else{
+            tempString += index;
+        }
+    }
+
+    return list;
 }

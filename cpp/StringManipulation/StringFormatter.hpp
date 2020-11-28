@@ -6,13 +6,28 @@
 #define DEVKIT_STRINGFORMATTER_HPP
 
 #include <string>
+#include "../Types/Lists/HashMapV2.hpp"
 
 namespace AluminiumTech::DeveloperKit {
 
+    /**
+     *
+     */
     class StringFormatter {
 
     public:
-        StringFormatter();
+        std::string* split_toArray(const std::string& word);
+        std::string* split_toArray(char delimiterChar, const std::string& string);
+
+        ObjectList<std::string> split_toObjectList(const std::string& string);
+        ObjectList<std::string> split_toObjectList(char delimiterChar, const std::string& string);
+
+        int indexOfCharacter(char* string, char character);
+        int indexOfCharacter(std::string string, char character);
+
+        AluminiumTech::DeveloperKit::HashMapV2<char, int> indexOfCharactersWithinString(char* string, char* characters);
+        AluminiumTech::DeveloperKit::HashMapV2<char, int> indexOfCharactersWithinString(const std::string& string, char* characters);
+        AluminiumTech::DeveloperKit::HashMapV2<char, int> indexOfCharactersWithinString(const std::string& string, const std::string& characters);
 
         std::string toString(char string[]);
         char *toString(std::string string);
@@ -25,6 +40,11 @@ namespace AluminiumTech::DeveloperKit {
 
         char toUpper(char);
         char toLower(char);
+
+        std::string replaceCharacter(std::string word, char oldCharacter, char newCharacter);
+
+        std::string replace(const std::string& word, char* oldString, char* newString);
+        std::string replace(std::string word, const std::string& oldString,std::string newString);
 
         bool equals(std::string A, std::string B);
         bool equals(char A, char B);
