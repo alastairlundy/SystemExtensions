@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 project(DeveloperKit)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
 add_library(DeveloperKit SHARED
 
@@ -10,8 +10,8 @@ add_library(DeveloperKit SHARED
 
         Types/KeyValuePair.hpp
 
-      ##  Types/DeveloperTypes/Version/Version.hpp
-      ##  Types/DeveloperTypes/Version/Version.cpp
+        Types/DeveloperTypes/Version/Version.hpp
+        Types/DeveloperTypes/Version/Version.cpp
 
         Types/Lists/ObjectList/ObjectList.hpp
         Types/Lists/ObjectList/ObjectList.cpp

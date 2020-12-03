@@ -7,38 +7,34 @@
 
 #include <string>
 
-#include <concepts>
-
 #include "../../../StringManipulation/TextProcessors/StringFormatter/StringFormatter.hpp"
 
 namespace AluminiumTech::DeveloperKit {
-
-    template<typename T> requires std::integral<T>
 
     /**
      * A class to represent Version information similar to C#'s System.Version class but obviously in C++ instead.
      */
     class Version {
         public:
-            T major;
-            T minor;
-            T build;
-            T revision;
+            int_least32_t major;
+            int_least32_t minor;
+            int_least32_t build;
+            int_least32_t revision;
 
-            int api_level;
+            int_least32_t api_level;
 
-            Version();
-            Version(std::string versionString);
-            explicit Version(T Major = 1, T Minor = 0, T Build = 0, T Revision = 0);
+            Version(int_least32_t Major = 1, int_least32_t Minor = 0, int_least32_t Build = 0, int_least32_t Revision = 0, int_least32_t Api_level = 1);
 
             ~Version();
 
+            AluminiumTech::DeveloperKit::Version convertStringToVersion(std::string versionString);
+
             std::string toString();
 
-            bool isThisVersionHigher(Version version);
-            bool isThisVersionLower(Version version);
+            bool isThisVersionHigher(const Version& version);
+            bool isThisVersionLower(const Version& version);
 
-            bool equals(Version version);
+            bool equals(const Version& version);
 
         protected:
             AluminiumTech::DeveloperKit::StringFormatter stringFormatter;
