@@ -2,6 +2,7 @@
 //
 //
 
+#include <exception>
 #include "ResultsAveraging.hpp"
 
 /**
@@ -12,7 +13,7 @@
 double AluminiumTech::DeveloperKit::ResultsAveraging::averageResults(const double *results) {
     double average = 0;
 
-    for(int index = 0; index < sizeof(results); index++){
+    for(int_least32_t index = 0; index < sizeof(results); index++){
         average += results[index];
     }
 
@@ -44,7 +45,7 @@ bool AluminiumTech::DeveloperKit::ResultsAveraging::isAllPositive(const bool *re
  * @return
  */
 bool AluminiumTech::DeveloperKit::ResultsAveraging::isAllNegative(const bool *results) {
-    for(int index = 0; index < sizeof(results); index++){
+    for(int_least32_t index = 0; index < sizeof(results); index++){
 
         if(results[index] == true){
             return false;
@@ -63,21 +64,27 @@ bool AluminiumTech::DeveloperKit::ResultsAveraging::isAllNegative(const bool *re
  * @return
  */
 bool AluminiumTech::DeveloperKit::ResultsAveraging::averageResults(const bool *results) {
+    int_least32_t trueCounter = 0;
+    int_least32_t falseCounter = 0;
 
-    int trueCounter = 0;
-    int falseCounter = 0;
+    try{
+        for(int index = 0; index < sizeof(results); index++){
 
-    for(int index = 0; index < sizeof(results); index++){
+            if(results[index] == true){
+                trueCounter++;
+            }
+            else{
+                falseCounter++;
+            }
 
-        if(results[index] == true){
-            trueCounter++;
+            return (trueCounter > falseCounter);
         }
-        else{
-            falseCounter++;
-        }
-
-        return (trueCounter > falseCounter);
+        return 0;
     }
+   catch(std::exception &e){
+       throw &e;
+   }
+
 }
 
 float AluminiumTech::DeveloperKit::ResultsAveraging::floatDifference(float A, float B) {
