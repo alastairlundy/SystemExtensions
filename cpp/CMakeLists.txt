@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.17)
 project(DeveloperKit)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -43,8 +43,3 @@ add_library(DeveloperKit SHARED
 
         Types/DeveloperTypes/Stopwatch/Stopwatch.hpp
         Types/DeveloperTypes/Stopwatch/Stopwatch.cpp)
-
-install(TARGETS DeveloperKit DESTINATION lib)
-
-export(TARGETS DeveloperKit
-        FILE DeveloperKit.cmake)

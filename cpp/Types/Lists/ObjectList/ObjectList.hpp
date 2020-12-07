@@ -12,8 +12,8 @@ namespace AluminiumTech::DeveloperKit {
 /**
  * A wrapper around the C++ Standard Library 'list' class.
  */
-    template<typename Object>
-    class ObjectList {
+
+    template<typename Object> class ObjectList {
 
     public:
         ~ObjectList();

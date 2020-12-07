@@ -26,6 +26,7 @@ std::string AluminiumTech::DeveloperKit::GenericStringProcessor::capitalizeALett
         word[index] = stringFormatter.toUpper(word[index]);
         return word;
     }
+    return nullptr;
 }
 
 /**
