@@ -73,36 +73,19 @@ bool AluminiumTech::DeveloperKit::GenericStringProcessor::isCharacterAnUpperCase
 
 /**
  *
- * @param word
- * @return
- */
-bool AluminiumTech::DeveloperKit::GenericStringProcessor::isWordTitleCase(std::string word) {
-    ObjectList<bool> letterCapitalization;
-
-    letterCapitalization.add(isCharacterAnUpperCaseLetter(word[0]));
-
-    for(int index = 1; index < word.length(); index++){
-        letterCapitalization.add(isCharacterALowerCaseLetter(word[index]));
-    }
-
-    return resultsAveraging.isAllPositive(letterCapitalization.toArray());
-}
-
-/**
- *
  * @param phrase
  * @return
  */
 bool AluminiumTech::DeveloperKit::GenericStringProcessor::basicTitleCaseDetection(const std::string& phrase) {
     auto words = stringFormatter.split_toObjectList(phrase);
 
-    ObjectList<bool> results;
+    auto array = new bool[words.count];
 
     for(int index = 0; index < words.count; index++){
-        results.add(isWordTitleCase(words.get(index)));
+        array[index] = basicTitleCaseDetection(words.get(index));
     }
 
-    return resultsAveraging.isAllPositive(results.toArray());
+    return resultsAveraging.isAllPositive(array);
 }
 
 /**
@@ -115,7 +98,7 @@ std::string AluminiumTech::DeveloperKit::GenericStringProcessor::phraseToTitleCa
 
     for (int index = 0; index < phrase.length(); index++) {
 
-        if (isWordTitleCase(words.get(index)))
+        if (basicTitleCaseDetection(words.get(index)))
         {
             phrase += words.get(index);
         }

@@ -26,8 +26,6 @@ namespace AluminiumTech::DeveloperKit {
         bool isCharacterALowerCaseLetter(char c);
         bool isCharacterAnUpperCaseLetter(char c);
 
-        bool isWordTitleCase(std::string word);
-
         bool basicTitleCaseDetection(const std::string& phrase);
         std::string phraseToTitleCase(std::string phrase);
 

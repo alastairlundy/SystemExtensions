@@ -5,7 +5,7 @@
 #include "StringFormatter.hpp"
 
 #include "../../../enums&constants/StringConstants.hpp"
-#include "../../../Types/Lists/ObjectList/ObjectList.hpp"
+#include "../../../Types/Lists/ObjectList.hpp"
 
 /**
  *
@@ -390,13 +390,14 @@ std::string AluminiumTech::DeveloperKit::StringFormatter::toString(char* string)
  * @return
  */
 char* AluminiumTech::DeveloperKit::StringFormatter::toString(std::string string) {
+    char* array = new char[string.size()];
     ObjectList<char> newString;
 
     for(int index = 0; index < string.length(); index++){
-        newString.add(string[index]);
+        array[index] = string[index];
     }
 
-    return reinterpret_cast<char *>(newString.toArray());
+    return array;
 }
 
 /**
@@ -562,7 +563,15 @@ std::string *AluminiumTech::DeveloperKit::StringFormatter::split_toArray(const s
  * @return
  */
 std::string *AluminiumTech::DeveloperKit::StringFormatter::split_toArray(char delimiterChar, const std::string& string) {
-    return split_toObjectList(delimiterChar, string).toArray();
+    auto ol = split_toObjectList(delimiterChar, string);
+
+    auto* array = new std::string[ol.count];
+
+    for(int_least32_t index = 0; index < ol.count; index++){
+        array[index] = ol.get(index);
+    }
+
+    return array;
 }
 
 /**
