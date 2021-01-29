@@ -6,4 +6,8 @@
         <AssemblyName>AluminiumTech.DevKit.DeveloperKit.StringManipulation</AssemblyName>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="TextProcessors" />
+    </ItemGroup>
+
 </Project>
