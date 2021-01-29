@@ -21,8 +21,4 @@
 * Added experimental Significant Figure classes
 * Added String Manipulation clases</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DeveloperKit.FunctionalityEngine\DeveloperKit.FunctionalityEngine.csproj" />
-  </ItemGroup>
 </Project>
