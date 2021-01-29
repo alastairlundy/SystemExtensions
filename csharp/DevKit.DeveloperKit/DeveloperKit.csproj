@@ -4,7 +4,7 @@
     <RootNamespace>AluminiumTech.DevKit.DeveloperKit</RootNamespace>
     <AssemblyVersion></AssemblyVersion>
     <FileVersion></FileVersion>
-    <PackageVersion>1.2.0.0</PackageVersion>
+    <PackageVersion>1.2.1.0</PackageVersion>
     <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
     <PackageId>aluminiumtechdevkit</PackageId>
     <Title>AluminiumTech.DevKit.DeveloperKit</Title>
@@ -14,11 +14,9 @@
     <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>### Changes since 1.1.0
-* Re-licensed under LGPLv2.1 - Please be aware of the added requirements compared to the MIT License.
-* Added experimental Significant Figure classes
-* Added String Manipulation clases</PackageReleaseNotes>
+    <PackageReleaseNotes>### Changes since 1.2.0
+* Fixed some publication issues</PackageReleaseNotes>
   </PropertyGroup>
 </Project>
