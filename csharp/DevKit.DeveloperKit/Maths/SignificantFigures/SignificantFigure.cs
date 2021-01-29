@@ -18,16 +18,22 @@
     USA
     */
 
-using System;
-
-namespace AluminiumTech.DevKit.DeveloperKit
+namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
 {
-    public class ValueNotFoundException : Exception
+    public struct SignificantFigure
     {
+        public int PositionWithinSource { get; set; }
 
-        public ValueNotFoundException() : base("Value Not Found within Key Value Pairs")
+        public int Value { get; set; }
+        
+        public string Source { get; set; }
+        
+        
+        public SignificantFigure(int PositionWithinSource, int Value, string Source)
         {
-            
+            this.PositionWithinSource = PositionWithinSource;
+            this.Source = Source;
+            this.Value = Value;
         }
     }
 }
