@@ -15,11 +15,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>### Changes since 1.1.0
+* Re-licensed under LGPLv2.1 - Please be aware of the added requirements compared to the MIT License.
+* Added experimental Significant Figure classes
+* Added String Manipulation clases</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DeveloperKit.FunctionalityEngine\DeveloperKit.FunctionalityEngine.csproj" />
