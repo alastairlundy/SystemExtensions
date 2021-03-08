@@ -4,17 +4,19 @@
     <RootNamespace>AluminiumTech.DevKit.DeveloperKit</RootNamespace>
     <AssemblyVersion></AssemblyVersion>
     <FileVersion></FileVersion>
-    <PackageVersion>1.2.0.0</PackageVersion>
+    <PackageVersion>1.2.1.0</PackageVersion>
     <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>aluminiumtechdevkit</PackageId>
+    <Title>AluminiumTech.DevKit.DeveloperKit</Title>
+    <Authors>AluminiumTech</Authors>
+    <Copyright>2021 (c) AluminiumTech</Copyright>
+    <PackageLicenseUrl>https://gitlab.com/aluminiumtechdevkit/developerkit/-/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>### Changes since 1.2.0
+* Fixed some publication issues</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DeveloperKit.FunctionalityEngine\DeveloperKit.FunctionalityEngine.csproj" />
-    <ProjectReference Include="..\DeveloperKit.StringManipulation\DeveloperKit.StringManipulation.csproj" />
-  </ItemGroup>
 </Project>
