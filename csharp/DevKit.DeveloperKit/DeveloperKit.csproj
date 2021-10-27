@@ -19,4 +19,8 @@
     <PackageReleaseNotes>### Changes since 1.2.0
 * Fixed some publication issues</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ObjectManipulation" />
+  </ItemGroup>
 </Project>

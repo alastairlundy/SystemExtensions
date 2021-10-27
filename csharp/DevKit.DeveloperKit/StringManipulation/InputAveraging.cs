@@ -29,22 +29,76 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
+namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
 {
-    public struct SignificantFigure
+    public class InputAveraging
     {
-        public int PositionWithinSource { get; set; }
-
-        public int Value { get; set; }
         
-        public string Source { get; set; }
-        
-        
-        public SignificantFigure(int PositionWithinSource, int Value, string Source)
+        public double AverageInputs(double[] inputs)
         {
-            this.PositionWithinSource = PositionWithinSource;
-            this.Source = Source;
-            this.Value = Value;
+            double average = 0;
+
+            foreach (var input in inputs)
+            {
+                average += input;
+            }
+
+            average = average / inputs.Length;
+            return average;
         }
+    
+        public bool IsAllPositive(bool[] inputs)
+        {
+            foreach (var input in inputs)
+            {
+                if (input.Equals(false))
+                {
+                    return false;
+                }
+                else
+                {
+                    
+                }
+            }
+
+            return true;
+        }
+
+        public bool IsAllNegative(bool[] inputs)
+        {
+            foreach (var input in inputs)
+            {
+                if (input.Equals(true))
+                {
+                    return false;
+                }
+                else
+                {
+                    
+                }
+            }
+            return true;
+        }
+        
+        public bool AverageInputs(bool[] inputs)
+        {
+            int trueCounter = 0;
+            int falseCounter = 0;
+            
+            foreach (bool b in inputs)
+            {
+                if (b.Equals(true))
+                {
+                    trueCounter++;
+                }
+                else
+                {
+                    falseCounter++;
+                }
+            }
+
+            return (trueCounter > falseCounter);
+        }
+
     }
 }
