@@ -7,7 +7,7 @@
     <Title>AluminiumTech.DevKit.DeveloperKit</Title>
     <Authors>AluminiumTech</Authors>
     <Copyright>2021 (c) AluminiumTech</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
       <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -30,10 +30,15 @@
   </ItemGroup>
   
   <ItemGroup>
-    <None Include="..\..\README.md"/>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="..\..\LICENSE"/>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>
