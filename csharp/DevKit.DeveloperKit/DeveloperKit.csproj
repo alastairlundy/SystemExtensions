@@ -2,25 +2,38 @@
 
   <PropertyGroup>
     <RootNamespace>AluminiumTech.DevKit.DeveloperKit</RootNamespace>
-    <AssemblyVersion></AssemblyVersion>
-    <FileVersion></FileVersion>
-    <PackageVersion>1.3.0</PackageVersion>
     <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
     <PackageId>aluminiumtechdevkit</PackageId>
     <Title>AluminiumTech.DevKit.DeveloperKit</Title>
     <Authors>AluminiumTech</Authors>
     <Copyright>2021 (c) AluminiumTech</Copyright>
-    <PackageLicenseUrl>https://gitlab.com/aluminiumtechdevkit/developerkit/-/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>### Changes
+* Re-licensed under BSD 3 clause license
+* Renamed HashMapV2 to HashMap
+* Renamed ``Add()`` method to ``Put()``
+* Added Version Extensions class to add extensions to Versions</PackageReleaseNotes>
     <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
+    <PackageVersion>1.3.0</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="ObjectManipulation" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\README.md"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="..\..\LICENSE"/>
   </ItemGroup>
 </Project>
