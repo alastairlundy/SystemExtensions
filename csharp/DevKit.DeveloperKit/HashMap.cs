@@ -38,24 +38,24 @@ namespace AluminiumTech.DevKit.DeveloperKit
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public class HashMapV2<TKey, TValue>
+    public class HashMap<TKey, TValue>
     {
         protected List<KeyValuePair<TKey, TValue>> list;
 
-        public HashMapV2()
+        public HashMap()
         {
-            list = new List<KeyValuePair<TKey, TValue>>();    
+            list = new List<KeyValuePair<TKey, TValue>>();
         }
 
         /// <summary>
-        /// Imports an existing HashMapV2 object and creates a new one.
+        /// Imports an existing HashMap object and creates a new one.
         /// </summary>
-        /// <param name="hashMapV2"></param>
-        public void ImportHashMapV2(HashMapV2<TKey, TValue> hashMapV2)
+        /// <param name="hashMap"></param>
+        public void ImportHashMap(HashMap<TKey, TValue> hashMap)
         {
-            foreach (KeyValuePair<TKey,TValue> pairs in hashMapV2.list)
+            foreach (KeyValuePair<TKey,TValue> pairs in hashMap.list)
             {
-                Add(pairs);
+                Put(pairs);
             }
         }
         
@@ -69,7 +69,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 KeyValuePair<TKey, TValue> pair = new KeyValuePair<TKey, TValue>(k, dictionary[k]);
 
-                Add(pair);
+                Put(pair);
             }
         }
 
@@ -77,7 +77,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// Adds a KeyValuePair to the HashMap.
         /// </summary>
         /// <param name="pair"></param>
-        public void Add(KeyValuePair<TKey, TValue> pair)
+        public void Put(KeyValuePair<TKey, TValue> pair)
         {
             list.Add(pair);
         }
@@ -87,10 +87,10 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        public void Add(TKey key, TValue value)
+        public void Put(TKey key, TValue value)
         {
             var pair = CreateKeyValuePair(key, value);
-            Add(pair);
+            Put(pair);
         }
         
         /// <summary>
@@ -209,7 +209,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         
         /// <summary>
         /// Creates a key value pair and returns it.
-        /// Note: This does not add it to the HashMapV2 object.
+        /// Note: This does not add it to the HashMap object.
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
@@ -221,7 +221,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// Converts a HashMapV2 object to an array.
+        /// Converts a HashMap object to an array.
         /// </summary>
         /// <returns></returns>
         public KeyValuePair<TKey, TValue>[] ToArray()
@@ -230,7 +230,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// Converts a HashMapV2 object to a C# List.
+        /// Converts a HashMap object to a C# List.
         /// </summary>
         /// <returns></returns>
         public List<KeyValuePair<TKey, TValue>> ToList()
@@ -239,7 +239,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         }
         
         /// <summary>
-        /// Converts a HashMapV2 object to a C# Dictionary.
+        /// Converts a HashMap object to a C# Dictionary.
         /// </summary>
         /// <returns></returns>
         public Dictionary<TKey, TValue> ToDictionary()
