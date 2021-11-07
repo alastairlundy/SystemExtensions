@@ -29,11 +29,12 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
+using System;
+
 namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
 {
     public class InputAveraging
     {
-        
         public double AverageInputs(double[] inputs)
         {
             double average = 0;
