@@ -37,7 +37,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
     public class GenericStringProcessor
     {
 
-        protected InputAveraging inputAveraging;
+        protected readonly InputAveraging inputAveraging;
         
         public GenericStringProcessor()
         {
@@ -47,7 +47,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
         /// <summary>
         /// 
         /// </summary>
-        public readonly string[] AlphabetLower =
+        public readonly string[] EnglishAlphabetLower =
         {
             "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
             "v", "w", "x", "y", "z"
@@ -130,7 +130,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
         // ReSharper disable once MemberCanBePrivate.Global
         public bool IsCharacterAnUpperCaseLetter(string s)
         {
-            foreach (string abc in AlphabetLower)
+            foreach (string abc in EnglishAlphabetLower)
             {
                 if (abc.Equals(s.ToUpper()))
                 {
@@ -163,7 +163,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
         /// <returns></returns>
         public bool IsCharacterALowerCaseLetter(string s)
         {
-            foreach (string abc in AlphabetLower){
+            foreach (string abc in EnglishAlphabetLower){
                 if (abc.Equals(s.ToLower()))
                 {
                     //Get out of the for loop if it the character matches.
