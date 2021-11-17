@@ -29,7 +29,10 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
+using System;
 using System.Collections.Generic;
+    
+using AluminiumTech.DevKit.DeveloperKit.Exceptions;
 
 namespace AluminiumTech.DevKit.DeveloperKit
 {
@@ -89,8 +92,29 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="value"></param>
         public void Put(TKey key, TValue value)
         {
-            var pair = CreateKeyValuePair(key, value);
-            Put(pair);
+            Put(CreateKeyValuePair(key, value));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        public void PutIfAbsent(TKey key, TValue value)
+        {
+            PutIfAbsent(CreateKeyValuePair(key, value));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
+        public void PutIfAbsent(KeyValuePair<TKey, TValue> pair)
+        {
+            if (!ContainsKey(pair.Key))
+            {
+                Put(pair);
+            }
         }
         
         /// <summary>
@@ -101,15 +125,26 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <exception cref="KeyNotFoundException"></exception>
         public TValue GetValue(TKey key)
         {
-            foreach (KeyValuePair<TKey, TValue> pairs in list)
+            try
             {
-                if (pairs.Key.Equals(key))
+                if (ContainsKey(key))
                 {
-                    return pairs.Value;
+                    foreach (KeyValuePair<TKey, TValue> pairs in list)
+                    {
+                        if (pairs.Key.Equals(key))
+                        {
+                            return pairs.Value;
+                        }
+                    }
                 }
-            }
             
-            throw new KeyNotFoundException();
+                throw new KeyNotFoundException();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                throw new Exception(exception.ToString());
+            }
         }
         
         /// <summary>
@@ -138,15 +173,26 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <exception cref="ValueNotFoundException"></exception>
         public TKey GetKey(TValue value)
         {
-            foreach (KeyValuePair<TKey, TValue> pairs in list)
+            try
             {
-                if (pairs.Value.Equals(value))
+                if (ContainsValue(value))
                 {
-                    return pairs.Key;
+                    foreach (KeyValuePair<TKey, TValue> pairs in list)
+                    {
+                        if (pairs.Value.Equals(value))
+                        {
+                            return pairs.Key;
+                        }
+                    }
                 }
+                
+                throw new ValueNotFoundException();
             }
-            
-            throw new DeveloperKit.ValueNotFoundException();
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                throw new Exception(exception.ToString());
+            }
         }
         
         /// <summary>
@@ -165,8 +211,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="value"></param>
         public void Remove(TKey key, TValue value)
         {
-            var pair = CreateKeyValuePair(key, value);
-            Remove(pair);
+            Remove(CreateKeyValuePair(key, value));
         }
         
         /// <summary>
@@ -175,12 +220,25 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="key"></param>
         public void Remove(TKey key)
         {
-            for (int index = 0; index < list.Count; index++)
+            try
             {
-                if (list[index].Key.Equals(key))
+                if (ContainsKey(key))
                 {
-                    Remove(key, GetValue(key));
+                    for (int index = 0; index < list.Count; index++)
+                    {
+                        if (list[index].Key.Equals(key))
+                        {
+                            Remove(key, GetValue(key));
+                        }
+                    }
                 }
+
+                throw new KeyNotFoundException();
+            }
+            catch (Exception exception)
+            {
+               Console.WriteLine(exception.ToString());
+               throw new Exception(exception.ToString());
             }
         }
         
@@ -190,19 +248,100 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="value"></param>
         public void Remove(TValue value)
         {
-            for (int index = 0; index < list.Count; index++)
+            try
             {
-                if (list[index].Value.Equals(value))
+                if (ContainsValue(value))
                 {
-                    Remove(GetKey(value), value);
+                    for (int index = 0; index < list.Count; index++)
+                    {
+                        if (list[index].Value.Equals(value))
+                        {
+                            Remove(GetKey(value), value);
+                        }
+                    }
                 }
+
+                throw new ValueNotFoundException();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                throw new Exception(exception.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Replaces the value of a key value pair if the existing value of the key value pair is not null.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <exception cref="KeyNotFoundException"></exception>
+        /// <exception cref="Exception"></exception>
+        public void Replace(TKey key, TValue value)
+        {
+            try
+            {
+                if (ContainsKey(key))
+                {
+                    for (int index = 0; index < list.Count; index++)
+                    {
+                        if (list[index].Value == null)
+                        {
+                            list[index] = new KeyValuePair<TKey, TValue>(key, value);
+                        }
+                    }
+                }
+
+                throw new KeyNotFoundException();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                throw new Exception(exception.ToString());
+            }
+        }
+        
+        /// <summary>
+        /// Replaces the old value if it is associated with the key and replace it with the new value.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="oldValue"></param>
+        /// <param name="newValue"></param>
+        /// <exception cref="ValueNotFoundException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
+        /// <exception cref="Exception"></exception>
+        public void Replace(TKey key, TValue oldValue, TValue newValue)
+        {
+            try
+            {
+                if (ContainsKey(key))
+                {
+                    if (ContainsValue(oldValue)){
+                        for (int index = 0; index < list.Count; index++)
+                        {
+                            if (list[index].Key.Equals(key))
+                            {
+                                list[index] = new KeyValuePair<TKey, TValue>(key, newValue);
+                            }
+                        }
+                    }
+
+                    throw new ValueNotFoundException();
+                }
+
+                throw new KeyNotFoundException();
+            }
+            catch(Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                throw new Exception(exception.ToString());
             }
         }
         
         /// <summary>
         /// Removals all Key Value Pairs from the list.
         /// </summary>
-        public void RemoveAllPairs()
+        public void Clear()
         {
             list.Clear();
         }
@@ -216,8 +355,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public KeyValuePair<TKey, TValue> CreateKeyValuePair(TKey key, TValue value)
         {
-            KeyValuePair<TKey, TValue> pair = new KeyValuePair<TKey, TValue>(key, value);
-            return pair;
+            return new KeyValuePair<TKey, TValue>(key, value);
         }
         
         /// <summary>
@@ -252,6 +390,51 @@ namespace AluminiumTech.DevKit.DeveloperKit
             }
 
             return dictionary;
+        }
+
+        /// <summary>
+        /// Returns whether the hashmap contains the specified key. 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool ContainsKey(TKey key)
+        {
+            foreach (var pair in list)
+            {
+                if (pair.Key.Equals(key))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns whether the hashmap contains the specified value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool ContainsValue(TValue value)
+        {
+            foreach (var pair in list)
+            {
+                if (pair.Value.Equals(value))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns whether the hashmap is empty or not.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsEmpty()
+        {
+            return !(list.Count > 0);
         }
     }
 }
