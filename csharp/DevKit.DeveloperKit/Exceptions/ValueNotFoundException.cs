@@ -31,7 +31,7 @@
 
 using System;
 
-namespace AluminiumTech.DevKit.DeveloperKit
+namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
 {
     public class ValueNotFoundException : Exception
     {
