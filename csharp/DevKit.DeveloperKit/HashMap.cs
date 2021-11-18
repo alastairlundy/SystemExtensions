@@ -246,7 +246,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// Remove all instances of a Value in a HashMap.
         /// </summary>
         /// <param name="value"></param>
-        public void Remove(TValue value)
+        public void RemoveAllInstancesOf(TValue value)
         {
             try
             {
