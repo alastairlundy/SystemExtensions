@@ -36,7 +36,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
     public class ValueNotFoundException : Exception
     {
 
-        public ValueNotFoundException() : base("Value Not Found within Key Value Pairs")
+        public ValueNotFoundException() : base("Value Not Found within Key Value Pair")
         {
             
         }
