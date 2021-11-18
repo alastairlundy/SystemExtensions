@@ -13,12 +13,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>### Changes
-* Re-licensed under BSD 3 clause license
-* Renamed HashMapV2 to HashMap
-* Renamed ``Add()`` method to ``Put()``
-* Added Version Extensions class to add extensions to Versions</PackageReleaseNotes>
-    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <AssemblyVersion>1.3.0.0</AssemblyVersion>
     <FileVersion>1.3.0.0</FileVersion>
