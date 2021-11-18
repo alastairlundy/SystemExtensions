@@ -30,8 +30,9 @@
     */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
-    
+using System.Linq;
 using AluminiumTech.DevKit.DeveloperKit.Exceptions;
 
 namespace AluminiumTech.DevKit.DeveloperKit
@@ -43,12 +44,15 @@ namespace AluminiumTech.DevKit.DeveloperKit
     /// <typeparam name="TValue"></typeparam>
     public class HashMap<TKey, TValue>
     {
-        protected List<KeyValuePair<TKey, TValue>> list;
+        // ReSharper disable once FieldCanBeMadeReadOnly.Global
+        protected List<KeyValuePair<TKey, TValue>> KeyValuePairs;
 
         public HashMap()
         {
-            list = new List<KeyValuePair<TKey, TValue>>();
+            KeyValuePairs = new();
         }
+
+        public int Size => KeyValuePairs.Count;
 
         /// <summary>
         /// Imports an existing HashMap object and creates a new one.
@@ -56,23 +60,53 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="hashMap"></param>
         public void ImportHashMap(HashMap<TKey, TValue> hashMap)
         {
-            foreach (KeyValuePair<TKey,TValue> pairs in hashMap.list)
+            ImportList(hashMap.ToList());
+        }
+
+        public void ImportList(List<KeyValuePair<TKey, TValue>> list)
+        {
+            ImportArray(list.ToArray());   
+        }
+
+        public void ImportArray(KeyValuePair<TKey, TValue>[] array)
+        {
+            foreach (KeyValuePair<TKey,TValue> pairs in array)
             {
                 Put(pairs);
             }
         }
-        
+
+        public void ImportHashtable(Hashtable hashtable)
+        {
+            var keys = hashtable.Keys;
+            var vals = hashtable.Values;
+
+            var sameSize = keys.Count == vals.Count;
+
+            TKey[] keyArray = new TKey[keys.Count];
+            TValue[] valArray = new TValue[vals.Count];
+
+            vals.CopyTo(valArray, 0);
+            keys.CopyTo(keyArray,0);
+
+            if (sameSize)
+            {
+                for (int index = 0; index < keys.Count; index++)
+                {
+                    Put(CreateKeyValuePair(keyArray[index], valArray[index]));
+                }
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="dictionary"></param>
         public void ImportDictionary(Dictionary<TKey, TValue> dictionary)
         {
-            foreach (TKey k in dictionary.Keys)
+            foreach (TKey key in dictionary.Keys)
             {
-                KeyValuePair<TKey, TValue> pair = new KeyValuePair<TKey, TValue>(k, dictionary[k]);
-
-                Put(pair);
+                Put(CreateKeyValuePair(key, dictionary[key]));
             }
         }
 
@@ -82,7 +116,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="pair"></param>
         public void Put(KeyValuePair<TKey, TValue> pair)
         {
-            list.Add(pair);
+            KeyValuePairs.Add(pair);
         }
         
         /// <summary>
@@ -129,7 +163,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsKey(key))
                 {
-                    foreach (KeyValuePair<TKey, TValue> pairs in list)
+                    foreach (KeyValuePair<TKey, TValue> pairs in KeyValuePairs)
                     {
                         if (pairs.Key.Equals(key))
                         {
@@ -177,7 +211,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsValue(value))
                 {
-                    foreach (KeyValuePair<TKey, TValue> pairs in list)
+                    foreach (KeyValuePair<TKey, TValue> pairs in KeyValuePairs)
                     {
                         if (pairs.Value.Equals(value))
                         {
@@ -201,7 +235,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="pair"></param>
         public void Remove(KeyValuePair<TKey, TValue> pair)
         {
-            list.Remove(pair);
+            KeyValuePairs.Remove(pair);
         }
         
         /// <summary>
@@ -224,9 +258,9 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsKey(key))
                 {
-                    for (int index = 0; index < list.Count; index++)
+                    for (int index = 0; index < KeyValuePairs.Count; index++)
                     {
-                        if (list[index].Key.Equals(key))
+                        if (KeyValuePairs[index].Key.Equals(key))
                         {
                             Remove(key, GetValue(key));
                         }
@@ -252,9 +286,9 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsValue(value))
                 {
-                    for (int index = 0; index < list.Count; index++)
+                    for (int index = 0; index < KeyValuePairs.Count; index++)
                     {
-                        if (list[index].Value.Equals(value))
+                        if (KeyValuePairs[index].Value.Equals(value))
                         {
                             Remove(GetKey(value), value);
                         }
@@ -283,11 +317,11 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsKey(key))
                 {
-                    for (int index = 0; index < list.Count; index++)
+                    for (int index = 0; index < KeyValuePairs.Count; index++)
                     {
-                        if (list[index].Value == null)
+                        if (KeyValuePairs[index].Value == null)
                         {
-                            list[index] = new KeyValuePair<TKey, TValue>(key, value);
+                            KeyValuePairs[index] = new (key, value);
                         }
                     }
                 }
@@ -317,11 +351,11 @@ namespace AluminiumTech.DevKit.DeveloperKit
                 if (ContainsKey(key))
                 {
                     if (ContainsValue(oldValue)){
-                        for (int index = 0; index < list.Count; index++)
+                        for (int index = 0; index < KeyValuePairs.Count; index++)
                         {
-                            if (list[index].Key.Equals(key))
+                            if (KeyValuePairs[index].Key.Equals(key))
                             {
-                                list[index] = new KeyValuePair<TKey, TValue>(key, newValue);
+                                KeyValuePairs[index] = new (key, newValue);
                             }
                         }
                     }
@@ -343,7 +377,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// </summary>
         public void Clear()
         {
-            list.Clear();
+            KeyValuePairs.Clear();
         }
         
         /// <summary>
@@ -355,7 +389,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public KeyValuePair<TKey, TValue> CreateKeyValuePair(TKey key, TValue value)
         {
-            return new KeyValuePair<TKey, TValue>(key, value);
+            return new (key, value);
         }
         
         /// <summary>
@@ -364,7 +398,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public KeyValuePair<TKey, TValue>[] ToArray()
         {
-            return list.ToArray();
+            return KeyValuePairs.ToArray();
         }
         
         /// <summary>
@@ -373,7 +407,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public List<KeyValuePair<TKey, TValue>> ToList()
         {
-            return list;
+            return KeyValuePairs;
         }
         
         /// <summary>
@@ -384,7 +418,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         {
             Dictionary<TKey, TValue> dictionary = new Dictionary<TKey, TValue>();
             
-            foreach (KeyValuePair<TKey, TValue> pairs in list)
+            foreach (KeyValuePair<TKey, TValue> pairs in KeyValuePairs)
             {
                 dictionary.Add(pairs.Key, pairs.Value);
             }
@@ -399,7 +433,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public bool ContainsKey(TKey key)
         {
-            foreach (var pair in list)
+            foreach (var pair in KeyValuePairs)
             {
                 if (pair.Key.Equals(key))
                 {
@@ -417,7 +451,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public bool ContainsValue(TValue value)
         {
-            foreach (var pair in list)
+            foreach (var pair in KeyValuePairs)
             {
                 if (pair.Value.Equals(value))
                 {
@@ -434,7 +468,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <returns></returns>
         public bool IsEmpty()
         {
-            return !(list.Count > 0);
+            return !(KeyValuePairs.Count > 0);
         }
     }
 }
