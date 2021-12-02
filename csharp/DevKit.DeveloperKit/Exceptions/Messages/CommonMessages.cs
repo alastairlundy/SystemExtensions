@@ -29,21 +29,14 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-using System;
-
-using AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages;
-
-namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
+namespace AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages
 {
-    public class ValueNotFoundException : Exception
+    public static class CommonMessages
     {
+        public const string IfEndUserMessage = "If you are an end user:";
+        public const string IfDeveloperMessage = "If you are the developer:";
 
-        public ValueNotFoundException() : base(
-                CommonMessages.IfDeveloperMessage +
-            " Value Not Found within Key Value Pair." +
-                CommonMessages.AskUserSendDetailsToDeveloper)
-        {
-            
-        }
+        public const string SendDetailsToDeveloper = "Please send these details to the developer via a bug report.";
+        public const string AskUserSendDetailsToDeveloper = $"{IfEndUserMessage} {SendDetailsToDeveloper}";
     }
 }

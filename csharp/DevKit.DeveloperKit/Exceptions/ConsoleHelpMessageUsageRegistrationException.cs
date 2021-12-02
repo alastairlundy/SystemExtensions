@@ -35,15 +35,12 @@ using AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages;
 
 namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
 {
-    public class ValueNotFoundException : Exception
+    public class ConsoleHelpMessageUsageRegistrationException : Exception
     {
-
-        public ValueNotFoundException() : base(
-                CommonMessages.IfDeveloperMessage +
-            " Value Not Found within Key Value Pair." +
-                CommonMessages.AskUserSendDetailsToDeveloper)
+        public ConsoleHelpMessageUsageRegistrationException() : base("ConsoleHelpBuilder UsageRegistration was not registered.\n" + 
+                                                              CommonMessages.IfDeveloperMessage + " Please call the RegisterUsage() method before calling the method that triggered this exception.\n" +
+                                                              CommonMessages.AskUserSendDetailsToDeveloper)
         {
-            
         }
     }
 }
