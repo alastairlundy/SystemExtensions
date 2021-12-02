@@ -40,11 +40,11 @@ namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
         public string Source { get; set; }
         
         
-        public SignificantFigure(int PositionWithinSource, int Value, string Source)
+        public SignificantFigure(int positionWithinSource, int value, string source)
         {
-            this.PositionWithinSource = PositionWithinSource;
-            this.Source = Source;
-            this.Value = Value;
+            this.PositionWithinSource = positionWithinSource;
+            this.Source = source;
+            this.Value = value;
         }
     }
 }
