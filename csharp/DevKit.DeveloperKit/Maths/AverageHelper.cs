@@ -34,7 +34,7 @@ using System;
 namespace AluminiumTech.DevKit.DeveloperKit.Maths{
     public class AverageHelper{
 
-        public double ExponentOf(double value, double power)
+        public double Root(double value, double power)
         {
            return Math.Pow(value, (1.0 / power));
         }
@@ -53,7 +53,7 @@ namespace AluminiumTech.DevKit.DeveloperKit.Maths{
                 sum *= values[index];
             }
 
-            return ExponentOf(sum, values.Length);
+            return Root(sum, values.Length);
         }
 
         /// <summary>
