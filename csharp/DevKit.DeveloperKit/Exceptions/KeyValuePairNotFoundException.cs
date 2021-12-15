@@ -35,13 +35,11 @@ using AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages;
 
 namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
 {
-    public class ValueNotFoundException : Exception
+    public class KeyValuePairNotFoundException : Exception
     {
-
-        public ValueNotFoundException(string collectionName) : base(
-                CommonMessages.IfDeveloperMessage +
-            " Value Not Found within Key Value Pair '" + collectionName + "' " +
-                CommonMessages.AskUserSendDetailsToDeveloper)
+        public KeyValuePairNotFoundException(string collectionName) : base(CommonMessages.IfDeveloperMessage +
+                                                      " KeyValuePair not found within the collection '" + collectionName + "' " +
+                                                      CommonMessages.AskUserSendDetailsToDeveloper)
         {
             
         }
