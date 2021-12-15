@@ -42,12 +42,12 @@ namespace AluminiumTech.DevKit.DeveloperKit
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
-    public class HashMap<TKey, TValue>
+    public class JHashMap<TKey, TValue> : IJHashMap<TKey, TValue>
     {
         // ReSharper disable once FieldCanBeMadeReadOnly.Global
         protected List<KeyValuePair<TKey, TValue>> KeyValuePairs;
 
-        public HashMap()
+        public JHashMap()
         {
             KeyValuePairs = new();
         }
@@ -58,16 +58,24 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// Imports an existing HashMap object and creates a new one.
         /// </summary>
         /// <param name="hashMap"></param>
-        public void ImportHashMap(HashMap<TKey, TValue> hashMap)
+        public void ImportJHashMap(JHashMap<TKey, TValue> hashMap)
         {
             ImportList(hashMap.ToList());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
         public void ImportList(List<KeyValuePair<TKey, TValue>> list)
         {
             ImportArray(list.ToArray());   
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="array"></param>
         public void ImportArray(KeyValuePair<TKey, TValue>[] array)
         {
             foreach (KeyValuePair<TKey,TValue> pairs in array)
@@ -76,17 +84,21 @@ namespace AluminiumTech.DevKit.DeveloperKit
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hashtable"></param>
         public void ImportHashtable(Hashtable hashtable)
         {
             var keys = hashtable.Keys;
-            var vals = hashtable.Values;
+            var values = hashtable.Values;
 
-            var sameSize = keys.Count == vals.Count;
+            var sameSize = keys.Count == values.Count;
 
             TKey[] keyArray = new TKey[keys.Count];
-            TValue[] valArray = new TValue[vals.Count];
+            TValue[] valArray = new TValue[values.Count];
 
-            vals.CopyTo(valArray, 0);
+            values.CopyTo(valArray, 0);
             keys.CopyTo(keyArray,0);
 
             if (sameSize)
@@ -150,7 +162,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
                 Put(pair);
             }
         }
-        
+
         /// <summary>
         /// Gets the value associated with a key.
         /// </summary>
@@ -220,7 +232,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
                     }
                 }
                 
-                throw new ValueNotFoundException();
+                throw new ValueNotFoundException(nameof(KeyValuePairs));
             }
             catch(Exception exception)
             {
@@ -235,7 +247,19 @@ namespace AluminiumTech.DevKit.DeveloperKit
         /// <param name="pair"></param>
         public void Remove(KeyValuePair<TKey, TValue> pair)
         {
-            KeyValuePairs.Remove(pair);
+            if (KeyValuePairs.Count > 0)
+            {
+                if (ContainsKeyValuePair(pair))
+                {
+                    KeyValuePairs.Remove(pair);
+                }
+
+                throw new KeyValuePairNotFoundException(nameof(KeyValuePairs));
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
         }
         
         /// <summary>
@@ -256,18 +280,26 @@ namespace AluminiumTech.DevKit.DeveloperKit
         {
             try
             {
-                if (ContainsKey(key))
+                if (KeyValuePairs.Count > 0)
                 {
-                    for (int index = 0; index < KeyValuePairs.Count; index++)
+                    if (ContainsKey(key))
                     {
-                        if (KeyValuePairs[index].Key.Equals(key))
+                        // ReSharper disable once ForCanBeConvertedToForeach
+                        for (int index = 0; index < KeyValuePairs.Count; index++)
                         {
-                            Remove(key, GetValue(key));
+                            if (KeyValuePairs[index].Key.Equals(key))
+                            {
+                                Remove(KeyValuePairs[index]);
+                            }
                         }
                     }
-                }
 
-                throw new KeyNotFoundException();
+                    throw new KeyNotFoundException();
+                }
+                else
+                {
+                    throw new NullReferenceException();
+                }
             }
             catch (Exception exception)
             {
@@ -286,6 +318,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
             {
                 if (ContainsValue(value))
                 {
+                    // ReSharper disable once ForCanBeConvertedToForeach
                     for (int index = 0; index < KeyValuePairs.Count; index++)
                     {
                         if (KeyValuePairs[index].Value.Equals(value))
@@ -295,7 +328,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
                     }
                 }
 
-                throw new ValueNotFoundException();
+                throw new ValueNotFoundException(nameof(KeyValuePairs));
             }
             catch (Exception exception)
             {
@@ -360,7 +393,7 @@ namespace AluminiumTech.DevKit.DeveloperKit
                         }
                     }
 
-                    throw new ValueNotFoundException();
+                    throw new ValueNotFoundException(nameof(KeyValuePairs));
                 }
 
                 throw new KeyNotFoundException();
@@ -379,7 +412,34 @@ namespace AluminiumTech.DevKit.DeveloperKit
         {
             KeyValuePairs.Clear();
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
+        /// <returns></returns>
+        /// <exception cref="KeyValuePairNotFoundException"></exception>
+        public int IndexOf(KeyValuePair<TKey, TValue> pair)
+        {
+            if (ContainsKeyValuePair(pair))
+            {
+                for (int index = 0; index < KeyValuePairs.Count; index++)
+                {
+                    if (KeyValuePairs[index].Equals(pair))
+                    {
+                        return index;
+                    }
+                }
+            }
+
+            throw new KeyValuePairNotFoundException(nameof(KeyValuePairs));
+        }
+
+        public int IndexOf(TKey key)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Creates a key value pair and returns it.
         /// Note: This does not add it to the HashMap object.
@@ -460,6 +520,54 @@ namespace AluminiumTech.DevKit.DeveloperKit
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Checks to see if a specified Key Value Pair exists in the HashMap.
+        /// This works by checking to see if a Key is in the HashMap and whether that Key is associated with the specified value.
+        /// </summary>
+        /// <param name="pair">The KeyValuePair to compare against this HashMap.</param>
+        /// <returns>Returns whether or not the specified Key Value Pair exists in the HashMap as a bool. True means it exists and False means it does not exist.</returns>
+        /// <exception cref="ValueNotFoundException">This exception is thrown when the Value does not exist in the HashMap regardless of what the key is.</exception>
+        /// <exception cref="KeyNotFoundException">This exception is thrown when the HashMap does not contain the Key specified.</exception>
+        public bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair)
+        {
+            if (ContainsKey(pair.Key))
+            {
+                if (ContainsValue(pair.Value))
+                {
+                    return GetValue(pair.Key).Equals(pair.Value);
+                }
+
+                throw new ValueNotFoundException(nameof(KeyValuePairs));
+            }
+
+            throw new KeyNotFoundException();
+        }
+
+        /// <summary>
+        /// Checks to see whether or not 
+        /// </summary>
+        /// <param name="hashMap"></param>
+        /// <returns></returns>
+        public bool Equals(JHashMap<TKey, TValue> hashMap)
+        {
+            foreach (var pair in hashMap.ToList())
+            {
+                if (!ContainsKeyValuePair(pair))
+                {
+                    return false;
+                }
+                else if (ContainsKeyValuePair(pair))
+                {
+                    if (!pair.Value.Equals(GetValue(pair.Key)))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
