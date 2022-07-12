@@ -1,5 +1,13 @@
 ## Version History
 
+### Version 2.x
+
+| Version | Release Date |
+|-|-|
+| 2.0.0 | July 12th 2022 |
+
+### Version 1.x
+
 | Version | Release Date |
 |-|-|
 | 1.4.0 | November 18th 2021 |
