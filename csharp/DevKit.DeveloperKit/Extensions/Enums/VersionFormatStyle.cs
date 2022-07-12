@@ -29,7 +29,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.Extensions.Enums
+namespace AluminiumTech.DeveloperKit.Extensions.Enums
 {
     public enum FriendlyVersionFormatStyle
     {

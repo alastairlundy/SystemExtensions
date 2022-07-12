@@ -32,7 +32,7 @@
 using System;
 using System.Globalization;
 
-namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
+namespace AluminiumTech.DeveloperKit.Maths.SignificantFigures
 {
     public class SignificantFiguresProcessing
     {

@@ -30,10 +30,9 @@
     */
 
 using System;
+using AluminiumTech.DeveloperKit.Extensions.Enums;
 
-using AluminiumTech.DevKit.DeveloperKit.Extensions.Enums;
-
-namespace AluminiumTech.DevKit.DeveloperKit.Extensions
+namespace AluminiumTech.DeveloperKit.Extensions
 {
     public static class VersionExtensions
     {

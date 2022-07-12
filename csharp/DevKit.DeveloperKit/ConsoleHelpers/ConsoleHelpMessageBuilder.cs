@@ -33,10 +33,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using AluminiumTech.DeveloperKit.Exceptions;
 
-using AluminiumTech.DevKit.DeveloperKit.Exceptions;
-
-namespace AluminiumTech.DevKit.DeveloperKit.ConsoleHelpers
+namespace AluminiumTech.DeveloperKit.ConsoleHelpers
 {
     public class ConsoleHelpMessageBuilder
     {

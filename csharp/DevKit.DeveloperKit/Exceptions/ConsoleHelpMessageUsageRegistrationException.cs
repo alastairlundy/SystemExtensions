@@ -30,10 +30,9 @@
     */
 
 using System;
+using AluminiumTech.DeveloperKit.Exceptions.Messages;
 
-using AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages;
-
-namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
+namespace AluminiumTech.DeveloperKit.Exceptions
 {
     public class ConsoleHelpMessageUsageRegistrationException : Exception
     {

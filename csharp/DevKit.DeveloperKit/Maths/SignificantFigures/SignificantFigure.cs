@@ -29,7 +29,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
+namespace AluminiumTech.DeveloperKit.Maths.SignificantFigures
 {
     public struct SignificantFigure
     {

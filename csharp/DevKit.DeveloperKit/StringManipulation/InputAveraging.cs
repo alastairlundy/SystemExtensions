@@ -29,9 +29,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-using System;
-
-namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation
+namespace AluminiumTech.DeveloperKit.StringManipulation
 {
     public class InputAveraging
     {

@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>AluminiumTech.DevKit.DeveloperKit</RootNamespace>
-    <AssemblyName>AluminiumTech.DevKit.DeveloperKit</AssemblyName>
-    <PackageId>aluminiumtechdevkit</PackageId>
+    <RootNamespace>AluminiumTech.DeveloperKit</RootNamespace>
+    <AssemblyName>AluminiumTech.DeveloperKit</AssemblyName>
+    <PackageId>AluminiumTechDevKit</PackageId>
     <Title>AluminiumTech.DevKit.DeveloperKit</Title>
     <Authors>AluminiumTech</Authors>
-    <Copyright>2021 (c) AluminiumTech</Copyright>
+    <Copyright>2022 (c) AluminiumTech</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
       <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
@@ -17,11 +17,11 @@
 * Renamed some methods to be more similar to the Java HashMap's method names
 * Added methods similar to methods contained in the Java HashMap
 * Added new type of Exception</PackageReleaseNotes>
-    <TargetFrameworks>net5.0;net6.0;netcoreapp3.1;netstandard2.0</TargetFrameworks>
-    <LangVersion>10</LangVersion>
+    <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>default</LangVersion>
     <AssemblyVersion>1.4.0.0</AssemblyVersion>
     <FileVersion>1.4.0.0</FileVersion>
-    <PackageVersion>1.4.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
   </PropertyGroup>
   
   <ItemGroup>
@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Remove="Types\TableComponents\**" />
     <Compile Remove="Types\DataTable.cs" />
+    <Compile Remove="Types\HashMapXD.cs" />
   </ItemGroup>
   
   <ItemGroup>

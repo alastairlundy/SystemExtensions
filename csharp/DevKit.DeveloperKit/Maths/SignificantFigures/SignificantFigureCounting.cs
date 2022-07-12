@@ -31,7 +31,7 @@
 
 using System.Collections.Generic;
 
-namespace AluminiumTech.DevKit.DeveloperKit.Maths.SignificantFigures
+namespace AluminiumTech.DeveloperKit.Maths.SignificantFigures
 {
     public class SignificantFigureCounting
     {

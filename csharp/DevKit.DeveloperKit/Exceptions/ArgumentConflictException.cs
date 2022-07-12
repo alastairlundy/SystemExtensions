@@ -31,7 +31,7 @@
 
 using System;
 
-namespace AluminiumTech.DevKit.DeveloperKit.Exceptions
+namespace AluminiumTech.DeveloperKit.Exceptions
 {
     public class ArgumentConflictException : Exception
     {

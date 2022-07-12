@@ -31,7 +31,7 @@
 
 using System;
 
-namespace AluminiumTech.DevKit.DeveloperKit.Maths{
+namespace AluminiumTech.DeveloperKit.Maths{
     public class AverageHelper{
 
         public double Root(double value, double power)

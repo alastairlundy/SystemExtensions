@@ -29,7 +29,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.Exceptions.Messages
+namespace AluminiumTech.DeveloperKit.Exceptions.Messages
 {
     public static class CommonMessages
     {

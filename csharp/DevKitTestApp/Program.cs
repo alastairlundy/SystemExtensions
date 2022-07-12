@@ -34,23 +34,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using AluminiumTech.DevKit.DeveloperKit;
+using AluminiumTech.DeveloperKit;
 
 Console.WriteLine("Hello, World!");
     
-JHashMap<string, string> hashMap = new();
+HashMap<string, string> hashMap = new();
 
 Hashtable table = new()
 {
-   ["binger"] = "dumb"
+   
 };
 
 hashMap.ImportHashtable(table);
 
 Console.WriteLine();
 
-hashMap["binger"] = "dumb";
-hashMap["krauss"] = "wants a sandwich";
+hashMap["wearables"] = "aren't dead";
+hashMap["apple_car"] = "maybe coming??";
+
+hashMap["alastair_age"] = "23"; 
 
 string nameOfTestVariable = nameof(hashMap);
 
