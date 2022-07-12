@@ -159,7 +159,7 @@ namespace AluminiumTech.DeveloperKit
         /// <param name="pair"></param>
         public void PutIfAbsent(KeyValuePair<TKey, TValue> pair)
         {
-            if (!Contains(pair.Key))
+            if (!ContainsKey(pair.Key))
             {
                 Put(pair);
             }
@@ -175,7 +175,7 @@ namespace AluminiumTech.DeveloperKit
         {
             try
             {
-                if (Contains(key))
+                if (ContainsKey(key))
                 {
                     foreach (KeyValuePair<TKey, TValue> pairs in KeyValuePairs)
                     {
@@ -223,7 +223,7 @@ namespace AluminiumTech.DeveloperKit
         {
             try
             {
-                if (Contains(value))
+                if (ContainsValue(value))
                 {
                     foreach (KeyValuePair<TKey, TValue> pairs in KeyValuePairs)
                     {
@@ -251,7 +251,7 @@ namespace AluminiumTech.DeveloperKit
         {
             if (KeyValuePairs.Count > 0)
             {
-                if (Contains(pair))
+                if (ContainsKeyValuePair(pair))
                 {
                     KeyValuePairs.Remove(pair);
                 }
@@ -284,7 +284,7 @@ namespace AluminiumTech.DeveloperKit
             {
                 if (KeyValuePairs.Count > 0)
                 {
-                    if (Contains(key))
+                    if (ContainsKey(key))
                     {
                         // ReSharper disable once ForCanBeConvertedToForeach
                         for (int index = 0; index < KeyValuePairs.Count; index++)
@@ -318,7 +318,7 @@ namespace AluminiumTech.DeveloperKit
         {
             try
             {
-                if (Contains(value))
+                if (ContainsValue(value))
                 {
                     // ReSharper disable once ForCanBeConvertedToForeach
                     for (int index = 0; index < KeyValuePairs.Count; index++)
@@ -350,7 +350,7 @@ namespace AluminiumTech.DeveloperKit
         {
             try
             {
-                if (Contains(key))
+                if (ContainsKey(key))
                 {
                     for (int index = 0; index < KeyValuePairs.Count; index++)
                     {
@@ -383,9 +383,9 @@ namespace AluminiumTech.DeveloperKit
         {
             try
             {
-                if (Contains(key))
+                if (ContainsKey(key))
                 {
-                    if (Contains(oldValue)){
+                    if (ContainsValue(oldValue)){
                         for (int index = 0; index < KeyValuePairs.Count; index++)
                         {
                             if (KeyValuePairs[index].Key.Equals(key))
@@ -423,7 +423,7 @@ namespace AluminiumTech.DeveloperKit
         /// <exception cref="KeyValuePairNotFoundException"></exception>
         public int IndexOf(KeyValuePair<TKey, TValue> pair)
         {
-            if (Contains(pair))
+            if (ContainsKeyValuePair(pair))
             {
                 for (int index = 0; index < KeyValuePairs.Count; index++)
                 {
@@ -445,7 +445,7 @@ namespace AluminiumTech.DeveloperKit
         /// <exception cref="KeyNotFoundException"></exception>
         public int IndexOf(TKey key)
         {
-            if (Contains(key))
+            if (ContainsKey(key))
             {
                 for (int index = 0; index < KeyValuePairs.Count; index++)
                 {
@@ -538,7 +538,7 @@ namespace AluminiumTech.DeveloperKit
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public bool Contains(TKey key)
+        public bool ContainsKey(TKey key)
         {
             foreach (var pair in KeyValuePairs)
             {
@@ -556,7 +556,7 @@ namespace AluminiumTech.DeveloperKit
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public bool Contains(TValue value)
+        public bool ContainsValue(TValue value)
         {
             foreach (var pair in KeyValuePairs)
             {
@@ -577,11 +577,11 @@ namespace AluminiumTech.DeveloperKit
         /// <returns>Returns whether or not the specified Key Value Pair exists in the HashMap as a bool. True means it exists and False means it does not exist.</returns>
         /// <exception cref="ValueNotFoundException">This exception is thrown when the Value does not exist in the HashMap regardless of what the key is.</exception>
         /// <exception cref="KeyNotFoundException">This exception is thrown when the HashMap does not contain the Key specified.</exception>
-        public bool Contains(KeyValuePair<TKey, TValue> pair)
+        public bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair)
         {
-            if (Contains(pair.Key))
+            if (ContainsKey(pair.Key))
             {
-                if (Contains(pair.Value))
+                if (ContainsValue(pair.Value))
                 {
                     return GetValue(pair.Key).Equals(pair.Value);
                 }
@@ -601,11 +601,11 @@ namespace AluminiumTech.DeveloperKit
         {
             foreach (var pair in hashMap.ToList())
             {
-                if (!Contains(pair))
+                if (!ContainsKeyValuePair(pair))
                 {
                     return false;
                 }
-                else if (Contains(pair))
+                else if (ContainsKeyValuePair(pair))
                 {
                     if (!pair.Value.Equals(GetValue(pair.Key)))
                     {
@@ -635,7 +635,7 @@ namespace AluminiumTech.DeveloperKit
         {
             get
             {
-                if (Contains(key))
+                if (ContainsKey(key))
                 {
                     return GetValue(key);
                 }
@@ -644,7 +644,7 @@ namespace AluminiumTech.DeveloperKit
             }
             set
             {
-                if (Contains(key))
+                if (ContainsKey(key))
                 {
                     Replace(key, value);
                 }

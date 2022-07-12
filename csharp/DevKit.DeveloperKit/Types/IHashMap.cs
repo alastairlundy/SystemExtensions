@@ -24,11 +24,11 @@ public interface IHashMap<TKey, TValue>
     public int IndexOf(KeyValuePair<TKey, TValue> pair);
 
 
-    public bool Contains(TKey key);
+    public bool ContainsKey(TKey key);
     
-    public bool Contains(TValue value);
+    public bool ContainsValue(TValue value);
 
-    public bool Contains(KeyValuePair<TKey, TValue> pair);
+    public bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair);
 
     public bool IsEmpty();
     
