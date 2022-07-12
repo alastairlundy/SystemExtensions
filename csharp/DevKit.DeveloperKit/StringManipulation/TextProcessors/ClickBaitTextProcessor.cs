@@ -29,7 +29,7 @@
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     */
 
-namespace AluminiumTech.DevKit.DeveloperKit.StringManipulation.TextProcessors
+namespace AluminiumTech.DeveloperKit.StringManipulation.TextProcessors
 {
     /// <summary>
     /// 
