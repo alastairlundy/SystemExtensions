@@ -9,18 +9,22 @@
     <Copyright>2022 (c) AluminiumTech</Copyright>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
       <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/developerkit</RepositoryUrl>
+    <RepositoryUrl>https://gitlab.com/aluminiumtechdevkit/devkit-csharp/developerkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>### Changes
-* Renamed some methods to be more similar to the Java HashMap's method names
-* Added methods similar to methods contained in the Java HashMap
-* Added new type of Exception</PackageReleaseNotes>
+    <PackageReleaseNotes>### Changes since 1.4.0
+* Renamed JHashMap to HashMap
+* Removed IJHashMap
+* Updated namespaces
+* Re-added new IHashMap interface
+* Method name changes
+* Minor Tweaks and improvements
+* Added the ability to use HashMapObjectName["HashMapKey"] to get and set HashMap values.</PackageReleaseNotes>
     <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
-    <AssemblyVersion>1.4.0.0</AssemblyVersion>
-    <FileVersion>1.4.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
     <PackageVersion>2.0.0</PackageVersion>
   </PropertyGroup>
   
@@ -37,15 +41,19 @@
     </None>
     
     <None Remove="Types\TableComponents\**" />
+    
+    <None Remove="ConsoleHelpers\**" />
   </ItemGroup>
   
   <ItemGroup>
     <Compile Remove="Types\TableComponents\**" />
     <Compile Remove="Types\DataTable.cs" />
     <Compile Remove="Types\HashMapXD.cs" />
+    <Compile Remove="ConsoleHelpers\**" />
   </ItemGroup>
   
   <ItemGroup>
     <EmbeddedResource Remove="Types\TableComponents\**" />
+    <EmbeddedResource Remove="ConsoleHelpers\**" />
   </ItemGroup>
 </Project>
