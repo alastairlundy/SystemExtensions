@@ -4,6 +4,7 @@
 
 | Version | Release Date |
 |-|-|
+| 2.1.0 | February 4th 2022 |
 | 2.0.0 | July 12th 2022 |
 
 ### Version 1.x
