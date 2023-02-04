@@ -55,7 +55,6 @@ namespace AluminiumTech.DeveloperKit.Maths{
 
             return Root(sum, values.Length);
         }
-        
         /// <summary>
         /// Calculate the geometric mean of a given set of numbers.
         /// </summary>
