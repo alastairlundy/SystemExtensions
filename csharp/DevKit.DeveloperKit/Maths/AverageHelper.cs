@@ -55,6 +55,23 @@ namespace AluminiumTech.DeveloperKit.Maths{
 
             return Root(sum, values.Length);
         }
+        
+        /// <summary>
+        /// Calculate the geometric mean of a given set of numbers.
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public long CalculateGeometricMean(long[] values)
+        {
+            long sum = 1;
+            
+            for(int index = 0; index < values.Length; index++)
+            {
+                sum *= values[index];
+            }
+
+            return Convert.ToInt64(Root(Convert.ToDouble(sum), Convert.ToDouble(values.Length)));
+        }
 
         /// <summary>
         /// 

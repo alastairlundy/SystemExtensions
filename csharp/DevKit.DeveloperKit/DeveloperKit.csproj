@@ -13,14 +13,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageReleaseNotes>### Changes since 1.4.0
-* Renamed JHashMap to HashMap
-* Removed IJHashMap
-* Updated namespaces
-* Re-added new IHashMap interface
-* Method name changes
-* Minor Tweaks and improvements
-* Added the ability to use HashMapObjectName["HashMapKey"] to get and set HashMap values.</PackageReleaseNotes>
+    <PackageReleaseNotes>### Changes since 2.0.1
+* Added the ability to calculate a Geometric means using ``long`` values</PackageReleaseNotes>
     <TargetFrameworks>net6.0;netstandard2.0</TargetFrameworks>
     <LangVersion>default</LangVersion>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
