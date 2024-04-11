@@ -2,6 +2,28 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>AlastairLundy.System.Extensions</Title>
+        <Description>Extensions to C# System classes and structs to help improve them.</Description>
+        <Copyright>(c) 2024 Alastair Lundy</Copyright>
+        <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
+        <PackageReleaseNotes>Initial release under new namespace and package.</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+        <Content Include="..\LICENSE.txt">
+            <Link>LICENSE.txt</Link>
+            <PackagePath>LICENSE.txt</PackagePath>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>

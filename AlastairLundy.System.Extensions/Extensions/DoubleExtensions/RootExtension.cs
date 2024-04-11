@@ -28,6 +28,12 @@ namespace AlastairLundy.System.Extensions.DoubleExtensions
 {
     public static class RootExtension
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="power"></param>
+        /// <returns></returns>
         public static double Root(this double value, double power)
         {
             return Math.Pow(value, (1.0 / power));
