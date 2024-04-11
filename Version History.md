@@ -1,4 +1,13 @@
-## Version History
+# Version History
+
+## As AlastairLundy.System.Extensions
+
+### Version 3.x
+| Version | Release Date |
+|-|-|
+| 3.0.0 | April 11th 2024| 
+
+## As a prior name.
 
 ### Version 2.x
 
