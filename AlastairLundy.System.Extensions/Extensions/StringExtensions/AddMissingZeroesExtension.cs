@@ -32,7 +32,6 @@ namespace AlastairLundy.System.Extensions.StringExtensions
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="version"></param>
         /// <param name="str"></param>
         /// <param name="numberOfZeroesNeeded">The number of zeroes to add. Valid values are 0 through 3. Defaults to 3.</param>
         /// <returns></returns>
@@ -40,22 +39,24 @@ namespace AlastairLundy.System.Extensions.StringExtensions
         public static string AddMissingZeroes(this string str, int numberOfZeroesNeeded = 3)
         {
             StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(str);
+            
             int dots = str.CountDotsInString();
 
             if (dots == 0)
             {
-                stringBuilder.Append(".");
-                stringBuilder.Append("0");
+                stringBuilder.Append('.');
+                stringBuilder.Append('0');
             }
-            if (dots == 1 && numberOfZeroesNeeded >= 1)
+            if (dots == 1 && numberOfZeroesNeeded > 1)
             {
-                stringBuilder.Append(".");
-                stringBuilder.Append("0");
+                stringBuilder.Append('.');
+                stringBuilder.Append('0');
             }
-            if (dots == 2 && numberOfZeroesNeeded >= 2)
+            if (dots == 2 && numberOfZeroesNeeded > 2)
             {
-                stringBuilder.Append(".");
-                stringBuilder.Append("0");
+                stringBuilder.Append('.');
+                stringBuilder.Append('0');
             }
             if (dots == 3 && numberOfZeroesNeeded == 3)
             {
