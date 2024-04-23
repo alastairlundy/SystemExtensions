@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System.Text;
+
 namespace AlastairLundy.System.Extensions.StringExtensions
 {
     public static class CapitalizeLetterWordExtension
@@ -34,22 +36,23 @@ namespace AlastairLundy.System.Extensions.StringExtensions
         /// <returns></returns>
         public static string CapitalizeALetterInAWord(this string word, int index)
         {
-            string result = "";
             char[] chars = word.ToCharArray();
+
+            StringBuilder stringBuilder = new StringBuilder();
             
             for(int i = 0; i < chars.Length; i++)
             {
                 if (i.Equals(index))
                 {
-                    result += chars[index].ToString().ToUpper();
+                    stringBuilder.Append(chars[index].ToString().ToUpper());
                 }
                 else
                 {
-                    result += chars[index].ToString().ToLower();
+                    stringBuilder.Append(chars[index].ToString().ToLower());
                 }
             }
 
-            return result;
+            return stringBuilder.ToString();
         }
     }
 }
