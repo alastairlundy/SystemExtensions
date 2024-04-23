@@ -36,7 +36,7 @@ namespace AlastairLundy.System.Extensions.StringArrayExtensions
         /// <returns></returns>
         public static bool IsTitleCase(this string phrase)
         {
-            var words = phrase.Split();
+            string[] words = phrase.Split();
             
             bool[] results = new bool[words.Length];
             
