@@ -7,13 +7,16 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 3.0.0
-Fixed a bug where the ``AddMissingZeroes`` string extension method would unnecessarily cause Argument Exceptions to be thrown.</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 3.0.1
+* Added ``GetKey&lt;TKey,TValue&gt;(TValue value)`` Dictionary Extension
+* Added ``GetKey&lt;TKey,TValue&gt;(TValue value)`` HashMap Extension
+* Added ``ToHashMap&lt;TKey,TValue&gt;()`` Dictionary extension
+* Improved the performance of several extensions by switching to using StringBuilder or Interpolation from concatenation</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>3.0.1.0</AssemblyVersion>
-        <FileVersion>3.0.1.0</FileVersion>
+        <AssemblyVersion>3.1.0.0</AssemblyVersion>
+        <FileVersion>3.1.0.0</FileVersion>
         <Version>3.0.1</Version>
         <PackageVersion>3.0.1</PackageVersion>
     </PropertyGroup>
