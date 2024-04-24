@@ -68,15 +68,15 @@ namespace AlastairLundy.System.Extensions.VersionExtensions
             }
             else if (showBuild)
             {
-                return (version.Major.ToString() + dot + version.Minor.ToString() + dot + version.Build.ToString());
+                return $"{version.Major}{dot}{version.Minor}{dot}{version.Build}";
             }
             else if(showMinor)
             {
-                return (version.Major.ToString() + dot + version.Minor.ToString());
+                return $"{version.Major}{dot}{version.Minor}";
             }
             else
             {
-                return (version.Major.ToString());
+                return version.Major.ToString();
             }
         }
     }
