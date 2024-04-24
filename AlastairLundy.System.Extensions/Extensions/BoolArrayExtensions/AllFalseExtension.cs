@@ -26,6 +26,11 @@ namespace AlastairLundy.System.Extensions.BoolArrayExtensions
 {
     public static class AllFalseExtension
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <returns></returns>
         public static bool IsAllFalse(this bool[] inputs)
         {
             foreach (var input in inputs)
