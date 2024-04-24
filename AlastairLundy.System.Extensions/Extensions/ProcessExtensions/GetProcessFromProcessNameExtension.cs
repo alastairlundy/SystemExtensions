@@ -36,7 +36,10 @@ namespace AlastairLundy.System.Extensions.ProcessExtensions
         /// <returns></returns>
         public static Process GetProcessFromProcessName(this Process process, string processName)
         {
-            processName = processName.Replace(".exe", string.Empty);
+            if (processName.Contains(".exe"))
+            {
+                processName = processName.Replace(".exe", string.Empty);
+            }
 
             if (process.IsProcessRunning(processName) ||
                 process.IsProcessRunning(processName.ToLower()) ||
