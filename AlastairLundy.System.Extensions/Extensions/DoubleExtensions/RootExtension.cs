@@ -26,6 +26,7 @@ using System;
 
 namespace AlastairLundy.System.Extensions.DoubleExtensions
 {
+    [Obsolete]
     public static class RootExtension
     {
         /// <summary>
@@ -34,6 +35,7 @@ namespace AlastairLundy.System.Extensions.DoubleExtensions
         /// <param name="value"></param>
         /// <param name="power"></param>
         /// <returns></returns>
+        [Obsolete]
         public static double Root(this double value, double power)
         {
             return Math.Pow(value, (1.0 / power));
