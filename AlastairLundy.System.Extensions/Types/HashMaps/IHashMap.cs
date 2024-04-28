@@ -47,6 +47,7 @@ namespace AlastairLundy.System.Extensions.Types.HashMaps
 
         void RemoveInstancesOf(TValue value);
 
+        void Replace(TKey key, TValue value);
         void Replace(TKey key, TValue oldValue, TValue newValue);
 
         void Clear();
