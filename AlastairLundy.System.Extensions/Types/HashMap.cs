@@ -262,7 +262,7 @@ namespace AlastairLundy.System.Extensions.Types
         public void Remove(TKey key)
         {
             if (KeyValuePairs.Count > 0)
-                {
+            {
                     if (ContainsKey(key))
                     {
                         // ReSharper disable once ForCanBeConvertedToForeach
