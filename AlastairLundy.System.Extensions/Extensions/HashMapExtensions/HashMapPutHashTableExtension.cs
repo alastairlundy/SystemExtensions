@@ -27,7 +27,7 @@ using AlastairLundy.System.Extensions.Types;
 using System.Collections;
 
 
-namespace AlastairLundy.System.Extensions.Extensions.HashMapExtensions
+namespace AlastairLundy.System.Extensions.HashMapExtensions
 {
     public static class HashMapPutHashTableExtension
     {

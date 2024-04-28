@@ -22,13 +22,10 @@
        SOFTWARE.
    */
 
+using System.Collections.Generic;
 using AlastairLundy.System.Extensions.Types;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AlastairLundy.System.Extensions.Extensions.HashMapExtensions
+namespace AlastairLundy.System.Extensions.HashMapExtensions
 {
     public static class HashMapPutListExtension
     {
