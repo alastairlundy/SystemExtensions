@@ -48,12 +48,14 @@ namespace AlastairLundy.System.Extensions.Types
         /// <summary>
         /// Gets the number of elements in the HashMap.
         /// </summary>
+        [Obsolete]
         public int Size => KeyValuePairs.Count;
 
         /// <summary>
         /// Imports an existing HashMap object and creates a new one.
         /// </summary>
         /// <param name="hashMap"></param>
+        [Obsolete]
         public void ImportHashMap(HashMap<TKey, TValue> hashMap)
         {
             ImportList(hashMap.ToList());
@@ -63,6 +65,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Adds items in a list to the HashMap
         /// </summary>
         /// <param name="list"></param>
+        [Obsolete]
         public void ImportList(List<KeyValuePair<TKey, TValue>> list)
         {
             ImportArray(list.ToArray());   
@@ -72,6 +75,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Adds items in an array to the HashMap.
         /// </summary>
         /// <param name="array"></param>
+        [Obsolete]
         public void ImportArray(KeyValuePair<TKey, TValue>[] array)
         {
             foreach (KeyValuePair<TKey,TValue> pairs in array)
@@ -84,6 +88,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Adds items in a HashTable to the HashMap
         /// </summary>
         /// <param name="hashtable"></param>
+        [Obsolete]
         public void ImportHashtable(Hashtable hashtable)
         {
             var keys = hashtable.Keys;
@@ -110,6 +115,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Adds items in a dictionary to a HashMap.
         /// </summary>
         /// <param name="dictionary"></param>
+        [Obsolete]
         public void ImportDictionary(Dictionary<TKey, TValue> dictionary)
         {
             foreach (TKey key in dictionary.Keys)
@@ -429,6 +435,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Converts a HashMap object to an array.
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public KeyValuePair<TKey, TValue>[] ToArray()
         {
             return KeyValuePairs.ToArray();
@@ -438,6 +445,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// Converts a HashMap object to a C# List.
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public List<KeyValuePair<TKey, TValue>> ToList()
         {
             return KeyValuePairs;
@@ -557,6 +565,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// </summary>
         /// <param name="key"></param>
         /// <exception cref="KeyNotFoundException"></exception>
+        [Obsolete]
         public TValue this[TKey key]
         {
             get
