@@ -24,10 +24,8 @@
 
 using AlastairLundy.System.Extensions.Exceptions;
 using AlastairLundy.System.Extensions.Types;
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace AlastairLundy.System.Extensions.HashMapExtensions
 {
