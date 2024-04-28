@@ -36,7 +36,7 @@ namespace AlastairLundy.System.Extensions.VersionExtensions
         /// <returns></returns>
         public static bool IsAtLeast(this Version version, Version versionToBeCompared)
         {
-            var expected = versionToBeCompared;
+            Version expected = versionToBeCompared;
 
             if (version.Major >= expected.Major)
             {
