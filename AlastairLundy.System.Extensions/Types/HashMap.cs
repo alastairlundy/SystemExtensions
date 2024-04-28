@@ -533,7 +533,7 @@ namespace AlastairLundy.System.Extensions.Types
         /// <returns></returns>
         public bool Equals(HashMap<TKey, TValue> hashMap)
         {
-            foreach (var pair in hashMap.ToList())
+            foreach (KeyValuePair<TKey,TValue> pair in hashMap.ToList())
             {
                 if (!ContainsKeyValuePair(pair))
                 {
