@@ -31,7 +31,7 @@ namespace AlastairLundy.System.Extensions.DecimalExtensions
     {
         public static decimal Root(this decimal power, decimal value)
         {
-            return (decimal)Math.Pow((double)value, (1.0 / (double)power));
+            return Convert.ToDecimal(Math.Pow((double)value, (1.0 / (double)power)));
         }
     }
 }
