@@ -91,10 +91,10 @@ namespace AlastairLundy.System.Extensions.Types
         [Obsolete]
         public void ImportHashtable(Hashtable hashtable)
         {
-            var keys = hashtable.Keys;
-            var values = hashtable.Values;
+            ICollection keys = hashtable.Keys;
+            ICollection values = hashtable.Values;
 
-            var sameSize = keys.Count == values.Count;
+            bool sameSize = keys.Count == values.Count;
 
             TKey[] keyArray = new TKey[keys.Count];
             TValue[] valArray = new TValue[values.Count];
