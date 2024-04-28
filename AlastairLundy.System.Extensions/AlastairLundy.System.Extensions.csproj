@@ -7,17 +7,18 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 3.1.0
-* Added Assembly Extensions ``AssemblyGetProgramNameExtension`` and ``AssemblyGetProgramVersionExtension``
-* Added Decimal Extension ``DecimalRootExtension``
-* Deprecated Double Extension ``RootExtension``</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 3.2.0
+* Deprecated some methods in ``HashMap``
+* Correct namespace issues in 3.2.0
+* Added ``IHashMap`` interface to assist in working on the next version of ``HashMap``
+* Added replacement extension methods for the deprecated ``HashMap`` methods</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>3.2.0.0</AssemblyVersion>
-        <FileVersion>3.2.0.0</FileVersion>
-        <Version>3.2.0</Version>
-        <PackageVersion>3.2.0</PackageVersion>
+        <AssemblyVersion>3.3.0.0</AssemblyVersion>
+        <FileVersion>3.3.0.0</FileVersion>
+        <Version>3.3.0</Version>
+        <PackageVersion>3.3.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
