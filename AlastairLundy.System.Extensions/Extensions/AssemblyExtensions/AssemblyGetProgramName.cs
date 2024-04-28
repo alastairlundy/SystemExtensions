@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace AlastairLundy.System.Extensions.Extensions.AssemblyExtensions
+namespace AlastairLundy.System.Extensions.AssemblyExtensions
 {
     public static class AssemblyGetProgramName
     {

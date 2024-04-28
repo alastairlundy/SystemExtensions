@@ -27,7 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AlastairLundy.System.Extensions.Extensions.DecimalExtensions
+namespace AlastairLundy.System.Extensions.DecimalExtensions
 {
     public static class DecimalRootExtension
     {
