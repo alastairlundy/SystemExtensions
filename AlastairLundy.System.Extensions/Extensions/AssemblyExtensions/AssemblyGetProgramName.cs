@@ -36,7 +36,7 @@ namespace AlastairLundy.System.Extensions.AssemblyExtensions
         /// <returns></returns>
         public static string GetProjectName(this Assembly assembly)
         {
-            return Assembly.GetEntryAssembly().GetName().Name;
+            return Assembly.GetEntryAssembly()?.GetName().Name;
         }
     }
 }
