@@ -6,18 +6,19 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 3.2.0
-* Deprecated some methods in ``HashMap``
-* Correct namespace issues in 3.2.0
-* Added ``IHashMap`` interface to assist in working on the next version of ``HashMap``
-* Added replacement extension methods for the deprecated ``HashMap`` methods</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 3.3.0
+* Added classes to solve ``Root``, ``Power``, ``Sum``, ``Median``, ``Mode``, ``ArithmeticMean``, ``GeometricMean``, and ``MidRange`` calculations
+* Revamped HashMap class so that it now internally uses a Dictionary.
+* Updated namespaces and name of the project
+* Added Decimal extension ``Pow&lt;TKey, TValue&gt;(this decimal value, decimal power)``
+* Added Dictionary extension ``GetKeys&lt;TKey,TValue&gt;(this Dictionary&lt;TKey,TValue&gt; dictionary, TValue value)`` </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>3.3.0.0</AssemblyVersion>
         <FileVersion>3.3.0.0</FileVersion>
         <Version>3.3.0</Version>
-        <PackageVersion>3.3.0</PackageVersion>
+        <PackageVersion>4.0.0-preview.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
