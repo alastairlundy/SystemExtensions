@@ -108,10 +108,12 @@ namespace AlastairLundy.Extensions.System.Collections
 
         public void Remove(KeyValuePair<TKey, TValue> pair)
         {
-            if (ContainsKey(pair.Key) && ContainsValue(pair.Value))
+            if (ContainsKeyValuePair(pair))
             {
                 _dictionary.Remove(pair.Key);
             }
+
+            throw new KeyValuePairNotFoundException(nameof(pair));
         }
 
         public void RemoveInstancesOf(TValue value)
