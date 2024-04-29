@@ -31,7 +31,7 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
     {
 
         /// <summary>
-        ///  Adds items in an array to the HashMap.
+        ///  Adds items in an array to a HashMap.
         /// </summary>
         /// <typeparam name="TKey"></typeparam>
         /// <typeparam name="TValue"></typeparam>
