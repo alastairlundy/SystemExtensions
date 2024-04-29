@@ -26,7 +26,9 @@ using System;
 
 namespace AlastairLundy.Extensions.System.Maths
 {
-    
+    /// <summary>
+    /// A class to store code related to calculating the Geometric Mean of values.
+    /// </summary>
     public class GeometricMean
     {
         /// <summary>
