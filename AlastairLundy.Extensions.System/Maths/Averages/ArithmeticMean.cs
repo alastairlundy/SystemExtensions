@@ -27,14 +27,14 @@ using System;
 namespace AlastairLundy.Extensions.System.Maths
 {
     /// <summary>
-    /// 
+    /// A class to assist in getting the Arithmetic mean of an array of values.
     /// </summary>
     public static class ArithmeticMean
     {
         /// <summary>
-        /// 
+        /// Returns the arithmetic mean of a double array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array of values to get the arithmetic mean of.</param>
         /// <returns></returns>
         public static double ToDouble(double[] values)
         {
@@ -42,9 +42,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Returns the arithmetic mean of a decimal array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array of values to get the arithmetic mean of.</param>
         /// <returns></returns>
         public static decimal ToDecimal(decimal[] values)
         {
@@ -52,9 +52,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Returns the arithmetic mean of a 64 Bit integer array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array of values to get the arithmetic mean of.</param>
         /// <returns></returns>
         public static long ToLong(long[] values)
         {
@@ -62,9 +62,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        ///  Returns the arithmetic mean of a 32 Bit integer array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array of values to get the arithmetic mean of.</param>
         /// <returns></returns>
         public static int ToInt(int[] values)
         {
@@ -72,9 +72,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
     
         /// <summary>
-        /// 
+        ///  Returns the arithmetic mean of a float array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array of values to get the arithmetic mean of.</param>
         /// <returns></returns>
         public static float ToFloat(float[] values)
         {
