@@ -30,7 +30,7 @@ using AlastairLundy.Extensions.System.DictionaryExtensions;
 namespace AlastairLundy.Extensions.System.Maths
 {
     /// <summary>
-    /// 
+    /// A class to store mode calculation related code.
     /// </summary>
     public class Mode
     {

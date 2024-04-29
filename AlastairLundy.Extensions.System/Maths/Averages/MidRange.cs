@@ -28,7 +28,7 @@
 namespace AlastairLundy.Extensions.System.Maths
 {
     /// <summary>
-    /// 
+    /// A class to store mid-range calculation related code.
     /// </summary>
     public class MidRange
     {

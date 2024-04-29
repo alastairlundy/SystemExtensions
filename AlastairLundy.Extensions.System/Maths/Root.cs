@@ -27,6 +27,9 @@ using System;
 namespace AlastairLundy.Extensions.System.Maths
 {
     
+    /// <summary>
+    /// A class to assist in calculating the Nth Root of a value.
+    /// </summary>
     public static class Root
     {
         /// <summary>

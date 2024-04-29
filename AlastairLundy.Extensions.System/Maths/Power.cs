@@ -26,6 +26,9 @@ using System;
 
 namespace AlastairLundy.Extensions.System.Maths
 {
+    /// <summary>
+    /// A class to assist in getting a specified number raised to a specified power.
+    /// </summary>
     public static class Power
     {
         /// <summary>

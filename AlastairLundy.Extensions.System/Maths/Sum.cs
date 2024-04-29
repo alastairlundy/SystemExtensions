@@ -26,7 +26,10 @@ using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.System.Maths
 {
-    public class Sum
+    /// <summary>
+    /// A class to assist in calculating the Arithmetic sum of values.
+    /// </summary>
+    public static class Sum
     {
         /// <summary>
         /// 
