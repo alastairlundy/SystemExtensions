@@ -64,7 +64,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values"></param>
         /// <returns></returns>
-        public static int OfInts(int[] values)
+        public static int ToInt(int[] values)
         {
            return Sum.OfInts(values) / values.Length;
         }
