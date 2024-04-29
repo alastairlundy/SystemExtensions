@@ -24,7 +24,8 @@
 
 
 using System.Collections.Generic;
-using AlastairLundy.Extensions.System.Types;
+using AlastairLundy.Extensions.System.Collections;
+using AlastairLundy.Extensions.System.HashMapExtensions;
 
 namespace AlastairLundy.Extensions.System.DictionaryExtensions
 {
@@ -41,8 +42,7 @@ namespace AlastairLundy.Extensions.System.DictionaryExtensions
         public static HashMap<TKey, TValue> ToHashMap<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
         {
             HashMap<TKey, TValue> hashMap = new HashMap<TKey, TValue>();
-
-            hashMap.ImportDictionary(dictionary);
+            hashMap.PutDictionary(dictionary);
 
             return hashMap;
         }
