@@ -23,7 +23,7 @@
    */
 
 using System.Collections;
-using AlastairLundy.Extensions.System.Types;
+using AlastairLundy.Extensions.System.Collections;
 
 namespace AlastairLundy.Extensions.System.HashMapExtensions
 {

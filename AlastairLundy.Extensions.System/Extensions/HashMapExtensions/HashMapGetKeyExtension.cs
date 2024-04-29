@@ -23,8 +23,8 @@
    */
 
 using System.Collections.Generic;
+using AlastairLundy.Extensions.System.Collections;
 using AlastairLundy.Extensions.System.Exceptions;
-using AlastairLundy.Extensions.System.Types;
 
 namespace AlastairLundy.Extensions.System.HashMapExtensions
 {
@@ -44,7 +44,7 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
         {
             if (hashmap.ContainsValue(value))
             {
-                foreach (KeyValuePair<TKey, TValue> pair in hashmap.ToList())
+                foreach (KeyValuePair<TKey, TValue> pair in hashmap.ToDictionary())
                 {
                     if (pair.Value.Equals(value))
                     {
