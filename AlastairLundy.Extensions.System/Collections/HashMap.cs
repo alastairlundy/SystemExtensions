@@ -27,7 +27,6 @@ using System;
 using System.Collections.Generic;
 using AlastairLundy.Extensions.System.DictionaryExtensions;
 using AlastairLundy.Extensions.System.Exceptions;
-using NotImplementedException = System.NotImplementedException;
 
 namespace AlastairLundy.Extensions.System.Collections
 {
