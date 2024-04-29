@@ -43,7 +43,7 @@ namespace AlastairLundy.Extensions.System.Maths
                 sum *= value;
             }
 
-            return Root.ToDouble(sum, values.Length);
+            return Root.ToDouble(sum, Convert.ToDouble(values.Length));
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace AlastairLundy.Extensions.System.Maths
                 sum *= value;
             }
 
-            return Root.ToFloat(sum, values.Length);
+            return Root.ToFloat(sum, Convert.ToSingle(values.Length));
         }
     }
 }
