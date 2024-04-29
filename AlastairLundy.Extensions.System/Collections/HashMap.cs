@@ -42,17 +42,17 @@ namespace AlastairLundy.Extensions.System.Collections
         
         public void Put(TKey key, TValue value)
         {
-            Put(new KeyValuePair<TKey, TValue>(key, value));
+            if (!ContainsKey(key))
+            {
+                _dictionary.Add(key, value);
+            }
+
+            throw new ArgumentException($"Existing key {key} found with value {GetValue(key)}. Can't put a Key that already exists.");
         }
 
         public void Put(KeyValuePair<TKey, TValue> pair)
         {
-            if (!ContainsKey(pair.Key))
-            {
-                _dictionary.Add(pair.Key, pair.Value);
-            }
-
-            throw new ArgumentException($"Existing key {pair.Key} found with value {GetValue(pair.Key)}. Can't put a Key that already exists.");
+            Put(pair.Key, pair.Value);
         }
 
         public void PutIfAbsent(TKey key, TValue value)
