@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-
+﻿using System;
+using System.Collections.Generic;
+using AlastairLundy.Extensions.System.DictionaryExtensions;
+using AlastairLundy.Extensions.System.Exceptions;
 using NotImplementedException = System.NotImplementedException;
 
 namespace AlastairLundy.Extensions.System.Collections
@@ -16,12 +18,17 @@ namespace AlastairLundy.Extensions.System.Collections
         
         public void Put(TKey key, TValue value)
         {
-            throw new NotImplementedException();
+            Put(new KeyValuePair<TKey, TValue>(key, value));
         }
 
         public void Put(KeyValuePair<TKey, TValue> pair)
         {
-            throw new NotImplementedException();
+            if (!ContainsKey(pair.Key))
+            {
+                _dictionary.Add(pair.Key, pair.Value);
+            }
+
+            throw new ArgumentException($"Existing key {pair.Key} found with value {GetValue(pair.Key)}. Can't put a Key that already exists.");
         }
 
         public void PutIfAbsent(TKey key, TValue value)
@@ -34,7 +41,7 @@ namespace AlastairLundy.Extensions.System.Collections
 
         public void PutIfAbsent(KeyValuePair<TKey, TValue> pair)
         {
-            throw new NotImplementedException();
+            PutIfAbsent(pair.Key, pair.Value);
         }
 
         public TValue GetValue(TKey key)
@@ -85,22 +92,43 @@ namespace AlastairLundy.Extensions.System.Collections
 
         public void RemoveInstancesOf(TValue value)
         {
-      
+            TKey[] keys = _dictionary.GetKeys(value);
+
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (int index = 0; index < keys.Length; index++)
+            {
+                Remove(keys[index]);
+            }
         }
 
         public void Replace(TKey key, TValue value)
         {
-            throw new NotImplementedException();
+            if (ContainsKey(key))
+            {
+                _dictionary[key] = value;
+            }
+
+            throw new KeyNotFoundException();
         }
 
         public void Replace(TKey key, TValue oldValue, TValue newValue)
         {
-            throw new NotImplementedException();
+            if (ContainsKey(key))
+            {
+                if (ContainsKeyValuePair(new KeyValuePair<TKey, TValue>(key, oldValue)))
+                {
+                    _dictionary[key] = newValue;
+                }
+
+                throw new KeyValuePairNotFoundException(nameof(_dictionary));
+            }
+
+            throw new KeyNotFoundException();
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            _dictionary.Clear();
         }
         
         public Dictionary<TKey, TValue> ToDictionary()
