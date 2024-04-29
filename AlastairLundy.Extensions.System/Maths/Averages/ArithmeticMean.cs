@@ -26,8 +26,10 @@ using System;
 
 namespace AlastairLundy.Extensions.System.Maths
 {
-    
-    public class ArithmeticMean
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class ArithmeticMean
     {
         /// <summary>
         /// 

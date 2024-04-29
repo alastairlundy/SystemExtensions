@@ -30,16 +30,29 @@ using AlastairLundy.Extensions.System.Exceptions;
 
 namespace AlastairLundy.Extensions.System.Collections
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
+    /// <typeparam name="TValue"></typeparam>
     public class HashMap<TKey, TValue> : IHashMap<TKey, TValue>
     {
         // ReSharper disable once InconsistentNaming
         protected Dictionary<TKey, TValue> _dictionary;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public HashMap()
         {
             _dictionary = new Dictionary<TKey, TValue>();
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void Put(TKey key, TValue value)
         {
             if (!ContainsKey(key))
@@ -50,11 +63,21 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new ArgumentException($"Existing key {key} found with value {GetValue(key)}. Can't put a Key that already exists.");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void Put(KeyValuePair<TKey, TValue> pair)
         {
             Put(pair.Key, pair.Value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
         public void PutIfAbsent(TKey key, TValue value)
         {
             if (!ContainsKey(key))
@@ -63,11 +86,21 @@ namespace AlastairLundy.Extensions.System.Collections
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
         public void PutIfAbsent(KeyValuePair<TKey, TValue> pair)
         {
             PutIfAbsent(pair.Key, pair.Value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException"></exception>
         public TValue GetValue(TKey key)
         {
             if (ContainsKey(key))
@@ -78,6 +111,12 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="defaultValue"></param>
+        /// <returns></returns>
         public TValue GetValueOrDefault(TKey key, TValue defaultValue)
         {
             if (ContainsKey(key))
@@ -91,16 +130,28 @@ namespace AlastairLundy.Extensions.System.Collections
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<TKey> Keys()
         {
             return _dictionary.Keys;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<TValue> Values()
         {
             return _dictionary.Values;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
         public void Remove(TKey key)
         {
             if (ContainsKey(key))
@@ -109,6 +160,10 @@ namespace AlastairLundy.Extensions.System.Collections
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
         public void Remove(KeyValuePair<TKey, TValue> pair)
         {
             if (ContainsKeyValuePair(pair))
@@ -119,6 +174,10 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new KeyValuePairNotFoundException(nameof(pair));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
         public void RemoveInstancesOf(TValue value)
         {
             TKey[] keys = _dictionary.GetKeys(value);
@@ -130,6 +189,12 @@ namespace AlastairLundy.Extensions.System.Collections
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <exception cref="KeyNotFoundException"></exception>
         public void Replace(TKey key, TValue value)
         {
             if (ContainsKey(key))
@@ -155,26 +220,49 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public void Clear()
         {
             _dictionary.Clear();
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<TKey, TValue> ToDictionary()
         {
             return _dictionary;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool ContainsKey(TKey key)
         {
             return _dictionary.ContainsKey(key);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool ContainsValue(TValue value)
         {
             return _dictionary.ContainsValue(value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pair"></param>
+        /// <returns></returns>
+        /// <exception cref="KeyNotFoundException"></exception>
         public bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair)
         {
             if (ContainsKey(pair.Key))
@@ -185,16 +273,29 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new KeyNotFoundException();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="map"></param>
+        /// <returns></returns>
         public bool Equals(HashMap<TKey, TValue> map)
         {
             return _dictionary.Equals(map.ToDictionary());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool IsEmpty()
         {
             return Count() > 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public int Count()
         {
             return _dictionary.Count;

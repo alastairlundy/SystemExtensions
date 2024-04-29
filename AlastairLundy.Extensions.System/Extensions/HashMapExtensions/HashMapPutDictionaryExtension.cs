@@ -29,6 +29,13 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
 {
     public static class HashMapPutDictionaryExtension
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hashMap"></param>
+        /// <param name="dictionary"></param>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
         public static void PutDictionary<TKey, TValue>(this HashMap<TKey, TValue> hashMap, Dictionary<TKey, TValue> dictionary)
         {
             foreach (KeyValuePair<TKey, TValue> pair in dictionary)
