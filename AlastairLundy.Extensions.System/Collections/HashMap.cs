@@ -103,7 +103,10 @@ namespace AlastairLundy.Extensions.System.Collections
 
         public void Remove(TKey key)
         {
-            _dictionary.Remove(key);
+            if (ContainsKey(key))
+            {
+                _dictionary.Remove(key);
+            }
         }
 
         public void Remove(KeyValuePair<TKey, TValue> pair)
