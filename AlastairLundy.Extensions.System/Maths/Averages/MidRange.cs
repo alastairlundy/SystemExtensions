@@ -22,6 +22,9 @@
        SOFTWARE.
    */
 
+// ReSharper disable RedundantExplicitArrayCreation
+// ReSharper disable HeapView.ObjectAllocation
+// ReSharper disable HeapView.ObjectAllocation.Evident
 namespace AlastairLundy.Extensions.System.Maths
 {
     /// <summary>
