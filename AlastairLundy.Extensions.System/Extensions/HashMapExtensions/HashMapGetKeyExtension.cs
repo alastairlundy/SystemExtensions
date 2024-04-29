@@ -32,7 +32,7 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
     {
 
         /// <summary>
-        /// Gets the Key associated with the specified value in the HashMap.
+        /// Gets the Key associated with the specified value to a HashMap.
         /// </summary>
         /// <typeparam name="TKey"></typeparam>
         /// <typeparam name="TValue"></typeparam>
