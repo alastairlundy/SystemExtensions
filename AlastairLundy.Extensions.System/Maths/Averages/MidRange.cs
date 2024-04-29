@@ -30,9 +30,9 @@ namespace AlastairLundy.Extensions.System.Maths
     public class MidRange
     {
         /// <summary>
-        /// 
+        /// Calculates the mid-range of the values of a double array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array to calculate the mid-range of.</param>
         /// <returns></returns>
         public static double OfDoubles(double[] values)
         {
@@ -44,9 +44,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Calculates the mid-range of the values of a decimal array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array to calculate the mid-range of.</param>
         /// <returns></returns>
         public static decimal OfDecimals(decimal[] values)
         {
@@ -58,9 +58,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Calculates the mid-range of the values of a float array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array to calculate the mid-range of.</param>
         /// <returns></returns>
         public static float OfFloats(float[] values)
         {
@@ -72,9 +72,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Calculates the mid-range of the values of a 64 Bit integer array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array to calculate the mid-range of.</param>
         /// <returns></returns>
         public static long OfLongs(long[] values)
         {
@@ -86,9 +86,9 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Calculates the mid-range of the values of a 32 Bit integer array.
         /// </summary>
-        /// <param name="values"></param>
+        /// <param name="values">The array to calculate the mid-range of.</param>
         /// <returns></returns>
         public static int OfInts(int[] values)
         {
