@@ -30,6 +30,12 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
 {
     public static class DecimalRootExtension
     {
+        /// <summary>
+        /// Returns the Nth Root of a value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static decimal Root(this decimal value, decimal n)
         {
             return Power.ToDecimal(value, (decimal.Divide(decimal.One, n)));
