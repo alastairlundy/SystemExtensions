@@ -41,14 +41,9 @@ namespace AlastairLundy.Extensions.System.StringArrayExtensions
 
                 for (int index = 0; index < chars.Length; index++)
                 {
-                    if((index % 2) == 0)
-                    {
-                        stringBuilder.Append(chars[index].ToString().ToUpper());
-                    }
-                    else
-                    {
-                        stringBuilder.Append(chars[index].ToString().ToLower());
-                    }
+                    stringBuilder.Append(index % 2 == 0
+                        ? chars[index].ToString().ToUpper()
+                        : chars[index].ToString().ToLower());
                 }
             }
 
