@@ -30,12 +30,12 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
     public static class HashMapPutDictionaryExtension
     {
         /// <summary>
-        /// 
+        /// Adds the Key Value Pairs in a Dictionary to a HashMap.
         /// </summary>
-        /// <param name="hashMap"></param>
-        /// <param name="dictionary"></param>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
+        /// <param name="hashMap">The HashMap to have Key Value Pairs added to it.</param>
+        /// <param name="dictionary">The Dictionary to get the Key Value Pairs from.</param>
+        /// <typeparam name="TKey">The type of Key in the HashMap and Dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of Value in the HashMap and Dictionary.</typeparam>
         public static void PutDictionary<TKey, TValue>(this HashMap<TKey, TValue> hashMap, Dictionary<TKey, TValue> dictionary)
         {
             foreach (KeyValuePair<TKey, TValue> pair in dictionary)
