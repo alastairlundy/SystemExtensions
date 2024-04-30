@@ -34,19 +34,9 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public static string GetFriendlyVersionToString(this Version version)
-        {
-            return GetFriendlyVersionToString(version, FriendlyVersionFormatStyle.AutomaticallyRemoveZeros);
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="version"></param>
-        /// <param name="friendlyVersionFormatStyle"></param>
         /// <returns></returns>
         public static string GetFriendlyVersionToString(this Version version,
-            FriendlyVersionFormatStyle friendlyVersionFormatStyle)
+            FriendlyVersionFormatStyle friendlyVersionFormatStyle = FriendlyVersionFormatStyle.AutomaticallyRemoveZeros)
         {
             string dot = ".";
             
