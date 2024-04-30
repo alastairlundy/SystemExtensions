@@ -151,9 +151,9 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Removes the Key and the value associated with it from the HashMap.
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="key">The Key to be removed.</param>
         /// <returns>true if the item has been successfully removed from the HashMap, and false otherwise.</returns>
         public bool Remove(TKey key)
         {
@@ -165,10 +165,10 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Removes the KeyValuePair from the HashMap.
         /// </summary>
-        /// <param name="pair"></param>
-        /// <returns></returns>
+        /// <param name="pair">The KeyValuePair to be removed.</param>
+        /// <returns>true if the item has been successfully removed from the HashMap, and false otherwise.</returns>
         /// <exception cref="KeyValuePairNotFoundException"></exception>
         public bool Remove(KeyValuePair<TKey, TValue> pair)
         {

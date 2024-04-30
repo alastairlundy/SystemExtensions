@@ -33,10 +33,10 @@ namespace AlastairLundy.Extensions.System.DictionaryExtensions
         /// <summary>
         /// Returns all keys associated with a specified value in a Dictionary.
         /// </summary>
-        /// <param name="dictionary"></param>
+        /// <param name="dictionary">The Dictionary to be searched.</param>
         /// <param name="value">The value to search for.</param>
-        /// <typeparam name="TKey">The Key type of the Dictionary.</typeparam>
-        /// <typeparam name="TValue">The Value type of the Dictionary</typeparam>
+        /// <typeparam name="TKey">The type of Key in the Dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of Value in the Dictionary.</typeparam>
         /// <returns></returns>
         /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the Dictionary.</exception>
         public static TKey[] GetKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TValue value)
