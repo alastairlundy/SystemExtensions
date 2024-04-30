@@ -33,7 +33,7 @@ namespace AlastairLundy.Extensions.System.BoolArrayExtensions
         /// <returns></returns>
         public static bool IsAllFalse(this bool[] inputs)
         {
-            foreach (var input in inputs)
+            foreach (bool input in inputs)
             {
                 if (input.Equals(true))
                 {
