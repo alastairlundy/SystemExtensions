@@ -27,10 +27,10 @@ namespace AlastairLundy.Extensions.System.BoolArrayExtensions
     public static class AllFalseExtension
     {
         /// <summary>
-        /// 
+        /// Returns whether all the bool objects in an array are false or not.
         /// </summary>
-        /// <param name="inputs"></param>
-        /// <returns></returns>
+        /// <param name="inputs">The bool array to be checked.</param>
+        /// <returns>true if all the bool objects in the array are false, returns false otherwise.</returns>
         public static bool IsAllFalse(this bool[] inputs)
         {
             foreach (bool input in inputs)
