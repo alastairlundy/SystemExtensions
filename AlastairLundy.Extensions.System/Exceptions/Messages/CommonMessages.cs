@@ -24,12 +24,12 @@
 
 namespace AlastairLundy.Extensions.System.Exceptions.Messages
 {
-    public static class CommonMessages
+    internal static class CommonMessages
     {
-        public const string IfEndUserMessage = "If you are an end user:";
-        public const string IfDeveloperMessage = "If you are the developer:";
+        internal const string IfEndUserMessage = "If you are an end user:";
+        internal const string IfDeveloperMessage = "If you are the developer:";
 
-        public const string SendDetailsToDeveloper = "Please send these details to the developer via a bug report.";
-        public const string AskUserSendDetailsToDeveloper = IfEndUserMessage + " " + SendDetailsToDeveloper;
+        internal const string SendDetailsToDeveloper = "Please send these details to the developer via a bug report.";
+        internal const string AskUserSendDetailsToDeveloper = IfEndUserMessage + " " + SendDetailsToDeveloper;
     }
 }
