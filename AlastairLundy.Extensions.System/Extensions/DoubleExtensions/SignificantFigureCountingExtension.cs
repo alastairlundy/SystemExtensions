@@ -31,11 +31,11 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="val"></param>
+        /// <param name="value"></param>
         /// <returns></returns>
-        public static int GetNumberOfSignificantFigures(this double val)
+        public static int GetNumberOfSignificantFigures(this double value)
         {
-            var source = val.ToString(CultureInfo.InvariantCulture);
+            string source = value.ToString(CultureInfo.InvariantCulture);
             
             int significantFigures = 0;
             
