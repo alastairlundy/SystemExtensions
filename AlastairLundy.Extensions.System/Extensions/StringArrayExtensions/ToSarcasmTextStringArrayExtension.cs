@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.StringArrayExtensions
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            foreach (var word in words)
+            foreach (string word in words)
             {
                 char[] chars = word.ToCharArray();
 
