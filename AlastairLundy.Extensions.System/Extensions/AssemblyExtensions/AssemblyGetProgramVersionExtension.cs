@@ -33,8 +33,8 @@ namespace AlastairLundy.Extensions.System.AssemblyExtensions
         /// <summary>
         /// The version of the .NET project calling this library.
         /// </summary>
-        /// <param name="assembly"></param>
-        /// <returns></returns>
+        /// <param name="assembly">The current Assembly.</param>
+        /// <returns>the version of the entry Assembly (your project).</returns>
         public static Version GetProjectVersion(this Assembly assembly)
         {
             return Assembly.GetEntryAssembly()?.GetName().Version;

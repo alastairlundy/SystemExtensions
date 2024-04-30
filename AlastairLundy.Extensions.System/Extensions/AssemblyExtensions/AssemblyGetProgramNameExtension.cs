@@ -31,8 +31,8 @@ namespace AlastairLundy.Extensions.System.AssemblyExtensions
         /// <summary>
         /// The name of the .NET project calling this library.
         /// </summary>
-        /// <param name="assembly"></param>
-        /// <returns></returns>
+        /// <param name="assembly">The current Assembly.</param>
+        /// <returns>the name of the entry Assembly (your project).</returns>
         public static string GetProjectName(this Assembly assembly)
         {
             return Assembly.GetEntryAssembly()?.GetName().Name;
