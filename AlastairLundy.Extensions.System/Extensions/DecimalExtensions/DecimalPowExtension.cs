@@ -30,11 +30,11 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
     public class DecimalPowExtension
     {
         /// <summary>
-        /// Returns a specified number to a specified power.
+        /// Returns the results of a specified number raised to a specified power.
         /// </summary>
         /// <param name="x">A decimal to be raised to a power.</param>
         /// <param name="y">A decimal that specified a power.</param>
-        /// <returns></returns>
+        /// <returns>a specified number raised to a specified power.</returns>
         public static decimal Pow(decimal x, decimal y)
         {
             return Power.ToDecimal(x, y);

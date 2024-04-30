@@ -33,12 +33,12 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         /// <summary>
         /// Returns the Nth Root of a value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="n"></param>
-        /// <returns></returns>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The Nth root.</param>
+        /// <returns>the Nth root of the specified value.</returns>
         public static decimal Root(this decimal value, decimal n)
         {
-            return Power.ToDecimal(value, (decimal.Divide(decimal.One, n)));
+            return Power.ToDecimal(value, decimal.Divide(decimal.One, n));
         }
     }
 }
