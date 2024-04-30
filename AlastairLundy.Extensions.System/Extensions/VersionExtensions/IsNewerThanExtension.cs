@@ -29,11 +29,11 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
     public static class IsNewerThanExtension
     {
         /// <summary>
-        /// 
+        /// Returns whether the specified version is newer than the current version object.
         /// </summary>
-        /// <param name="version"></param>
-        /// <param name="versionToBeCompared"></param>
-        /// <returns></returns>
+        /// <param name="version">The current version object.</param>
+        /// <param name="versionToBeCompared">The version to be compared.</param>
+        /// <returns>true if the specified compared version is newer than the current version, and returns false otherwise.</returns>
         public static bool IsNewerThan(this Version version, Version versionToBeCompared)
         {
             Version expected = versionToBeCompared;

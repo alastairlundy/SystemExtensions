@@ -30,11 +30,11 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
     public static class FriendlyVersionExtension
     {
         /// <summary>
-        /// 
+        /// Returns the current version formatted in the specified formatting style.
         /// </summary>
-        /// <param name="version"></param>
-        /// <returns></returns>
-        /// <returns></returns>
+        /// <param name="version">The current version object.</param>
+        /// <param name="friendlyVersionFormatStyle">The version format style to use.</param>
+        /// <returns>the current version formatted in the specified formatting style as a string.</returns>
         public static string GetFriendlyVersionToString(this Version version,
             FriendlyVersionFormatStyle friendlyVersionFormatStyle = FriendlyVersionFormatStyle.AutomaticallyRemoveZeros)
         {
