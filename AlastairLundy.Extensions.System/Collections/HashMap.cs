@@ -159,8 +159,9 @@ namespace AlastairLundy.Extensions.System.Collections
         {
             if (ContainsKey(key))
             {
-                _dictionary.Remove(key);
+                return _dictionary.Remove(key);
             }
+            return false;
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace AlastairLundy.Extensions.System.Collections
         {
             if (ContainsKeyValuePair(pair))
             {
-                _dictionary.Remove(pair.Key);
+              return Remove(pair.Key);
             }
 
             throw new KeyValuePairNotFoundException(nameof(pair));
@@ -210,16 +211,25 @@ namespace AlastairLundy.Extensions.System.Collections
             throw new KeyNotFoundException();
         }
 
-        public void Replace(TKey key, TValue oldValue, TValue newValue)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="oldValue"></param>
+        /// <param name="newValue"></param>
+        /// <exception cref="KeyValuePairNotFoundException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
+        public bool Replace(TKey key, TValue oldValue, TValue newValue)
         {
             if (ContainsKey(key))
             {
                 if (ContainsKeyValuePair(new KeyValuePair<TKey, TValue>(key, oldValue)))
                 {
                     _dictionary[key] = newValue;
+                    return true;
                 }
 
-                throw new KeyValuePairNotFoundException(nameof(_dictionary));
+                return false;
             }
 
             throw new KeyNotFoundException();
