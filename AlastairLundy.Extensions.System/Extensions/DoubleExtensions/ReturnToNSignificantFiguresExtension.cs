@@ -31,12 +31,12 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         /// <summary>
         /// Insert or remove Significant Figures as needed. 
         /// </summary>
-        /// <param name="val"></param>
+        /// <param name="value"></param>
         /// <param name="numberOfSignificantFigures"></param>
         /// <returns></returns>
-        public static string ToNSignificantFigures(this double val, int numberOfSignificantFigures)
+        public static string ToNSignificantFigures(this double value, int numberOfSignificantFigures)
         {
-            return val.ToString("G" + numberOfSignificantFigures, CultureInfo.InvariantCulture);
+            return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
         }
     }
 }
