@@ -98,11 +98,11 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns the value associated with the specified key.
         /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        /// <exception cref="KeyNotFoundException"></exception>
+        /// <param name="key">The key to be checked.</param>
+        /// <returns>The value associated with the specified key if the key is in the HashMap.</returns>
+        /// <exception cref="KeyNotFoundException">Thrown if the key has not been found in the HashMap.</exception>
         public TValue GetValue(TKey key)
         {
             if (ContainsKey(key))
@@ -114,11 +114,11 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns the value associated with the specified key (if the key exists) or the specified default value.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="defaultValue"></param>
-        /// <returns></returns>
+        /// <param name="key">The key to be checked.</param>
+        /// <param name="defaultValue">The specified value to be returned if the key has not been found.</param>
+        /// <returns>The value associated with the key if the key has been found in the HashMap. Returns the defaultValue otherwise.</returns>
         public TValue GetValueOrDefault(TKey key, TValue defaultValue)
         {
             if (ContainsKey(key))
