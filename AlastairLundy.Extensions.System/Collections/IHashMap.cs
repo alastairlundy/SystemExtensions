@@ -42,13 +42,13 @@ namespace AlastairLundy.Extensions.System.Collections
         IEnumerable<TKey> Keys();
         IEnumerable<TValue> Values();
         
-        void Remove(TKey key);
-        void Remove(KeyValuePair<TKey, TValue> pair);
+        bool Remove(TKey key);
+        bool Remove(KeyValuePair<TKey, TValue> pair);
 
         void RemoveInstancesOf(TValue value);
 
-        void Replace(TKey key, TValue value);
-        void Replace(TKey key, TValue oldValue, TValue newValue);
+        bool Replace(TKey key, TValue value);
+        bool Replace(TKey key, TValue oldValue, TValue newValue);
 
         void Clear();
 
