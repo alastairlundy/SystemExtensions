@@ -33,12 +33,12 @@ namespace AlastairLundy.Extensions.System.DictionaryExtensions
     {
 
         /// <summary>
-        /// 
+        /// Creates a HashMap object with the values from a Dictionary.
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
-        /// <param name="dictionary"></param>
-        /// <returns></returns>
+        /// <typeparam name="TKey">The type of Key in the Dictionary and HashMap.</typeparam>
+        /// <typeparam name="TValue">The type of Value in the Dictionary and HashMap.</typeparam>
+        /// <param name="dictionary">The Dictionary to get values from.</param>
+        /// <returns>a HashMap with the values from the specified Dictionary.</returns>
         public static HashMap<TKey, TValue> ToHashMap<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
         {
             HashMap<TKey, TValue> hashMap = new HashMap<TKey, TValue>();

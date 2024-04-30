@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DictionaryExtensions
         /// <param name="value">The value to search for.</param>
         /// <typeparam name="TKey">The type of Key in the Dictionary.</typeparam>
         /// <typeparam name="TValue">The type of Value in the Dictionary.</typeparam>
-        /// <returns></returns>
+        /// <returns>the keys associated with the specified value in a Dictionary.</returns>
         /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the Dictionary.</exception>
         public static TKey[] GetKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TValue value)
         {
