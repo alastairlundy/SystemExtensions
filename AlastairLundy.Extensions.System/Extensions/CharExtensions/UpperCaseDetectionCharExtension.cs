@@ -31,8 +31,8 @@ namespace AlastairLundy.Extensions.System.CharExtensions
         /// <summary>
         /// Returns whether a character is an upper case letter or not.
         /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is an upper case character, returns false otherwise.</returns>
         public static bool IsUpperCaseLetter(this char c)
         {
             return c.ToString().IsUpperCaseLetter();

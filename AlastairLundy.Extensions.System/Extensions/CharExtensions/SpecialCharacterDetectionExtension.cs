@@ -29,8 +29,8 @@ namespace AlastairLundy.Extensions.System.CharExtensions
         /// <summary>
         /// Returns whether a character is a special character or not.
         /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is a special character, returns false otherwise.</returns>
         public static bool IsSpecialCharacter(this char c)
         {
             string[] specialCharacters =
