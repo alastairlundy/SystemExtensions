@@ -49,10 +49,10 @@ namespace AlastairLundy.Extensions.System.Collections
         }
         
         /// <summary>
-        /// 
+        /// Add a Key and a corresponding Value to the HashMap.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param name="key">The key to be added.</param>
+        /// <param name="value">The value to be associated with the key.</param>
         public void Put(TKey key, TValue value)
         {
             if (!ContainsKey(key))
@@ -64,9 +64,9 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Add a KeyValuePair to the HashMap.
         /// </summary>
-        /// <param name="pair"></param>
+        /// <param name="pair">The KeyValuePair to be added.</param>
         /// <exception cref="ArgumentException"></exception>
         public void Put(KeyValuePair<TKey, TValue> pair)
         {
@@ -74,10 +74,11 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Adds a Key and a corresponding value to the HashMap only if the key isn't already in use.
+        /// If the key is already present in the HashMap no action is taken.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
+        /// <param name="key">The key to be added.</param>
+        /// <param name="value">The value to be associated with the key.</param>
         public void PutIfAbsent(TKey key, TValue value)
         {
             if (!ContainsKey(key))
@@ -87,9 +88,10 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Adds a KeyValuePair to the HashMap only if the key isn't already in use.
+        /// If the key is already present in the HashMap no action is taken.
         /// </summary>
-        /// <param name="pair"></param>
+        /// <param name="pair">The KeyValuePair to be added to the hashmap.</param>
         public void PutIfAbsent(KeyValuePair<TKey, TValue> pair)
         {
             PutIfAbsent(pair.Key, pair.Value);
@@ -131,7 +133,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns an IEnumerable of Keys in the HashMap.
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TKey> Keys()
@@ -140,7 +142,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns an IEnumerable of Values in the HashMap.
         /// </summary>
         /// <returns></returns>
         public IEnumerable<TValue> Values()
@@ -152,7 +154,8 @@ namespace AlastairLundy.Extensions.System.Collections
         /// 
         /// </summary>
         /// <param name="key"></param>
-        public void Remove(TKey key)
+        /// <returns>true if the item has been successfully removed from the HashMap, and false otherwise.</returns>
+        public bool Remove(TKey key)
         {
             if (ContainsKey(key))
             {
@@ -164,7 +167,9 @@ namespace AlastairLundy.Extensions.System.Collections
         /// 
         /// </summary>
         /// <param name="pair"></param>
-        public void Remove(KeyValuePair<TKey, TValue> pair)
+        /// <returns></returns>
+        /// <exception cref="KeyValuePairNotFoundException"></exception>
+        public bool Remove(KeyValuePair<TKey, TValue> pair)
         {
             if (ContainsKeyValuePair(pair))
             {
@@ -195,7 +200,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <exception cref="KeyNotFoundException"></exception>
-        public void Replace(TKey key, TValue value)
+        public bool Replace(TKey key, TValue value)
         {
             if (ContainsKey(key))
             {
@@ -221,7 +226,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Clears the contents of the HashMap.
         /// </summary>
         public void Clear()
         {
@@ -229,7 +234,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
         
         /// <summary>
-        /// 
+        /// Returns the HashMap's internal Dictionary object.
         /// </summary>
         /// <returns></returns>
         public Dictionary<TKey, TValue> ToDictionary()
@@ -238,7 +243,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns whether the HasMap contains a Key or not.
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -284,7 +289,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns whether the HashMap is empty or not.
         /// </summary>
         /// <returns></returns>
         public bool IsEmpty()
@@ -293,7 +298,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns the number of KeyValuePairs in the HashMap. 
         /// </summary>
         /// <returns></returns>
         public int Count()
