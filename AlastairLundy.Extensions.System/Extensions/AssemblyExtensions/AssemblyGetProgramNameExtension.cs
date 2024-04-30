@@ -22,22 +22,20 @@
        SOFTWARE.
    */
 
-using System;
 using System.Reflection;
 
 namespace AlastairLundy.Extensions.System.AssemblyExtensions
 {
-    public static class AssemblyGetProgramVersion
+    public static class AssemblyGetProgramNameExtension
     {
-
         /// <summary>
-        /// The version of the .NET project calling this library.
+        /// The name of the .NET project calling this library.
         /// </summary>
         /// <param name="assembly"></param>
         /// <returns></returns>
-        public static Version GetProjectVersion(this Assembly assembly)
+        public static string GetProjectName(this Assembly assembly)
         {
-            return Assembly.GetEntryAssembly()?.GetName().Version;
+            return Assembly.GetEntryAssembly()?.GetName().Name;
         }
     }
 }
