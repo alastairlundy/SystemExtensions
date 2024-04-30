@@ -31,7 +31,7 @@ using AlastairLundy.Extensions.System.Exceptions;
 namespace AlastairLundy.Extensions.System.Collections
 {
     /// <summary>
-    /// 
+    /// A class to store keys and values that tries to mimic how Java's HashMap works.
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
@@ -181,9 +181,9 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Removes all instances of a specified Value from the HashMap.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The specified value to be removed.</param>
         public void RemoveInstancesOf(TValue value)
         {
             TKey[] keys = _dictionary.GetKeys(value);
@@ -196,37 +196,53 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Replaces the value associated with the speicifed Key with a specified Value.
         /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        /// <exception cref="KeyNotFoundException"></exception>
+        /// <param name="key">The key associated with the value to be replaced.</param>
+        /// <param name="value">The replacement value.</param>
+        /// <returns>true if the value has been replaced, and false otherwise.</returns>
+        /// <exception cref="KeyNotFoundException">Thrown if the specified Key isn't found in the HashMap.</exception>
         public bool Replace(TKey key, TValue value)
         {
             if (ContainsKey(key))
             {
-                _dictionary[key] = value;
+                try
+                {
+                    _dictionary[key] = value;
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
             }
 
             throw new KeyNotFoundException();
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="oldValue"></param>
-        /// <param name="newValue"></param>
-        /// <exception cref="KeyValuePairNotFoundException"></exception>
-        /// <exception cref="KeyNotFoundException"></exception>
+        /// Replaces a specified value associated with the speicifed Key with a specified replacement Value.
+        /// </summary> 
+        /// <param name="key">The key associated with the value to be replaced and the replacement value.</param>
+        /// <param name="oldValue">The value to be replaced.</param>
+        /// <param name="newValue">The replacement value.</param>
+        /// <returns>true if the oldValue has been replaced with the newValue, and false otherwise.</returns>
+        /// <exception cref="KeyNotFoundException">Thrown if the specified Key isn't found in the HashMap.</exception>
         public bool Replace(TKey key, TValue oldValue, TValue newValue)
         {
             if (ContainsKey(key))
             {
                 if (ContainsKeyValuePair(new KeyValuePair<TKey, TValue>(key, oldValue)))
                 {
-                    _dictionary[key] = newValue;
-                    return true;
+                    try
+                    {
+                        _dictionary[key] = newValue;
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
                 }
 
                 return false;
@@ -256,17 +272,17 @@ namespace AlastairLundy.Extensions.System.Collections
         /// Returns whether the HasMap contains a Key or not.
         /// </summary>
         /// <param name="key"></param>
-        /// <returns></returns>
+        /// <returns>true if the HashMap contains the specified key, and false otherwise.</returns>
         public bool ContainsKey(TKey key)
         {
             return _dictionary.ContainsKey(key);
         }
 
         /// <summary>
-        /// 
+        /// Returns whether the HashMap contains a specified value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The specified value.</param>
+        /// <returns>true if the HashMap contains the specified value, and false otherwise.</returns>
         public bool ContainsValue(TValue value)
         {
             return _dictionary.ContainsValue(value);
@@ -289,10 +305,10 @@ namespace AlastairLundy.Extensions.System.Collections
         }
 
         /// <summary>
-        /// 
+        /// Returns whether a HashMap's internal Dictionary is equal to another HashMap's internal Dictionary.
         /// </summary>
-        /// <param name="map"></param>
-        /// <returns></returns>
+        /// <param name="map">The HashMap to be compared against.</param>
+        /// <returns>true if the compared HashMap's Dictionary is equal to this HashMap's internal Dictionary. Returns false otherwise.</returns>
         public bool Equals(HashMap<TKey, TValue> map)
         {
             return _dictionary.Equals(map.ToDictionary());
