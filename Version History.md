@@ -1,10 +1,22 @@
 # Version History
 
+## As AlastairLundy.Extensions.System
+
+### Version 4.x
+| Version | Release Date |
+|-|-|
+| 4.0.0 Preview 2 | May 1st 2024 |
+| 4.0.0 Preview 1 | April 29th 2024 | 
+
 ## As AlastairLundy.System.Extensions
 
 ### Version 3.x
 | Version | Release Date |
 |-|-|
+| 3.3.0 | April 28th 2024 |
+| 3.2.0 | April 26th 2024 |
+| 3.1.0 | April 24th 2024 | 
+| 3.0.1 | April 12th 2024 |
 | 3.0.0 | April 11th 2024| 
 
 ## As a prior name.
