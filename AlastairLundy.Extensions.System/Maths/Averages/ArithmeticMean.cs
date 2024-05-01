@@ -24,7 +24,7 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Averages
 {
     /// <summary>
     /// A class to assist in getting the Arithmetic mean of an array of values.

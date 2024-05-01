@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AlastairLundy.Extensions.System.DictionaryExtensions;
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Averages
 {
     /// <summary>
     /// A class to store mode calculation related code.

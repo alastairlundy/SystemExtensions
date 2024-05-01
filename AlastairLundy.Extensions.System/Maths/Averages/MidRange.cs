@@ -25,7 +25,8 @@
 // ReSharper disable RedundantExplicitArrayCreation
 // ReSharper disable HeapView.ObjectAllocation
 // ReSharper disable HeapView.ObjectAllocation.Evident
-namespace AlastairLundy.Extensions.System.Maths
+
+namespace AlastairLundy.Extensions.System.Maths.Averages
 {
     /// <summary>
     /// A class to store mid-range calculation related code.

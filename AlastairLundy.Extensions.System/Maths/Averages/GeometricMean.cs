@@ -24,7 +24,7 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Averages
 {
     /// <summary>
     /// A class to store code related to calculating the Geometric Mean of values.
