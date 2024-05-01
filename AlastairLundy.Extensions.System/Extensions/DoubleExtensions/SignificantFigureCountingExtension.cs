@@ -29,10 +29,10 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
     public static class SignificantFigureCountingExtension
     {
         /// <summary>
-        /// 
+        /// Returns the number of significant figures in the specified value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="value">The value to be checked.</param>
+        /// <returns>the number of significant figures in the specified value as an integer.</returns>
         public static int GetNumberOfSignificantFigures(this double value)
         {
             string source = value.ToString(CultureInfo.InvariantCulture);

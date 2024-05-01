@@ -31,9 +31,9 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         /// <summary>
         /// Insert or remove Significant Figures as needed. 
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="numberOfSignificantFigures"></param>
-        /// <returns></returns>
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
+        /// <returns>the specified value to the specified number of significant figures.</returns>
         public static string ToNSignificantFigures(this double value, int numberOfSignificantFigures)
         {
             return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
