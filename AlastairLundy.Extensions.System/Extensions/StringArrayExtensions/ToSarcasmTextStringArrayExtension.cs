@@ -29,8 +29,10 @@ namespace AlastairLundy.Extensions.System.StringArrayExtensions
     public static class ToSarcasmTextStringArrayExtension
     {
         /// <summary>
-        /// Takes an array of ordinary words and converts each one to sArCaSm Text.
+        /// Takes an array of ordinary words and converts it to sArCaSm tExT.
         /// </summary>
+        /// <param name="words">The words to be converted to Regular Text.</param>
+        /// <returns>a string of text converted from regular text to sArCaSm tExT.</returns>
         public static string ToSarcasmText(this string[] words)
         {
             StringBuilder stringBuilder = new StringBuilder();

@@ -23,12 +23,18 @@
    */
 
 using System.Text;
+
 using AlastairLundy.Extensions.System.StringExtensions;
 
 namespace AlastairLundy.Extensions.System.StringArrayExtensions
 {
     public static class FromSarcasticTextStringArrayExtension
     {
+        /// <summary>
+        /// Takes a string array of words and converts it to a string of text converted from sArCaSm tExT to regular text.
+        /// </summary>
+        /// <param name="words">The words to be converted to Regular Text.</param>
+        /// <returns>a string of text converted from sArCaSm tExT to regular text.</returns>
         public static string FromSarcasmTextToRegularText(this string[] words)
         {
             StringBuilder stringBuilder = new StringBuilder();
