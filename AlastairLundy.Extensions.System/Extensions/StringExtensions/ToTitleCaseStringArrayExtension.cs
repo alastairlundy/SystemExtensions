@@ -31,7 +31,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <summary>
         /// Turns a regular string to a Title Case String Like This.
         /// </summary>
-        /// <param name="words"></param>
+        /// <param name="words">The array of strings to be converted.</param>
         /// <returns></returns>
         public static string ToTitleCase(this string[] words)
         {
