@@ -24,20 +24,42 @@
 
 using System.Globalization;
 
-using AlastairLundy.Extensions.System.DecimalExtensions;
-
-namespace AlastairLundy.Extensions.System.DoubleExtensions
+namespace AlastairLundy.Extensions.System.DecimalExtensions
 {
-    public static class SignificantFigureCountingExtension
+    public static class DecimalSignificantFigureCountingExtension
     {
+
         /// <summary>
-        /// Returns the number of significant figures in the specified value.
+        /// Returns the number of significant figures in a decimal.
         /// </summary>
         /// <param name="value">The value to be checked.</param>
-        /// <returns>the number of significant figures in the specified value as an integer.</returns>
-        public static int GetNumberOfSignificantFigures(this double value)
+        /// <returns>the number of significant figures contained in the specified value.</returns>
+        public static int GetNumberOfSignificantFigures(this decimal value)
         {
-            return decimal.Parse(value.ToString(CultureInfo.InvariantCulture)).GetNumberOfSignificantFigures();
+            string source = value.ToString(CultureInfo.InvariantCulture);
+
+            int significantFigures = 0;
+
+            bool reachedPeriod = false;
+
+            for (int index = 0; index < source.Length; index++)
+            {
+                var current = source[index];
+
+                if (current.Equals('.') && !reachedPeriod)
+                {
+                    reachedPeriod = true;
+                }
+                else if (reachedPeriod)
+                {
+                    if (int.Parse(current.ToString()) >= 0 && int.Parse(current.ToString()) <= 9)
+                    {
+                        significantFigures++;
+                    }
+                }
+            }
+
+            return significantFigures;
         }
     }
 }
