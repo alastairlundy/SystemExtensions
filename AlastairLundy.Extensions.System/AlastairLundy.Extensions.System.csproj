@@ -6,39 +6,22 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 3.3.0
+        <PackageReleaseNotes>## Changes since 4.0.0
 ### General Changes
-* Updated namespaces and name of the project
-* Added classes to solve Root, Power, Sum, Median, Mode, ArithmeticMean, GeometricMean, and MidRange calculations
-* Added Decimal extension Pow&lt;TKey, TValue&gt;(this decimal value, decimal power)
-* Added Dictionary extension GetKeys&lt;TKey,TValue&gt;(this Dictionary&lt;TKey,TValue&gt; dictionary, TValue value)
-* Changed some instances of String concatenation to string interpolation for improved performance
-* Merged two Version extension method consutructors into one with an optional parameter
-* Made internally used strings internal only
-
-### HashMap
-* Made some changes to IHashMap
-* Made some changes to HashMap
-* Revamped HashMap class so that it now internally uses a Dictionary.
-
-### XML Doc Comments
-* Added missing xml doc comments for:
-    * Assembly extensions
-    * bool extensions
-    * char extensions
-    * Dictionary extensions
-    * string array extensions
-    * Version extensions
+* Added Decimal Significant Figure Counting extension.
+* Added Decimal extension to add or remove significant figures.
+* Fixed a potential issue with Significant figure counting.
+* Updated Double significant figure counting extension to use the new Decimal extension.
 
 ## Known Issues
 * XML Doc Comments are missing or incomplete in the String Extensions</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <FileVersion>4.0.0.0</FileVersion>
-        <Version>4.0.0.0</Version>
-        <PackageVersion>4.0.0</PackageVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <FileVersion>4.1.0.0</FileVersion>
+        <Version>4.1.0</Version>
+        <PackageVersion>4.1.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
