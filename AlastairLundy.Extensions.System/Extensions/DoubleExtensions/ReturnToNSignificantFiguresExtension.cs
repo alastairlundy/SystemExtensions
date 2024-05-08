@@ -29,7 +29,7 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
     public static class ReturnToNSignificantFiguresExtension
     {
         /// <summary>
-        /// Insert or remove Significant Figures as needed. 
+        /// Insert or remove Significant Figures as needed to reach the required number of significant figures. 
         /// </summary>
         /// <param name="value">The value to be checked.</param>
         /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
