@@ -5,6 +5,7 @@
 ### Version 4.x
 | Version | Release Date |
 |-|-|
+| 4.1.0 | May 8th 2024 |
 | 4.0.0 | May 3rd 2024 |
 | 4.0.0 Preview 2 | May 1st 2024 |
 | 4.0.0 Preview 1 | April 29th 2024 | 
