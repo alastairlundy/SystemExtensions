@@ -30,10 +30,9 @@ namespace AlastairLundy.Extensions.System.ProcessExtensions
     public static class ProcessListToStringArrayExtension
     {
         /// <summary>
-        /// Get the list of processes as a String Array
+        /// Get the list of currently running processes as a String Array.
         /// </summary>
-        /// <returns></returns>
-        ///
+        /// <returns>the list of currently running processes as a String Array</returns>
         public static string[] ToStringArray(this Process process)
         {
             var strList = new List<string>();
