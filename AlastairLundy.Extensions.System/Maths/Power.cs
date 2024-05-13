@@ -62,5 +62,37 @@ namespace AlastairLundy.Extensions.System.Maths
 
             return x;
         }
+
+        /// <summary>
+        /// Returns a specified number to a specified power.
+        /// </summary>
+        /// <param name="x">A 64 Bit Integer to be raised to a power.</param>
+        /// <param name="y">A 64 Bit Integer that specifies a power.</param>
+        /// <returns>a 64 Bit Integer raised to a specified power.</returns>
+        public static long ToInt64(long x, long y)
+        {
+            for (long index = 0; index < y; index++)
+            {
+                x *= x;
+            }
+
+            return x;
+        }
+
+        /// <summary>
+        /// Returns a specified number to a specified power.
+        /// </summary>
+        /// <param name="x">A 32 Bit Integer to be raised to a power.</param>
+        /// <param name="y">A 32 Bit Integer that specifies a power.</param>
+        /// <returns>a 32 Bit Integer raised to a specified power.</returns>
+        public static int ToInt32(int x, int y)
+        {
+            for (int index = 0; index < y; index++)
+            {
+                x *= x;
+            }
+
+            return x;
+        }
     }
 }
