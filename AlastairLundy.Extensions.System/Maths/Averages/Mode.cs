@@ -84,15 +84,15 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <param name="values"></param>
         /// <typeparam name="TKey"></typeparam>
         /// <returns></returns>
-        internal static TKey[] GetModes<TKey>(TKey[] values)
+        internal static T[] GetModes<T>(T[] values)
         {
-            List<TKey> mode = new List<TKey>();
+            List<T> mode = new List<T>();
             
-            Dictionary<TKey, long> pairs = CountUsage<TKey>(values);
+            Dictionary<T, long> pairs = CountUsage<T>(values);
 
-            foreach (long modeFrequency in GetModeFrequencies<TKey>(pairs.Values.ToArray()))
+            foreach (long modeFrequency in GetModeFrequencies<T>(pairs.Values.ToArray()))
             {
-                foreach (TKey key in pairs.GetKeys(modeFrequency))
+                foreach (T key in pairs.GetKeys(modeFrequency))
                 {
                     mode.Add(key);
                 }
