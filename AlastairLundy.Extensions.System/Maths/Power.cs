@@ -52,7 +52,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="x">A float to be raised to a power.</param>
         /// <param name="y">A float that specifies a power.</param>
-        /// <returns></returns>
+        /// <returns>a float raised to a specified power.</returns>
         public static float ToFloat(float x, float y)
         {
             for (float index = 0; index < y; index++)
