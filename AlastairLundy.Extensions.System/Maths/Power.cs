@@ -36,7 +36,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="x">A decimal to be raised to a power.</param>
         /// <param name="y">A decimal that specifies a power.</param>
-        /// <returns></returns>
+        /// <returns>a decimal raised to a specified power.</returns>
         public static decimal ToDecimal(decimal x, decimal y)
         {
             for (decimal index = decimal.Zero; index < y; index = decimal.Add(index, decimal.One))

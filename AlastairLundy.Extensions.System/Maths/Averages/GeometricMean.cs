@@ -34,8 +34,8 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <summary>
         /// Returns the Geometric mean of an array of double values.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The values to get the Geometric Mean of.</param>
+        /// <returns>the Geometric mean of the specified array.</returns>
         public static double ToDouble(double[] values)
         {
             double sum = 1.0;
@@ -49,10 +49,10 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         }
 
         /// <summary>
-        /// 
+        ///  Returns the Geometric mean of an array of decimal values.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The values to get the Geometric Mean of.</param>
+        /// <returns>the Geometric mean of the specified array.</returns>
         public static decimal ToDecimal(decimal[] values)
         {
             decimal sum = Decimal.One;
@@ -66,10 +66,10 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         }
 
         /// <summary>
-        /// 
+        ///  Returns the Geometric mean of an array of float values.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The values to get the Geometric Mean of.</param>
+        /// <returns>the Geometric mean of the specified array.</returns>
         public static float ToFloat(float[] values)
         {
             float sum = 1;
