@@ -46,8 +46,8 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <summary>
         /// Returns the Nth Root of a value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="n"></param>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The root</param>
         /// <returns></returns>
         public static decimal ToDecimal(decimal value, decimal n)
         {
@@ -57,8 +57,8 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <summary>
         ///  Returns the Nth Root of a value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="n"></param>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The root</param>
         /// <returns></returns>
         public static float ToFloat(float value, float n)
         {
