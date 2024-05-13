@@ -6,22 +6,24 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.0.0
-### General Changes
-* Added Decimal Significant Figure Counting extension.
-* Added Decimal extension to add or remove significant figures.
-* Fixed a potential issue with Significant figure counting.
-* Updated Double significant figure counting extension to use the new Decimal extension.
+        <PackageReleaseNotes>## Changes since 4.1.0
 
-## Known Issues
-* XML Doc Comments are missing or incomplete in the String Extensions</PackageReleaseNotes>
+### General Changes
+* Updated or Added missing xml doc comments for Power class, Root class, and GeometricMean class
+* Added methods to the Power class for raising 32 Bit and 64 Bit Integers to specified powers.
+* Added Interquartile Mean class
+* Changed some internal method signatures.
+
+### Known Issues
+* XML Doc Comments are missing or incomplete in the String Extensions
+* XML Doc Comments are missing or incomplete in the Sum class</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.1.0.0</AssemblyVersion>
-        <FileVersion>4.1.0.0</FileVersion>
-        <Version>4.1.0</Version>
-        <PackageVersion>4.1.0</PackageVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <FileVersion>4.2.0.0</FileVersion>
+        <Version>4.2.0</Version>
+        <PackageVersion>4.2.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
