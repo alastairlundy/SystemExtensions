@@ -53,7 +53,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
             return pairs;
         }
 
-        internal static long[] GetModeFrequencies<TKey>(long[] values)
+        internal static long[] GetModeFrequencies(long[] values)
         {
             List<long> modeFrequencies = new List<long>();
 
@@ -82,7 +82,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Gets the modes for a list of objects (presumably numbers).
         /// </summary>
         /// <param name="values"></param>
-        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         internal static T[] GetModes<T>(T[] values)
         {
@@ -90,7 +90,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
             
             Dictionary<T, long> pairs = CountUsage<T>(values);
 
-            foreach (long modeFrequency in GetModeFrequencies<T>(pairs.Values.ToArray()))
+            foreach (long modeFrequency in GetModeFrequencies(pairs.Values.ToArray()))
             {
                 foreach (T key in pairs.GetKeys(modeFrequency))
                 {
