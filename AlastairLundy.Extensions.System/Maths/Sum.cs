@@ -32,10 +32,10 @@ namespace AlastairLundy.Extensions.System.Maths
     public static class Sum
     {
         /// <summary>
-        /// 
+        /// Performs the sum of all the doubles specified and returns it.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The doubles to be added up.</param>
+        /// <returns>the sum of the specified doubles.</returns>
         public static double OfDoubles(IEnumerable<double> values)
         {
             double sum = 0;
@@ -49,10 +49,10 @@ namespace AlastairLundy.Extensions.System.Maths
         }
         
         /// <summary>
-        /// 
+        /// Performs the sum of all the decimals specified and returns it.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The decimals to be added up.</param>
+        /// <returns>the sum of the specified decimals.</returns>
         public static decimal OfDecimals(IEnumerable<decimal> values)
         {
             decimal sum = decimal.Zero;
@@ -66,10 +66,10 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Performs the sum of all the 64 Bit Integers specified and returns it.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The 64 Bit Integers to be added up.</param>
+        /// <returns>the sum of the specified 64 Bit Integers.</returns>
         public static long OfLongs(IEnumerable<long> values)
         {
             long sum = 0;
@@ -83,10 +83,10 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Performs the sum of all the 32 Bit Integers specified and returns it.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The 32 Bit Integers to be added up.</param>
+        /// <returns>the sum of the specified 32 Bit Integers.</returns>
         public static int OfInts(IEnumerable<int> values)
         {
             int sum = 0;
@@ -100,10 +100,10 @@ namespace AlastairLundy.Extensions.System.Maths
         }
 
         /// <summary>
-        /// 
+        /// Performs the sum of all the floats specified and returns it.
         /// </summary>
-        /// <param name="values"></param>
-        /// <returns></returns>
+        /// <param name="values">The floats to be added up.</param>
+        /// <returns>the sum of the specified floats.</returns>
         public static float OfFloats(IEnumerable<float> values)
         {
             float sum = 0;
