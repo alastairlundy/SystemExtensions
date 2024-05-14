@@ -29,8 +29,8 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <summary>
         /// Returns whether a character, represented by a string, is a lower case letter or not.
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if a character, represented as a string, is lower case; returns false otherwise.</returns>
         public static bool IsLowerCaseLetter(this string s)
         {
             string[] englishAlphabetLower =

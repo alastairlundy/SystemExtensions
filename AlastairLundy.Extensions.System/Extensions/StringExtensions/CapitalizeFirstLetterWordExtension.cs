@@ -30,8 +30,8 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <summary>
         /// Capitalizes the first letter in a word.
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word">The word to be modifed.</param>
+        /// <returns>the updated word with the first letter capitalized.</returns>
         public static string CapitalizeFirstLetter(this string word)
         {
             return word.CapitalizeALetterInAWord(0);

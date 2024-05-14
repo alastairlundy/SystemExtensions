@@ -31,7 +31,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <summary>
         /// Checks whether a word is capitalized.
         /// </summary>
-        /// <param name="word"></param>
+        /// <param name="word">The word to be checked.</param>
         /// <returns></returns>
         public static bool IsWordTitleCase(this string word)
         {

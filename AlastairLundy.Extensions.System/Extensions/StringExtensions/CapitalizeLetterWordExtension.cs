@@ -29,11 +29,11 @@ namespace AlastairLundy.Extensions.System.StringExtensions
     public static class CapitalizeLetterWordExtension
     {
         /// <summary>
-        /// Capitalizes the specified letter in the word.
+        /// Capitalizes the specified letter in the specified word.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="index">The letter position to be made upper case.</param>
+        /// <param name="word">The word to be modified.</param>
+        /// <returns>the specified word with the specified letter made upper case.</returns>
         public static string CapitalizeALetterInAWord(this string word, int index)
         {
             char[] chars = word.ToCharArray();

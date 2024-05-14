@@ -29,10 +29,10 @@ namespace AlastairLundy.Extensions.System.StringExtensions
     public static class ToTitleCaseStringArrayExtension
     {
         /// <summary>
-        /// Turns a regular string to a Title Case String Like This.
+        /// Converts a regular string to a Title Case String Like This.
         /// </summary>
         /// <param name="words">The array of strings to be converted.</param>
-        /// <returns></returns>
+        /// <returns>the converted title case string.</returns>
         public static string ToTitleCase(this string[] words)
         {
             StringBuilder stringBuilder = new StringBuilder();

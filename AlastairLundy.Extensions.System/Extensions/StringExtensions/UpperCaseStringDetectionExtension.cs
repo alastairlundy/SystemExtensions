@@ -30,7 +30,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// Returns whether a character, represented as a string, is an upper case letter or not.
         /// </summary>
         /// <param name="s">The string to be checked.</param>
-        /// <returns></returns>
+        /// <returns>true if a character, represented as a string, is upper case; returns false otherwise.</returns>
         // ReSharper disable once MemberCanBePrivate.Global
         public static bool IsUpperCaseLetter(this string s)
         {

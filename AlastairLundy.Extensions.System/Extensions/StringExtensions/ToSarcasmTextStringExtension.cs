@@ -28,6 +28,11 @@ namespace AlastairLundy.Extensions.System.StringExtensions
 {
     public static class ToSarcasmTextStringExtension
     {
+        /// <summary>
+        /// Converts a regular string to sArCaSm tExT lIkE tHiS.
+        /// </summary>
+        /// <param name="word">The word to be converted.</param>
+        /// <returns></returns>
         public static string ToSarcasmText(this string word)
         {
             return new string[] { word }.ToSarcasmText();

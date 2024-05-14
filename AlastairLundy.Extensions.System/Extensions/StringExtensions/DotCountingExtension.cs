@@ -26,7 +26,11 @@ namespace AlastairLundy.Extensions.System.StringExtensions
 {
     public static class DotCountingExtension
     {
-        
+        /// <summary>
+        /// Counts the number of periods/full stops/dots in a string.
+        /// </summary>
+        /// <param name="str">The string to be checked.</param>
+        /// <returns>the number of periods/full stops/dots in a string</returns>
         public static int CountDotsInString(this string str)
         {
             int dotCounter = 0;
