@@ -33,10 +33,10 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
         /// <summary>
         /// Adds items in a HashTable to a HashMap.
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
-        /// <param name="hashMap"></param>
-        /// <param name="hashtable"></param>
+        /// <typeparam name="TKey">The type of the Keys used.</typeparam>
+        /// <typeparam name="TValue">The type of the Values used.</typeparam>
+        /// <param name="hashMap">The HashMap to be added to.</param>
+        /// <param name="hashtable">The table to have items added to the HashMap</param>
         public static void PutHashTable<TKey, TValue>(this HashMap<TKey, TValue> hashMap, Hashtable hashtable)
         {
             ICollection keys = hashtable.Keys;

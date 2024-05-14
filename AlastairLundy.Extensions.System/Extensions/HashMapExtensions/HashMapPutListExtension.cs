@@ -32,10 +32,10 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
         /// <summary>
         /// Adds items in a list to a HashMap
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
-        /// <param name="hashMap"></param>
-        /// <param name="list"></param>
+        /// <typeparam name="TKey">The type of the Keys used.</typeparam>
+        /// <typeparam name="TValue">The type of the Values used.</typeparam>
+        /// <param name="hashMap">The HashMap to be added to.</param>
+        /// <param name="list">The list of items to add to the HashMap.</param>
         public static void PutList<TKey, TValue>(this HashMap<TKey, TValue> hashMap, List<KeyValuePair<TKey, TValue>> list)
         {
             foreach(KeyValuePair<TKey, TValue> pair in list)

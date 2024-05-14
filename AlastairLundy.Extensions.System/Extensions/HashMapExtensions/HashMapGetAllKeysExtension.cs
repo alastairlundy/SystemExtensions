@@ -31,7 +31,7 @@ using AlastairLundy.Extensions.System.Collections;
 using AlastairLundy.Extensions.System.DictionaryExtensions;
 using AlastairLundy.Extensions.System.Exceptions;
 
-namespace AlastairLundy.Extensions.System.Extensions.HashMapExtensions
+namespace AlastairLundy.Extensions.System.HashMapExtensions
 {
     public static class HashMapGetAllKeysExtension
     {
@@ -43,7 +43,7 @@ namespace AlastairLundy.Extensions.System.Extensions.HashMapExtensions
         /// <param name="hashMap">The HashMap to be searched.</param>
         /// <param name="value">The value to search for.</param>
         /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the HashMap.</exception>
-        /// <returns></returns>
+        /// <returns>the keys associated with the specified value in the HashMap.</returns>
         public static TKey[] GetKeys<TKey, TValue>(this HashMap<TKey, TValue> hashMap, TValue value)
         {
             if(hashMap.ContainsValue(value))

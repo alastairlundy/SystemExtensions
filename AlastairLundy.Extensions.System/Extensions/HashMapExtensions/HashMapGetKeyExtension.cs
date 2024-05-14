@@ -34,17 +34,17 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
         /// <summary>
         /// Gets the Key associated with the specified value to a HashMap.
         /// </summary>
-        /// <typeparam name="TKey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
-        /// <param name="hashmap"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="ValueNotFoundException"></exception>
-        public static TKey GetKey<TKey, TValue>(this HashMap<TKey, TValue> hashmap, TValue value)
+        /// <typeparam name="TKey">The type of the Keys used.</typeparam>
+        /// <typeparam name="TValue">The type of the Values used.</typeparam>
+        /// <param name="hashMap">The HashMap to be added to.</param>
+        /// <param name="value">The value to use to return the desired keys.</param>
+        /// <returns>the key associated with the value in the HashMap. If more than one Key is associated with the value, only the first key is returned.</returns>
+        /// <exception cref="ValueNotFoundException">An exception that is thrown if the specified Value is not found within the HashMap.</exception>
+        public static TKey GetKey<TKey, TValue>(this HashMap<TKey, TValue> hashMap, TValue value)
         {
-            if (hashmap.ContainsValue(value))
+            if (hashMap.ContainsValue(value))
             {
-                foreach (KeyValuePair<TKey, TValue> pair in hashmap.ToDictionary())
+                foreach (KeyValuePair<TKey, TValue> pair in hashMap.ToDictionary())
                 {
                     if (pair.Value.Equals(value))
                     {
@@ -53,7 +53,7 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
                 }
             }
 
-            throw new ValueNotFoundException(nameof(hashmap));
+            throw new ValueNotFoundException(nameof(hashMap));
         }
     }
 }
