@@ -23,7 +23,6 @@
    */
 
 using System;
-using AlastairLundy.Extensions.System.Exceptions.Messages;
 
 namespace AlastairLundy.Extensions.System.Exceptions
 {

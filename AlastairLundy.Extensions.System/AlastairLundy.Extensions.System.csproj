@@ -50,6 +50,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Exceptions\Messages\" />
       <Folder Include="Extensions\CharArrayExtensions\" />
     </ItemGroup>
 </Project>
