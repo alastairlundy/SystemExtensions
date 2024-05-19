@@ -29,11 +29,11 @@ namespace AlastairLundy.Extensions.System.ProcessExtensions
     public static class GetProcessFromProcessNameExtension
     {
         /// <summary>
-        /// Converts a String to a Process
+        /// Retrieves the Process object with the same name as the specified string.
         /// </summary>
-        /// <param name="process"></param>
-        /// <param name="processName"></param>
-        /// <returns></returns>
+        /// <param name="process">The process object</param>
+        /// <param name="processName">The name of the process to be retrieved.</param>
+        /// <returns>the Process object with the same name as the specified string.</returns>
         public static Process GetProcessFromProcessName(this Process process, string processName)
         {
             if (processName.Contains(".exe"))
