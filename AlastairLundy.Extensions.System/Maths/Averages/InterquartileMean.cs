@@ -185,7 +185,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the Interquartile Mean of an array of doubles.
         /// </summary>
         /// <param name="values">The array to get the Interquartile Mean of.</param>
-        /// <returns>The Interquartile Mean of the specified double array.</returns>
+        /// <returns>the Interquartile Mean of the specified double array.</returns>
         public static double ToDouble(double[] values)
         {
             double[] newValues = RemoveUnneededQuartiles(values);
