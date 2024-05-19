@@ -23,7 +23,9 @@
    */
 
 using System;
+
 using AlastairLundy.Extensions.System.VersionExtensions.Enums;
+// ReSharper disable RedundantIfElseBlock
 
 namespace AlastairLundy.Extensions.System.VersionExtensions
 {
@@ -51,21 +53,25 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
                 showRevision = version.Revision != 0;
             }
 
-            if (showRevision)
+            switch (showRevision)
             {
-                return version.ToString();
-            }
-            else if (showBuild)
-            {
-                return $"{version.Major}{dot}{version.Minor}{dot}{version.Build}";
-            }
-            else if(showMinor)
-            {
-                return $"{version.Major}{dot}{version.Minor}";
-            }
-            else
-            {
-                return version.Major.ToString();
+                case true:
+                    return version.ToString();
+                default:
+                {
+                    if (showBuild)
+                    {
+                        return $"{version.Major}{dot}{version.Minor}{dot}{version.Build}";
+                    }
+                    else if(showMinor)
+                    {
+                        return $"{version.Major}{dot}{version.Minor}";
+                    }
+                    else
+                    {
+                        return version.Major.ToString();
+                    }
+                }
             }
         }
     }
