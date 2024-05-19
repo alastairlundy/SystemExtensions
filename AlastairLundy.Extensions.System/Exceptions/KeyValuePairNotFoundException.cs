@@ -29,9 +29,8 @@ namespace AlastairLundy.Extensions.System.Exceptions
 {
     public class KeyValuePairNotFoundException : Exception
     {
-        public KeyValuePairNotFoundException(string collectionName) : base(CommonMessages.IfDeveloperMessage +
-                                                      " KeyValuePair not found within the collection '" + collectionName + "' " +
-                                                      CommonMessages.AskUserSendDetailsToDeveloper)
+        public KeyValuePairNotFoundException(string collectionName) : base(
+            $"KeyValuePair not found within the collection: {collectionName}")
         {
             
         }

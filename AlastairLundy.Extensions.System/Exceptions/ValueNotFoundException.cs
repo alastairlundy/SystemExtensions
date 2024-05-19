@@ -31,9 +31,7 @@ namespace AlastairLundy.Extensions.System.Exceptions
     {
 
         public ValueNotFoundException(string collectionName) : base(
-                CommonMessages.IfDeveloperMessage +
-            " Value Not Found within Key Value Pair '" + collectionName + "' " +
-                CommonMessages.AskUserSendDetailsToDeveloper)
+            $"Value Not Found within Key Value Pair: {collectionName}")
         {
             
         }
