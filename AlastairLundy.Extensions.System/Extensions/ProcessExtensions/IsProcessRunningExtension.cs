@@ -31,9 +31,9 @@ namespace AlastairLundy.Extensions.System.ProcessExtensions
         /// <summary>
         /// Check to see if a specified process is running or not.
         /// </summary>
-        /// <param name="process"></param>
-        /// <param name="processName"></param>
-        /// <returns></returns>
+        /// <param name="process">The process object.</param>
+        /// <param name="processName">The name of the process to be checked.</param>
+        /// <returns>true if the specified process is running; returns false otherwise.</returns>
         public static bool IsProcessRunning(this Process process, string processName)
         {
             foreach (Process proc in Process.GetProcesses())
