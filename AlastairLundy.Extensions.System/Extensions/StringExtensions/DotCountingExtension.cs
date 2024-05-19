@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
 
             foreach (char c in str)
             {
-                if (c == '.')
+                if (c.Equals('.'))
                 {
                     dotCounter++;
                 }
