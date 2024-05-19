@@ -33,25 +33,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <returns>true if a character, represented as a string, is lower case; returns false otherwise.</returns>
         public static bool IsLowerCaseLetter(this string s)
         {
-            string[] englishAlphabetLower =
-            {
-                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
-                "v", "w", "x", "y", "z"
-            };
-            
-            foreach (string abc in englishAlphabetLower){
-                if (abc.Equals(s.ToLower()))
-                {
-                    //Get out of the for loop if the character matches.
-                    return true;
-                }
-                else
-                {
-                    //Do nothing if it's not a match;
-                }
-            }
-
-            return false;
+            return s.Equals(s.ToLower());
         }
     }
 }
