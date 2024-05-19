@@ -33,7 +33,7 @@ namespace AlastairLundy.Extensions.System.StringArrayExtensions
         /// Returns whether the specified phrase to be checked is in Title Case or not.
         /// </summary>
         /// <param name="phrase">The phrase to be checked.</param>
-        /// <returns>true if the specified phrase is in Title Case; false otherwise.</returns>
+        /// <returns>true if the specified phrase is in Title Case; returns false otherwise.</returns>
         public static bool IsTitleCase(this string phrase)
         {
             string[] words = phrase.Split();
