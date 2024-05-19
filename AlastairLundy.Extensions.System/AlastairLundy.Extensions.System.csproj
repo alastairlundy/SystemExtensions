@@ -6,28 +6,23 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.2.0
+        <PackageReleaseNotes>## Changes since 4.3.0 Preview 1
+
 ### Additions
-* Added Decimal Cuberoot ``Cbrt`` extension method
-* Added Double Cuberoot ``Cbrt`` extension method
-* Added Decimal Squareroot ``Sqrt`` extension method
-* Added Decimal Array ``ToStringArray`` extension method
-* Added some XML Doc Comments for String Extensions - Note: Not all XML Doc comments have been added or completed for string extensions
+* Add Squared extensions for Decimal and Double
+* Add Cubed extensions for Decimal and Double
 
 ### Fixed Issues
-* XML Doc Comments were missing or incomplete in the Sum class
-* XML Doc Comments were missing or incomplete in the HashMap Extensions
-
-### Known Issues
 * XML Doc Comments are missing or incomplete in the String Extensions
-* XML Doc Comments are missing or incomplete in the Process Extensions</PackageReleaseNotes>
+* XML Doc Comments are missing or incomplete in the Process Extensions
+</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <FileVersion>4.2.0.0</FileVersion>
         <Version>4.2.0</Version>
-        <PackageVersion>4.3.0-preview.1</PackageVersion>
+        <PackageVersion>4.3.0-preview.2</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
