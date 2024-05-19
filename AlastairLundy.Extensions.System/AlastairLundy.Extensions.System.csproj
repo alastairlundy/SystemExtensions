@@ -48,4 +48,8 @@
     <ItemGroup>
       <EmbeddedResource Remove="AlastairLundy.Math.Extensions\**" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Extensions\CharArrayExtensions\" />
+    </ItemGroup>
 </Project>
