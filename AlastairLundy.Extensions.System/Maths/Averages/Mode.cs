@@ -106,7 +106,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the mode of an array of doubles.
         /// </summary>
         /// <param name="values">The array to determine the mode from.</param>
-        /// <returns></returns>
+        /// <returns>the mode(s) of the specified array.</returns>
         public static double[] OfDoubles(double[] values)
         {
             return GetModes<double>(values);
@@ -116,7 +116,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the mode of an array of decimals.
         /// </summary>
         /// <param name="values">The array to determine the mode from.</param>
-        /// <returns></returns>
+        /// <returns>the mode(s) of the specified array.</returns>
         public static decimal[] OfDecimals(decimal[] values)
         {
             return GetModes<decimal>(values);
@@ -126,7 +126,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the mode of an array of 64 Bit integers.
         /// </summary>
         /// <param name="values">The array to determine the mode from.</param>
-        /// <returns></returns>
+        /// <returns>the mode(s) of the specified array.</returns>
         public static long[] OfLongs(long[] values)
         {
             return GetModes<long>(values);
@@ -136,7 +136,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the mode of an array of ints.
         /// </summary>
         /// <param name="values">The array to determine the mode from.</param>
-        /// <returns></returns>
+        /// <returns>the mode(s) of the specified array.</returns>
         public static int[] OfInts(int[] values)
         {
             return GetModes<int>(values);
@@ -146,7 +146,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the mode of an array of floats.
         /// </summary>
         /// <param name="values">The array to determine the mode from.</param>
-        /// <returns></returns>
+        /// <returns>the mode(s) of the specified array.</returns>
         public static float[] OfFloats(float[] values)
         {
             return GetModes<float>(values);
