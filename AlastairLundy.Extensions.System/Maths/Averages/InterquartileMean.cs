@@ -71,7 +71,6 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
             values = Sort(values);
 
             List<T> list = new List<T>();
-
             List<T> newList = new List<T>();
 
             int numberRemoved = 0;
