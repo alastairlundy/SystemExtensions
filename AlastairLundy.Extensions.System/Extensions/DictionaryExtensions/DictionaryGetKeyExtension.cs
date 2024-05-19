@@ -23,6 +23,7 @@
    */
 
 using System.Collections.Generic;
+
 using AlastairLundy.Extensions.System.Exceptions;
 
 namespace AlastairLundy.Extensions.System.DictionaryExtensions
