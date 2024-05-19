@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <returns>the modified string.</returns>
         public static string FromSarcasmTextToRegularText(this string word)
         {
-            return new string[1] { word }.FromSarcasmTextToRegularText();
+            return new string[] { word }.FromSarcasmTextToRegularText();
         }
     }
 }
