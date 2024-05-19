@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.CharExtensions
         /// <returns>true if the character is an upper case character, returns false otherwise.</returns>
         public static bool IsUpperCaseLetter(this char c)
         {
-            return c.ToString().IsUpperCaseLetter();
+            return c.ToString().Equals(c.ToString().ToUpper());
         }
     }
 }

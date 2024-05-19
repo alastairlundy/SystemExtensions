@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.CharExtensions
         /// <returns>true if the character is a lower case character, returns false otherwise.</returns>
         public static bool IsCharacterALowerCaseLetter(this char c)
         {
-            return c.ToString().IsLowerCaseLetter();
+            return c.ToString().Equals(c.ToString().ToLower());
         }
     }
 }
