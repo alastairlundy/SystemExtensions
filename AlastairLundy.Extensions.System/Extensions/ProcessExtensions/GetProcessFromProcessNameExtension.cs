@@ -58,7 +58,6 @@ namespace AlastairLundy.Extensions.System.ProcessExtensions
             }
 
             return null;
-            //  throw new Exception();
         }
     }
 }
