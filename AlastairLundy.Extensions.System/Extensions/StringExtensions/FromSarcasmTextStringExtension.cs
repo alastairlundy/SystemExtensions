@@ -29,10 +29,10 @@ namespace AlastairLundy.Extensions.System.StringExtensions
     public static class FromSarcasmTextStringExtension
     {
         /// <summary>
-        /// 
+        /// Converts sArCaSm tExT to Regular Text.
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word">the string to be modified.</param>
+        /// <returns>the modified string.</returns>
         public static string FromSarcasmTextToRegularText(this string word)
         {
             return new string[1] { word }.FromSarcasmTextToRegularText();

@@ -42,6 +42,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
             
             for(int i = 0; i < chars.Length; i++)
             {
+                // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
                 if (i.Equals(index))
                 {
                     stringBuilder.Append(chars[index].ToString().ToUpper());
