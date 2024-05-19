@@ -38,7 +38,7 @@ namespace AlastairLundy.Extensions.System.ProcessExtensions
         {
             foreach (Process proc in Process.GetProcesses())
             {
-                var procName =  proc.ProcessName.Replace("System.Diagnostics.Process (", string.Empty);
+                string procName =  proc.ProcessName.Replace("System.Diagnostics.Process (", string.Empty);
                 
                 processName = processName.Replace(".exe", string.Empty);
                 
