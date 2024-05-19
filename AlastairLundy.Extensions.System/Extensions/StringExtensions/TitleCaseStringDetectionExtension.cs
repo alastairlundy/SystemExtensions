@@ -32,7 +32,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// Checks whether a word is capitalized.
         /// </summary>
         /// <param name="word">The word to be checked.</param>
-        /// <returns></returns>
+        /// <returns>true if the word is capitalized; returns false otherwise.</returns>
         public static bool IsWordTitleCase(this string word)
         {
             string[] letters = word.Split();

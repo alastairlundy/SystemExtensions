@@ -31,8 +31,8 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// <summary>
         /// Converts a regular string to sArCaSm tExT lIkE tHiS.
         /// </summary>
-        /// <param name="word">The word to be converted.</param>
-        /// <returns></returns>
+        /// <param name="word">The word to be modified.</param>
+        /// <returns>the modified string.</returns>
         public static string ToSarcasmText(this string word)
         {
             return new string[] { word }.ToSarcasmText();

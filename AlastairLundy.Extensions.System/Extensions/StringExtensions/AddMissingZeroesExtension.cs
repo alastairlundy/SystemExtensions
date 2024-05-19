@@ -30,12 +30,12 @@ namespace AlastairLundy.Extensions.System.StringExtensions
     public static class AddMissingZeroesExtension
     {
         /// <summary>
-        /// 
+        /// Add missing zeroes to the version string if it is missing zeroes.
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="numberOfZeroesNeeded">The number of zeroes to add. Valid values are 0 through 3. Defaults to 3.</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
+        /// <param name="str">The string to be modified.</param>
+        /// <param name="numberOfZeroesNeeded">The number of zeroes to be added. Valid values are 0 through 3. Defaults to 3.</param>
+        /// <returns>the modified string.</returns>
+        /// <exception cref="ArgumentException">Thrown if the number of zeroes to be added is greater than 3.</exception>
         public static string AddMissingZeroes(this string str, int numberOfZeroesNeeded = 3)
         {
             StringBuilder stringBuilder = new StringBuilder();
