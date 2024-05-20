@@ -7,6 +7,7 @@
 #### 4.3
 | Version | Release Date |
 |-|-|
+| 4.3.0 | May 20th 2024 |
 | 4.3.0 Preview 3 | May 20th 2024 |
 | 4.3.0 Preview 2 | May 19th 2024 |
 | 4.3.0 Preview 1 | May 14th 2024 |

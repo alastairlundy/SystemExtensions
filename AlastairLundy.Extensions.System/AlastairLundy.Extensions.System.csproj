@@ -6,21 +6,40 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 4.3.0 Preview 2
+        <PackageReleaseNotes>## Changes since 4.2.0
+
+### Additions
+* Added Decimal Cuberoot ``Cbrt`` extension method
+* Added Double Cuberoot ``Cbrt`` extension method
+* Added Decimal Squareroot ``Sqrt`` extension method
+* Added Decimal Array ``ToStringArray`` extension method
+* Add Squared extensions for Decimal and Double
+* Add Cubed extensions for Decimal and Double
 * Add extension method to remove Escape Characters from a String
-* Update exceptions 
+
+### General Changes
+* Replaced equals calls in an extension method
 * Removed unnecessary array size parameter
 * Replaced equals calls in an extension method
 * Replaced English language hardcoding for upper and lower case character detection with language neutral code
 * Updated char case detection method
-* Added missing xml doc comments in Mode class</PackageReleaseNotes>
+
+### Deprecations
+* Deprecated ``IsCharacterALowerCaseLetter`` extension method - This will be removed in version 5.0 . Please use ``IsLowerCaseCharacter`` method
+
+### Fixed Issues
+* XML Doc Comments were missing or incomplete in the Sum class
+* XML Doc Comments were missing or incomplete in the HashMap Extensions
+* XML Doc Comments were missing or in complete in the Mode class
+
+### Known Issues</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.2.0.0</AssemblyVersion>
-        <FileVersion>4.2.0.0</FileVersion>
-        <Version>4.2.0</Version>
-        <PackageVersion>4.3.0-preview.3</PackageVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+        <FileVersion>4.3.0.0</FileVersion>
+        <Version>4.3.0</Version>
+        <PackageVersion>4.3.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
