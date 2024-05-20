@@ -6,23 +6,21 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.3.0 Preview 1
-
-### Additions
-* Add Squared extensions for Decimal and Double
-* Add Cubed extensions for Decimal and Double
-
-### Fixed Issues
-* XML Doc Comments are missing or incomplete in the String Extensions
-* XML Doc Comments are missing or incomplete in the Process Extensions
-</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 4.3.0 Preview 2
+* Add extension method to remove Escape Characters from a String
+* Update exceptions 
+* Removed unnecessary array size parameter
+* Replaced equals calls in an extension method
+* Replaced English language hardcoding for upper and lower case character detection with language neutral code
+* Updated char case detection method
+* Added missing xml doc comments in Mode class</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>4.2.0.0</AssemblyVersion>
         <FileVersion>4.2.0.0</FileVersion>
         <Version>4.2.0</Version>
-        <PackageVersion>4.3.0-preview.2</PackageVersion>
+        <PackageVersion>4.3.0-preview.3</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
