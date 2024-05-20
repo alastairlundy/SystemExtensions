@@ -22,17 +22,18 @@
        SOFTWARE.
    */
 
-using AlastairLundy.Extensions.System.StringExtensions;
+using System;
 
 namespace AlastairLundy.Extensions.System.CharExtensions
 {
-    public static class LowerCaseCharDetectionExtension
+    public static class LowerCaseCharDetectionLegacyExtension
     {
         /// <summary>
         /// Returns whether a character is a lower case letter or not.
         /// </summary>
         /// <param name="c">The character to be checked.</param>
         /// <returns>true if the character is a lower case character, returns false otherwise.</returns>
+        [Obsolete]
         public static bool IsCharacterALowerCaseLetter(this char c)
         {
             return c.ToString().Equals(c.ToString().ToLower());
