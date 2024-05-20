@@ -1,3 +1,3 @@
 # AlastairLundy.System.Extensions
 
-A C# .NET library to hold useful System extension methods
+Extensions to C# System classes and structs to help improve them.
