@@ -30,7 +30,7 @@ namespace AlastairLundy.Extensions.System.Exceptions
     {
 
         public ValueNotFoundException(string collectionName) : base(
-                "Value Not Found within Key Value Pair: " + collectionName)
+            $"Value Not Found within Key Value Pair: {collectionName}")
         {
             
         }
