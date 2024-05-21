@@ -23,6 +23,7 @@
    */
 
 
+using System;
 using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.System.Collections
@@ -59,9 +60,11 @@ namespace AlastairLundy.Extensions.System.Collections
         bool ContainsKey(TKey key);
         bool ContainsValue(TValue value);
         bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair);
-        
+
+        [Obsolete]
         bool IsEmpty();
 
+        [Obsolete]
         int Count();
     }
 }

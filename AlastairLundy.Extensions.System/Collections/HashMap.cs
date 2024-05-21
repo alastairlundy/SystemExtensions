@@ -25,6 +25,7 @@
 using System;
 
 using System.Collections.Generic;
+
 using AlastairLundy.Extensions.System.DictionaryExtensions;
 using AlastairLundy.Extensions.System.Exceptions;
 
@@ -318,6 +319,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// Returns whether the HashMap is empty or not.
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public bool IsEmpty()
         {
             return Count() > 0;
@@ -327,6 +329,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// Returns the number of KeyValuePairs in the HashMap. 
         /// </summary>
         /// <returns></returns>
+        [Obsolete]
         public int Count()
         {
             return _dictionary.Count;
