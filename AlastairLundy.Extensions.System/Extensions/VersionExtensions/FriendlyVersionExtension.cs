@@ -56,7 +56,7 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
             switch (showRevision)
             {
                 case true:
-                    return version.ToString();
+                    return $"{version.Major}{dot}{version.Minor}{dot}{version.Build}{dot}{version.Revision}";
                 default:
                 {
                     if (showBuild)
