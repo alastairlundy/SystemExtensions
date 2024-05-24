@@ -23,20 +23,15 @@
    */
 
 using System;
+using AlastairLundy.Extensions.System.Internal.Localizations;
 
 namespace AlastairLundy.Extensions.System.Exceptions
 {
     public class KeyValuePairNotFoundException : Exception
     {
 
-
-        public KeyValuePairNotFoundException() : base()
-        { 
-           
-        }
-
         public KeyValuePairNotFoundException(string collectionName) : base(
-            $"KeyValuePair not found within the collection: {collectionName}")
+            $"{Resources.Exceptions_KeyValuePairNotFound}: {collectionName}")
         {
             
         }

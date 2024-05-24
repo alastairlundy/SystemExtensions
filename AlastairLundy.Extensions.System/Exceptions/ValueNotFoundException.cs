@@ -23,6 +23,7 @@
    */
 
 using System;
+using AlastairLundy.Extensions.System.Internal.Localizations;
 
 namespace AlastairLundy.Extensions.System.Exceptions
 {
@@ -30,7 +31,7 @@ namespace AlastairLundy.Extensions.System.Exceptions
     {
 
         public ValueNotFoundException(string collectionName) : base(
-            $"Value Not Found within Key Value Pair: {collectionName}")
+            $"{Resources.Exceptions_ValueNotFound}: {collectionName}")
         {
             
         }
