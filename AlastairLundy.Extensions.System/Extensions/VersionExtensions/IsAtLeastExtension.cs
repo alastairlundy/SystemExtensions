@@ -36,15 +36,13 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         /// <returns>true if the specified compared version is newer than or equal to the current version, and returns false otherwise.</returns>
         public static bool IsAtLeast(this Version version, Version versionToBeCompared)
         {
-            Version expected = versionToBeCompared;
-
-            if (version.Major >= expected.Major)
+            if (version.Major >= versionToBeCompared.Major)
             {
-                if (version.Minor >= expected.Minor)
+                if (version.Minor >= versionToBeCompared.Minor)
                 {
-                    if (version.Build >= expected.Build)
+                    if (version.Build >= versionToBeCompared.Build)
                     {
-                        if (version.Revision >= expected.Revision)
+                        if (version.Revision >= versionToBeCompared.Revision)
                         {
                             return true;
                         }
