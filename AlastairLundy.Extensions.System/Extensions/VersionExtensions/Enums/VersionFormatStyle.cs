@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+
 namespace AlastairLundy.Extensions.System.VersionExtensions.Enums
 {
     public enum FriendlyVersionFormatStyle
