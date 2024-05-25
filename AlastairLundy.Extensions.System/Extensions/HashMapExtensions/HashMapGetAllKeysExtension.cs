@@ -42,10 +42,16 @@ namespace AlastairLundy.Extensions.System.HashMapExtensions
         /// <typeparam name="TValue">The type of Value in the HashMap.</typeparam>
         /// <param name="hashMap">The HashMap to be searched.</param>
         /// <param name="value">The value to search for.</param>
-        /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the HashMap.</exception>
+        /// <exception cref="ValueNotFoundException">Thrown if the value is not found within the HashMap.</exception>
+        /// <exception cref="NullReferenceException">Thrown if the HashMap provided is null.</exception>
         /// <returns>the keys associated with the specified value in the HashMap.</returns>
         public static TKey[] GetKeys<TKey, TValue>(this HashMap<TKey, TValue> hashMap, TValue value)
         {
+            if (hashMap == null)
+            {
+                throw new NullReferenceException();
+            }
+            
             if(hashMap.ContainsValue(value))
             {
                 return hashMap.ToDictionary().GetKeys(value);
