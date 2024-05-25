@@ -23,6 +23,7 @@
    */
 
 using System;
+
 using AlastairLundy.Extensions.System.DateTimeExtensions;
 
 namespace AlastairLundy.Extensions.System.DateOnlyExtensions
