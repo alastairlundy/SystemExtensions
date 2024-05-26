@@ -61,12 +61,12 @@ namespace AlastairLundy.Extensions.System.ArrayExtensions
         }
         
         /// <summary>
-        /// 
+        /// Combines 2 arrays and outputs the newly combined array.
         /// </summary>
-        /// <param name="arrayA"></param>
-        /// <param name="arrayB"></param>
-        /// <param name="destinationArray"></param>
-        /// <typeparam name="T"></typeparam>
+        /// <param name="arrayA">The first array to be combined.</param>
+        /// <param name="arrayB">The second array to be combined.</param>
+        /// <param name="destinationArray">The combined arrays returned to this variable.</param>
+        /// <typeparam name="T">The type of the value.</typeparam>
         /// <exception cref="OverflowException"></exception>
         public static void Combine<T>(T[] arrayA, T[] arrayB, out T[] destinationArray)
         {
