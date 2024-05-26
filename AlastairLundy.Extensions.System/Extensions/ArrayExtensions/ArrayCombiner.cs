@@ -32,13 +32,13 @@ namespace AlastairLundy.Extensions.System.ArrayExtensions
     public static class ArrayCombiner
     {
         /// <summary>
-        /// 
+        /// Combines an array with another array and returns the newly combined array.
         /// </summary>
-        /// <param name="array"></param>
-        /// <param name="arrayToBeAdded"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        /// <exception cref="OverflowException"></exception>
+        /// <param name="array">The array to be added to.</param>
+        /// <param name="arrayToBeAdded">The array to be added.</param>
+        /// <typeparam name="T">The type of the value.</typeparam>
+        /// <returns>the newly combined arrays.</returns>
+        /// <exception cref="OverflowException">Thrown if the size of the new array is larger than the max size for Arrays.</exception>
         public static T[] Combine<T>(this T[] array, T[] arrayToBeAdded)
         {
 #if NET6_0_OR_GREATER
@@ -67,7 +67,7 @@ namespace AlastairLundy.Extensions.System.ArrayExtensions
         /// <param name="arrayB">The second array to be combined.</param>
         /// <param name="destinationArray">The combined arrays returned to this variable.</param>
         /// <typeparam name="T">The type of the value.</typeparam>
-        /// <exception cref="OverflowException"></exception>
+        /// <exception cref="OverflowException">Thrown if the size of the new array is larger than the max size for Arrays.</exception>
         public static void Combine<T>(T[] arrayA, T[] arrayB, out T[] destinationArray)
         {
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse
