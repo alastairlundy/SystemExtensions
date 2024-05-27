@@ -27,13 +27,32 @@ namespace AlastairLundy.Extensions.System.StringExtensions
     public static class EscapeCharsStringExtensions
     {
         internal static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
+
+        /// <summary>
+        /// Returns whether the string contains an Escape Character.
+        /// </summary>
+        /// <param name="str">The string to be searched.</param>
+        /// <returns>whether the string contains an Escape Character</returns>
+        public static bool ContainsEscapeCharacters(this string str)
+        {
+            foreach (string escapeChar in EscapeChars)
+            {
+                if (str.Contains(escapeChar))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        
         /// <summary>
         /// Removes escape characters from a string.
         /// </summary>
         /// <param name="str">The string to be modified.</param>
         public static void RemoveEscapeCharacters(this string str)
         {
-            foreach (string escapeChar in escapeChars)
+            if (ContainsEscapeCharacters(str))
             {
                 foreach (string escapeChar in EscapeChars)
                 {
