@@ -35,25 +35,6 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
     /// </summary>
     public class Mode
     {
-        internal static Dictionary<TKey, long> CountUsage<TKey>(TKey[] values)
-        {
-            Dictionary<TKey, long> pairs = new Dictionary<TKey, long>();
-            
-            foreach(TKey value in values)
-            {
-                if (pairs.ContainsKey(value))
-                {
-                    pairs[value] += 1;
-                }
-                else
-                {
-                    pairs.Add(value, 1);
-                }
-            }
-
-            return pairs;
-        }
-
         internal static int[] GetModeFrequencies(int[] values)
         {
             List<int> modeFrequencies = new List<int>();
