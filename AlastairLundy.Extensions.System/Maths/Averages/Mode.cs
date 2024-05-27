@@ -54,7 +54,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
             return pairs;
         }
 
-        internal static long[] GetModeFrequencies(long[] values)
+        internal static int[] GetModeFrequencies(int[] values)
         {
             List<int> modeFrequencies = new List<int>();
 
