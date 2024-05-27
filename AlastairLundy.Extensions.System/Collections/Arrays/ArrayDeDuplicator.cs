@@ -32,8 +32,6 @@ namespace AlastairLundy.Extensions.System.Collections
     public static class ArrayDeDuplicator
     {
         
-
-        
         public static T[] RemoveDuplicates<T>(this T[] array)
         {
             Dictionary<T, int> items = FrequencyOf.Objects(array);
