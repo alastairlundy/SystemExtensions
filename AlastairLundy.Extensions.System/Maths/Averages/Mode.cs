@@ -56,9 +56,9 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
 
         internal static long[] GetModeFrequencies(long[] values)
         {
-            List<long> modeFrequencies = new List<long>();
+            List<int> modeFrequencies = new List<int>();
 
-            long[] descending = values;
+            int[] descending = values;
             Array.Sort(descending);
             Array.Reverse(descending);
             
@@ -66,7 +66,8 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
             
             for(int index = 0; index < descending.Length; index++)
             {
-                long next = descending[index + 1] < descending.Length ? descending[index + 1] : descending[index];
+                int next = descending[index + 1] < descending.Length ? descending[index + 1] : descending[index];
+                
                 if (!descending[index].Equals(next))
                 {
                     if (descending[index] == descending[0])
@@ -89,9 +90,9 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         {
             List<T> mode = new List<T>();
             
-            Dictionary<T, long> pairs = CountUsage<T>(values);
+            Dictionary<T, int> pairs = FrequencyOf.Objects(values);
 
-            foreach (long modeFrequency in GetModeFrequencies(pairs.Values.ToArray()))
+            foreach (int modeFrequency in GetModeFrequencies(pairs.Values.ToArray()))
             {
                 foreach (T key in pairs.GetKeys(modeFrequency))
                 {
