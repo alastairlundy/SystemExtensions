@@ -32,7 +32,7 @@ namespace AlastairLundy.Extensions.System.Collections
     public static class FrequencyOf
     {
         /// <summary>
-        ///  Caculates the number of times an object appears in an IEnumerable.
+        ///  Calculates the number of times an object appears in an IEnumerable.
         /// </summary>
         /// <param name="enumerable">The IEnumerable to be searched.</param>
         /// <param name="obj">The object to be searched for.</param>
@@ -54,7 +54,7 @@ namespace AlastairLundy.Extensions.System.Collections
         }
         
         /// <summary>
-        /// Caculates the number of times objects appears in an IEnumerable.
+        /// Calculates the number of times objects appears in an IEnumerable.
         /// </summary>
         /// <param name="enumerable">The IEnumerable to be searched.</param>
         /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
