@@ -24,7 +24,7 @@
 
 using System.Collections.Generic;
 
-namespace AlastairLundy.Extensions.System.ArrayExtensions
+namespace AlastairLundy.Extensions.System.Collections
 {
     /// <summary>
     /// 
@@ -32,21 +32,11 @@ namespace AlastairLundy.Extensions.System.ArrayExtensions
     public static class ArrayDeDuplicator
     {
         
+
+        
         public static T[] RemoveDuplicates<T>(this T[] array)
         {
-            Dictionary<T, long> items = new Dictionary<T, long>();
-
-            foreach (T item in array)
-            {
-                if (items.ContainsKey(item))
-                {
-                    items[item] += 1;
-                }
-                else
-                {
-                    items.Add(item, 1);
-                }
-            }
+            Dictionary<T, int> items = FrequencyOf.Objects(array);
 
             T[] newArray = new T[items.Keys.Count];
             
