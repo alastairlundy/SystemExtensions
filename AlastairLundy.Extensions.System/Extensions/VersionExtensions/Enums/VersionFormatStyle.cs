@@ -26,6 +26,7 @@ using System;
 
 namespace AlastairLundy.Extensions.System.VersionExtensions.Enums
 {
+    [Obsolete]
     public enum FriendlyVersionFormatStyle
     {
         Major,
