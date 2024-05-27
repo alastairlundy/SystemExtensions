@@ -24,21 +24,23 @@
 
 namespace AlastairLundy.Extensions.System.StringExtensions
 {
-    public static class RemoveEscapeCharsStringExtension
+    public static class EscapeCharsStringExtensions
     {
+        internal static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
         /// <summary>
         /// Removes escape characters from a string.
         /// </summary>
         /// <param name="str">The string to be modified.</param>
         public static void RemoveEscapeCharacters(this string str)
         {
-            string[] escapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
-
             foreach (string escapeChar in escapeChars)
             {
-                if (str.Contains(escapeChar))
+                foreach (string escapeChar in EscapeChars)
                 {
-                    str = str.Replace(escapeChar, string.Empty);
+                    if (str.Contains(escapeChar))
+                    {
+                        str = str.Replace(escapeChar, string.Empty);
+                    }
                 }
             }
         }
