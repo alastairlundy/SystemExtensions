@@ -6,40 +6,36 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.2.0
+        <PackageReleaseNotes>## Changes since 4.3.0
 
 ### Additions
-* Added Decimal Cuberoot ``Cbrt`` extension method
-* Added Double Cuberoot ``Cbrt`` extension method
-* Added Decimal Squareroot ``Sqrt`` extension method
-* Added Decimal Array ``ToStringArray`` extension method
-* Add Squared extensions for Decimal and Double
-* Add Cubed extensions for Decimal and Double
-* Add extension method to remove Escape Characters from a String
+* Added ``FrequencyOf`` static class
+* Added ``ArrayCombiner`` static class
+* Added ``DeDuplicate`` static class
+* Added ``IndexOf`` IEnumerable Extension method
+* Added DateTime Subtract Extension methods
+* Added DateOnly Subtract Extension methods
+* Added Extension Method to convert DateOnly to DateTime
 
-### General Changes
-* Replaced equals calls in an extension method
-* Removed unnecessary array size parameter
-* Replaced equals calls in an extension method
-* Replaced English language hardcoding for upper and lower case character detection with language neutral code
-* Updated char case detection method
+### Changes
+* Optimized Version extension methods
+* Improved robustness of HashMap ``GetKeys`` extension method
+* Updated ``ValueNotFoundException`` to use String Interpolation for Exception message
+* Started work towards Localizing Exception messages
+* Internal changes to Mode class include removing duplicate code
 
 ### Deprecations
-* Deprecated ``IsCharacterALowerCaseLetter`` extension method - This will be removed in version 5.0 . Please use ``IsLowerCaseCharacter`` method
-
-### Fixed Issues
-* XML Doc Comments were missing or incomplete in the Sum class
-* XML Doc Comments were missing or incomplete in the HashMap Extensions
-* XML Doc Comments were missing or in complete in the Mode class
-
-### Known Issues</PackageReleaseNotes>
+* Deprecated ``IHashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
+* Deprecated ``HashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
+* Deprecated ``VersionFormatStyle`` enum - This will be removed in 5.0
+* Deprecated ``GetFriendlyVersionToString`` method - This will be removed in 5.0 . A replacement method will be added in 4.5.0</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.3.0.0</AssemblyVersion>
-        <FileVersion>4.3.0.0</FileVersion>
-        <Version>4.3.0</Version>
-        <PackageVersion>4.3.0</PackageVersion>
+        <AssemblyVersion>4.4.0.0</AssemblyVersion>
+        <FileVersion>4.4.0.0</FileVersion>
+        <Version>4.4.0</Version>
+        <PackageVersion>4.4.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>

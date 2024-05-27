@@ -4,6 +4,11 @@
 
 ### Version 4.x
 
+### 4.4
+| Version | Release Date |
+|-|-|
+| 4.4.0 | May 27th 2024 |
+
 #### 4.3
 | Version | Release Date |
 |-|-|
