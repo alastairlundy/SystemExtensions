@@ -37,6 +37,7 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         /// <param name="version">The current version object.</param>
         /// <param name="friendlyVersionFormatStyle">The version format style to use.</param>
         /// <returns>the current version formatted in the specified formatting style as a string.</returns>
+        [Obsolete]
         public static string GetFriendlyVersionToString(this Version version,
             FriendlyVersionFormatStyle friendlyVersionFormatStyle = FriendlyVersionFormatStyle.AutomaticallyRemoveZeros)
         {
