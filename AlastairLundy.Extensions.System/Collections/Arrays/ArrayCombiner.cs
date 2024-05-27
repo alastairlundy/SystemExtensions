@@ -24,7 +24,7 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.ArrayExtensions
+namespace AlastairLundy.Extensions.System.Collections
 {
     /// <summary>
     /// 
