@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using System.Text;
 
 namespace AlastairLundy.Extensions.System.StringArrayExtensions
@@ -33,6 +34,7 @@ namespace AlastairLundy.Extensions.System.StringArrayExtensions
         /// </summary>
         /// <param name="words">The words to be converted to Regular Text.</param>
         /// <returns>a string of text converted from regular text to sArCaSm tExT.</returns>
+        [Obsolete]
         public static string ToSarcasmText(this string[] words)
         {
             StringBuilder stringBuilder = new StringBuilder();

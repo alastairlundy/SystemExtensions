@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using AlastairLundy.Extensions.System.StringArrayExtensions;
 
 namespace AlastairLundy.Extensions.System.StringExtensions
@@ -33,6 +34,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
         /// </summary>
         /// <param name="word">The word to be modified.</param>
         /// <returns>the modified string.</returns>
+        [Obsolete]
         public static string ToSarcasmText(this string word)
         {
             return new string[] { word }.ToSarcasmText();
