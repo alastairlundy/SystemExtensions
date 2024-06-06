@@ -139,5 +139,53 @@ namespace AlastairLundy.Extensions.System.String
             return stringBuilder.ToString().ToCharArray();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        public static string Decode(string word)
+        {
+            string[] words = word.Split(' ');
+            
+            if (words.Length > 1)
+            {
+                StringBuilder stringBuilder = new StringBuilder();
+
+                foreach (string newWord in words)
+                {
+                    stringBuilder.Append(Decode(newWord.ToCharArray()));
+                    stringBuilder.Append(' ');
+                }
+
+                return stringBuilder.ToString();
+            }
+            else
+            {
+                return Decode(word.ToCharArray()).ToString();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        public static IEnumerable<string> Decode(IEnumerable<string> words)
+        {
+            string[] enumerable = words as string[] ?? words.ToArray();
+
+            string[] newEnumerable = new string[enumerable.Length];
+
+            newEnumerable[0] = enumerable[0].Remove(0, 1);
+            newEnumerable[0] = newEnumerable[0].Insert(0, enumerable[0][0].ToString().ToUpper());
+            
+            for (int index = 1; index < enumerable.Count(); index++)
+            {
+                newEnumerable[index] = Decode(enumerable[index]);
+            }
+
+            return newEnumerable;
+        }
     }
 }
