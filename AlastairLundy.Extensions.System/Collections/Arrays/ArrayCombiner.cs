@@ -23,6 +23,8 @@
    */
 
 using System;
+using System.Linq;
+using AlastairLundy.Extensions.System.IEnumerableExtensions;
 
 namespace AlastairLundy.Extensions.System.Collections
 {
