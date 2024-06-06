@@ -42,23 +42,7 @@ namespace AlastairLundy.Extensions.System.Collections
         [Obsolete]
         public static T[] Combine<T>(this T[] array, T[] arrayToBeAdded)
         {
-#if NET6_0_OR_GREATER
-            if (array.Length + arrayToBeAdded.Length > Array.MaxLength)
-#else
-            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-            if(array.Length + arrayToBeAdded.Length > int.MaxValue)
-#endif
-            {
-
-                throw new OverflowException();
-            }
-            
-            T[] newArray = new T[array.Length + arrayToBeAdded.Length];
-            
-            array.CopyTo(newArray, 0);
-            arrayToBeAdded.CopyTo(newArray, array.Length);
-
-            return newArray;
+            return CombineIEnumerableExtension.Combine(array, arrayToBeAdded).ToArray();
         }
         
         /// <summary>
