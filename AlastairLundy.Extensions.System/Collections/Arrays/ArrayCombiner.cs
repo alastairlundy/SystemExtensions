@@ -39,6 +39,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <typeparam name="T">The type of the value.</typeparam>
         /// <returns>the newly combined arrays.</returns>
         /// <exception cref="OverflowException">Thrown if the size of the new array is larger than the max size for Arrays.</exception>
+        [Obsolete]
         public static T[] Combine<T>(this T[] array, T[] arrayToBeAdded)
         {
 #if NET6_0_OR_GREATER
@@ -68,6 +69,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="destinationArray">The combined arrays returned to this variable.</param>
         /// <typeparam name="T">The type of the value.</typeparam>
         /// <exception cref="OverflowException">Thrown if the size of the new array is larger than the max size for Arrays.</exception>
+        [Obsolete]
         public static void Combine<T>(T[] arrayA, T[] arrayB, out T[] destinationArray)
         {
             // ReSharper disable once ConditionIsAlwaysTrueOrFalse
