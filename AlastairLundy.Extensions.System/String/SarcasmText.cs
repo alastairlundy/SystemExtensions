@@ -87,7 +87,8 @@ namespace AlastairLundy.Extensions.System.String
             {
                 foreach (string s in words)
                 {
-                    stringBuilder.Append(Encode(s.ToCharArray()).ToString());
+                    stringBuilder.Append(Encode(s.ToCharArray()));
+                    stringBuilder.Append(' ');
                 }
                 
                 return stringBuilder.ToString();
