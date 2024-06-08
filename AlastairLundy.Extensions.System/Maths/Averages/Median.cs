@@ -33,7 +33,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the median of an array of doubles.
         /// </summary>
         /// <param name="values">The array to get the median from.</param>
-        /// <returns></returns>
+        /// <returns>the median of an array of doubles</returns>
         public static double OfDoubles(double[] values)
         {
             if (values.Length % 2 == 0)
@@ -58,7 +58,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the median of an array of decimals.
         /// </summary>
         /// <param name="values">The array to get the median from.</param>
-        /// <returns></returns>
+        /// <returns>the median of an array of decimals</returns>
         public static decimal OfDecimals(decimal[] values)
         {
             if (values.Length % 2 == 0)
@@ -83,7 +83,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the median of an array of floats.
         /// </summary>
         /// <param name="values">The array to get the median from.</param>
-        /// <returns></returns>
+        /// <returns>the median of an array of floats</returns>
         public static float OfFloats(float[] values)
         {
             if (values.Length % 2 == 0)
@@ -108,7 +108,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the median of an array of 64 Bit integers.
         /// </summary>
         /// <param name="values">The array to get the median from.</param>
-        /// <returns></returns>
+        /// <returns>the median of an array of 64 Bit integers</returns>
         public static long OfLongs(long[] values)
         {
             if (values.Length % 2 == 0)
@@ -133,7 +133,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// Returns the median of an array of 32 Bit integers.
         /// </summary>
         /// <param name="values">The array to get the median from.</param>
-        /// <returns></returns>
+        /// <returns>the median of an array of 32 Bit integers</returns>
         public static int OfInts(int[] values)
         {
             if (values.Length % 2 == 0)
