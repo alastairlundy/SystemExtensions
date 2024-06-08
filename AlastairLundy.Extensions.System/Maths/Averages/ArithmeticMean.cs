@@ -23,6 +23,7 @@
    */
 
 using System;
+using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Maths.Averages
 {
@@ -38,7 +39,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns></returns>
         public static double ToDouble(double[] values)
         {
-            return Sum.OfDoubles(values) / values.Length;
+            return values.Sum() / values.Length;
         }
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns></returns>
         public static decimal ToDecimal(decimal[] values)
         {
-            return Decimal.Divide(Sum.OfDecimals(values), Convert.ToDecimal(values.Length));
+            return Decimal.Divide(values.Sum(), Convert.ToDecimal(values.Length));
         }
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns></returns>
         public static long ToLong(long[] values)
         {
-            return Sum.OfLongs(values) / values.Length;
+            return values.Sum() / Convert.ToInt64(values.Length);
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns></returns>
         public static int ToInt(int[] values)
         {
-           return Sum.OfInts(values) / values.Length;
+           return values.Sum() / values.Length;
         }
     
         /// <summary>
@@ -78,7 +79,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns></returns>
         public static float ToFloat(float[] values)
         {
-            return Sum.OfFloats(values) / values.Length;
+            return values.Sum() / Convert.ToSingle(values.Length);
         }
     }
 }
