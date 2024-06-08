@@ -29,11 +29,11 @@ namespace AlastairLundy.Extensions.System.FloatExtensions
     public static class FloatPowExtension
     {
         /// <summary>
-        /// 
+        /// Returns a specified number to a specified power.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
+        /// <param name="x">A float to be raised to a power.</param>
+        /// <param name="y">A float that specifies a power.</param>
+        /// <returns>a float raised to a specified power.</returns>
         public static float Pow(this float x, float y)
         {
             return Power.ToFloat(x, y);

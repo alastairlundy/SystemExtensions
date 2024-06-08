@@ -29,11 +29,11 @@ namespace AlastairLundy.Extensions.System.FloatExtensions
     public static class FloatRootExtension
     {
         /// <summary>
-        /// 
+        ///  Returns the Nth Root of a value.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="n"></param>
-        /// <returns></returns>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The root</param>
+        /// <returns>the Nth root of the specified value.</returns>
         public static float Root(this float value, float n)
         {
             return value.Pow(Convert.ToSingle(1.0 / n));
