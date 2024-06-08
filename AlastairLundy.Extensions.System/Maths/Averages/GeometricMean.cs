@@ -25,7 +25,6 @@
 using System;
 using AlastairLundy.Extensions.System.DecimalExtensions;
 using AlastairLundy.Extensions.System.DoubleExtensions;
-using AlastairLundy.Extensions.System.FloatExtensions;
 
 namespace AlastairLundy.Extensions.System.Maths.Averages
 {
