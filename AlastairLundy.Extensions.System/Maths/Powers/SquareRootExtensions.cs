@@ -22,21 +22,39 @@
        SOFTWARE.
    */
 
-using System;
-
-namespace AlastairLundy.Extensions.System.DecimalExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class DecimalSquareRootExtension
+    public static class SquareRootExtensions
     {
+        /// <summary>
+        /// Returns the square root of the float.
+        /// </summary>
+        /// <param name="value">The float to be square rooted.</param>
+        /// <returns>the square root of the float.</returns>
+        public static float SquareRoot(this float value)
+        {
+            return value.Root(value);
+        }
+        
+        /// <summary>
+        /// Returns the square root of the double.
+        /// </summary>
+        /// <param name="value">The double to be square rooted.</param>
+        /// <returns>the square root of the double.</returns>
+        public static double SquareRoot(this double value)
+        {
+            return value.Root(2);
+        }
+        
         /// <summary>
         /// Returns the square root of the decimal.
         /// </summary>
         /// <param name="value">The decimal to be square rooted.</param>
         /// <returns>the square root of the decimal.</returns>
-        [Obsolete]
-        public static decimal Sqrt(this decimal value)
+        public static decimal SquareRoot(this decimal value)
         {
             return value.Root(2);
         }
+
     }
 }
