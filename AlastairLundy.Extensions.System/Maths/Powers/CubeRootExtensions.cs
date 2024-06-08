@@ -22,19 +22,36 @@
        SOFTWARE.
    */
 
-using System;
-
-namespace AlastairLundy.Extensions.System.DoubleExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class DoubleCubeRootExtension
+    public static class CubeRootExtensions
     {
+        /// <summary>
+        /// Returns the cube root of the decimal.
+        /// </summary>
+        /// <param name="value">The decimal to be cube rooted.</param>
+        /// <returns>the cube root of the decimal.</returns>
+        public static decimal CubeRoot(this decimal value)
+        {
+            return value.Root(3);
+        }
+        
         /// <summary>
         /// Returns the cube root of the double.
         /// </summary>
         /// <param name="value">The double to be cube rooted.</param>
         /// <returns>the cube root of the double.</returns>
-        [Obsolete]
-        public static double Cbrt(this double value)
+        public static double CubeRoot(this double value)
+        {
+            return value.Root(3);
+        }
+
+        /// <summary>
+        /// Returns the cube root of the float.
+        /// </summary>
+        /// <param name="value">The float to be cube rooted.</param>
+        /// <returns>the cube root of the float.</returns>
+        public static float CubeRoot(this float value)
         {
             return value.Root(3);
         }

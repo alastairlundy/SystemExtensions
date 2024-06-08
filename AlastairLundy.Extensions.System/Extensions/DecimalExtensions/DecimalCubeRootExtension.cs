@@ -33,6 +33,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         /// </summary>
         /// <param name="value">The decimal to be cube rooted.</param>
         /// <returns>the cube root of the decimal.</returns>
+        [Obsolete]
         public static decimal Cbrt(this decimal value)
         {
             return value.Root(3);
