@@ -30,6 +30,7 @@ namespace AlastairLundy.Extensions.System.Maths
     /// <summary>
     /// A class to assist in calculating the Arithmetic sum of values.
     /// </summary>
+    [Obsolete]
     public static class Sum
     {
         /// <summary>
@@ -37,6 +38,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values">The doubles to be added up.</param>
         /// <returns>the sum of the specified doubles.</returns>
+        [Obsolete]
         public static double OfDoubles(IEnumerable<double> values)
         {
             double sum = 0;
@@ -54,6 +56,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values">The decimals to be added up.</param>
         /// <returns>the sum of the specified decimals.</returns>
+        [Obsolete]
         public static decimal OfDecimals(IEnumerable<decimal> values)
         {
             decimal sum = decimal.Zero;
@@ -71,6 +74,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values">The 64 Bit Integers to be added up.</param>
         /// <returns>the sum of the specified 64 Bit Integers.</returns>
+        [Obsolete]
         public static long OfLongs(IEnumerable<long> values)
         {
             long sum = 0;
@@ -88,6 +92,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values">The 32 Bit Integers to be added up.</param>
         /// <returns>the sum of the specified 32 Bit Integers.</returns>
+        [Obsolete]
         public static int OfInts(IEnumerable<int> values)
         {
             int sum = 0;
@@ -105,6 +110,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// </summary>
         /// <param name="values">The floats to be added up.</param>
         /// <returns>the sum of the specified floats.</returns>
+        [Obsolete]
         public static float OfFloats(IEnumerable<float> values)
         {
             float sum = 0;
