@@ -36,7 +36,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>the Nth root of the specified value.</returns>
         public static float Root(this float value, float n)
         {
-            return value.Pow(Convert.ToSingle(1.0 / n));
+            return value.Power(Convert.ToSingle(1.0 / n));
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>the Nth root of the specified value.</returns>
         public static double Root(this double value, double n)
         {
-            return Math.Pow(value, 1.0 / n);
+            return value.Power(1.0 / n);
         }
         
         /// <summary>
@@ -58,7 +58,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>the Nth root of the specified value.</returns>
         public static decimal Root(this decimal value, decimal n)
         {
-            return value.Pow(decimal.Divide(decimal.One, n));
+            return value.Power(decimal.Divide(decimal.One, n));
         }
     }
 }

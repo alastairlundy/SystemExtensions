@@ -22,11 +22,11 @@
        SOFTWARE.
    */
 
-using AlastairLundy.Extensions.System.Maths;
+using System;
 
-namespace AlastairLundy.Extensions.System.FloatExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class FloatPowExtension
+    public static class PowerExtensions
     {
         /// <summary>
         /// Returns a specified number to a specified power.
@@ -34,9 +34,31 @@ namespace AlastairLundy.Extensions.System.FloatExtensions
         /// <param name="x">A float to be raised to a power.</param>
         /// <param name="y">A float that specifies a power.</param>
         /// <returns>a float raised to a specified power.</returns>
-        public static float Pow(this float x, float y)
+        public static float Power(this float x, float y)
         {
-            return Power.ToFloat(x, y);
+            return Convert.ToSingle(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
+        }
+
+        /// <summary>
+        /// Returns a specified number to a specified power.
+        /// </summary>
+        /// <param name="x">A double to be raised to a power.</param>
+        /// <param name="y">A double that specifies a power.</param>
+        /// <returns>a double raised to a specified power.</returns>
+        public static double Power(this double x, double y)
+        {
+            return Math.Pow(x, y);
+        }
+        
+        /// <summary>
+        /// Returns a specified number raised to a specified power.
+        /// </summary>
+        /// <param name="x">A decimal to be raised to a power.</param>
+        /// <param name="y">A decimal that specified a power.</param>
+        /// <returns>a specified number raised to a specified power.</returns>
+        public static decimal Power(this decimal x, decimal y)
+        {
+            return Maths.Power.ToDecimal(x, y);
         }
     }
 }
