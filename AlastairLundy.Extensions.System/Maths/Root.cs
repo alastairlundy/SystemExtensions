@@ -30,6 +30,7 @@ namespace AlastairLundy.Extensions.System.Maths
     /// <summary>
     /// A class to assist in calculating the Nth Root of a value.
     /// </summary>
+    [Obsolete]
     public static class Root
     {
         /// <summary>
@@ -38,6 +39,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="value">The value to get the Nth root of.</param>
         /// <param name="n">The root</param>
         /// <returns></returns>
+        [Obsolete]
         public static double ToDouble(double value, double n)
         {
             return Math.Pow(value, 1.0 / n);
@@ -49,6 +51,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="value">The value to get the Nth root of.</param>
         /// <param name="n">The root</param>
         /// <returns></returns>
+        [Obsolete]
         public static decimal ToDecimal(decimal value, decimal n)
         {
             return Power.ToDecimal(value, decimal.Divide(decimal.One, n));
@@ -60,6 +63,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="value">The value to get the Nth root of.</param>
         /// <param name="n">The root</param>
         /// <returns></returns>
+        [Obsolete]
         public static float ToFloat(float value, float n)
         {
             return Power.ToFloat(value, 1 / n);
