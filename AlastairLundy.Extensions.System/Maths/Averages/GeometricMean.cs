@@ -23,8 +23,6 @@
    */
 
 using System;
-using AlastairLundy.Extensions.System.DecimalExtensions;
-using AlastairLundy.Extensions.System.DoubleExtensions;
 
 namespace AlastairLundy.Extensions.System.Maths.Averages
 {
@@ -57,11 +55,11 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
         /// <returns>the Geometric mean of the specified array.</returns>
         public static decimal ToDecimal(decimal[] values)
         {
-            decimal sum = Decimal.One;
+            decimal sum = decimal.One;
 
             foreach (decimal value in values)
             {
-                sum = Decimal.Multiply(sum, value);
+                sum = decimal.Multiply(sum, value);
             }
 
             return sum.Root(Convert.ToDecimal(values.Length));

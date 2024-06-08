@@ -33,7 +33,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>the square root of the float.</returns>
         public static float SquareRoot(this float value)
         {
-            return value.Root(value);
+            return value.Root(2);
         }
         
         /// <summary>
