@@ -29,6 +29,7 @@ namespace AlastairLundy.Extensions.System.Maths
     /// <summary>
     /// A class to assist in getting a specified number raised to a specified power.
     /// </summary>
+    [Obsolete]
     public static class Power
     {
         /// <summary>
@@ -37,14 +38,10 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="x">A decimal to be raised to a power.</param>
         /// <param name="y">A decimal that specifies a power.</param>
         /// <returns>a decimal raised to a specified power.</returns>
+        [Obsolete]
         public static decimal ToDecimal(decimal x, decimal y)
         {
-            for (decimal index = decimal.One; index < y; index = decimal.Add(index, decimal.One))
-            {
-                x = decimal.Multiply(x, x);
-            }
-
-            return x;
+            return Convert.ToDecimal(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
         }
 
         /// <summary>
@@ -53,14 +50,10 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="x">A double to be raised to a power.</param>
         /// <param name="y">A double that specifies a power.</param>
         /// <returns>a double raised to a specified power.</returns>
+        [Obsolete]
         public static double ToDouble(double x, double y)
         {
-            for (double index = 1.0; index < y; index += 1.0)
-            {
-                x *= x;
-            }
-
-            return x;
+            return Math.Pow(x, y);
         }
 
         /// <summary>
@@ -69,14 +62,10 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="x">A float to be raised to a power.</param>
         /// <param name="y">A float that specifies a power.</param>
         /// <returns>a float raised to a specified power.</returns>
+        [Obsolete]
         public static float ToFloat(float x, float y)
         {
-            for (float index = 1; index < y; index++)
-            {
-                x *= x;
-            }
-
-            return x;
+            return Convert.ToSingle(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
         }
 
         /// <summary>
@@ -85,14 +74,10 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="x">A 64 Bit Integer to be raised to a power.</param>
         /// <param name="y">A 64 Bit Integer that specifies a power.</param>
         /// <returns>a 64 Bit Integer raised to a specified power.</returns>
+        [Obsolete]
         public static long ToInt64(long x, long y)
         {
-            for (long index = 1; index < y; index++)
-            {
-                x *= x;
-            }
-
-            return x;
+            return Convert.ToInt64(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
         }
 
         /// <summary>
@@ -103,12 +88,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>a 32 Bit Integer raised to a specified power.</returns>
         public static int ToInt32(int x, int y)
         {
-            for (int index = 1; index < y; index++)
-            {
-                x *= x;
-            }
-
-            return x;
+            return Convert.ToInt32(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
         }
     }
 }
