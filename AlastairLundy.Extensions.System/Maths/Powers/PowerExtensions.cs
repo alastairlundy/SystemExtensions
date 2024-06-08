@@ -58,7 +58,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>a specified number raised to a specified power.</returns>
         public static decimal Power(this decimal x, decimal y)
         {
-            return Maths.Power.ToDecimal(x, y);
+            return Convert.ToDecimal(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
         }
     }
 }

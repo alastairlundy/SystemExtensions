@@ -43,7 +43,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <returns>the squared value.</returns>
         public static double Square(this double value)
         {
-            return Power.ToDouble(value, 2);
+            return value.Power(2);
         }
         
         /// <summary>
