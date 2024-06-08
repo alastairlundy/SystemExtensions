@@ -23,6 +23,9 @@
    */
 
 using System;
+using AlastairLundy.Extensions.System.DecimalExtensions;
+using AlastairLundy.Extensions.System.DoubleExtensions;
+using AlastairLundy.Extensions.System.FloatExtensions;
 
 namespace AlastairLundy.Extensions.System.Maths.Averages
 {
@@ -45,7 +48,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
                 sum *= value;
             }
 
-            return Root.ToDouble(sum, Convert.ToDouble(values.Length));
+            return sum.Root(Convert.ToDouble(values.Length));
         }
 
         /// <summary>
@@ -62,7 +65,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
                 sum = Decimal.Multiply(sum, value);
             }
 
-            return Root.ToDecimal(sum, Convert.ToDecimal(values.Length));
+            return sum.Root(Convert.ToDecimal(values.Length));
         }
 
         /// <summary>
@@ -79,7 +82,7 @@ namespace AlastairLundy.Extensions.System.Maths.Averages
                 sum *= value;
             }
 
-            return Root.ToFloat(sum, Convert.ToSingle(values.Length));
+            return sum.Root(Convert.ToSingle(values.Length));
         }
     }
 }
