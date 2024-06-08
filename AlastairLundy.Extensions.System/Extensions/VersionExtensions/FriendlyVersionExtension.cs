@@ -34,6 +34,39 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         /// <summary>
         /// Returns the current version formatted in the specified formatting style.
         /// </summary>
+        /// <param name="version"></param>
+        /// <returns></returns>
+        public static string ToFriendlyVersion(this Version version)
+        {
+            bool showMinor = version.Minor != 0;
+            bool showBuild = version.Build != 0;
+            bool showRevision = version.Revision != 0;
+
+            switch (showRevision)
+            {
+                case true:
+                    return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+                default:
+                {
+                    if (showBuild)
+                    {
+                        return $"{version.Major}.{version.Minor}.{version.Build}";
+                    }
+                    else if(showMinor)
+                    {
+                        return $"{version.Major}.{version.Minor}";
+                    }
+                    else
+                    {
+                        return version.Major.ToString();
+                    }
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Returns the current version formatted in the specified formatting style.
+        /// </summary>
         /// <param name="version">The current version object.</param>
         /// <param name="friendlyVersionFormatStyle">The version format style to use.</param>
         /// <returns>the current version formatted in the specified formatting style as a string.</returns>
@@ -41,7 +74,7 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         public static string GetFriendlyVersionToString(this Version version,
             FriendlyVersionFormatStyle friendlyVersionFormatStyle = FriendlyVersionFormatStyle.AutomaticallyRemoveZeros)
         {
-            string dot = ".";
+            char dot = '.';
             
             bool showMinor = friendlyVersionFormatStyle == FriendlyVersionFormatStyle.MajorDotMinor;
             bool showBuild = friendlyVersionFormatStyle == FriendlyVersionFormatStyle.MajorDotMinorDotBuild;
