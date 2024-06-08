@@ -34,6 +34,7 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         /// <param name="value">The value to calculate the Nth root of.</param>
         /// <param name="n">The Nth root to be calculated.</param>
         /// <returns>the Nth root of the specified value.</returns>
+        [Obsolete]
         public static double Root(this double value, double n)
         {
             return Math.Pow(value, 1.0 / n);

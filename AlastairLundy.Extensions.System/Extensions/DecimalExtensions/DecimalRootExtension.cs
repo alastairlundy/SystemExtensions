@@ -24,6 +24,7 @@
 
 
 using System;
+
 using AlastairLundy.Extensions.System.Maths;
 
 namespace AlastairLundy.Extensions.System.DecimalExtensions
@@ -36,6 +37,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         /// <param name="value">The value to get the Nth root of.</param>
         /// <param name="n">The Nth root.</param>
         /// <returns>the Nth root of the specified value.</returns>
+        [Obsolete]
         public static decimal Root(this decimal value, decimal n)
         {
             return Power.ToDecimal(value, decimal.Divide(decimal.One, n));

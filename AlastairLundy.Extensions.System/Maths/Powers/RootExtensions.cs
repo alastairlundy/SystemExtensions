@@ -24,9 +24,9 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.FloatExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class FloatRootExtension
+    public static class RootExtensions
     {
         /// <summary>
         ///  Returns the Nth Root of a value.
@@ -37,6 +37,28 @@ namespace AlastairLundy.Extensions.System.FloatExtensions
         public static float Root(this float value, float n)
         {
             return value.Pow(Convert.ToSingle(1.0 / n));
+        }
+        
+        /// <summary>
+        /// Returns the Nth root of a specified value.
+        /// </summary>
+        /// <param name="value">The value to calculate the Nth root of.</param>
+        /// <param name="n">The Nth root to be calculated.</param>
+        /// <returns>the Nth root of the specified value.</returns>
+        public static double Root(this double value, double n)
+        {
+            return Math.Pow(value, 1.0 / n);
+        }
+        
+        /// <summary>
+        /// Returns the Nth Root of a value.
+        /// </summary>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The Nth root.</param>
+        /// <returns>the Nth root of the specified value.</returns>
+        public static decimal Root(this decimal value, decimal n)
+        {
+            return value.Pow(decimal.Divide(decimal.One, n));
         }
     }
 }
