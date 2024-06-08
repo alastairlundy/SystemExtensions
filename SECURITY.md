@@ -10,8 +10,8 @@ Extended Security Support covers all accepted security vulnerabilities of Modera
 
 | Version | Standard Security Support | Extended Security Support |
 | ------- | ------------------ |----|
-| 4.4.x   | Until System Extensions 4.6 | Until System Extensions 4.8 |
-| 4.3.x   | Until System Extensions 4.5 | Until System Extensions 4.7 |
+| 4.4.x   | Until System Extensions 4.6 | Until System Extensions 5.1 |
+| 4.3.x   | Until System Extensions 4.5 | Until System Extensions 5.0 |
 | 4.2.x   | Until September 13th 2024 | Until November 13th 2024 |
 | 4.1.x   | Until September 8th 2024 | Until November 8th 2024 |
 | 4.0.x   | Until August 8th 2024 | Until October 8th 2024 | 
