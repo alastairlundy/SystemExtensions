@@ -22,22 +22,39 @@
        SOFTWARE.
    */
 
-using System;
-using AlastairLundy.Extensions.System.Maths;
-
-namespace AlastairLundy.Extensions.System.DoubleExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class DoubleCubedExtension
+    public static class CubeExtensions
     {
+        
         /// <summary>
         /// Cubes a specified value.
         /// </summary>
         /// <param name="value">The value to be cubed.</param>
         /// <returns>the cubed value.</returns>
-        [Obsolete]
-        public static double Cubed(this double value)
+        public static double Cube(this double value)
         {
             return Power.ToDouble(value, 3);
+        }
+        
+        /// <summary>
+        /// Cubes a specified value.
+        /// </summary>
+        /// <param name="value">The value to be cubed.</param>
+        /// <returns>the cubed value.</returns>
+        public static decimal Cube(this decimal value)
+        {
+            return value.Power(3);
+        }
+
+        /// <summary>
+        /// Cubes a specified value.
+        /// </summary>
+        /// <param name="value">The value to be cubed.</param>
+        /// <returns>the cubed value.</returns>
+        public static float Cube(this float value)
+        {
+            return value.Power(3);
         }
     }
 }
