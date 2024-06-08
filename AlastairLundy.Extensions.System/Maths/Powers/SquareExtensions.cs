@@ -22,22 +22,38 @@
        SOFTWARE.
    */
 
-using System;
-using AlastairLundy.Extensions.System.Maths;
-
-namespace AlastairLundy.Extensions.System.DoubleExtensions
+namespace AlastairLundy.Extensions.System.Maths
 {
-    public static class DoubleSquaredExtension
+    public static class SquareExtensions
     {
         /// <summary>
-        /// Squares a specified value.
+        /// Multiplies a value by itself.
         /// </summary>
         /// <param name="value">The value to be squared.</param>
         /// <returns>the squared value.</returns>
-        [Obsolete]
-        public static double Squared(this double value)
+        public static float Square(this float value)
+        {
+            return value.Power(2);
+        }
+        
+        /// <summary>
+        /// Multiplies a value by itself.
+        /// </summary>
+        /// <param name="value">The value to be squared.</param>
+        /// <returns>the squared value.</returns>
+        public static double Square(this double value)
         {
             return Power.ToDouble(value, 2);
+        }
+        
+        /// <summary>
+        /// Multiplies a value by itself.
+        /// </summary>
+        /// <param name="value">The value to be squared.</param>
+        /// <returns>the squared value.</returns>
+        public static decimal Square(this decimal value)
+        {
+            return value.Power(2);
         }
     }
 }

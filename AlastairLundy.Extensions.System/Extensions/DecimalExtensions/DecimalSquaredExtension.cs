@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using AlastairLundy.Extensions.System.Maths;
 
 namespace AlastairLundy.Extensions.System.DecimalExtensions
@@ -33,6 +34,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         /// </summary>
         /// <param name="value">The value to be squared.</param>
         /// <returns>the squared value.</returns>
+        [Obsolete]
         public static decimal Squared(this decimal value)
         {
             return Power.ToDecimal(value, 2);
