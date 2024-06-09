@@ -34,6 +34,10 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Attempts to encode a string input from normal text to sArCaSm tExT.
         /// </summary>
+        /// <param name="input">The string to be converted.</param>
+        /// <param name="output">The converted string if successful; null otherwise.</param>
+        /// <returns>true if the conversion was successful; returns false otherwise.</returns>
+        public static bool TryEncode(string input, out string output)
         {
             try
             {
@@ -57,6 +61,10 @@ namespace AlastairLundy.Extensions.System
         }
 
         /// <summary>
+        /// Converts an IEnumerable of chars from normal text to sArCaSm tExT. 
+        /// </summary>
+        /// <param name="chars">The IEnumerable of chars to be converted.</param>
+        /// <returns>the converted chars.</returns>
         public static IEnumerable<char> Encode(IEnumerable<char> chars)
         {
             char[] enumerable = chars as char[] ?? chars.ToArray();
@@ -76,8 +84,8 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Converts a word in normal text to sArCaSm tExT.
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word">The word to be converted.</param>
+        /// <returns>the converted word.</returns>
         public static string Encode(string word)
         {
             string[] words = word.Split(' ');
@@ -103,8 +111,8 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Converts words in normal text to sArCaSm tExT.
         /// </summary>
-        /// <param name="words"></param>
-        /// <returns></returns>
+        /// <param name="words">The IEnumerable of words to be converted.</param>
+        /// <returns>the converted words.</returns>
         public static IEnumerable<string> Encode(IEnumerable<string> words)
         {
             string[] enumerable = words as string[] ?? words.ToArray();
@@ -122,8 +130,8 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Converts an IEnumerable of chars in sArCaSm tExT to normal text.
         /// </summary>
-        /// <param name="chars"></param>
-        /// <returns></returns>
+        /// <param name="chars">The IEnumerable of chars to be converted.</param>
+        /// <returns>the converted chars.</returns>
         public static IEnumerable<char> Decode(IEnumerable<char> chars)
         {
             char[] enumerable = chars as char[] ?? chars.ToArray();
@@ -143,8 +151,8 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Converts a word in sArCaSm tExT to normal text.
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word">The word to be converted.</param>
+        /// <returns>the converted word.</returns>
         public static string Decode(string word)
         {
             string[] words = word.Split(' ');
@@ -170,8 +178,8 @@ namespace AlastairLundy.Extensions.System
         /// <summary>
         /// Converts words in sArCaSm tExT to normal text.
         /// </summary>
-        /// <param name="words"></param>
-        /// <returns></returns>
+        /// <param name="words">The IEnumerable of words to be converted.</param>
+        /// <returns>the converted words.</returns>
         public static IEnumerable<string> Decode(IEnumerable<string> words)
         {
             string[] enumerable = words as string[] ?? words.ToArray();
