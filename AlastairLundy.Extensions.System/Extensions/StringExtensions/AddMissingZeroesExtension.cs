@@ -43,24 +43,22 @@ namespace AlastairLundy.Extensions.System.StringExtensions
             
             int dots = str.CountDotsInString();
 
-            if (dots == 0)
+            switch (dots)
             {
-                stringBuilder.Append('.');
-                stringBuilder.Append('0');
-            }
-            if (dots == 1 && numberOfZeroesNeeded > 1)
-            {
-                stringBuilder.Append('.');
-                stringBuilder.Append('0');
-            }
-            if (dots == 2 && numberOfZeroesNeeded > 2)
-            {
-                stringBuilder.Append('.');
-                stringBuilder.Append('0');
-            }
-            if (dots == 3 && numberOfZeroesNeeded == 3)
-            {
-                return str;
+                case 0:
+                    stringBuilder.Append('.');
+                    stringBuilder.Append('0');
+                    break;
+                case 1 when numberOfZeroesNeeded > 1:
+                    stringBuilder.Append('.');
+                    stringBuilder.Append('0');
+                    break;
+                case 2 when numberOfZeroesNeeded > 2:
+                    stringBuilder.Append('.');
+                    stringBuilder.Append('0');
+                    break;
+                case 3 when numberOfZeroesNeeded == 3:
+                    return str;
             }
 
             var newDots = stringBuilder.ToString().CountDotsInString();
