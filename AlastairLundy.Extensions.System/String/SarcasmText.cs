@@ -29,15 +29,11 @@ using System.Text;
 
 namespace AlastairLundy.Extensions.System.String
 {
-    public class SarcasmText
+    public static class SarcasmText
     {
         /// <summary>
-        /// 
+        /// Attempts to encode a string input from normal text to sArCaSm tExT.
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="output"></param>
-        /// <returns></returns>
-        public static bool TryParse(string input, out string output)
         {
             try
             {
@@ -56,6 +52,11 @@ namespace AlastairLundy.Extensions.System.String
         /// </summary>
         /// <param name="chars"></param>
         /// <returns></returns>
+                return false;
+            }
+        }
+
+        /// <summary>
         public static IEnumerable<char> Encode(IEnumerable<char> chars)
         {
             char[] enumerable = chars as char[] ?? chars.ToArray();
@@ -73,7 +74,7 @@ namespace AlastairLundy.Extensions.System.String
         }
         
         /// <summary>
-        /// 
+        /// Converts a word in normal text to sArCaSm tExT.
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
@@ -100,7 +101,7 @@ namespace AlastairLundy.Extensions.System.String
         }
         
         /// <summary>
-        /// 
+        /// Converts words in normal text to sArCaSm tExT.
         /// </summary>
         /// <param name="words"></param>
         /// <returns></returns>
@@ -119,7 +120,7 @@ namespace AlastairLundy.Extensions.System.String
         }
 
         /// <summary>
-        /// 
+        /// Converts an IEnumerable of chars in sArCaSm tExT to normal text.
         /// </summary>
         /// <param name="chars"></param>
         /// <returns></returns>
@@ -140,7 +141,7 @@ namespace AlastairLundy.Extensions.System.String
         }
 
         /// <summary>
-        /// 
+        /// Converts a word in sArCaSm tExT to normal text.
         /// </summary>
         /// <param name="word"></param>
         /// <returns></returns>
@@ -167,7 +168,7 @@ namespace AlastairLundy.Extensions.System.String
         }
 
         /// <summary>
-        /// 
+        /// Converts words in sArCaSm tExT to normal text.
         /// </summary>
         /// <param name="words"></param>
         /// <returns></returns>
