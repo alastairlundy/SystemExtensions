@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         [Obsolete]
         public static decimal Squared(this decimal value)
         {
-            return Power.ToDecimal(value, 2);
+            return value.Square();
         }
     }
 }

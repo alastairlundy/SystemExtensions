@@ -39,7 +39,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         [Obsolete]
         public static decimal Pow(this decimal x, decimal y)
         {
-            return Power.ToDecimal(x, y);
+            return x.Power(y);
         }
     }
 }

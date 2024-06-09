@@ -40,7 +40,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         [Obsolete]
         public static decimal Root(this decimal value, decimal n)
         {
-            return Power.ToDecimal(value, decimal.Divide(decimal.One, n));
+            return value.Power(decimal.Divide(decimal.One, n));
         }
     }
 }

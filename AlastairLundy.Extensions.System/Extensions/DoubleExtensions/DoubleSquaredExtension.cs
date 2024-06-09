@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         [Obsolete]
         public static double Squared(this double value)
         {
-            return Power.ToDouble(value, 2);
+            return value.Square();
         }
     }
 }

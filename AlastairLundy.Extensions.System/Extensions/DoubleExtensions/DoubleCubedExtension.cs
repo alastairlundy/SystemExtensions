@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         [Obsolete]
         public static double Cubed(this double value)
         {
-            return Power.ToDouble(value, 3);
+            return value.Cube();
         }
     }
 }

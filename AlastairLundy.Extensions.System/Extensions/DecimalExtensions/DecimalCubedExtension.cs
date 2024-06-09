@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         [Obsolete]
         public static decimal Cubed(this decimal value)
         {
-            return Power.ToDecimal(value, 3);
+            return value.Power(3);
         }
     }
 }
