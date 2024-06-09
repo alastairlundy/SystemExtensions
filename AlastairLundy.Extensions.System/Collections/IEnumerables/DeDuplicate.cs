@@ -39,7 +39,19 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="enumerable">The IEnumerable to be searched.</param>
         /// <typeparam name="T"></typeparam>
         /// <returns>true if duplicates are found in the IEnumerable; returns false otherwise.</returns>
+        [Obsolete]
         public static bool FoundDuplicate<T>(IEnumerable<T> enumerable)
+        {
+            return ContainsDuplicates(enumerable);
+        }
+
+        /// <summary>
+        /// Returns whether an IEnumerable contains duplicate instances of an object.
+        /// </summary>
+        /// <param name="enumerable">The IEnumerable to be searched.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>true if the IEnumerable contains duplicate objects; returns false otherwise.</returns>
+        public static bool ContainsDuplicates<T>(IEnumerable<T> enumerable)
         {
             Dictionary<T, int> frequency = FrequencyOf.Objects(enumerable);
 
@@ -51,7 +63,7 @@ namespace AlastairLundy.Extensions.System.Collections
                 }
             }
 
-            return false;
+            return false;   
         }
         
         /// <summary>
@@ -84,7 +96,7 @@ namespace AlastairLundy.Extensions.System.Collections
         {
             T[] toBeDeDuplicated = enumerableToBeDeDuplicated as T[] ?? enumerableToBeDeDuplicated.ToArray();
             
-            if (!FoundDuplicate(toBeDeDuplicated))
+            if (!ContainsDuplicates(toBeDeDuplicated))
             {
                 destinationEnumerable = toBeDeDuplicated;
                 return false;
