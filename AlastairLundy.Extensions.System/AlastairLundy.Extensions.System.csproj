@@ -6,36 +6,36 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.3.0
+        <PackageReleaseNotes>## Changes since 4.4.0
 
 ### Additions
-* Added ``FrequencyOf`` static class
-* Added ``ArrayCombiner`` static class
-* Added ``DeDuplicate`` static class
-* Added ``IndexOf`` IEnumerable Extension method
-* Added DateTime Subtract Extension methods
-* Added DateOnly Subtract Extension methods
-* Added Extension Method to convert DateOnly to DateTime
+* Added ``IBigCollection`` Interface
+* Added ``SarcasmText`` class - This will replace most Sarcasm Text string extensions in version 5.
+* Added replacement method for ``GetFriendlyVersionToString``. The new method is ``ToFriendlyVersionString``
+* Added ``Power`` extension methods for Float, Double, and Decimal. These wil replace the ``Pow`` extension methods and ``Power`` class.
+* Added ``CubeRoot`` extension methods for Float, Double, and Decimal. These will replace the ``Cbrt`` extension methods.
+* Added ``SquareRoot`` extension methods for Float, Double, and Decimal. These will replace the ``Sqrt`` extension methods.
+* Added replacement ``Cube`` extension methods - These will function identically to the existing ``Cube`` extension methods but are in the same file and static class. The original extension methods will be removed in version 5.
+* Added replacement ``Square`` extension methods - These will function identically to the existing ``Square`` extension methods but are in the same file and static class. The original extension methods will be removed in version 5.
+* Added missing xml doc comments in the ``Median`` class.
 
 ### Changes
-* Optimized Version extension methods
-* Improved robustness of HashMap ``GetKeys`` extension method
-* Updated ``ValueNotFoundException`` to use String Interpolation for Exception message
-* Started work towards Localizing Exception messages
-* Internal changes to Mode class include removing duplicate code
+* Replaced usage of deprecated methods and classes with non-deprecated methods and classes
+* Replaced ``Power`` method implmentations with wrappers around C#'s built in Math.Pow.
 
 ### Deprecations
-* Deprecated ``IHashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
-* Deprecated ``HashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
-* Deprecated ``VersionFormatStyle`` enum - This will be removed in 5.0
-* Deprecated ``GetFriendlyVersionToString`` method - This will be removed in 5.0 . A replacement method will be added in 4.5.0</PackageReleaseNotes>
+* Deprecated the ``DeDuplicate`` class's ``FoundDuplicate`` method - This will be removed in version 5. Please use the ``Contains Duplicate`` method instead. 
+* Deprecated the ``Sum`` class - This will be removed in version 5. This is not being replaced. Please use C#'s built in LINQ extension method instead.
+* Deprecated the ``Power`` class - This will be removed in version 5. Please use the Power extension methods instead.
+* Deprecated the ``Root`` class - This will be removed in version 5. Please use the Root extension methods instead.
+* Deprecated the Sarcasm Text String extension me thods - These will be removed in version 5. This has been replaced with the SarcasmText class.</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.4.0.0</AssemblyVersion>
-        <FileVersion>4.4.0.0</FileVersion>
-        <Version>4.4.0</Version>
-        <PackageVersion>4.4.0</PackageVersion>
+        <AssemblyVersion>4.5.0.0</AssemblyVersion>
+        <FileVersion>4.5.0.0</FileVersion>
+        <Version>4.5.0</Version>
+        <PackageVersion>4.5.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
