@@ -52,10 +52,21 @@ namespace AlastairLundy.Extensions.System
         }
 
         /// <summary>
-        /// 
+        /// Attempts to decode a string input from sArCaSm tExT to normal text.
         /// </summary>
-        /// <param name="chars"></param>
-        /// <returns></returns>
+        /// <param name="input">The string to be converted.</param>
+        /// <param name="output">The converted string if successful; null otherwise.</param>
+        /// <returns>true if the conversion was successful; returns false otherwise.</returns>
+        public static bool TryDecode(string input, out string output)
+        {
+            try
+            {
+                output = Decode(input);
+                return true;
+            }
+            catch
+            {
+                output = null;
                 return false;
             }
         }
