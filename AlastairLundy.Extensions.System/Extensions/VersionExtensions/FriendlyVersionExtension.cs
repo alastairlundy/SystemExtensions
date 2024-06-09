@@ -36,7 +36,7 @@ namespace AlastairLundy.Extensions.System.VersionExtensions
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public static string ToFriendlyVersion(this Version version)
+        public static string ToFriendlyVersionString(this Version version)
         {
             bool showMinor = version.Minor != 0;
             bool showBuild = version.Build != 0;
