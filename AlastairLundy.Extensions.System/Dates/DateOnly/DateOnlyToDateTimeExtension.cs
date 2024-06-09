@@ -22,21 +22,24 @@
        SOFTWARE.
    */
 
-using System.Collections;
+using System;
 
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class DateOnlyToDateTimeExtension
     {
-        ulong Count { get; }
-
-        bool IsReadOnly { get; }
-
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
+#if NET6_0_OR_GREATER
         
-        bool Contains(T item);
+        /// <summary>
+        /// Creates a new DateTime object with the Date from a DateOnly object.
+        /// </summary>
+        /// <param name="dateOnly">The date to be converted to a DateTime object.</param>
+        /// <returns>the newly created DateTime object.</returns>
+        public static DateTime ToDateTime(this DateOnly dateOnly)
+        {
+            return DateTime.Parse(dateOnly.ToLongDateString());
+        }
+            
+#endif
     }
 }

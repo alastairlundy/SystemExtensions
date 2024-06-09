@@ -22,21 +22,28 @@
        SOFTWARE.
    */
 
-using System.Collections;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class DotCountingExtensions
     {
-        ulong Count { get; }
+        /// <summary>
+        /// Counts the number of periods/full stops/dots in a string.
+        /// </summary>
+        /// <param name="str">The string to be checked.</param>
+        /// <returns>the number of periods/full stops/dots in a string</returns>
+        public static int CountDotsInString(this string str)
+        {
+            int dotCounter = 0;
 
-        bool IsReadOnly { get; }
+            foreach (char c in str)
+            {
+                if (c.Equals('.'))
+                {
+                    dotCounter++;
+                }
+            }
 
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
-        
-        bool Contains(T item);
+            return dotCounter;
+        }
     }
 }

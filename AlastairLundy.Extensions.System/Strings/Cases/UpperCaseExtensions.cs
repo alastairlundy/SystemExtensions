@@ -22,21 +22,29 @@
        SOFTWARE.
    */
 
-using System.Collections;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class UpperCaseExtensions
     {
-        ulong Count { get; }
-
-        bool IsReadOnly { get; }
-
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
+        /// <summary>
+        /// Returns whether a character is an upper case letter or not.
+        /// </summary>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is an upper case character, returns false otherwise.</returns>
+        public static bool IsUpperCaseLetter(this char c)
+        {
+            return c.ToString().Equals(c.ToString().ToUpper());
+        }
         
-        bool Contains(T item);
+        /// <summary>
+        /// Returns whether a character, represented as a string, is an upper case letter or not.
+        /// </summary>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if a character, represented as a string, is upper case; returns false otherwise.</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static bool IsUpperCaseLetter(this string s)
+        {
+            return s.Equals(s.ToUpper());
+        }
     }
 }

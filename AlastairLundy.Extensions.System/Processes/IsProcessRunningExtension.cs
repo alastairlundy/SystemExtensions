@@ -22,21 +22,34 @@
        SOFTWARE.
    */
 
-using System.Collections;
+using System.Diagnostics;
 
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Processes
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class IsProcessRunningExtension
     {
-        ulong Count { get; }
+        /// <summary>
+        /// Check to see if a specified process is running or not.
+        /// </summary>
+        /// <param name="process">The process object.</param>
+        /// <param name="processName">The name of the process to be checked.</param>
+        /// <returns>true if the specified process is running; returns false otherwise.</returns>
+        public static bool IsProcessRunning(this Process process, string processName)
+        {
+            foreach (Process proc in Process.GetProcesses())
+            {
+                string procName =  proc.ProcessName.Replace("System.Diagnostics.Process (", string.Empty);
+                
+                processName = processName.Replace(".exe", string.Empty);
+                
+                if (procName.ToLower().Equals(processName.ToLower()) ||
+                    procName.ToLower().Contains(processName.ToLower()))
+                {
+                    return true;
+                }
+            }
 
-        bool IsReadOnly { get; }
-
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
-        
-        bool Contains(T item);
+            return false;
+        }
     }
 }

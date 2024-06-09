@@ -22,21 +22,25 @@
        SOFTWARE.
    */
 
-using System.Collections;
+using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.System.Collections
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class DictionaryToExtensions
     {
-        ulong Count { get; }
+        /// <summary>
+        /// Creates a HashMap object with the values from a Dictionary.
+        /// </summary>
+        /// <typeparam name="TKey">The type of Key in the Dictionary and HashMap.</typeparam>
+        /// <typeparam name="TValue">The type of Value in the Dictionary and HashMap.</typeparam>
+        /// <param name="dictionary">The Dictionary to get values from.</param>
+        /// <returns>a HashMap with the values from the specified Dictionary.</returns>
+        public static HashMap<TKey, TValue> ToHashMap<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
+        {
+            HashMap<TKey, TValue> hashMap = new HashMap<TKey, TValue>();
+            hashMap.PutDictionary(dictionary);
 
-        bool IsReadOnly { get; }
-
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
-        
-        bool Contains(T item);
+            return hashMap;
+        }
     }
 }

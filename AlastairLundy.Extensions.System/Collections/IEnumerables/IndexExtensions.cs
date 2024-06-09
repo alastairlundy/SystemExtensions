@@ -22,21 +22,37 @@
        SOFTWARE.
    */
 
-using System.Collections;
+using System.Collections.Generic;
+
+using AlastairLundy.Extensions.System.Exceptions;
 
 namespace AlastairLundy.Extensions.System.Collections
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class IndexExtensions
     {
-        ulong Count { get; }
+        /// <summary>
+        /// Returns the index of an object in an IEnumerable.
+        /// </summary>
+        /// <param name="enumerable">The IEnumerable to be searched.</param>
+        /// <param name="obj">The object to get the index of.</param>
+        /// <typeparam name="T">The type of object in the IEnumerable.</typeparam>
+        /// <returns>the index of an object in an IEnumerable, if the IEnumerable contains the object; throws an exception otherwise.</returns>
+        /// <exception cref="ValueNotFoundException">Thrown if the IEnumerable does not contain the specified object.</exception>
+        public static int IndexOf<T>(this IEnumerable<T> enumerable, T obj)
+        {
+            int index = 0;
 
-        bool IsReadOnly { get; }
+            foreach (T item in enumerable)
+            {
+                if (item.Equals(obj))
+                {
+                    return index;
+                }
+                
+                index++;
+            }
 
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
-        
-        bool Contains(T item);
+            throw new ValueNotFoundException(nameof(enumerable));
+        }
     }
 }

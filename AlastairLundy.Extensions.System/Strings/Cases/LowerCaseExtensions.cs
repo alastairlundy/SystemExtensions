@@ -22,21 +22,28 @@
        SOFTWARE.
    */
 
-using System.Collections;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System
 {
-    // ReSharper disable once TypeParameterCanBeVariant
-    public interface IBigCollection<T> : IEnumerable
+    public static class LowerCaseExtensions
     {
-        ulong Count { get; }
-
-        bool IsReadOnly { get; }
-
-        void Add(T item);
-        void Clear();
-        void Remove(T item);
+        /// <summary>
+        /// Returns whether a character is a lower case letter or not.
+        /// </summary>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is a lower case character, returns false otherwise.</returns>
+        public static bool IsLowerCaseCharacter(this char c)
+        {
+            return c.ToString().Equals(c.ToString().ToLower());
+        }
         
-        bool Contains(T item);
+        /// <summary>
+        /// Returns whether a character, represented by a string, is a lower case letter or not.
+        /// </summary>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if a character, represented as a string, is lower case; returns false otherwise.</returns>
+        public static bool IsLowerCaseLetter(this string s)
+        {
+            return s.Equals(s.ToLower());
+        }
     }
 }
