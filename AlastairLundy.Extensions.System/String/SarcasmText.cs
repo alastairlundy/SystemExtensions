@@ -27,7 +27,7 @@ using System.Linq;
 
 using System.Text;
 
-namespace AlastairLundy.Extensions.System.String
+namespace AlastairLundy.Extensions.System
 {
     public static class SarcasmText
     {
