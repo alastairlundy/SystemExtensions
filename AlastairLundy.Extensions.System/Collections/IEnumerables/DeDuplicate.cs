@@ -51,6 +51,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="enumerable">The IEnumerable to be searched.</param>
         /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
         /// <returns>true if the IEnumerable contains duplicate objects; returns false otherwise.</returns>
+        [Obsolete]
         public static bool ContainsDuplicates<T>(IEnumerable<T> enumerable)
         {
             Dictionary<T, int> frequency = FrequencyOf.Objects(enumerable);
@@ -73,6 +74,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
         /// <returns>an IEnumerable with duplicate objects removed.</returns>
         /// <exception cref="NullReferenceException">Thrown if no objects exist in the IEnumerable.</exception>
+        [Obsolete]
         public static IEnumerable<T> FromIEnumerable<T>(IEnumerable<T> enumerable)
         {
             Dictionary<T, int> frequency = FrequencyOf.Objects(enumerable);
@@ -92,6 +94,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="destinationEnumerable">The IEnumerable with duplicates removed, if any duplicates were found.</param>
         /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
         /// <returns>whether duplicates of an object were removed from the specified IEnumerable.</returns>
+        [Obsolete]
         public static bool TryFromIEnumerable<T>(IEnumerable<T> enumerableToBeDeDuplicated, out IEnumerable<T> destinationEnumerable)
         {
             T[] toBeDeDuplicated = enumerableToBeDeDuplicated as T[] ?? enumerableToBeDeDuplicated.ToArray();
