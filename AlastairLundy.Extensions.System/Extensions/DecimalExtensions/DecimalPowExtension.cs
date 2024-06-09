@@ -27,7 +27,7 @@ using AlastairLundy.Extensions.System.Maths;
 
 namespace AlastairLundy.Extensions.System.DecimalExtensions
 {
-    public class DecimalPowExtension
+    public static class DecimalPowExtension
     {
         /// <summary>
         /// Returns the results of a specified number raised to a specified power.
@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         /// <param name="x">A decimal to be raised to a power.</param>
         /// <param name="y">A decimal that specified a power.</param>
         /// <returns>a specified number raised to a specified power.</returns>
-        public static decimal Pow(decimal x, decimal y)
+        public static decimal Pow(this decimal x, decimal y)
         {
             return Power.ToDecimal(x, y);
         }
