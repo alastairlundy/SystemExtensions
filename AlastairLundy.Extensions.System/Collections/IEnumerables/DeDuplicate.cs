@@ -34,18 +34,6 @@ namespace AlastairLundy.Extensions.System.Collections
     public class DeDuplicate
     {
         /// <summary>
-        /// Returns whether duplicates of an object exist in a IEnumerable.
-        /// </summary>
-        /// <param name="enumerable">The IEnumerable to be searched.</param>
-        /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
-        /// <returns>true if duplicates are found in the IEnumerable; returns false otherwise.</returns>
-        [Obsolete]
-        public static bool FoundDuplicate<T>(IEnumerable<T> enumerable)
-        {
-            return ContainsDuplicates(enumerable);
-        }
-
-        /// <summary>
         /// Returns whether an IEnumerable contains duplicate instances of an object.
         /// </summary>
         /// <param name="enumerable">The IEnumerable to be searched.</param>
