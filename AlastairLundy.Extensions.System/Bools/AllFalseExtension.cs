@@ -22,25 +22,26 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.BoolArrayExtensions
+using System.Collections.Generic;
+
+namespace AlastairLundy.Extensions.System
 {
-    public static class AllTrueExtension
+    public static class AllFalseExtensions
     {
         /// <summary>
-        /// Returns whether all the bool objects in an array are true or not.
+        /// Returns whether all the bool objects in an array are false or not.
         /// </summary>
         /// <param name="inputs">The bool array to be checked.</param>
-        /// <returns>true if all the bool objects in the array are true, returns false otherwise.</returns>
-        public static bool IsAllTrue(this bool[] inputs)
+        /// <returns>true if all the bool objects in the array are false, returns false otherwise.</returns>
+        public static bool IsAllFalse(this IEnumerable<bool> inputs)
         {
             foreach (bool input in inputs)
             {
-                if (input.Equals(false))
+                if (input.Equals(true))
                 {
                     return false;
                 }
             }
-
             return true;
         }
     }
