@@ -65,13 +65,13 @@ namespace AlastairLundy.Extensions.System.Collections
 
             foreach (T item in enumerable)
             {
+#if NET6_0_OR_GREATER
+                if (!items.TryAdd(item, 1))
+#else
                 if (items.ContainsKey(item))
+#endif
                 {
                     items[item] += 1;
-                }
-                else
-                {
-                    items.Add(item, 1);
                 }
             }
 
