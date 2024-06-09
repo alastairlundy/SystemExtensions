@@ -26,9 +26,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlastairLundy.Extensions.System.IEnumerableExtensions
+namespace AlastairLundy.Extensions.System.Collections
 {
-    public static class CombineIEnumerableExtension
+    public static class CombineExtensions
     {
         
         /// <summary>
