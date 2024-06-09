@@ -23,6 +23,7 @@
    */
 
 using System;
+using AlastairLundy.Extensions.System.Maths;
 
 namespace AlastairLundy.Extensions.System.DoubleExtensions
 {
@@ -36,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DoubleExtensions
         [Obsolete]
         public static double Cbrt(this double value)
         {
-            return value.Root(3);
+            return value.CubeRoot();
         }
     }
 }

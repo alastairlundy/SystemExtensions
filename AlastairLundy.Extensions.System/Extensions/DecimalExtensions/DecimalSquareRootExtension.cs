@@ -23,6 +23,7 @@
    */
 
 using System;
+using AlastairLundy.Extensions.System.Maths;
 
 namespace AlastairLundy.Extensions.System.DecimalExtensions
 {
@@ -36,7 +37,7 @@ namespace AlastairLundy.Extensions.System.DecimalExtensions
         [Obsolete]
         public static decimal Sqrt(this decimal value)
         {
-            return value.Root(2);
+            return value.SquareRoot();
         }
     }
 }
