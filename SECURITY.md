@@ -4,9 +4,9 @@
 
 These are the currently supported versions of LocalizationKit.
 
-Standard Security Support covers bug fixes and all accepted security vulnerabilities of Low, Moderate, or High severity.
+Standard Security Support covers bug fixes and all accepted security vulnerabilities of Low, Moderate, High, or Critical severity.
 
-Extended Security Support covers all accepted security vulnerabilities of Moderate or High severity.
+Extended Security Support covers all accepted security vulnerabilities of Moderate, High, or Critical severity.
 
 | Version | Standard Security Support | Extended Security Support |
 | ------- | ------------------ |----|
