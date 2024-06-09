@@ -6,36 +6,15 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Changes since 4.3.0
-
-### Additions
-* Added ``FrequencyOf`` static class
-* Added ``ArrayCombiner`` static class
-* Added ``DeDuplicate`` static class
-* Added ``IndexOf`` IEnumerable Extension method
-* Added DateTime Subtract Extension methods
-* Added DateOnly Subtract Extension methods
-* Added Extension Method to convert DateOnly to DateTime
-
-### Changes
-* Optimized Version extension methods
-* Improved robustness of HashMap ``GetKeys`` extension method
-* Updated ``ValueNotFoundException`` to use String Interpolation for Exception message
-* Started work towards Localizing Exception messages
-* Internal changes to Mode class include removing duplicate code
-
-### Deprecations
-* Deprecated ``IHashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
-* Deprecated ``HashMap``'s ``IsEmpty`` and ``Count`` methods - These will be removed in 5.0
-* Deprecated ``VersionFormatStyle`` enum - This will be removed in 5.0
-* Deprecated ``GetFriendlyVersionToString`` method - This will be removed in 5.0 . A replacement method will be added in 4.5.0</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 4.4.0
+* Fixed an issue where the Decimal ``Pow`` extension method was not actually an extension meethod.</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>4.4.0.0</AssemblyVersion>
-        <FileVersion>4.4.0.0</FileVersion>
-        <Version>4.4.0</Version>
-        <PackageVersion>4.4.0</PackageVersion>
+        <AssemblyVersion>4.4.1.0</AssemblyVersion>
+        <FileVersion>4.4.1.0</FileVersion>
+        <Version>4.4.1</Version>
+        <PackageVersion>4.4.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
