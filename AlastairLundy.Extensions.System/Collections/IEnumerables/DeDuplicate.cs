@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// Returns whether duplicates of an object exist in a IEnumerable.
         /// </summary>
         /// <param name="enumerable">The IEnumerable to be searched.</param>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
         /// <returns>true if duplicates are found in the IEnumerable; returns false otherwise.</returns>
         [Obsolete]
         public static bool FoundDuplicate<T>(IEnumerable<T> enumerable)
@@ -49,7 +49,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// Returns whether an IEnumerable contains duplicate instances of an object.
         /// </summary>
         /// <param name="enumerable">The IEnumerable to be searched.</param>
-        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T">The type of objects in the IEnumerable.</typeparam>
         /// <returns>true if the IEnumerable contains duplicate objects; returns false otherwise.</returns>
         public static bool ContainsDuplicates<T>(IEnumerable<T> enumerable)
         {
