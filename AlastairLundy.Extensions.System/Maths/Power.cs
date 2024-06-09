@@ -86,6 +86,7 @@ namespace AlastairLundy.Extensions.System.Maths
         /// <param name="x">A 32 Bit Integer to be raised to a power.</param>
         /// <param name="y">A 32 Bit Integer that specifies a power.</param>
         /// <returns>a 32 Bit Integer raised to a specified power.</returns>
+        [Obsolete]
         public static int ToInt32(int x, int y)
         {
             return Convert.ToInt32(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
