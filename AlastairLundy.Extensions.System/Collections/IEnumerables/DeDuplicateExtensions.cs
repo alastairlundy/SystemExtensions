@@ -41,7 +41,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <returns>true if the IEnumerable contains duplicate objects; returns false otherwise.</returns>
         public static bool ContainsDuplicates<T>(this IEnumerable<T> enumerable)
         {
-            Dictionary<T, int> frequency = FrequencyOfExtensions.FrequencyOfAll(enumerable);
+            Dictionary<T, int> frequency = enumerable.FrequencyOfAll();
 
             foreach (int frequencyValue in frequency.Values)
             {
@@ -63,7 +63,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <exception cref="NullReferenceException">Thrown if no objects exist in the IEnumerable.</exception>
         public static IEnumerable<T> DeDuplicate<T>(this IEnumerable<T> enumerable)
         {
-            Dictionary<T, int> frequency = FrequencyOfExtensions.FrequencyOfAll(enumerable);
+            Dictionary<T, int> frequency = enumerable.FrequencyOfAll();
 
             if (frequency.Keys.Count == 0 || frequency.Keys.Count < 1)
             {
