@@ -26,7 +26,7 @@ using System.Diagnostics;
 
 namespace AlastairLundy.Extensions.System.Processes
 {
-    public static class IsProcessRunningExtension
+    public static class IsProcessRunningExtensions
     {
         /// <summary>
         /// Check to see if a specified process is running or not.
