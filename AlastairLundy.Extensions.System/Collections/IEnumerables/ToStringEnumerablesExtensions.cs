@@ -22,28 +22,41 @@
        SOFTWARE.
    */
 
+using System;
 using System.Collections.Generic;
-using System.Globalization;
 
-namespace AlastairLundy.Extensions.System.DecimalArrayExtensions
+namespace AlastairLundy.Extensions.System.Collections
 {
-    public static class DecimalArrayToStringArrayExtension
+    public static class ToStringEnumerablesExtensions
     {
         /// <summary>
-        /// Converts a decimal array to a string array.
+        /// 
         /// </summary>
-        /// <param name="array">The array to be converted.</param>
-        /// <returns>a string array with the values of the specified decimal array.</returns>
-        public static string[] ToStringArray(this decimal[] array)
+        /// <param name="enumerable"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static IEnumerable<string> ToStringEnumerable<T>(this IEnumerable<T> enumerable)
         {
-            List<string> list = new List<string>();
-
-            foreach (decimal value in array)
+            if (typeof(T).GetMethod("ToString")?.DeclaringType != typeof(object) && typeof(T) != typeof(object))
             {
-                list.Add(value.ToString(CultureInfo.CurrentCulture));
-            }
+                List<string> list = new List<string>();
 
-            return list.ToArray();
+                foreach (T item in enumerable)
+                {
+                    if (item.GetType() != typeof(object))
+                    {
+                        list.Add(item.ToString());
+                    }
+                }
+
+                return list.ToArray();
+            }
+            // ReSharper disable once RedundantIfElseBlock
+            else
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }
