@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Versioning
 {
     public static class DotCountingExtensions
     {

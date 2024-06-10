@@ -25,9 +25,9 @@
 using System;
 using System.Text;
 
-namespace AlastairLundy.Extensions.System.StringExtensions
+namespace AlastairLundy.Extensions.System.Versioning
 {
-    public static class AddMissingZeroesExtension
+    public static class AddMissingZeroesExtensions
     {
         /// <summary>
         /// Add missing zeroes to the version string if it is missing zeroes.
@@ -61,7 +61,7 @@ namespace AlastairLundy.Extensions.System.StringExtensions
                     return str;
             }
 
-            var newDots = stringBuilder.ToString().CountDotsInString();
+            int newDots = stringBuilder.ToString().CountDotsInString();
         
             if (newDots == 1 && numberOfZeroesNeeded == 1 || 
                 newDots == 2 && numberOfZeroesNeeded == 2 || 

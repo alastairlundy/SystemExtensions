@@ -23,9 +23,8 @@
    */
 
 using System.Diagnostics;
-using AlastairLundy.Extensions.System.Processes;
 
-namespace AlastairLundy.Extensions.System.ProcessExtensions
+namespace AlastairLundy.Extensions.System.Processes
 {
     public static class GetProcessFromProcessNameExtension
     {
