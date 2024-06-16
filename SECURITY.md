@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-These are the currently supported versions of LocalizationKit.
+These are the currently supported versions of System Extensions.
 
 Standard Security Support covers bug fixes and all accepted security vulnerabilities of Low, Moderate, High, or Critical severity.
 
