@@ -47,6 +47,16 @@ namespace AlastairLundy.Extensions.System.Collections
         {
             _dictionary = new Dictionary<TKey, TValue>();
         }
+
+        /// <summary>
+        /// Returns whether the HashMap is empty or not.
+        /// </summary>
+        public bool IsEmpty => Count == 0;
+
+        /// <summary>
+        /// Returns the number of KeyValuePairs in the HashMap. 
+        /// </summary>
+        public int Count => _dictionary.Count;
         
         /// <summary>
         /// Add a Key and a corresponding Value to the HashMap.
