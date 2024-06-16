@@ -60,11 +60,5 @@ namespace AlastairLundy.Extensions.System.Collections
         bool ContainsKey(TKey key);
         bool ContainsValue(TValue value);
         bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair);
-
-        [Obsolete]
-        bool IsEmpty();
-
-        [Obsolete]
-        int Count();
     }
 }
