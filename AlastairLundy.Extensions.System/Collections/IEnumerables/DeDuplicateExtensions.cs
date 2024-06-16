@@ -67,7 +67,7 @@ namespace AlastairLundy.Extensions.System.Collections
 
             if (frequency.Keys.Count == 0 || frequency.Keys.Count < 1)
             {
-                throw new NullReferenceException();
+                throw new ArgumentException();
             }
             
             return frequency.Keys.ToArray();
@@ -83,15 +83,23 @@ namespace AlastairLundy.Extensions.System.Collections
         public static bool TryDeDuplicate<T>(this IEnumerable<T> enumerableToBeDeDuplicated, out IEnumerable<T> destinationEnumerable)
         {
             T[] toBeDeDuplicated = enumerableToBeDeDuplicated as T[] ?? enumerableToBeDeDuplicated.ToArray();
-            
-            if (!ContainsDuplicates(toBeDeDuplicated))
+
+            try
+            {
+                if (!ContainsDuplicates(toBeDeDuplicated))
+                {
+                    destinationEnumerable = toBeDeDuplicated;
+                    return false;
+                }
+
+                destinationEnumerable = DeDuplicate(toBeDeDuplicated);
+                return true;
+            }
+            catch
             {
                 destinationEnumerable = toBeDeDuplicated;
                 return false;
             }
-
-            destinationEnumerable = DeDuplicate(toBeDeDuplicated);
-            return true;
         }
     }
 }
