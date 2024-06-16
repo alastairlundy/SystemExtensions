@@ -313,25 +313,5 @@ namespace AlastairLundy.Extensions.System.Collections
         {
             return _dictionary.Equals(map.ToDictionary());
         }
-
-        /// <summary>
-        /// Returns whether the HashMap is empty or not.
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete]
-        public bool IsEmpty()
-        {
-            return Count() > 0;
-        }
-
-        /// <summary>
-        /// Returns the number of KeyValuePairs in the HashMap. 
-        /// </summary>
-        /// <returns></returns>
-        [Obsolete]
-        public int Count()
-        {
-            return _dictionary.Count;
-        }
     }
 }
