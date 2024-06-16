@@ -131,12 +131,19 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <returns>The value associated with the key if the key has been found in the HashMap. Returns the defaultValue otherwise.</returns>
         public TValue GetValueOrDefault(TKey key, TValue defaultValue)
         {
-            if (ContainsKey(key))
+            try
             {
-                return GetValue(key);
+                if (ContainsKey(key))
+                {
+                    return GetValue(key);
+                }
+                // ReSharper disable once RedundantIfElseBlock
+                else
+                {
+                    return defaultValue;
+                }
             }
-            // ReSharper disable once RedundantIfElseBlock
-            else
+            catch
             {
                 return defaultValue;
             }
