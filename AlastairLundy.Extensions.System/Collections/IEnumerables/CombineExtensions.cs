@@ -71,8 +71,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="enumerableTwo">The second IEnumerable to be added.</param>
         /// <param name="destinationEnumerable"></param>
         /// <typeparam name="T">The type of the value.</typeparam>
-        public static void Combine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo,
-            out IEnumerable<T> destinationEnumerable)
+        public static void Combine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo, out IEnumerable<T> destinationEnumerable)
         {
             destinationEnumerable = enumerableOne.Combine(enumerableTwo);
         }
@@ -86,8 +85,7 @@ namespace AlastairLundy.Extensions.System.Collections
         /// <param name="destinationEnumerable">The combined IEnumerable if sucessful; is null otherwise.</param>
         /// <typeparam name="T">The type of the value.</typeparam>
         /// <returns>true if combining IEnumerables was successful; returns false otherwise.</returns>
-        public static bool TryCombine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo,
-            out IEnumerable<T> destinationEnumerable)
+        public static bool TryCombine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo, out IEnumerable<T> destinationEnumerable)
         {
             try
             {
