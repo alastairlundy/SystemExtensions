@@ -43,7 +43,6 @@ namespace AlastairLundy.Extensions.System.Collections
         {   
             T[] arrayOne = enumerableOne as T[] ?? enumerableOne.ToArray();
             T[] arrayTwo = enumerableTwo as T[] ?? enumerableTwo.ToArray();
-
             
 #if NET6_0_OR_GREATER
             if (arrayOne.Length + arrayTwo.Length > Array.MaxLength)
