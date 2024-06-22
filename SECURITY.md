@@ -10,7 +10,7 @@ Extended Security Support covers all accepted security vulnerabilities of Modera
 
 | Version | Standard Security Support | Extended Security Support |
 | ------- | ------------------ |----|
-| 4.5.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
+| 4.5.x   | Until System Extensions 5.1 | Until System Extensions 5.2 |
 | 4.4.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
 | 4.3.x   | :x: | Until System Extensions 5.0 |
 | 4.2.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
