@@ -1,7 +1,7 @@
 ﻿/*
         MIT License
        
-       Copyright (c) 2020-2024 Alastair Lundy
+       Copyright (c) 2024 Alastair Lundy
        
        Permission is hereby granted, free of charge, to any person obtaining a copy
        of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,38 @@
        SOFTWARE.
    */
 
-using System.Diagnostics;
-
-namespace AlastairLundy.Extensions.System.Processes
+namespace AlastairLundy.Extensions.Collections.IEnumerables
 {
-    public static class GetProcessFromProcessNameExtension
+    public static class ToStringEnumerablesExtensions
     {
         /// <summary>
-        /// Retrieves the Process object with the same name as the specified string.
+        /// 
         /// </summary>
-        /// <param name="process">The process object</param>
-        /// <param name="processName">The name of the process to be retrieved.</param>
-        /// <returns>the Process object with the same name as the specified string.</returns>
-        public static Process GetProcessFromProcessName(this Process process, string processName)
+        /// <param name="enumerable"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static IEnumerable<string> ToStringEnumerable<T>(this IEnumerable<T> enumerable)
         {
-            if (processName.Contains(".exe"))
+            if (typeof(T).GetMethod("ToString")?.DeclaringType != typeof(object) && typeof(T) != typeof(object))
             {
-                processName = processName.Replace(".exe", string.Empty);
-            }
+                List<string> list = new List<string>();
 
-            if (process.IsProcessRunning(processName) ||
-                process.IsProcessRunning(processName.ToLower()) ||
-                process.IsProcessRunning(processName.ToUpper()))
-            {
-                Process[] processes = Process.GetProcesses();
-
-                foreach (Process p in processes)
+                foreach (T item in enumerable)
                 {
-                    if (p.ProcessName.ToLower().Equals(processName.ToLower()))
+                    if (item.GetType() != typeof(object))
                     {
-                        return p;
+                        list.Add(item.ToString());
                     }
                 }
-            }
 
-            return null;
+                return list.ToArray();
+            }
+            // ReSharper disable once RedundantIfElseBlock
+            else
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }

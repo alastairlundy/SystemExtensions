@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Authors>AlastairLundy</Authors>
+        <Version>5.0.0</Version>
+        <Title>AlastairLundy.Extensions.Maths</Title>
+        <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReleaseNotes>Initial release as separate library</PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <AssemblyName>AlastairLundy.Extensions.Maths</AssemblyName>
+        <RootNamespace>AlastairLundy.Extensions.Maths</RootNamespace>
+        <Description>Extensions to C# Math classes and structs to help improve them.</Description>
+    </PropertyGroup>
+
+</Project>

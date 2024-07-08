@@ -1,7 +1,7 @@
 ﻿/*
         MIT License
        
-       Copyright (c) 2020-2024 Alastair Lundy
+       Copyright (c) 2024 Alastair Lundy
        
        Permission is hereby granted, free of charge, to any person obtaining a copy
        of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,33 @@
        SOFTWARE.
    */
 
-using System.Diagnostics;
-
-namespace AlastairLundy.Extensions.System.Processes
+namespace AlastairLundy.Extensions.Collections.IEnumerables
 {
-    public static class GetProcessFromProcessNameExtension
+    public static class IndexExtensions
     {
         /// <summary>
-        /// Retrieves the Process object with the same name as the specified string.
+        /// Returns the index of an object in an IEnumerable.
         /// </summary>
-        /// <param name="process">The process object</param>
-        /// <param name="processName">The name of the process to be retrieved.</param>
-        /// <returns>the Process object with the same name as the specified string.</returns>
-        public static Process GetProcessFromProcessName(this Process process, string processName)
+        /// <param name="enumerable">The IEnumerable to be searched.</param>
+        /// <param name="obj">The object to get the index of.</param>
+        /// <typeparam name="T">The type of object in the IEnumerable.</typeparam>
+        /// <returns>the index of an object in an IEnumerable, if the IEnumerable contains the object; throws an exception otherwise.</returns>
+        /// <exception cref="ValueNotFoundException">Thrown if the IEnumerable does not contain the specified object.</exception>
+        public static int IndexOf<T>(this IEnumerable<T> enumerable, T obj)
         {
-            if (processName.Contains(".exe"))
-            {
-                processName = processName.Replace(".exe", string.Empty);
-            }
+            int index = 0;
 
-            if (process.IsProcessRunning(processName) ||
-                process.IsProcessRunning(processName.ToLower()) ||
-                process.IsProcessRunning(processName.ToUpper()))
+            foreach (T item in enumerable)
             {
-                Process[] processes = Process.GetProcesses();
-
-                foreach (Process p in processes)
+                if (item != null && item.Equals(obj))
                 {
-                    if (p.ProcessName.ToLower().Equals(processName.ToLower()))
-                    {
-                        return p;
-                    }
+                    return index;
                 }
+                
+                index++;
             }
 
-            return null;
+            throw new ValueNotFoundException(nameof(enumerable));
         }
     }
 }
