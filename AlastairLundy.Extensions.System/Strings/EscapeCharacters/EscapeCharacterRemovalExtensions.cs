@@ -26,18 +26,22 @@
         /// Removes escape characters from a string.
         /// </summary>
         /// <param name="str">The string to be modified.</param>
-        public static void RemoveEscapeCharacters(this string str)
+        public static string RemoveEscapeCharacters(this string str)
         {
+            string newStr = str;
+                
             if (ContainsEscapeCharacters(str))
             {
                 foreach (string escapeChar in EscapeChars)
                 {
-                    if (str.Contains(escapeChar))
+                    if (newStr.Contains(escapeChar))
                     {
-                        str = str.Replace(escapeChar, string.Empty);
+                        newStr = newStr.Replace(escapeChar, string.Empty);
                     }
                 }
             }
+
+            return newStr;
         }
     }
 }
