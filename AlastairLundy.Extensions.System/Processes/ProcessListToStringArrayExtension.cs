@@ -32,8 +32,8 @@ namespace AlastairLundy.Extensions.System.Processes
         /// <summary>
         /// Get the list of currently running processes as a String Array.
         /// </summary>
-        /// <returns>the list of currently running processes as a String Array</returns>
-        public static string[] ToStringArray(this Process process)
+        /// <returns>the list of currently running processes as an IEnumerable of string</returns>
+        public static IEnumerable<string> ToStringEnumerable(this Process process)
         {
             var strList = new List<string>();
             Process[] processes = Process.GetProcesses();
