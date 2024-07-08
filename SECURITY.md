@@ -1,12 +1,16 @@
 # Security Policy
 
-## Supported Versions
-
-These are the currently supported versions of System Extensions.
+## Definitions
 
 Standard Security Support covers bug fixes and all accepted security vulnerabilities of Low, Moderate, High, or Critical severity.
 
 Extended Security Support covers all accepted security vulnerabilities of Moderate, High, or Critical severity.
+
+## Versions
+
+### Supported Versions
+
+These are the currently supported versions of System Extensions.
 
 | Version | Standard Security Support | Extended Security Support |
 | ------- | ------------------ |----|
