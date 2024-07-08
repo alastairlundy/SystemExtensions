@@ -4,8 +4,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.Sy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.Maths", "AlastairLundy.Extensions.Maths\AlastairLundy.Extensions.Maths.csproj", "{C1A3D0B4-613B-4CDD-BF2A-A794A920E8E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.Collections", "AlastairLundy.Extensions.Collections\AlastairLundy.Extensions.Collections.csproj", "{CABD7D56-8640-41F0-AB98-497F592555B0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +18,5 @@ Global
 		{C1A3D0B4-613B-4CDD-BF2A-A794A920E8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A3D0B4-613B-4CDD-BF2A-A794A920E8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A3D0B4-613B-4CDD-BF2A-A794A920E8E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CABD7D56-8640-41F0-AB98-497F592555B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CABD7D56-8640-41F0-AB98-497F592555B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CABD7D56-8640-41F0-AB98-497F592555B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CABD7D56-8640-41F0-AB98-497F592555B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
