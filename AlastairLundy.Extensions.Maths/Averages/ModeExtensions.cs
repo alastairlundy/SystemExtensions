@@ -22,6 +22,9 @@
        SOFTWARE.
    */
 
+using AlastairLundy.Extensions.Collections.Dictionaries;
+using AlastairLundy.Extensions.Collections.IEnumerables;
+
 namespace AlastairLundy.Extensions.Maths.Averages;
 
     /// <summary>
@@ -61,7 +64,7 @@ namespace AlastairLundy.Extensions.Maths.Averages;
         /// <param name="values"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        internal static IEnumerable<T> GetModes<T>(IEnumerable<T> values)
+        internal static IEnumerable<T> GetModes<T>(IEnumerable<T> values) where T : notnull
         {
             List<T> mode = new List<T>();
             
