@@ -1,4 +1,4 @@
-/*
+﻿/*
         MIT License
        
        Copyright (c) 2024 Alastair Lundy
@@ -22,18 +22,25 @@
        SOFTWARE.
    */
 
-using System;
-using AlastairLundy.Extensions.System.Internal.Localizations;
+using AlastairLundy.Extensions.System.Collections.HashMaps;
 
-namespace AlastairLundy.Extensions.System.Exceptions
+namespace AlastairLundy.Extensions.System.Collections.Dictionaries
 {
-    public class KeyValuePairNotFoundException : Exception
+    public static class DictionaryToExtensions
     {
-
-        public KeyValuePairNotFoundException(string collectionName) : base(
-            $"{Resources.Exceptions_KeyValuePairNotFound}: {collectionName}")
+        /// <summary>
+        /// Creates a HashMap object with the values from a Dictionary.
+        /// </summary>
+        /// <typeparam name="TKey">The type of Key in the Dictionary and HashMap.</typeparam>
+        /// <typeparam name="TValue">The type of Value in the Dictionary and HashMap.</typeparam>
+        /// <param name="dictionary">The Dictionary to get values from.</param>
+        /// <returns>a HashMap with the values from the specified Dictionary.</returns>
+        public static HashMap<TKey, TValue> ToHashMap<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
         {
-            
+            HashMap<TKey, TValue> hashMap = new HashMap<TKey, TValue>();
+            hashMap.PutDictionary(dictionary);
+
+            return hashMap;
         }
     }
 }

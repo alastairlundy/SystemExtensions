@@ -23,9 +23,8 @@
    */
 
 using System.Collections;
-using System.Collections.Generic;
 
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Collections.HashMaps
 {
     public static class HashMapPutExtensions
     {

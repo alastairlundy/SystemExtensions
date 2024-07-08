@@ -22,16 +22,15 @@
        SOFTWARE.
    */
 
-using System;
-using AlastairLundy.Extensions.System.Internal.Localizations;
+using AlastairLundy.Extensions.System.Collections.Localizations;
 
-namespace AlastairLundy.Extensions.System.Exceptions
+namespace AlastairLundy.Extensions.System.Collections
 {
-    public class ValueNotFoundException : Exception
+    public class KeyValuePairNotFoundException : Exception
     {
 
-        public ValueNotFoundException(string collectionName) : base(
-            $"{Resources.Exceptions_ValueNotFound}: {collectionName}")
+        public KeyValuePairNotFoundException(string collectionName) : base(
+            $"{Resources.Exceptions_KeyValuePairNotFound}: {collectionName}")
         {
             
         }

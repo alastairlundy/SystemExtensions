@@ -22,9 +22,7 @@
        SOFTWARE.
    */
 
-using System.Collections.Generic;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Collections.IEnumerables
 {
     /// <summary>
     /// A class to assist in counting the number of times an object or objects appear in an IEnumerable.

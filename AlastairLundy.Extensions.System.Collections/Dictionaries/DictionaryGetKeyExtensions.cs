@@ -22,12 +22,7 @@
        SOFTWARE.
    */
 
-using System;
-using System.Collections.Generic;
-
-using AlastairLundy.Extensions.System.Exceptions;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Collections.Dictionaries
 {
     public static class DictionaryGetKeyExtensions
     {

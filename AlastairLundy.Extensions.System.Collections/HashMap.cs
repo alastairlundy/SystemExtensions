@@ -25,8 +25,7 @@
 using System;
 
 using System.Collections.Generic;
-
-using AlastairLundy.Extensions.System.Exceptions;
+using AlastairLundy.Extensions.System.Collections.Dictionaries;
 
 namespace AlastairLundy.Extensions.System.Collections
 {

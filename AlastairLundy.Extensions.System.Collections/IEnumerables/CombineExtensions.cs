@@ -22,11 +22,7 @@
        SOFTWARE.
    */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Collections.IEnumerables
 {
     public static class CombineExtensions
     {

@@ -22,41 +22,33 @@
        SOFTWARE.
    */
 
-using System;
-using System.Collections.Generic;
-
-namespace AlastairLundy.Extensions.System.Collections
+namespace AlastairLundy.Extensions.System.Collections.IEnumerables
 {
-    public static class ToStringEnumerablesExtensions
+    public static class IndexExtensions
     {
         /// <summary>
-        /// 
+        /// Returns the index of an object in an IEnumerable.
         /// </summary>
-        /// <param name="enumerable"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
-        public static IEnumerable<string> ToStringEnumerable<T>(this IEnumerable<T> enumerable)
+        /// <param name="enumerable">The IEnumerable to be searched.</param>
+        /// <param name="obj">The object to get the index of.</param>
+        /// <typeparam name="T">The type of object in the IEnumerable.</typeparam>
+        /// <returns>the index of an object in an IEnumerable, if the IEnumerable contains the object; throws an exception otherwise.</returns>
+        /// <exception cref="ValueNotFoundException">Thrown if the IEnumerable does not contain the specified object.</exception>
+        public static int IndexOf<T>(this IEnumerable<T> enumerable, T obj)
         {
-            if (typeof(T).GetMethod("ToString")?.DeclaringType != typeof(object) && typeof(T) != typeof(object))
-            {
-                List<string> list = new List<string>();
+            int index = 0;
 
-                foreach (T item in enumerable)
+            foreach (T item in enumerable)
+            {
+                if (item != null && item.Equals(obj))
                 {
-                    if (item.GetType() != typeof(object))
-                    {
-                        list.Add(item.ToString());
-                    }
+                    return index;
                 }
+                
+                index++;
+            }
 
-                return list.ToArray();
-            }
-            // ReSharper disable once RedundantIfElseBlock
-            else
-            {
-                throw new ArgumentException();
-            }
+            throw new ValueNotFoundException(nameof(enumerable));
         }
     }
 }
