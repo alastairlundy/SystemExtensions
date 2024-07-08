@@ -42,7 +42,7 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables;
 
             foreach (T item in enumerable)
             {
-                if (item.Equals(obj))
+                if (item != null && item.Equals(obj))
                 {
                     frequency++;
                 }

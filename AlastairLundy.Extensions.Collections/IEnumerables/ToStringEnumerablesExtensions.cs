@@ -41,9 +41,9 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables;
 
                 foreach (T item in enumerable)
                 {
-                    if (item.GetType() != typeof(object))
+                    if (item?.GetType() != typeof(object))
                     {
-                        list.Add(item.ToString());
+                        list.Add(item?.ToString()!);
                     }
                 }
 

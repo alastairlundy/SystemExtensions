@@ -44,7 +44,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
             {
                 foreach (KeyValuePair<TKey, TValue> pair in dictionary)
                 {
-                    if (pair.Value.Equals(value))
+                    if (pair.Value != null && pair.Value.Equals(value))
                     {
                         return pair.Key;
                     }
@@ -63,7 +63,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
         /// <typeparam name="TValue">The type of Value in the Dictionary.</typeparam>
         /// <returns>the keys associated with the specified value in a Dictionary.</returns>
         /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the Dictionary.</exception>
-        public static TKey[] GetKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TValue value)
+        public static IEnumerable<TKey> GetKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TValue value)
         {
             List<TKey> list = new();
             
@@ -71,7 +71,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
             {
                 foreach (KeyValuePair<TKey, TValue> pair in dictionary)
                 {
-                    if (pair.Value.Equals(value))
+                    if (pair.Value != null && pair.Value.Equals(value))
                     {
                         list.Add(pair.Key);
                     }
@@ -107,7 +107,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
         /// <exception cref="ValueNotFoundException">Thrown if the value is not found within the HashMap.</exception>
         /// <exception cref="NullReferenceException">Thrown if the HashMap provided is null.</exception>
         /// <returns>the keys associated with the specified value in the HashMap.</returns>
-        public static TKey[] GetKeys<TKey, TValue>(this HashMap<TKey, TValue> hashMap, TValue value)
+        public static IEnumerable<TKey> GetKeys<TKey, TValue>(this HashMap<TKey, TValue> hashMap, TValue value)
         {
             return hashMap.ToDictionary().GetKeys(value);
         }

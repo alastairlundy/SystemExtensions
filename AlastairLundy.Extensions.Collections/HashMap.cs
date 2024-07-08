@@ -199,7 +199,7 @@ namespace AlastairLundy.Extensions.Collections;
         /// <param name="value">The specified value to be removed.</param>
         public void RemoveInstancesOf(TValue value)
         {
-            TKey[] keys = _dictionary.GetKeys(value);
+            TKey[] keys = _dictionary.GetKeys(value).ToArray();
 
             // ReSharper disable once ForCanBeConvertedToForeach
             for (int index = 0; index < keys.Length; index++)
@@ -311,7 +311,7 @@ namespace AlastairLundy.Extensions.Collections;
         {
             if (ContainsKey(pair.Key))
             {
-                return _dictionary[pair.Key].Equals(pair.Value);
+                return _dictionary[pair.Key]!.Equals(pair.Value);
             }
 
             throw new KeyNotFoundException();
