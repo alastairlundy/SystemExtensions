@@ -22,39 +22,38 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Powers
 {
-    public static class CubeExtensions
+    public static class CubeRootExtensions
     {
-        
         /// <summary>
-        /// Cubes a specified value.
+        /// Returns the cube root of the decimal.
         /// </summary>
-        /// <param name="value">The value to be cubed.</param>
-        /// <returns>the cubed value.</returns>
-        public static double Cube(this double value)
+        /// <param name="value">The decimal to be cube rooted.</param>
+        /// <returns>the cube root of the decimal.</returns>
+        public static decimal CubeRoot(this decimal value)
         {
-            return value.Power(3);
+            return value.Root(3);
         }
         
         /// <summary>
-        /// Cubes a specified value.
+        /// Returns the cube root of the double.
         /// </summary>
-        /// <param name="value">The value to be cubed.</param>
-        /// <returns>the cubed value.</returns>
-        public static decimal Cube(this decimal value)
+        /// <param name="value">The double to be cube rooted.</param>
+        /// <returns>the cube root of the double.</returns>
+        public static double CubeRoot(this double value)
         {
-            return value.Power(3);
+            return value.Root(3);
         }
 
         /// <summary>
-        /// Cubes a specified value.
+        /// Returns the cube root of the float.
         /// </summary>
-        /// <param name="value">The value to be cubed.</param>
-        /// <returns>the cubed value.</returns>
-        public static float Cube(this float value)
+        /// <param name="value">The float to be cube rooted.</param>
+        /// <returns>the cube root of the float.</returns>
+        public static float CubeRoot(this float value)
         {
-            return value.Power(3);
+            return value.Root(3);
         }
     }
 }

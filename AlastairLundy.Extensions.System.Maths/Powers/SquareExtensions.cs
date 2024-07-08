@@ -22,39 +22,38 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Powers
 {
-    public static class SquareRootExtensions
+    public static class SquareExtensions
     {
         /// <summary>
-        /// Returns the square root of the float.
+        /// Multiplies a value by itself.
         /// </summary>
-        /// <param name="value">The float to be square rooted.</param>
-        /// <returns>the square root of the float.</returns>
-        public static float SquareRoot(this float value)
+        /// <param name="value">The value to be squared.</param>
+        /// <returns>the squared value.</returns>
+        public static float Square(this float value)
         {
-            return value.Root(2);
+            return value.Power(2);
         }
         
         /// <summary>
-        /// Returns the square root of the double.
+        /// Multiplies a value by itself.
         /// </summary>
-        /// <param name="value">The double to be square rooted.</param>
-        /// <returns>the square root of the double.</returns>
-        public static double SquareRoot(this double value)
+        /// <param name="value">The value to be squared.</param>
+        /// <returns>the squared value.</returns>
+        public static double Square(this double value)
         {
-            return value.Root(2);
+            return value.Power(2);
         }
         
         /// <summary>
-        /// Returns the square root of the decimal.
+        /// Multiplies a value by itself.
         /// </summary>
-        /// <param name="value">The decimal to be square rooted.</param>
-        /// <returns>the square root of the decimal.</returns>
-        public static decimal SquareRoot(this decimal value)
+        /// <param name="value">The value to be squared.</param>
+        /// <returns>the squared value.</returns>
+        public static decimal Square(this decimal value)
         {
-            return value.Root(2);
+            return value.Power(2);
         }
-
     }
 }

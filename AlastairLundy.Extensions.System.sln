@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.System", "AlastairLundy.Extensions.System\AlastairLundy.Extensions.System.csproj", "{6DB491E8-9390-46DD-8407-18D644E48F61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.System.Maths", "AlastairLundy.Extensions.System.Maths\AlastairLundy.Extensions.System.Maths.csproj", "{C1A3D0B4-613B-4CDD-BF2A-A794A920E8E2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.System.Collections", "AlastairLundy.Extensions.System.Collections\AlastairLundy.Extensions.System.Collections.csproj", "{CABD7D56-8640-41F0-AB98-497F592555B0}"
 EndProject
 Global

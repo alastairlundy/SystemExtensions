@@ -24,30 +24,51 @@
 
 using System.Globalization;
 
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.SignificantFigures
 {
-    public static class ToSignificantFigureExtensions
+    public static class SignificantFigureCountingExtensions
     {
         /// <summary>
-        /// Insert or remove Significant Figures as needed to reach the required number of significant figures. 
+        /// Returns the number of significant figures in the specified value.
         /// </summary>
         /// <param name="value">The value to be checked.</param>
-        /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
-        /// <returns>the specified value to the specified number of significant figures.</returns>
-        public static string ToNSignificantFigures(this double value, int numberOfSignificantFigures)
+        /// <returns>the number of significant figures in the specified value as an integer.</returns>
+        public static int GetNumberOfSignificantFigures(this double value)
         {
-            return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
+            return decimal.Parse(value.ToString(CultureInfo.InvariantCulture)).GetNumberOfSignificantFigures();
         }
         
         /// <summary>
-        /// Insert or remove Significant Figures as needed to reach the required number of significant figures. 
+        /// Returns the number of significant figures in a decimal.
         /// </summary>
         /// <param name="value">The value to be checked.</param>
-        /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
-        /// <returns>the specified value to the specified number of significant figures.</returns>
-        public static string ReturnToNSignificantFigures(this decimal value, int numberOfSignificantFigures)
+        /// <returns>the number of significant figures contained in the specified value.</returns>
+        public static int GetNumberOfSignificantFigures(this decimal value)
         {
-            return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
+            string source = value.ToString(CultureInfo.InvariantCulture);
+
+            int significantFigures = 0;
+
+            bool reachedPeriod = false;
+
+            for (int index = 0; index < source.Length; index++)
+            {
+                var current = source[index];
+
+                if (current.Equals('.') && !reachedPeriod)
+                {
+                    reachedPeriod = true;
+                }
+                else if (reachedPeriod)
+                {
+                    if (int.Parse(current.ToString()) >= 0 && int.Parse(current.ToString()) <= 9)
+                    {
+                        significantFigures++;
+                    }
+                }
+            }
+
+            return significantFigures;
         }
     }
 }

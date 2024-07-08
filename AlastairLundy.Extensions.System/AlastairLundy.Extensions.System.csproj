@@ -30,7 +30,7 @@
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
         <FileVersion>5.0.0.0</FileVersion>
         <Version>5.0.0</Version>
-        <PackageVersion>5.0.0-preview.1</PackageVersion>
+        <PackageVersion>5.0.0-preview.2</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFrameworks>netstandard2.0;net8.0</TargetFrameworks>
@@ -70,5 +70,9 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Exceptions\" />
     </ItemGroup>
 </Project>

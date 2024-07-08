@@ -22,43 +22,41 @@
        SOFTWARE.
    */
 
-using System;
-
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Powers
 {
-    public static class PowerExtensions
+    public static class RootExtensions
     {
         /// <summary>
-        /// Returns a specified number to a specified power.
+        ///  Returns the Nth Root of a value.
         /// </summary>
-        /// <param name="x">A float to be raised to a power.</param>
-        /// <param name="y">A float that specifies a power.</param>
-        /// <returns>a float raised to a specified power.</returns>
-        public static float Power(this float x, float y)
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The root</param>
+        /// <returns>the Nth root of the specified value.</returns>
+        public static float Root(this float value, float n)
         {
-            return Convert.ToSingle(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
-        }
-
-        /// <summary>
-        /// Returns a specified number to a specified power.
-        /// </summary>
-        /// <param name="x">A double to be raised to a power.</param>
-        /// <param name="y">A double that specifies a power.</param>
-        /// <returns>a double raised to a specified power.</returns>
-        public static double Power(this double x, double y)
-        {
-            return Math.Pow(x, y);
+            return value.Power(Convert.ToSingle(1.0 / n));
         }
         
         /// <summary>
-        /// Returns a specified number raised to a specified power.
+        /// Returns the Nth root of a specified value.
         /// </summary>
-        /// <param name="x">A decimal to be raised to a power.</param>
-        /// <param name="y">A decimal that specified a power.</param>
-        /// <returns>a specified number raised to a specified power.</returns>
-        public static decimal Power(this decimal x, decimal y)
+        /// <param name="value">The value to calculate the Nth root of.</param>
+        /// <param name="n">The Nth root to be calculated.</param>
+        /// <returns>the Nth root of the specified value.</returns>
+        public static double Root(this double value, double n)
         {
-            return Convert.ToDecimal(Math.Pow(Convert.ToDouble(x), Convert.ToDouble(y)));
+            return value.Power(1.0 / n);
+        }
+        
+        /// <summary>
+        /// Returns the Nth Root of a value.
+        /// </summary>
+        /// <param name="value">The value to get the Nth root of.</param>
+        /// <param name="n">The Nth root.</param>
+        /// <returns>the Nth root of the specified value.</returns>
+        public static decimal Root(this decimal value, decimal n)
+        {
+            return value.Power(decimal.Divide(decimal.One, n));
         }
     }
 }

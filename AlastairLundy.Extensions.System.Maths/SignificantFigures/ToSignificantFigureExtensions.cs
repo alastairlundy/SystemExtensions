@@ -22,38 +22,32 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Maths
+using System.Globalization;
+
+namespace AlastairLundy.Extensions.System.Maths.SignificantFigures
 {
-    public static class CubeRootExtensions
+    public static class ToSignificantFigureExtensions
     {
         /// <summary>
-        /// Returns the cube root of the decimal.
+        /// Insert or remove Significant Figures as needed to reach the required number of significant figures. 
         /// </summary>
-        /// <param name="value">The decimal to be cube rooted.</param>
-        /// <returns>the cube root of the decimal.</returns>
-        public static decimal CubeRoot(this decimal value)
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
+        /// <returns>the specified value to the specified number of significant figures.</returns>
+        public static string ToNSignificantFigures(this double value, int numberOfSignificantFigures)
         {
-            return value.Root(3);
+            return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
         }
         
         /// <summary>
-        /// Returns the cube root of the double.
+        /// Insert or remove Significant Figures as needed to reach the required number of significant figures. 
         /// </summary>
-        /// <param name="value">The double to be cube rooted.</param>
-        /// <returns>the cube root of the double.</returns>
-        public static double CubeRoot(this double value)
+        /// <param name="value">The value to be checked.</param>
+        /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
+        /// <returns>the specified value to the specified number of significant figures.</returns>
+        public static string ReturnToNSignificantFigures(this decimal value, int numberOfSignificantFigures)
         {
-            return value.Root(3);
-        }
-
-        /// <summary>
-        /// Returns the cube root of the float.
-        /// </summary>
-        /// <param name="value">The float to be cube rooted.</param>
-        /// <returns>the cube root of the float.</returns>
-        public static float CubeRoot(this float value)
-        {
-            return value.Root(3);
+            return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
         }
     }
 }

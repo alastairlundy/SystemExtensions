@@ -25,6 +25,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AlastairLundy.Extensions.System.Maths.Powers;
 
 namespace AlastairLundy.Extensions.System.Maths.Averages
 {

@@ -22,43 +22,39 @@
        SOFTWARE.
    */
 
-using System;
-
-namespace AlastairLundy.Extensions.System.Maths
+namespace AlastairLundy.Extensions.System.Maths.Powers
 {
-    public static class RootExtensions
+    public static class CubeExtensions
     {
+        
         /// <summary>
-        ///  Returns the Nth Root of a value.
+        /// Cubes a specified value.
         /// </summary>
-        /// <param name="value">The value to get the Nth root of.</param>
-        /// <param name="n">The root</param>
-        /// <returns>the Nth root of the specified value.</returns>
-        public static float Root(this float value, float n)
+        /// <param name="value">The value to be cubed.</param>
+        /// <returns>the cubed value.</returns>
+        public static double Cube(this double value)
         {
-            return value.Power(Convert.ToSingle(1.0 / n));
+            return value.Power(3);
         }
         
         /// <summary>
-        /// Returns the Nth root of a specified value.
+        /// Cubes a specified value.
         /// </summary>
-        /// <param name="value">The value to calculate the Nth root of.</param>
-        /// <param name="n">The Nth root to be calculated.</param>
-        /// <returns>the Nth root of the specified value.</returns>
-        public static double Root(this double value, double n)
+        /// <param name="value">The value to be cubed.</param>
+        /// <returns>the cubed value.</returns>
+        public static decimal Cube(this decimal value)
         {
-            return value.Power(1.0 / n);
+            return value.Power(3);
         }
-        
+
         /// <summary>
-        /// Returns the Nth Root of a value.
+        /// Cubes a specified value.
         /// </summary>
-        /// <param name="value">The value to get the Nth root of.</param>
-        /// <param name="n">The Nth root.</param>
-        /// <returns>the Nth root of the specified value.</returns>
-        public static decimal Root(this decimal value, decimal n)
+        /// <param name="value">The value to be cubed.</param>
+        /// <returns>the cubed value.</returns>
+        public static float Cube(this float value)
         {
-            return value.Power(decimal.Divide(decimal.One, n));
+            return value.Power(3);
         }
     }
 }
