@@ -24,8 +24,8 @@
 
 using AlastairLundy.Extensions.Collections.HashMaps;
 
-namespace AlastairLundy.Extensions.Collections.Dictionaries
-{
+namespace AlastairLundy.Extensions.Collections.Dictionaries;
+
     public static class DictionaryToExtensions
     {
         /// <summary>
@@ -43,4 +43,3 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries
             return hashMap;
         }
     }
-}

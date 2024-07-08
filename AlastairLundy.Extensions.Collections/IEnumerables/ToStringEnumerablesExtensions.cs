@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.Collections.IEnumerables
-{
+namespace AlastairLundy.Extensions.Collections.IEnumerables;
+
     public static class ToStringEnumerablesExtensions
     {
         /// <summary>
@@ -56,4 +56,3 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables
             }
         }
     }
-}

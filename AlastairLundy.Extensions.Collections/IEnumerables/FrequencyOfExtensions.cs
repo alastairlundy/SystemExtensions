@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.Collections.IEnumerables
-{
+namespace AlastairLundy.Extensions.Collections.IEnumerables;
+
     /// <summary>
     /// A class to assist in counting the number of times an object or objects appear in an IEnumerable.
     /// </summary>
@@ -76,4 +76,3 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables
             return items;
         }
     }
-}

@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.Collections.IEnumerables
-{
+namespace AlastairLundy.Extensions.Collections.IEnumerables;
+
     public static class IndexExtensions
     {
         /// <summary>
@@ -51,4 +51,3 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables
             throw new ValueNotFoundException(nameof(enumerable));
         }
     }
-}

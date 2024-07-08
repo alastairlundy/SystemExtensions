@@ -23,8 +23,8 @@
    */
 
 
-namespace AlastairLundy.Extensions.Collections
-{
+namespace AlastairLundy.Extensions.Collections;
+
     public interface IHashMap<TKey, TValue>
     {
         void Put(TKey key, TValue value);
@@ -58,4 +58,3 @@ namespace AlastairLundy.Extensions.Collections
         bool ContainsValue(TValue value);
         bool ContainsKeyValuePair(KeyValuePair<TKey, TValue> pair);
     }
-}

@@ -24,8 +24,8 @@
 
 using System.Collections;
 
-namespace AlastairLundy.Extensions.Collections.HashMaps
-{
+namespace AlastairLundy.Extensions.Collections.HashMaps;
+
     public static class HashMapPutExtensions
     {
         /// <summary>
@@ -87,4 +87,3 @@ namespace AlastairLundy.Extensions.Collections.HashMaps
             }
         }
     }
-}

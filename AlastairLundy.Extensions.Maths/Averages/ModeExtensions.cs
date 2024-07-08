@@ -22,8 +22,6 @@
        SOFTWARE.
    */
 
-
-
 namespace AlastairLundy.Extensions.Maths.Averages;
 
     /// <summary>

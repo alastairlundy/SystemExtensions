@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.Collections.IEnumerables
-{
+namespace AlastairLundy.Extensions.Collections.IEnumerables;
+
     /// <summary>
     /// 
     /// </summary>
@@ -98,4 +98,3 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables
             }
         }
     }
-}
