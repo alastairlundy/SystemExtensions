@@ -41,7 +41,7 @@ namespace AlastairLundy.Extensions.Collections;
         /// </summary>
         public HashMap()
         {
-            _dictionary = new Dictionary<TKey, TValue>();
+            _dictionary = new();
         }
 
         /// <summary>

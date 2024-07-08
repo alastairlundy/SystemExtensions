@@ -65,7 +65,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
         /// <exception cref="ValueNotFoundException">An exception that is thrown if the value is not found within the Dictionary.</exception>
         public static TKey[] GetKeys<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TValue value)
         {
-            List<TKey> list = new List<TKey>();
+            List<TKey> list = new();
             
             if (dictionary.ContainsValue(value))
             {

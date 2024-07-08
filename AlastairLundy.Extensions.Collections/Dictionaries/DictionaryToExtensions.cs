@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.Collections.Dictionaries;
         /// <returns>a HashMap with the values from the specified Dictionary.</returns>
         public static HashMap<TKey, TValue> ToHashMap<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
         {
-            HashMap<TKey, TValue> hashMap = new HashMap<TKey, TValue>();
+            HashMap<TKey, TValue> hashMap = new();
             hashMap.PutDictionary(dictionary);
 
             return hashMap;

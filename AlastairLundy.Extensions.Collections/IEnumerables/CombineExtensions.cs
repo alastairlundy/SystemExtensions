@@ -80,7 +80,7 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables;
         /// <param name="destinationEnumerable">The combined IEnumerable if sucessful; is null otherwise.</param>
         /// <typeparam name="T">The type of the value.</typeparam>
         /// <returns>true if combining IEnumerables was successful; returns false otherwise.</returns>
-        public static bool TryCombine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo, out IEnumerable<T> destinationEnumerable)
+        public static bool TryCombine<T>(this IEnumerable<T> enumerableOne, IEnumerable<T> enumerableTwo, out IEnumerable<T>? destinationEnumerable)
         {
             try
             {

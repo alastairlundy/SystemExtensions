@@ -59,7 +59,7 @@ namespace AlastairLundy.Extensions.Collections.IEnumerables;
         /// <returns></returns>
         public static Dictionary<T, int> FrequencyOfAll<T>(this IEnumerable<T> enumerable)
         {
-            Dictionary<T, int> items = new Dictionary<T, int>();
+            Dictionary<T, int> items = new();
 
             foreach (T item in enumerable)
             {
