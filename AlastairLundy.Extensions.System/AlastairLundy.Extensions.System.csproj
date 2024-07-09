@@ -6,19 +6,27 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>## Change since 5.0.0 Preview 1
+        <PackageReleaseNotes>## Changes since 4.5.0
 
 ### Modifications
 * Moved Collection based extensions to a separate library
 * Moved Maths based extensions to a separate library
-* Tweaks to Escape Character Removal methods</PackageReleaseNotes>
+* Tweaks to Escape Character Removal methods
+* Merge a lot of existing code into fewer classes
+* Renamed a lot of extension method names
+* Renamed a lot of extension class names
+
+### Removals
+* Removed deprecated classes, methods, and code
+* Removed Assembly extensions
+</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.0.0.0</AssemblyVersion>
         <FileVersion>5.0.0.0</FileVersion>
         <Version>5.0.0</Version>
-        <PackageVersion>5.0.0-preview.2</PackageVersion>
+        <PackageVersion>5.0.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <TargetFramework>net8.0</TargetFramework>
