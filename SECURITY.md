@@ -15,11 +15,11 @@ These are the currently supported versions of System Extensions.
 | Version | Standard Security Support | Extended Security Support |
 | ------- | ------------------ |----|
 | 4.5.x   | Until System Extensions 5.1 | Until System Extensions 5.2 |
-| 4.4.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
-| 4.3.x   | :x: | Until System Extensions 5.0 |
-| 4.2.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
-| 4.1.x   | Until System Extensions 5.0 | Until System Extensions 5.1 |
-| 4.0.x   | Until System Extensions 5.0 | Until System Extensions 5.1 | 
+| 4.4.x   | :x: | Until System Extensions 5.1 |
+| 4.3.x   | :x: | :x: |
+| 4.2.x   | :x: | Until System Extensions 5.1 |
+| 4.1.x   | :x: | Until System Extensions 5.1 |
+| 4.0.x   | :x: | Until System Extensions 5.1 | 
 | < 4.0.x | :x:                | :x: |
 
 ### Security Vulnerabilities
