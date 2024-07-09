@@ -22,11 +22,12 @@
        SOFTWARE.
    */
 
+using System;
 using System.Diagnostics;
 
 namespace AlastairLundy.Extensions.System.Processes;
 
-    public static class GetProcessFromProcessNameExtension
+    public static class GetProcessFromNameExtension
     {
         /// <summary>
         /// Retrieves the Process object with the same name as the specified string.
@@ -34,11 +35,16 @@ namespace AlastairLundy.Extensions.System.Processes;
         /// <param name="process">The process object</param>
         /// <param name="processName">The name of the process to be retrieved.</param>
         /// <returns>the Process object with the same name as the specified string.</returns>
-        public static Process GetProcessFromProcessName(this Process process, string processName)
+        public static Process GetProcessFromName(this Process process, string processName)
         {
             if (processName.Contains(".exe"))
             {
                 processName = processName.Replace(".exe", string.Empty);
+            }
+
+            if (processName.Contains(".app"))
+            {
+                processName = processName.Replace(".app", string.Empty);
             }
 
             if (process.IsProcessRunning(processName) ||
@@ -56,6 +62,6 @@ namespace AlastairLundy.Extensions.System.Processes;
                 }
             }
 
-            return null;
+            throw new ArgumentException();
         }
     }
