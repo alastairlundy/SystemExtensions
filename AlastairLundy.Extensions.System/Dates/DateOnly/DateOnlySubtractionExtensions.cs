@@ -27,8 +27,6 @@ using System;
 namespace AlastairLundy.Extensions.System;
     public static class DateOnlySubtractionExtensions
     {
-#if NET6_0_OR_GREATER
-
         /// <summary>
         /// Subtract a specified amount of days from a DateOnly object.
         /// </summary>
@@ -64,9 +62,5 @@ namespace AlastairLundy.Extensions.System;
             DateTime result = dateOnly.ToDateTime().SubtractYears(Convert.ToDouble(years));
             return DateOnly.FromDateTime(result);
         }
-
-#endif
-        
         
     }
-}
