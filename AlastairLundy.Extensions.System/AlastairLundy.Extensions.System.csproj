@@ -18,8 +18,7 @@
 
 ### Removals
 * Removed deprecated classes, methods, and code
-* Removed Assembly extensions
-</PackageReleaseNotes>
+* Removed Assembly extensions</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
