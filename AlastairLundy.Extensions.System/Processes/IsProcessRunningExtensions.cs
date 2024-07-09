@@ -39,8 +39,11 @@ namespace AlastairLundy.Extensions.System.Processes;
             foreach (Process proc in Process.GetProcesses())
             {
                 string procName =  proc.ProcessName.Replace("System.Diagnostics.Process (", string.Empty);
-                
-                processName = processName.Replace(".exe", string.Empty);
+
+                if (processName.Contains(processName))
+                {
+                    processName = processName.Replace(".exe", string.Empty);
+                }
                 
                 if (procName.ToLower().Equals(processName.ToLower()) ||
                     procName.ToLower().Contains(processName.ToLower()))
