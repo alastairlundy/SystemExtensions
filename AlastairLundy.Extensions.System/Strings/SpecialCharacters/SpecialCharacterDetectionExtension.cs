@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.SpecialCharacters
-{
+namespace AlastairLundy.Extensions.System.SpecialCharacters;
+
     public static class SpecialCharacterDetectionExtension
     {
         internal static readonly char[] SpecialCharacters =
@@ -65,4 +65,3 @@ namespace AlastairLundy.Extensions.System.SpecialCharacters
             return false;
         }
     }
-}

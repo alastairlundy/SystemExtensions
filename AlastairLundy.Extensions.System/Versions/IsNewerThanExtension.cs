@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class IsNewerThanExtensions
     {
         /// <summary>
@@ -96,4 +96,3 @@ namespace AlastairLundy.Extensions.System
             }
         }
     }
-}

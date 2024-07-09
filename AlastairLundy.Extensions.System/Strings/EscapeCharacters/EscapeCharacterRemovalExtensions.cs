@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.EscapeCharacters
-{
+namespace AlastairLundy.Extensions.System.EscapeCharacters;
+
     public static class EscapeCharacterRemovalExtensions
     {
         internal static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
@@ -68,4 +68,3 @@ namespace AlastairLundy.Extensions.System.EscapeCharacters
             return newStr;
         }
     }
-}

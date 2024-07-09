@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Versioning
-{
+namespace AlastairLundy.Extensions.System.Versioning;
+
     public static class DotCountingExtensions
     {
         /// <summary>
@@ -46,4 +46,3 @@ namespace AlastairLundy.Extensions.System.Versioning
             return dotCounter;
         }
     }
-}

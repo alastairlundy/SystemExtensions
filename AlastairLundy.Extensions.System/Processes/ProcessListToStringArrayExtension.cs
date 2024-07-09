@@ -25,8 +25,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace AlastairLundy.Extensions.System.Processes
-{
+namespace AlastairLundy.Extensions.System.Processes;
+
     public static class ProcessListToStringArrayExtension
     {
         /// <summary>
@@ -47,4 +47,3 @@ namespace AlastairLundy.Extensions.System.Processes
             return strList.ToArray();
         }
     }
-}

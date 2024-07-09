@@ -24,8 +24,8 @@
 
 using System.Text;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class TitleCaseExtensions
     {
         /// <summary>
@@ -91,4 +91,3 @@ namespace AlastairLundy.Extensions.System
             return results.IsAllTrue();
         }
     }
-}

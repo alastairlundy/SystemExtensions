@@ -24,8 +24,8 @@
 
 using System.Text;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class CapitalizationExtensions
     {
         /// <summary>
@@ -66,4 +66,3 @@ namespace AlastairLundy.Extensions.System
             return stringBuilder.ToString();
         }
     }
-}

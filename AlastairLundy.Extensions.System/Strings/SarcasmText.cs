@@ -27,8 +27,8 @@ using System.Linq;
 
 using System.Text;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class SarcasmText
     {
         /// <summary>
@@ -208,4 +208,3 @@ namespace AlastairLundy.Extensions.System
             return newEnumerable;
         }
     }
-}

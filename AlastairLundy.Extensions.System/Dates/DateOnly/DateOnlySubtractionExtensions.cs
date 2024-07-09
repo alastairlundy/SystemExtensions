@@ -1,7 +1,7 @@
-﻿using System;
 
-namespace AlastairLundy.Extensions.System
-{
+using System;
+
+namespace AlastairLundy.Extensions.System;
     public static class DateOnlySubtractionExtensions
     {
 #if NET6_0_OR_GREATER

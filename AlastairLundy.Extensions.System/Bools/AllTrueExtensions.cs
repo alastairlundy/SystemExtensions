@@ -24,8 +24,8 @@
 
 using System.Collections.Generic;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class AllTrueExtensions
     {
         /// <summary>
@@ -46,4 +46,3 @@ namespace AlastairLundy.Extensions.System
             return true;
         }
     }
-}

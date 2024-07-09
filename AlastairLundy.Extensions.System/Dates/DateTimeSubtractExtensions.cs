@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class DateTimeSubtractExtensions
     {
         /// <summary>
@@ -36,11 +36,7 @@ namespace AlastairLundy.Extensions.System
         /// <returns>the modified DateTime object.</returns>
         public static DateTime SubtractMicroseconds(this DateTime dateTime, double microseconds)
         {
-            #if NET6_0_OR_GREATER
-                return dateTime.Subtract(TimeSpan.FromMicroseconds(microseconds));
-            #else
-                return dateTime.Subtract(TimeSpan.FromMilliseconds(microseconds / 1000));
-            #endif
+            return dateTime.Subtract(TimeSpan.FromMicroseconds(microseconds));
         }
         
         /// <summary>
@@ -152,4 +148,3 @@ namespace AlastairLundy.Extensions.System
             return dateTime.Subtract(TimeSpan.FromDays(daysToRemove));
         }
     }
-}

@@ -24,11 +24,10 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class DateOnlyToDateTimeExtension
     {
-#if NET6_0_OR_GREATER
         
         /// <summary>
         /// Creates a new DateTime object with the Date from a DateOnly object.
@@ -40,6 +39,4 @@ namespace AlastairLundy.Extensions.System
             return DateTime.Parse(dateOnly.ToLongDateString());
         }
             
-#endif
     }
-}

@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class LowerCaseExtensions
     {
         /// <summary>
@@ -46,4 +46,3 @@ namespace AlastairLundy.Extensions.System
             return s.Equals(s.ToLower());
         }
     }
-}

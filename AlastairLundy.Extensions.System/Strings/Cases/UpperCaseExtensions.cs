@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System
-{
+namespace AlastairLundy.Extensions.System;
+
     public static class UpperCaseExtensions
     {
         /// <summary>
@@ -47,4 +47,3 @@ namespace AlastairLundy.Extensions.System
             return s.Equals(s.ToUpper());
         }
     }
-}
