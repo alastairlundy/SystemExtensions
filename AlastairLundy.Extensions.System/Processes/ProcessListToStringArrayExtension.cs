@@ -29,6 +29,7 @@ namespace AlastairLundy.Extensions.System.Processes;
 
     public static class ProcessListToStringArrayExtension
     {
+        
         /// <summary>
         /// Get the list of currently running processes as a String Array.
         /// </summary>
@@ -36,10 +37,9 @@ namespace AlastairLundy.Extensions.System.Processes;
         /// <returns>the list of currently running processes as an IEnumerable of string.</returns>
         public static IEnumerable<string> ToStringEnumerable(this Process process)
         {
-            var strList = new List<string>();
-            Process[] processes = Process.GetProcesses();
-
-            foreach (Process proc in processes)
+            List<string> strList = new();
+            
+            foreach (Process proc in Process.GetProcesses())
             {
                 strList.Add(proc.ProcessName);
             }
