@@ -28,6 +28,7 @@ namespace AlastairLundy.Extensions.System;
 
     public static class DateTimeSubtractExtensions
     {
+#if NET8_0_OR_GREATER
         /// <summary>
         /// Subtract a specified amount of microseconds from a DateTime.
         /// </summary>
@@ -38,6 +39,7 @@ namespace AlastairLundy.Extensions.System;
         {
             return dateTime.Subtract(TimeSpan.FromMicroseconds(microseconds));
         }
+#endif
         
         /// <summary>
         /// Subtract a specified amount of milliseconds from a DateTime.
