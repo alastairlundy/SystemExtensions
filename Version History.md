@@ -7,6 +7,7 @@
 #### 5.0
 | Version | Release Date |
 |-|-|
+| 5.0.1 | July 10th 2024 |
 | 5.0.0 | July 9th 2024 |
 | 5.0.0 Preview 2 | July 8th 2024 | 
 | 5.0.0 Preview 1 | June 19th 2024 | 
