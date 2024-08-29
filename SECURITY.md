@@ -17,7 +17,7 @@ These are the currently supported versions of System Extensions.
 | 5.1.x   | Until System Extensions 5.3 | Until System Extensions 5.4 |
 | 5.0.x   | Until System Extensions 5.2 | Until System Extensions 5.3 |
 | 4.5.x   | :x: | Until System Extensions 5.2 | 
-| <= 4.4.1 | :x: | :x: |
+| < 4.5.x | :x: | :x: |
 
 ### Security Vulnerabilities
 If you wish to report a potential security vulnerability please go to the security tab on this GitHub project and create a new Security Vulnerability report. 
