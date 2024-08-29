@@ -19,6 +19,7 @@
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
+        <ImplicitUsings>disable</ImplicitUsings>
         <TargetFrameworks>net8.0;net6.0;netstandard2.0</TargetFrameworks>
     </PropertyGroup>
 
