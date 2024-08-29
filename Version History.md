@@ -4,6 +4,11 @@
 
 ### Version 5.x
 
+#### 5.1
+| Version | Release Date |
+|-|-|
+| 5.1.0 | August 29th 2024 |
+
 #### 5.0
 | Version | Release Date |
 |-|-|

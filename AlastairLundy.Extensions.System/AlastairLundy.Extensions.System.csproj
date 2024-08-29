@@ -6,16 +6,17 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 5.0.0
-* Re-added limited support for .NET 6 - Some Date related features are unavailable for those targeting .NET 6
-* Re-added limited support for .NET Standard 2.0 - Many Date related features are unavailable for those targeting .NET Standard 2.0</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.0.x
+* Added string extensions for detecting line endings - This requires .NET 6 or newer and is disabled for .NET Standard 2.0 users.
+* Added string extensions for detecting spaces and space separated substrings
+* Minor tweaks to Process Name in ProcessRunning Extension</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>5.0.1.0</AssemblyVersion>
-        <FileVersion>5.0.1.0</FileVersion>
-        <Version>5.0.1</Version>
-        <PackageVersion>5.0.1</PackageVersion>
+        <AssemblyVersion>5.1.0.0</AssemblyVersion>
+        <FileVersion>5.1.0.0</FileVersion>
+        <Version>5.1.0</Version>
+        <PackageVersion>5.1.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
