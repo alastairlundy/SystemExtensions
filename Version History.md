@@ -4,6 +4,11 @@
 
 ### Version 5.x
 
+### 5.2
+| Version | Release Date |
+|-|-|
+| 5.2.0 Preview 1 | September 14th 2024 |
+
 #### 5.1
 | Version | Release Date |
 |-|-|
