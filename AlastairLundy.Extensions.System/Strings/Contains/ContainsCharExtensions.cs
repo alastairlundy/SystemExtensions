@@ -29,7 +29,7 @@ namespace AlastairLundy.Extensions.System;
 public static class ContainsCharExtensions
 {
     /// <summary>
-    /// 
+    /// Returns whether a string contains the specified character.
     /// </summary>
     /// <param name="source">The string to be searched for.</param>
     /// <param name="c">The character to search for.</param>
@@ -40,7 +40,7 @@ public static class ContainsCharExtensions
     }
     
     /// <summary>
-    /// 
+    /// Returns whether a string contains the specified character.
     /// </summary>
     /// <param name="source">The string to be searched.</param>
     /// <param name="c">The character to search for.</param>
