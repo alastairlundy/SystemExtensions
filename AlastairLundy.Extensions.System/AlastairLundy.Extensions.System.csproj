@@ -6,17 +6,14 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 5.0.x
-* Added string extensions for detecting line endings - This requires .NET 6 or newer and is disabled for .NET Standard 2.0 users.
-* Added string extensions for detecting spaces and space separated substrings
-* Minor tweaks to Process Name in ProcessRunning Extension</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.1.0
+* Added ``IsAPartialMatch`` Matching extension</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>5.1.0.0</AssemblyVersion>
-        <FileVersion>5.1.0.0</FileVersion>
-        <Version>5.1.0</Version>
-        <PackageVersion>5.1.0</PackageVersion>
+        <AssemblyVersion>5.2.0.0</AssemblyVersion>
+        <FileVersion>5.2.0.0</FileVersion>
+        <PackageVersion>5.2.0-preview.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
