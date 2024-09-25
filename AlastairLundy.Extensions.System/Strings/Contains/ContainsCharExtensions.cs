@@ -28,6 +28,8 @@ namespace AlastairLundy.Extensions.System;
 
 public static class ContainsCharExtensions
 {
+
+#if NETSTANDARD2_0
     /// <summary>
     /// Returns whether a string contains the specified character.
     /// </summary>
@@ -37,7 +39,8 @@ public static class ContainsCharExtensions
     public static bool Contains(this string source, char c)
     {
         return Contains(source, c, false);
-    }
+    }    
+#endif
     
     /// <summary>
     /// Returns whether a string contains the specified character.
