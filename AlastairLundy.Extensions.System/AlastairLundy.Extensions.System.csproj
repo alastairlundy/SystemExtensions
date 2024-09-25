@@ -6,16 +6,22 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 5.2.0 Preview 1
-* Moved ``ContainsSpacesExtensions`` class to the Strings subfolder
-* Added ``Contains`` string extension for chars
-* Added ``ContainsChar`` string extension for IEnumerable of strings</PackageReleaseNotes>
+        <PackageReleaseNotes>## Changes since 5.1.0
+
+### Additions
+* Added ``Contains`` string extensions for chars - .NET Standard 2 users have access to both methods to compensate for not having a built in String.Contains(char) method
+* Added ``IsAPartialMatch`` Matching extension
+* Added missing xml doc comments
+* Added ``IndexesOf`` string extensions
+
+### Changes
+* Moved ``ContainsSpacesExtensions`` class to the Strings subfolder</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.2.0.0</AssemblyVersion>
         <FileVersion>5.2.0.0</FileVersion>
-        <PackageVersion>5.2.0-preview.2</PackageVersion>
+        <PackageVersion>5.2.0</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
