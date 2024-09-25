@@ -68,37 +68,4 @@ public static class ContainsCharExtensions
 
         return false;
     }
-    
-    /// <summary>
-    /// Determines if an IEnumerable of strings contains a char.
-    /// </summary>
-    /// <param name="source">The IEnumerable of strings to be searched.</param>
-    /// <param name="c">The character to search for.</param>
-    /// <returns>True if the IEnumerable of strings contains the specified char; False otherwise.</returns>
-    public static bool ContainsChar(this IEnumerable<string> source, char c)
-    {
-        return ContainsChar(source, c, false);
-    }
-    
-    /// <summary>
-    /// Determines if an IEnumerable of strings contains a char.
-    /// </summary>
-    /// <param name="source">The IEnumerable of strings to be searched.</param>
-    /// <param name="c">The character to search for.</param>
-    /// <param name="ignoreCase"></param>
-    /// <returns>True if the IEnumerable of strings contains the specified char; False otherwise.</returns>
-    public static bool ContainsChar(this IEnumerable<string> source, char c, bool ignoreCase)
-    {
-        foreach (string contentLine in source)
-        {
-            bool contentLineContainsChar = Contains(contentLine, c, ignoreCase);
-
-            if (contentLineContainsChar == true)
-            {
-                return true;
-            }
-        }
-    
-        return false;
-    }
 }
