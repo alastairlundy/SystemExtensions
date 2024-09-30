@@ -27,25 +27,25 @@ using System.Linq;
 
 namespace AlastairLundy.Extensions.System;
 
-public static class AnyFalseExtensions
+public static class IsAnyTrueExtensions
 {
     /// <summary>
-    /// Returns true if any of the bools in an IEnumerable are false.
+    /// Returns true if any of the bools in an IEnumerable are true.
     /// </summary>
     /// <param name="source">The IEnumerable to be searched.</param>
-    /// <returns>True if any bool in the IEnumerable is false; False otherwise.</returns>
-    public static bool AnyFalse(this IEnumerable<bool> source)
+    /// <returns>True if any bool in the IEnumerable is true; False otherwise.</returns>
+    public static bool IsAnyTrue(this IEnumerable<bool> source)
     {
-        return source.Any(x => x == false);
+        return source.Any(x => x == true);
     }
-
+    
     /// <summary>
-    /// Returns true if any of the bools in an ICollection are false.
+    /// Returns true if any of the bools in an ICollection are true.
     /// </summary>
-    /// <param name="source">The ICollection to be searched.</param>
-    /// <returns>True if any bool in the ICollection is false; False otherwise.</returns>
-    public static bool AnyFalse(this ICollection<bool> source)
+    /// <param name="source">The collection to be searched.</param>
+    /// <returns>True if any bool in the ICollection is true; False otherwise.</returns>
+    public static bool IsAnyTrue(this ICollection<bool> source)
     {
-        return source.Any(x => x == false);
+        return source.Any(x => x == true);
     }
 }
