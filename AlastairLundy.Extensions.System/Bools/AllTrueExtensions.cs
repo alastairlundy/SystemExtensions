@@ -31,11 +31,11 @@ namespace AlastairLundy.Extensions.System;
         /// <summary>
         /// Returns whether all the bool objects in an array are true or not.
         /// </summary>
-        /// <param name="inputs">The bool array to be checked.</param>
+        /// <param name="source">The bool array to be checked.</param>
         /// <returns>true if all the bool objects in the array are true, returns false otherwise.</returns>
-        public static bool IsAllTrue(this IEnumerable<bool> inputs)
+        public static bool IsAllTrue(this IEnumerable<bool> source)
         {
-            foreach (bool input in inputs)
+            foreach (bool input in source)
             {
                 if (input.Equals(false))
                 {
