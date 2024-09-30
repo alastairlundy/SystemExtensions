@@ -6,16 +6,17 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 5.2.0
-* Added ``IsAnyTrue`` bool IEnumerable extensions 
-* Added ``IsAnyFalse`` bool IEnumerable extensions
-* Added ``ContainsAnyOf`` T extension (generic)</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.3.0 Preview 1
+* Removed ``IsAnyTrue`` bool IEnumerable extensions - This is being moved to CollectionsExtensions
+* Removed``IsAnyFalse`` bool IEnumerable extensions - This is being moved to CollectionsExtensions
+* Deprecated ``IsAllTrue``
+* Deprecated ``IsAllFalse``</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.3.0.0</AssemblyVersion>
         <FileVersion>5.3.0.0</FileVersion>
-        <PackageVersion>5.3.0-preview.1</PackageVersion>
+        <PackageVersion>5.3.0-preview.2</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
