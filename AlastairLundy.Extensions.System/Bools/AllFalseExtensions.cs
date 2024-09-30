@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.System;
@@ -32,6 +33,7 @@ namespace AlastairLundy.Extensions.System;
         /// </summary>
         /// <param name="source">The bool array to be checked.</param>
         /// <returns>true if all the bool objects in the array are false, returns false otherwise.</returns>
+        [Obsolete("This method will be moved to CollectionsExtensions (https://github.com/AlastairLundy/CollectionsExtensions) in a future version.")]
         public static bool IsAllFalse(this IEnumerable<bool> source)
         {
             foreach (bool input in source)
