@@ -25,7 +25,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AlastairLundy.Extensions.System;
+namespace AlastairLundy.Extensions.System.Strings.Indexes;
 
 public static class IndexesOfExtensions
 {

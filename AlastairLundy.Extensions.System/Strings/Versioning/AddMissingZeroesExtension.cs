@@ -25,7 +25,7 @@
 using System;
 using System.Text;
 
-namespace AlastairLundy.Extensions.System.Versioning;
+namespace AlastairLundy.Extensions.System.Strings.Versioning;
 
     public static class AddMissingZeroesExtensions
     {

@@ -23,9 +23,8 @@
    */
 
 using System.IO;
-using System.Linq;
 
-namespace AlastairLundy.Extensions.System.LineEndings;
+namespace AlastairLundy.Extensions.System.Strings.LineEndings;
 
 public static class GetLineEndingExtensions
 {

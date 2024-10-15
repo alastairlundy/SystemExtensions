@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.EscapeCharacters;
+namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
 
     public static class EscapeCharacterRemovalExtensions
     {

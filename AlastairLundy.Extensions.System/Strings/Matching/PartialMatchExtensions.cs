@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Matching;
+namespace AlastairLundy.Extensions.System.Strings.Matching;
 
 public static class PartialMatchExtensions
 {

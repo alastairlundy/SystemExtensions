@@ -24,7 +24,7 @@
 
 using System.Text;
 
-namespace AlastairLundy.Extensions.System;
+namespace AlastairLundy.Extensions.System.Strings.Cases;
 
     public static class CapitalizationExtensions
     {

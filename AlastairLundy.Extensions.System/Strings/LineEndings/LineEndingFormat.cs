@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.LineEndings;
+namespace AlastairLundy.Extensions.System.Strings.LineEndings;
 
 public enum LineEndingFormat
 {

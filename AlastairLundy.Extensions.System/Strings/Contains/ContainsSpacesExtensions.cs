@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System;
+namespace AlastairLundy.Extensions.System.Strings.Contains;
 
 public static class ContainsSpacesExtensions
 {

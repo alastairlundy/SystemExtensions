@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.SpecialCharacters;
+namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
 
     public static class SpecialCharacterDetectionExtension
     {

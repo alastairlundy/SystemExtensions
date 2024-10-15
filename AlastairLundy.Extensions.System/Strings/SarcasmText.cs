@@ -24,10 +24,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-
 using System.Text;
 
-namespace AlastairLundy.Extensions.System;
+namespace AlastairLundy.Extensions.System.Strings;
 
     public static class SarcasmText
     {
