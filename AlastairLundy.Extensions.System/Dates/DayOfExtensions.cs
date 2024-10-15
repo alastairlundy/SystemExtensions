@@ -29,7 +29,6 @@ namespace AlastairLundy.Extensions.System.Dates
 {
     public static class DayOfExtensions
     {
-#if NET6_0_OR_GREATER
     /// <summary>
     /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
     /// </summary>
@@ -64,7 +63,5 @@ namespace AlastairLundy.Extensions.System.Dates
         
         return dayOfWeek;
     }
-#endif
-        
 }
 }
