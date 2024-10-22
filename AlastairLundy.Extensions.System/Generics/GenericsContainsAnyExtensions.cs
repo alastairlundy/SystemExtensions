@@ -33,10 +33,10 @@ public static class GenericsContainsAnyExtensions
     /// <summary>
     /// Returns whether an item of type T contains any of a range of possible values
     /// </summary>
-    /// <param name="source"></param>
-    /// <param name="possibleValues"></param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns></returns>
+    /// <param name="source">The item to be searched.</param>
+    /// <param name="possibleValues">The possible values to search for.</param>
+    /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
+    /// <returns>true if any of possibles values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
     {
         bool output = false;
