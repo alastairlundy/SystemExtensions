@@ -3,10 +3,13 @@
 ## As AlastairLundy.Extensions.System
 
 ### Version 5.x
+See main branch for later versions.
 
 ### 5.2
 | Version | Release Date |
 |-|-|
+| 5.2.1 | October 22nd 2024 |
+| 5.2.0 | September 25th 2024 |
 | 5.2.0 Preview 2 | September 14th 2024 |
 | 5.2.0 Preview 1 | September 14th 2024 |
 
