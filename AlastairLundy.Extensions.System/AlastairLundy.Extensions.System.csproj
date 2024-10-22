@@ -6,17 +6,16 @@
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
         <Copyright>(c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
-        <PackageReleaseNotes>### Changes since 5.3.0 Preview 1
-* Removed ``IsAnyTrue`` bool IEnumerable extensions - This is being moved to CollectionsExtensions
-* Removed``IsAnyFalse`` bool IEnumerable extensions - This is being moved to CollectionsExtensions
-* Deprecated ``IsAllTrue``
-* Deprecated ``IsAllFalse``</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.3.0 Preview 2
+* Added additional DateTime Extensions along with xml doc comments for them
+* Replaced explicit .NET 6 TFM with .NET Standard 2.1 TFM
+* Corrected incorrect namespaces on some DateOnly extensions</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.3.0.0</AssemblyVersion>
         <FileVersion>5.3.0.0</FileVersion>
-        <PackageVersion>5.3.0-preview.2</PackageVersion>
+        <PackageVersion>5.3.0-preview.3</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
