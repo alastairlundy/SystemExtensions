@@ -54,7 +54,7 @@ public static class GenericsContainsAnyExtensions
         {
             if (source.Equals(possibleValue))
             {
-                output = true;
+                return true;
             }
             
             if (hasContainsMethod == true)
