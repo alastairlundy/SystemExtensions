@@ -41,14 +41,14 @@ public static class GenericsContainsAnyExtensions
     {
         bool output = false;
 
+        bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
+        
         foreach (T possibleValue in possibleValues)
         {
             if (source.Equals(possibleValue))
             {
                 output = true;
             }
-
-            bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
             
             if (hasContainsMethod == true)
             {
