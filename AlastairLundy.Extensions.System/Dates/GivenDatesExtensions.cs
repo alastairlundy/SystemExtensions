@@ -26,17 +26,13 @@ using System;
 
 namespace AlastairLundy.Extensions.System.Dates;
 
-public static class GivenDatesExtensions
+public static class GivenDateExtensions
 {
     /// <summary>
-    /// `
+    /// Gets the given date in the RFC 1123 format.
     /// </summary>
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="date"></param>
-    /// <returns></returns>
+    /// <param name="date">The dateTime object to be used.</param>
+    /// <returns>The given date in the RFC 1123 format to string.</returns>
     public static string GivenDateToString(this DateTime date)
     {
         return date.ToString("R");
