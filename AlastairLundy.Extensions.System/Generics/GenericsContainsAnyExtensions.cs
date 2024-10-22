@@ -25,6 +25,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using AlastairLundy.Extensions.System.Strings.Contains;
 
 namespace AlastairLundy.Extensions.System.Generics;
 
@@ -42,6 +43,11 @@ public static class GenericsContainsAnyExtensions
         bool output = false;
 
         bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
+
+        if (typeof(T) == typeof(string))
+        {
+            return StringContainsAnyOfExtensions.ContainsAnyOf(source as string, possibleValues as IEnumerable<string>);
+        }
         
         foreach (T possibleValue in possibleValues)
         {
