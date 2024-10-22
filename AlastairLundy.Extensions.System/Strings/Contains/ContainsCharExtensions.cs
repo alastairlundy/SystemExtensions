@@ -53,7 +53,7 @@ public static class ContainsCharExtensions
         {
             if (ignoreCase == false)
             {
-                if (ch.ToString().ToLower().Equals(c.ToString().ToLower()))
+                if (ch.ToString().Equals(c.ToString()))
                 {
                     return true;
                 }
