@@ -29,10 +29,10 @@ namespace AlastairLundy.Extensions.System.Dates;
 public static class LongTodayDateExtension
 {
     /// <summary>
-    /// 
+    /// Gets the current date in the format of the unix Date command.
     /// </summary>
-    /// <param name="dateTime"></param>
-    /// <returns></returns>
+    /// <param name="dateTime">The dateTime object to be used.</param>
+    /// <returns>the current date in the format of the unix Date command.</returns>
     public static string LongToday(this DateTime dateTime)
     {
         return dateTime.ToString("R").Replace(",", string.Empty);

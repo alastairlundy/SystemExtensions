@@ -33,8 +33,8 @@ public static class WeekOfExtensions
     /// <summary>
     /// Calculates the week of the month.
     /// </summary>
-    /// <param name="date"></param>
-    /// <returns></returns>
+    /// <param name="date">The date to be used.</param>
+    /// <returns>The week number in a given month.</returns>
     public static int WeekOfMonth(this DateTime date)
     {
         DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
@@ -61,11 +61,11 @@ public static class WeekOfExtensions
     }
 
     /// <summary>
-    /// Calculates the week in a year of a given DateTime. 
+    /// Calculates the week in the year of a given DateTime. 
     /// </summary>
-    /// <param name="date"></param>
-    /// <param name="calendarWeekRule"></param>
-    /// <returns></returns>
+    /// <param name="date">The date to be used.</param>
+    /// <param name="calendarWeekRule">The rule to use to determine what counts as the 1st week of the year.</param>
+    /// <returns>The week number in a given year.</returns>
     public static int WeekofYear(this DateTime date, CalendarWeekRule calendarWeekRule = CalendarWeekRule.FirstFullWeek)
     {
         DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;

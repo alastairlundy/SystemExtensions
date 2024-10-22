@@ -29,10 +29,11 @@ namespace AlastairLundy.Extensions.System.Dates
 {
     public static class DayOfExtensions
     {
+        
     /// <summary>
     /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
     /// </summary>
-    /// <param name="date"></param>
+    /// <param name="date">The date </param>
     /// <returns></returns>
     public static int DayOfWeekInt(this DateTime date)
     {
