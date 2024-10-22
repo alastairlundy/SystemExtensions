@@ -25,16 +25,16 @@
 using System;
 using System.Globalization;
 
-namespace AlastairLundy.Extensions.System.Dates
+namespace AlastairLundy.Extensions.System.Dates;
+
+public static class DayOfExtensions
 {
-    public static class DayOfExtensions
-    {
         
     /// <summary>
     /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
     /// </summary>
     /// <param name="date">The date </param>
-    /// <returns></returns>
+    /// <returns>the day of the week as a 32-Bit integer.</returns>
     public static int DayOfWeekInt(this DateTime date)
     {
         DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
@@ -43,7 +43,7 @@ namespace AlastairLundy.Extensions.System.Dates
         
         if (DayOfWeek.Sunday == firstDayOfWeek)
         {
-             dayOfWeek = (int)date.DayOfWeek + 1;
+            dayOfWeek = (int)date.DayOfWeek + 1;
         }
         else if (DayOfWeek.Monday == firstDayOfWeek)
         {
@@ -64,5 +64,4 @@ namespace AlastairLundy.Extensions.System.Dates
         
         return dayOfWeek;
     }
-}
 }
