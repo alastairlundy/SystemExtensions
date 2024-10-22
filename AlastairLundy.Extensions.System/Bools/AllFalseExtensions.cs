@@ -26,6 +26,7 @@ using System;
 using System.Collections.Generic;
 
 namespace AlastairLundy.Extensions.System;
+
     public static class AllFalseExtensions
     {
         /// <summary>
