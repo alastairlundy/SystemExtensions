@@ -51,9 +51,9 @@ public static class ContainsCharExtensions
     {
         foreach (char ch in source)
         {
-            if (ignoreCase == false)
+            if (ignoreCase == true)
             {
-                if (ch.ToString().Equals(c.ToString()))
+                if (ch.ToString().ToLower().Equals(c.ToString().ToLower()))
                 {
                     return true;
                 }
