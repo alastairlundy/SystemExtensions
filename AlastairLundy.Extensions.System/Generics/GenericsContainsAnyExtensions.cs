@@ -31,7 +31,7 @@ namespace AlastairLundy.Extensions.System.Generics;
 public static class GenericsContainsAnyExtensions
 {
     /// <summary>
-    /// Returns whether an item of type T contains any of a range of possible values
+    /// Returns whether an item of type T contains any of the specified possible values
     /// </summary>
     /// <param name="source">The item to be searched.</param>
     /// <param name="possibleValues">The possible values to search for.</param>
@@ -52,7 +52,7 @@ public static class GenericsContainsAnyExtensions
             
             if (hasContainsMethod == true)
             {
-                bool result;
+                bool result = false;
 
                 try
                 {
