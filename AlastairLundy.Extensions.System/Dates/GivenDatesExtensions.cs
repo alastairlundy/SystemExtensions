@@ -31,32 +31,6 @@ public static class GivenDatesExtensions
     /// <summary>
     /// `
     /// </summary>
-    /// <param name="dateString"></param>
-    /// <returns></returns>
-    public static string GivenDateToString(this string dateString)
-    {
-        return DateTime.Parse(dateString).GivenDateToString();
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="dateString"></param>
-    /// <param name="result"></param>
-    /// <returns></returns>
-    public static bool TryParseGivenDate(this string dateString, out string? result)
-    {
-        try
-        {
-            result = GivenDateToString(dateString);
-            return true;
-        }
-        catch
-        {
-            result = null;
-            return false;
-        }
-    }
     
     /// <summary>
     /// 
