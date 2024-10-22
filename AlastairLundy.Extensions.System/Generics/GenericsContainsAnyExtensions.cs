@@ -25,6 +25,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+
 using AlastairLundy.Extensions.System.Strings.Contains;
 
 namespace AlastairLundy.Extensions.System.Generics;
