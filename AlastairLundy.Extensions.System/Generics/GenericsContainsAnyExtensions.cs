@@ -59,11 +59,9 @@ public static class GenericsContainsAnyExtensions
             
             if (hasContainsMethod == true)
             {
-                bool result = false;
-
                 try
                 {
-                    result = (bool)typeof(T)!.InvokeMember("Contains",
+                    bool result = (bool)typeof(T)!.InvokeMember("Contains",
                         BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
                         new object[] { source })!;
 
