@@ -23,6 +23,7 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <TargetFrameworks>net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageTags>extension-methods</PackageTags>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
     </PropertyGroup>
 
     <ItemGroup>
