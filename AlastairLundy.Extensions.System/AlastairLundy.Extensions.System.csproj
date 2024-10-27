@@ -8,27 +8,15 @@
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>## Changes since 5.2.x
-
-### Additions
-* Added ``ContainsAnyOf`&lt;T&gt;`` extension (generic)
-* Added ``ContainsAnyOf`` string extension
-* Added ``ContainsAllOf`` string extension
-* Added additional ``DateTime`` Extensions along with xml doc comments for them
-
-### Deprecations
-* Deprecated ``IsAllTrue`` bool extension - This will be removed in a future version.
-* Deprecated ``IsAllFalse`` bool extension - This will be removed in a future version.
-
-### General Changes
-* Replaced explicit .NET 6 TFM with .NET Standard 2.1 TFM
-* Corrected incorrect namespaces on some ``DateOnly`` extensions</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.3.0
+* Added Symbol Package output to Nuget package
+* Added Source Link to Nuget package</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <AssemblyVersion>5.3.0.0</AssemblyVersion>
-        <FileVersion>5.3.0.0</FileVersion>
-        <PackageVersion>5.3.0</PackageVersion>
+        <AssemblyVersion>5.3.1.0</AssemblyVersion>
+        <FileVersion>5.3.1.0</FileVersion>
+        <PackageVersion>5.3.1-preview.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
