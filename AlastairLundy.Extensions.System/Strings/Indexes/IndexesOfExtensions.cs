@@ -24,6 +24,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Strings.Indexes;
 
@@ -64,7 +65,7 @@ public static class IndexesOfExtensions
         List<int> indexes = new();
         StringComparison comparer = ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
 
-        if (toBeSearched.Contains(expected))
+        if (toBeSearched.Contains(expected) || (ignoreCase && (toBeSearched.ToLower().Contains(expected.ToLower()))))
         {
             int index = toBeSearched.IndexOf(expected, comparer);
             
