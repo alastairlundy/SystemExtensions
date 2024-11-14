@@ -24,6 +24,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AlastairLundy.Extensions.System;
 
@@ -37,13 +38,6 @@ namespace AlastairLundy.Extensions.System;
         [Obsolete("This method will be moved to CollectionsExtensions (https://github.com/AlastairLundy/CollectionsExtensions) in a future version.")]
         public static bool IsAllFalse(this IEnumerable<bool> source)
         {
-            foreach (bool input in source)
-            {
-                if (input.Equals(true))
-                {
-                    return false;
-                }
-            }
-            return true;
+            return source.All(input => !input.Equals(true));
         }
     }
