@@ -7,6 +7,7 @@
 #### 5.3
 | Version | Release Date |
 |-|-|
+| 5.3.1 | November 14th 2024 |
 | 5.3.1 Preview 1 | October 27th 2024 |
 | 5.3.0 | October 26th 2024 |
 | 5.3.0 Preview 3 | October 22nd 2024 |

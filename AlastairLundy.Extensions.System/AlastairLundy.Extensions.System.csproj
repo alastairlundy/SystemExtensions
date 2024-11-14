@@ -9,14 +9,16 @@
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <PackageReleaseNotes>### Changes since 5.3.0
-* Added Symbol Package output to Nuget package
-* Added Source Link to Nuget package</PackageReleaseNotes>
+* Fixed SourceLink Deterministic build issue
+* Simplified dot counting string extension code
+* Re-structured added missing zeroes string extension code
+* Deprecated Partial Match extension string - This extension will be removed in a future version.</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.3.1.0</AssemblyVersion>
         <FileVersion>5.3.1.0</FileVersion>
-        <PackageVersion>5.3.1-preview.1</PackageVersion>
+        <PackageVersion>5.3.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>

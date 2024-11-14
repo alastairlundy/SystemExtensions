@@ -34,6 +34,7 @@ public static class GetLineEndingExtensions
     /// </summary>
     /// <param name="filePath"></param>
     /// <returns></returns>
+    /// TODO: Rename method to GetLineEnding in version 6
     public static LineEndingFormat LineEnding(this string filePath)
     {
         LineEndingFormat lineEndingFormat;
