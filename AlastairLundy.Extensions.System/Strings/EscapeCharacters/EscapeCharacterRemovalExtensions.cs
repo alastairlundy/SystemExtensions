@@ -26,7 +26,7 @@ namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
 
     public static class EscapeCharacterRemovalExtensions
     {
-        internal static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
+        private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
 
         /// <summary>
         /// Returns whether the string contains an Escape Character.
