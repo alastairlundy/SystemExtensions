@@ -23,6 +23,7 @@
    */
 
 using System;
+using System.Linq;
 using System.Text;
 
 namespace AlastairLundy.Extensions.System.Strings.Versioning;
@@ -43,33 +44,33 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
             
             int dots = str.CountDotsInString();
 
-            switch (dots)
+            if (dots < numberOfZeroesNeeded)
             {
-                case 0:
+                while (dots < numberOfZeroesNeeded)
+                {
                     stringBuilder.Append('.');
                     stringBuilder.Append('0');
-                    break;
-                case 1 when numberOfZeroesNeeded > 1:
-                    stringBuilder.Append('.');
-                    stringBuilder.Append('0');
-                    break;
-                case 2 when numberOfZeroesNeeded > 2:
-                    stringBuilder.Append('.');
-                    stringBuilder.Append('0');
-                    break;
-                case 3 when numberOfZeroesNeeded == 3:
-                    return str;
+
+                    dots = str.CountDotsInString();
+                }
+            }
+            else if (dots > numberOfZeroesNeeded)
+            {
+                while (dots > numberOfZeroesNeeded)
+                {
+                    if (str.Last() == 0 && str[str.Length - 2] == '.')
+                    {
+                        str = str.Remove(str.Length - 2, 1);
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                    dots = str.CountDotsInString();
+                }
             }
 
-            int newDots = stringBuilder.ToString().CountDotsInString();
-        
-            if (newDots == 1 && numberOfZeroesNeeded == 1 || 
-                newDots == 2 && numberOfZeroesNeeded == 2 || 
-                newDots == 3 && numberOfZeroesNeeded == 3)
-            {
-                return stringBuilder.ToString();
-            }
-        
-            throw new ArgumentException();
+            return stringBuilder.ToString();
         }
     }
