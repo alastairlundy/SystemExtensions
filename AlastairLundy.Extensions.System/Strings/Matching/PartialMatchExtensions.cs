@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+
 namespace AlastairLundy.Extensions.System.Strings.Matching;
 
 public static class PartialMatchExtensions
@@ -32,6 +34,7 @@ public static class PartialMatchExtensions
     /// <param name="toBeSearched">The string to be searched.</param>
     /// <param name="s">The string to look for.</param>
     /// <returns>true if a partial match to a string is found within the string to be searched; false otherwise.</returns>
+    [Obsolete("This method is obsolete and will be removed in a future version.")]
     public static bool IsAPartialMatch(this string toBeSearched, string s)
     {
         return (toBeSearched.ToLower().Equals(s.ToLower()) || toBeSearched.ToLower().Contains(s.ToLower()));
