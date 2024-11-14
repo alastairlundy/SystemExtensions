@@ -39,7 +39,7 @@ public static class IndexesOfExtensions
     /// <returns>The indexes if the char is found; An array with a single element of -1 otherwise.</returns>
     public static IEnumerable<int> IndexesOf(this string toBeSearched, char expected, bool ignoreCase)
     {
-        List<int> indexes = new();
+        List<int> indexes = new List<int>();
 
         for(int index = 0; index < toBeSearched.Length; index++)
         {
@@ -62,7 +62,7 @@ public static class IndexesOfExtensions
     /// <returns>The indexes if the string is found; An array with a single element of -1 otherwise.</returns>
     public static IEnumerable<int> IndexesOf(this string toBeSearched, string expected, bool ignoreCase)
     {
-        List<int> indexes = new();
+        List<int> indexes = new List<int>();
         StringComparison comparer = ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
 
         if (toBeSearched.Contains(expected) || (ignoreCase && (toBeSearched.ToLower().Contains(expected.ToLower()))))
