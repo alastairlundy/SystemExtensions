@@ -26,7 +26,7 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
 
     public static class SpecialCharacterDetectionExtension
     {
-        internal static readonly char[] SpecialCharacters =
+        private static readonly char[] SpecialCharacters =
             {',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+', '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'};
 
         /// <summary>
