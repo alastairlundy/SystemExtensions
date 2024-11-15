@@ -28,6 +28,7 @@ using System.Linq;
 
 namespace AlastairLundy.Extensions.System;
 
+    [Obsolete]
     public static class AllFalseExtensions
     {
         /// <summary>
