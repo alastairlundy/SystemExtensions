@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+// ReSharper disable RedundantBoolCompare
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
 public static class ContainsCharExtensions

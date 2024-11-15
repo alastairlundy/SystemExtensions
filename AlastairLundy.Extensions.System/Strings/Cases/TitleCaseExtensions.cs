@@ -22,7 +22,9 @@
        SOFTWARE.
    */
 
+using System.Linq;
 using System.Text;
+// ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Strings.Cases;
 
@@ -45,7 +47,7 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
                 letterCapitalization[index] = letters[index].IsLowerCaseLetter();
             }
 
-            return letterCapitalization.IsAllTrue();
+            return letterCapitalization.All(x => x == true);
         }
         
         /// <summary>
@@ -87,7 +89,7 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
             {
                 results[index] = words[index].IsWordTitleCase();
             }
-            
-            return results.IsAllTrue();
+
+            return results.All(x => x == true);
         }
     }
