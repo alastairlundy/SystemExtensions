@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System.Linq;
+
 namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
 
     public static class SpecialCharacterDetectionExtension
@@ -54,14 +56,6 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
         /// <returns>true if the character is a special character, returns false otherwise.</returns>
         public static bool IsSpecialCharacter(this char c)
         {
-            foreach (char ch in SpecialCharacters)
-            {
-                if (c.Equals(ch))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return SpecialCharacters.Where(sc => sc == c).Any();
         }
     }
