@@ -39,13 +39,8 @@ public static class StringContainsAnyOfExtensions
     public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
     {
         string[] vals = possibleValues.ToArray();
-        KeyValuePair<string, bool>[] pairs = new KeyValuePair<string, bool>[vals.Length];
 
-        for(int index = 0; index < pairs.Length; index++)
-        {
-            pairs[index] = new KeyValuePair<string, bool>(vals[index], source.Contains(vals[index]));
-        }
 
-        return pairs.Any(pair => pair.Value == true);
+        return vals.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
     }
 }

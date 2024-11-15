@@ -27,7 +27,7 @@ using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
-public static class StringContainsAllOfExtensions
+public static class StringAllOfExtensions
 {
     
     /// <summary>
@@ -39,13 +39,7 @@ public static class StringContainsAllOfExtensions
     public static bool ContainsAllOf(this string source, IEnumerable<string> values)
     {
         string[] vals = values.ToArray();
-        KeyValuePair<string, bool>[] pairs = new KeyValuePair<string, bool>[vals.Length];
 
-        for(int index = 0; index < pairs.Length; index++)
-        {
-            pairs[index] = new KeyValuePair<string, bool>(vals[index], source.Contains(vals[index]));
-        }
-
-        return pairs.All(pair => pair.Value != false);
+        return vals.Select(t => source.Contains(t)).Any(containsSource => containsSource);
     }
 }
