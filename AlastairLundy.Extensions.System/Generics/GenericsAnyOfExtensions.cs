@@ -27,10 +27,11 @@ using System.Linq;
 using System.Reflection;
 
 using AlastairLundy.Extensions.System.Strings.Contains;
+// ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Generics;
 
-public static class GenericsContainsAnyExtensions
+public static class GenericsAnyOfExtensions
 {
     /// <summary>
     /// Returns whether an item of type T contains any of the specified possible values
@@ -38,7 +39,7 @@ public static class GenericsContainsAnyExtensions
     /// <param name="source">The item to be searched.</param>
     /// <param name="possibleValues">The possible values to search for.</param>
     /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-    /// <returns>true if any of possibles values is found; returns false otherwise.</returns>
+    /// <returns>true if any of the possibles values is contained in the source; returns false otherwise.</returns>
     public static bool ContainsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
     {
         bool output = false;
@@ -47,7 +48,7 @@ public static class GenericsContainsAnyExtensions
 
         if (typeof(T) == typeof(string))
         {
-            return StringContainsAnyOfExtensions.ContainsAnyOf(source as string, possibleValues as IEnumerable<string>);
+            return StringAnyOfExtensions.ContainsAnyOf(source as string, possibleValues as IEnumerable<string>);
         }
         
         foreach (T possibleValue in possibleValues)
@@ -78,5 +79,19 @@ public static class GenericsContainsAnyExtensions
         }
         
         return output;
+    }
+
+    /// <summary>
+    /// Returns whether an item of type T is equal to any of the specified possible values
+    /// </summary>
+    /// <param name="source">The item to be searched.</param>
+    /// <param name="possibleValues">The possible values to search for.</param>
+    /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
+    /// <returns>true if any of the possibles values is equal to the source; returns false otherwise.</returns>
+    public static bool EqualsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
+    {
+        T[] vals = possibleValues.ToArray();
+
+        return vals.Select(t => source.Equals(t)).Any(containsValue => containsValue == true);
     }
 }
