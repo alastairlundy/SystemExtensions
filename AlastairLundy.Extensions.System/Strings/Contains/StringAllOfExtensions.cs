@@ -24,6 +24,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+// ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
@@ -37,9 +38,7 @@ public static class StringAllOfExtensions
     /// <returns>true if all of the values are found in the string; returns false otherwise.</returns>
     public static bool ContainsAllOf(this string source, IEnumerable<char> values)
     {
-        char[] vals = values.ToArray();
-
-        return vals.Select(t => source.Contains(t)).All(containsSource => containsSource);
+        return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
     }
     
     /// <summary>
@@ -50,8 +49,6 @@ public static class StringAllOfExtensions
     /// <returns>true if all of the values are found in the string; returns false otherwise.</returns>
     public static bool ContainsAllOf(this string source, IEnumerable<string> values)
     {
-        string[] vals = values.ToArray();
-
-        return vals.Select(t => source.Contains(t)).All(containsSource => containsSource);
+        return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
     }
 }

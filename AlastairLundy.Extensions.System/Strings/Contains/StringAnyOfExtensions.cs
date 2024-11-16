@@ -38,9 +38,7 @@ public static class StringAnyOfExtensions
     /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf(this string source, IEnumerable<char> possibleValues)
     {
-        char[] vals = possibleValues.ToArray();
-    
-        return vals.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
+        return possibleValues.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
     }
     
     /// <summary>
@@ -51,8 +49,6 @@ public static class StringAnyOfExtensions
     /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
     {
-        string[] vals = possibleValues.ToArray();
-    
-        return vals.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
+        return possibleValues.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
     }
 }

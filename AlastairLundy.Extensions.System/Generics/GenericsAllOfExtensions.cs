@@ -90,9 +90,7 @@ public static class GenericsAllOfExtensions
     /// <returns>true if all of the possibles values is equal to the source; returns false otherwise.</returns>
     public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues)
     {
-        T[] vals = possibleValues.ToArray();
-
         // ReSharper disable once RedundantBoolCompare
-        return vals.Select(t => source.Equals(t)).All(containsValue => containsValue == true);
+        return possibleValues.Select(t => source.Equals(t)).All(containsValue => containsValue == true);
     }
 }

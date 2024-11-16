@@ -90,8 +90,6 @@ public static class GenericsAnyOfExtensions
     /// <returns>true if any of the possibles values is equal to the source; returns false otherwise.</returns>
     public static bool EqualsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
     {
-        T[] vals = possibleValues.ToArray();
-
-        return vals.Select(t => source.Equals(t)).Any(containsValue => containsValue == true);
+        return possibleValues.Select(t => source.Equals(t)).Any(containsValue => containsValue == true);
     }
 }
