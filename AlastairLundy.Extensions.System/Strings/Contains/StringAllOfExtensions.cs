@@ -40,6 +40,6 @@ public static class StringAllOfExtensions
     {
         string[] vals = values.ToArray();
 
-        return vals.Select(t => source.Contains(t)).Any(containsSource => containsSource);
+        return vals.Select(t => source.Contains(t)).All(containsSource => containsSource);
     }
 }
