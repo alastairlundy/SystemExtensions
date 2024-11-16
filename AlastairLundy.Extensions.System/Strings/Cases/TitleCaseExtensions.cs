@@ -37,14 +37,14 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// <returns>true if the word is capitalized; returns false otherwise.</returns>
         public static bool IsWordTitleCase(this string word)
         {
-            string[] letters = word.Split();
+            char[] letters = word.ToCharArray();
             bool[] letterCapitalization = new bool[letters.Length];
 
-            letterCapitalization[0] = letters[0].IsUpperCaseLetter();
+            letterCapitalization[0] = letters[0].IsUpperCaseCharacter();
             
             for (int index = 1; index < letters.Length; index++)
             {
-                letterCapitalization[index] = letters[index].IsLowerCaseLetter();
+                letterCapitalization[index] = letters[index].IsLowerCaseCharacter();
             }
 
             return letterCapitalization.All(x => x == true);
