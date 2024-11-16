@@ -23,6 +23,7 @@
    */
 
 using System.Linq;
+using AlastairLundy.Extensions.System.Strings.Contains;
 
 namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
 
@@ -38,15 +39,7 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
         /// <returns></returns>
         public static bool ContainsSpecialCharacter(this string s)
         {
-            foreach (char c in s)
-            {
-                if (c.IsSpecialCharacter())
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return s.ContainsAnyOf(SpecialCharacters);
         }
         
         /// <summary>
