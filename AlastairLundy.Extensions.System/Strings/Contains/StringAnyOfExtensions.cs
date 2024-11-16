@@ -32,11 +32,11 @@ public static class StringAnyOfExtensions
 {
     
     /// <summary>
-    /// Returns whether an item of type T contains any of the specified possible values
+    /// Returns whether an item of type T contains any of the specified possible values.
     /// </summary>
     /// <param name="source">The string to be searched.</param>
     /// <param name="possibleValues">The possible values to search for.</param>
-    /// <returns>true if any of possibles values is found; returns false otherwise.</returns>
+    /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
     {
         string[] vals = possibleValues.ToArray();
