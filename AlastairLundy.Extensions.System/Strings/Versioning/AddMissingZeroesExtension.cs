@@ -41,6 +41,11 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(str);
+
+            if (numberOfZeroesNeeded < 0 || numberOfZeroesNeeded > 3)
+            {
+                throw new ArgumentException("Invalid number of zeroes requested. Value must be between 0 and 3.");
+            }
             
             int dots = str.CountDotsInString();
 
