@@ -48,6 +48,7 @@ public static class ContainsSpacesExtensions
     /// </summary>
     /// <param name="s">The string to search.</param>
     /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
+    [Obsolete("This method is deprecated and will be removed in a future version.")]
     public static bool ContainsSpaceSeparatedSubStrings(this string s)
     {
         return s.Split(' ').Length > 0;
