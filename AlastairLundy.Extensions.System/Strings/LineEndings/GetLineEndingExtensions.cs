@@ -84,14 +84,14 @@ public static class GetLineEndingExtensions
     }
     
     /// <summary>
-    /// 
+    /// Gets the line ending of a string.
     /// </summary>
-    /// <param name="filePath"></param>
-    /// <returns></returns>
+    /// <param name="source">The string to be checked.</param>
+    /// <returns>the line ending format of the string.</returns>
     [Obsolete("This method is deprecated and will be removed in a future version. Please use GetLineEnding(this string filePath) instead.")]
-    public static LineEndingFormat LineEnding(this string filePath)
+    public static LineEndingFormat LineEnding(this string source)
     {
-        return filePath.GetLineEnding();
+        return source.GetLineEnding();
     }
 #endif
 }
