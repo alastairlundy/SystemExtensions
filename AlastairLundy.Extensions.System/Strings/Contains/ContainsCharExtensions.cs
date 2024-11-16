@@ -23,6 +23,10 @@
    */
 
 // ReSharper disable RedundantBoolCompare
+
+using System.Linq;
+// ReSharper disable RedundantIfElseBlock
+
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
 public static class ContainsCharExtensions
@@ -50,24 +54,13 @@ public static class ContainsCharExtensions
     /// <returns>True if the string contains the specified char; False otherwise.</returns>
     public static bool Contains(this string source, char c, bool ignoreCase)
     {
-        foreach (char ch in source)
+        if (ignoreCase == true)
         {
-            if (ignoreCase == true)
-            {
-                if (ch.ToString().ToLower().Equals(c.ToString().ToLower()))
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                if (ch == c)
-                {
-                    return true;
-                }
-            }
+            return source.ToLower().ToCharArray().Contains(char.Parse(c.ToString().ToLower()));
         }
-
-        return false;
+        else
+        {
+            return source.Contains(c);
+        }
     }
 }
