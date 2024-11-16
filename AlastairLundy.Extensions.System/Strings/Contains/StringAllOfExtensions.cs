@@ -29,6 +29,18 @@ namespace AlastairLundy.Extensions.System.Strings.Contains;
 
 public static class StringAllOfExtensions
 {
+    /// <summary>
+    /// Returns whether an item of type T contains all of the specified values.
+    /// </summary>
+    /// <param name="source">The item to be searched.</param>
+    /// <param name="values">The values to search for.</param>
+    /// <returns>true if all of the values are found in the string; returns false otherwise.</returns>
+    public static bool ContainsAllOf(this string source, IEnumerable<char> values)
+    {
+        char[] vals = values.ToArray();
+
+        return vals.Select(t => source.Contains(t)).All(containsSource => containsSource);
+    }
     
     /// <summary>
     /// Returns whether an item of type T contains all of the specified values.
