@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
 public static class ContainsSpacesExtensions
@@ -31,6 +33,7 @@ public static class ContainsSpacesExtensions
     /// </summary>
     /// <param name="s">The string to search.</param>
     /// <returns>true if a string contains a space character; false otherwise.</returns>
+    [Obsolete("This method will be removed in a future version.")]
     public static bool ContainsSpace(this string s)
     {
         #if NET6_0_OR_GREATER
