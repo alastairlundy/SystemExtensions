@@ -35,6 +35,6 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
         /// <returns>the number of periods/full stops/dots in a string</returns>
         public static int CountDotsInString(this string str)
         {
-           return str.Where(x => x.Equals('.')).Count();
+           return str.ToCharArray().Where(x => x.Equals('.')).Count();
         }
     }
