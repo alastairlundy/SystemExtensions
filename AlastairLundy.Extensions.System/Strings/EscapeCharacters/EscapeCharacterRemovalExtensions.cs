@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using AlastairLundy.Extensions.System.Strings.Contains;
+
 namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
 
     public static class EscapeCharacterRemovalExtensions
@@ -35,15 +37,7 @@ namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
         /// <returns>whether the string contains an Escape Character</returns>
         public static bool ContainsEscapeCharacters(this string str)
         {
-            foreach (string escapeChar in EscapeChars)
-            {
-                if (str.Contains(escapeChar))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return str.ContainsAnyOf(EscapeChars);
         }
         
         /// <summary>
