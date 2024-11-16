@@ -32,29 +32,46 @@ public static class GetLineEndingExtensions
 {
 #if NET6_0_OR_GREATER || NETSTANDARD2_1
     /// <summary>
-    /// 
+    /// Gets the line ending of a file.
     /// </summary>
-    /// <param name="filePath"></param>
-    /// <returns></returns>
-    public static LineEndingFormat GetLineEnding(this string filePath)
+    /// <param name="filePath">The file path of the file to be checked.</param>
+    /// <returns>the line ending format of the string.</returns>
+    public static LineEndingFormat GetFileLineEnding(this string filePath)
+    {
+        try
+        {
+            string[] contents = File.ReadAllLines(filePath);
+            
+            return GetLineEnding(contents[0]);
+        }
+        catch
+        {
+            return LineEndingFormat.NotDetected;
+        }
+    }
+    
+    /// <summary>
+    /// Gets the line ending of a string.
+    /// </summary>
+    /// <param name="source">The string to be checked.</param>
+    /// <returns>the line ending format of the string.</returns>
+    public static LineEndingFormat GetLineEnding(this string source)
     {
         LineEndingFormat lineEndingFormat;
-
-        string[] contents = File.ReadAllLines(filePath);
-
-        if (contents[0].EndsWith('\n') && contents[0].Contains('\r') == true)
+        
+        if (source.EndsWith('\n') && source.Contains('\r') == true)
         {
             lineEndingFormat = LineEndingFormat.LF_CR;
         }
-        else if (contents[0].EndsWith('\r') && contents[0].Contains('\n') == true)
+        else if (source.EndsWith('\r') && source.Contains('\n') == true)
         {
             lineEndingFormat = LineEndingFormat.CR_LF;
         }
-        else if (contents[0].EndsWith('\n') && contents[0].Contains('\r') == false)
+        else if (source.EndsWith('\n') && source.Contains('\r') == false)
         {
             lineEndingFormat = LineEndingFormat.LF;
         }
-        else if (contents[0].EndsWith('\r') && contents[0].Contains('\n') == false)
+        else if (source.EndsWith('\r') && source.Contains('\n') == false)
         {
             lineEndingFormat = LineEndingFormat.CR;
         }
