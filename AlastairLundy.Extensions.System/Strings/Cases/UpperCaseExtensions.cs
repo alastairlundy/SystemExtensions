@@ -33,7 +33,18 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// </summary>
         /// <param name="c">The character to be checked.</param>
         /// <returns>true if the character is an upper case character, returns false otherwise.</returns>
+        [Obsolete("This method is deprecated and will be removed in a future version. Please use IsUpperCaseCharacter(char) instead.")]
         public static bool IsUpperCaseLetter(this char c)
+        {
+            return c.ToString().Equals(c.ToString().ToUpper());
+        }
+        
+        /// <summary>
+        /// Returns whether a character is an upper case character or not.
+        /// </summary>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is an upper case character, returns false otherwise.</returns>
+        public static bool IsUpperCaseCharacter(this char c)
         {
             return c.ToString().Equals(c.ToString().ToUpper());
         }
