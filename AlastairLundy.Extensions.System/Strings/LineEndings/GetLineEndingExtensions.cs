@@ -36,8 +36,7 @@ public static class GetLineEndingExtensions
     /// </summary>
     /// <param name="filePath"></param>
     /// <returns></returns>
-    /// TODO: Rename method to GetLineEnding in version 6
-    public static LineEndingFormat LineEnding(this string filePath)
+    public static LineEndingFormat GetLineEnding(this string filePath)
     {
         LineEndingFormat lineEndingFormat;
 
@@ -65,6 +64,17 @@ public static class GetLineEndingExtensions
         }
 
         return lineEndingFormat;
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="filePath"></param>
+    /// <returns></returns>
+    [Obsolete("This method is deprecated and will be removed in a future version. Please use GetLineEnding(this string filePath) instead.")]
+    public static LineEndingFormat LineEnding(this string filePath)
+    {
+        return filePath.GetLineEnding();
     }
 #endif
 }
