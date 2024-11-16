@@ -58,7 +58,11 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
             {
                 while (dots > numberOfZeroesNeeded)
                 {
+#if NET6_0_OR_GREATER || NETSTANDARD2_1
+                    if (str.Last() == 0 && str[^2] == '.')
+#else
                     if (str.Last() == 0 && str[str.Length - 2] == '.')
+#endif
                     {
                         str = str.Remove(str.Length - 2, 1);
                     }
