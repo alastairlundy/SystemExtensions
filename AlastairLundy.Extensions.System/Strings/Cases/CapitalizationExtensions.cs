@@ -46,23 +46,10 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// <returns>the specified word with the specified letter made upper case.</returns>
         public static string CapitalizeALetterInAWord(this string word, int index)
         {
-            char[] chars = word.ToCharArray();
+            char oldChar = word[index]; 
+            string newWord = word.Remove(index, 1);
+            newWord = newWord.Insert(index, oldChar.ToString().ToUpper());
 
-            StringBuilder stringBuilder = new StringBuilder();
-            
-            for(int i = 0; i < chars.Length; i++)
-            {
-                // ReSharper disable once ConvertIfStatementToConditionalTernaryExpression
-                if (i.Equals(index))
-                {
-                    stringBuilder.Append(chars[index].ToString().ToUpper());
-                }
-                else
-                {
-                    stringBuilder.Append(chars[index].ToString().ToLower());
-                }
-            }
-
-            return stringBuilder.ToString();
+            return newWord;
         }
     }
