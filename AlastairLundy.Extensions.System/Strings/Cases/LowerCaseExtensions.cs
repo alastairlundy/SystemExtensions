@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+
 namespace AlastairLundy.Extensions.System.Strings.Cases;
 
     public static class LowerCaseExtensions
@@ -41,7 +43,18 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// </summary>
         /// <param name="s">The string to be checked.</param>
         /// <returns>true if a character, represented as a string, is lower case; returns false otherwise.</returns>
+        [Obsolete("This method is deprecated and will be removed in future versions. Please use IsLowerCaseCharacter instead.")]
         public static bool IsLowerCaseLetter(this string s)
+        {
+            return s.Equals(s.ToLower());
+        }
+        
+        /// <summary>
+        /// Returns whether a string is lower case or not.
+        /// </summary>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if a string is lower case; returns false otherwise.</returns>
+        public static bool IsLowerCase(this string s)
         {
             return s.Equals(s.ToLower());
         }

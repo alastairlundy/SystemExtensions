@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+
 namespace AlastairLundy.Extensions.System.Strings.Cases;
 
     public static class UpperCaseExtensions
@@ -42,8 +44,20 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// <param name="s">The string to be checked.</param>
         /// <returns>true if a character, represented as a string, is upper case; returns false otherwise.</returns>
         // ReSharper disable once MemberCanBePrivate.Global
+        [Obsolete("This method is deprecated and will be removed in a future version.")]
         public static bool IsUpperCaseLetter(this string s)
         {
+            return s.Equals(s.ToUpper());
+        }
+        
+        /// <summary>
+        /// Returns whether a string is upper case or not.
+        /// </summary>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if the string is upper case; returns false otherwise.</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static bool IsUpperCase(this string s)
+        { 
             return s.Equals(s.ToUpper());
         }
     }
