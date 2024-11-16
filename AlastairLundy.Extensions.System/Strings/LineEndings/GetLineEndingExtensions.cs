@@ -22,13 +22,15 @@
        SOFTWARE.
    */
 
+using System;
 using System.IO;
+// ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Strings.LineEndings;
 
 public static class GetLineEndingExtensions
 {
-#if NET6_0_OR_GREATER
+#if NET6_0_OR_GREATER || NETSTANDARD2_1
     /// <summary>
     /// 
     /// </summary>
