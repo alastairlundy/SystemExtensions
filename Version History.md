@@ -7,6 +7,7 @@
 ### 5.4
 | Version | Release Date |
 |-|-|
+| 5.4.0 Preview 2 | November 23rd 2024. |
 | 5.4.0 Preview 1 | November 16th 2024. |
 
 #### 5.3

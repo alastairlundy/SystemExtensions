@@ -8,25 +8,17 @@
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>### Changes since 5.3.x series
-* General improvements and optimizations
-* Updated ``ContainsAnyOf`` code and ``ContainsAllOf`` code to use LINQ statements
-* Added ``EqualsAnyOf`` and ``EqualsAllOf`` generic extensions
-* Replaced usage of deprecated code
-* Optimized Dot counting extensions 
-* Deprecated ``ContainsSpace`` and ``ContainsSpaceSeperatedSubStrings`` extensions
-* Deprecated ``IsUpperCaseLetter(string)`` and ``IsUpperCaseLetter(char)`` extensions - ``IsUpperCaseCharacter(char)`` replaces the latter extension method
-* Deprecated ``IsLowerCaseLetter(string)`` extension - ``IsLowerCaseCharacter(char)`` replaces this extension method
-* Deprecated ``LineEnding(string)`` extension method - This has been replaced with ``GetLineEnding(string)`` and ``GetFileLineEnding(string)``.
-* Added support for Line Ending related code to .NET Standard 2.1
-* Deprecated ``IndexesOf(string, string, bool)`` extension method - This has been replaced with ``IndexesOf(string, string, StringComparison)`` extension method
-* Fixed an issue where ``AddMissingZeroes(string, int)`` would not throw an Argument exception if an invalid integer value was provided</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.4.0 Preview 1
+* Fix typos in XML doc comments
+* Added ``ToTitleCase(IEnumerable&lt;string&gt;)`` extension method
+* Deprecate ``ToTitleCase(string[] array)`` extension method - This has been replaced with ``ToTitleCase(IEnumerable&lt;string&gt;)`` extension method
+* Resolve some build warnings</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.4.0</AssemblyVersion>
         <FileVersion>5.4.0</FileVersion>
-        <PackageVersion>5.4.0-preview.1</PackageVersion>
+        <PackageVersion>5.4.0-preview.2</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
