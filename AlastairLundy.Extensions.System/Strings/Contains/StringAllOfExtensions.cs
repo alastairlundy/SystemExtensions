@@ -35,7 +35,7 @@ public static class StringAllOfExtensions
     /// </summary>
     /// <param name="source">The item to be searched.</param>
     /// <param name="values">The values to search for.</param>
-    /// <returns>true if all of the values are found in the string; returns false otherwise.</returns>
+    /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
     public static bool ContainsAllOf(this string source, IEnumerable<char> values)
     {
         return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
@@ -46,7 +46,7 @@ public static class StringAllOfExtensions
     /// </summary>
     /// <param name="source">The item to be searched.</param>
     /// <param name="values">The values to search for.</param>
-    /// <returns>true if all of the values are found in the string; returns false otherwise.</returns>
+    /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
     public static bool ContainsAllOf(this string source, IEnumerable<string> values)
     {
         return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
