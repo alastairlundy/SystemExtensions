@@ -33,10 +33,10 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
             {',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+', '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'};
 
         /// <summary>
-        /// 
+        /// Returns whether a string contains a special character or not.
         /// </summary>
-        /// <param name="s"></param>
-        /// <returns></returns>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if the string contains a special character; returns false otherwise.</returns>
         public static bool ContainsSpecialCharacter(this string s)
         {
             return s.ContainsAnyOf(SpecialCharacters);
@@ -46,7 +46,7 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
         /// Returns whether a character is a special character or not.
         /// </summary>
         /// <param name="c">The character to be checked.</param>
-        /// <returns>true if the character is a special character, returns false otherwise.</returns>
+        /// <returns>true if the character is a special character; returns false otherwise.</returns>
         public static bool IsSpecialCharacter(this char c)
         {
             return SpecialCharacters.Where(sc => sc == c).Any();

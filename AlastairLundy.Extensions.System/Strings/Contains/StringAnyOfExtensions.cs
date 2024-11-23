@@ -25,6 +25,7 @@
 using System.Collections.Generic;
 using System.Linq;
 // ReSharper disable RedundantBoolCompare
+// ReSharper disable ConvertClosureToMethodGroup
 
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 

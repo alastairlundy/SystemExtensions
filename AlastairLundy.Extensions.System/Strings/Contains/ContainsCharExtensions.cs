@@ -26,6 +26,7 @@
 
 using System.Linq;
 // ReSharper disable RedundantIfElseBlock
+// ReSharper disable IntroduceOptionalParameters.Global
 
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 

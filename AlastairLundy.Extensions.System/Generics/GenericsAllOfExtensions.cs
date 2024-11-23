@@ -34,12 +34,12 @@ namespace AlastairLundy.Extensions.System.Generics;
 public static class GenericsAllOfExtensions
 {
     /// <summary>
-    /// Returns whether an item of type T contains all of the specified possible values
+    /// Returns whether an item of type T contains all the specified possible values
     /// </summary>
     /// <param name="source">The item to be searched.</param>
     /// <param name="possibleValues">The possible values to search for.</param>
     /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-    /// <returns>true if all of the possibles values is contained in the source; returns false otherwise.</returns>
+    /// <returns>true if all the possibles values is contained in the source; returns false otherwise.</returns>
     public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues)
     {
         bool output = false;
@@ -82,12 +82,12 @@ public static class GenericsAllOfExtensions
     }
     
     /// <summary>
-    /// Returns whether an item of type T is equal to all of the specified possible values
+    /// Returns whether an item of type T is equal to all the specified possible values
     /// </summary>
     /// <param name="source">The item to be searched.</param>
     /// <param name="possibleValues">The possible values to search for.</param>
     /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-    /// <returns>true if all of the possibles values is equal to the source; returns false otherwise.</returns>
+    /// <returns>true if all the possibles values is equal to the source; returns false otherwise.</returns>
     public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues)
     {
         // ReSharper disable once RedundantBoolCompare
