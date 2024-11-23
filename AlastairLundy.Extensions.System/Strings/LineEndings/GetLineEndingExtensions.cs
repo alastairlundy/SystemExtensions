@@ -22,8 +22,10 @@
        SOFTWARE.
    */
 
+#if NETSTANDARD2_1 || NET6_0_OR_GREATER
 using System;
 using System.IO;
+#endif
 // ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Strings.LineEndings;

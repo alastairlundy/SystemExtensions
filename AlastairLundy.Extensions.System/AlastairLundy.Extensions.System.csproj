@@ -66,8 +66,4 @@
         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Internal\Exceptions\" />
-    </ItemGroup>
 </Project>
