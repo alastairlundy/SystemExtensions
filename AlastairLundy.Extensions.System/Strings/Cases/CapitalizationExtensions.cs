@@ -22,8 +22,6 @@
        SOFTWARE.
    */
 
-using System.Text;
-
 namespace AlastairLundy.Extensions.System.Strings.Cases;
 
     public static class CapitalizationExtensions
@@ -31,7 +29,7 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         /// <summary>
         /// Capitalizes the first letter in a word.
         /// </summary>
-        /// <param name="word">The word to be modifed.</param>
+        /// <param name="word">The word to be modified.</param>
         /// <returns>the updated word with the first letter capitalized.</returns>
         public static string CapitalizeFirstLetter(this string word)
         {
