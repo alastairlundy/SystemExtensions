@@ -23,13 +23,14 @@
    */
 
 using System.Linq;
+
 using AlastairLundy.Extensions.System.Strings.Contains;
 
 namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
 
     public static class SpecialCharacterDetectionExtension
     {
-        private static readonly char[] SpecialCharacters =
+        private static readonly char[] _specialCharacters =
             {',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+', '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'};
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
         /// <returns>true if the string contains a special character; returns false otherwise.</returns>
         public static bool ContainsSpecialCharacter(this string s)
         {
-            return s.ContainsAnyOf(SpecialCharacters);
+            return s.ContainsAnyOf(_specialCharacters);
         }
         
         /// <summary>
@@ -49,6 +50,6 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
         /// <returns>true if the character is a special character; returns false otherwise.</returns>
         public static bool IsSpecialCharacter(this char c)
         {
-            return SpecialCharacters.Where(sc => sc == c).Any();
+            return _specialCharacters.Where(sc => sc == c).Any();
         }
     }
