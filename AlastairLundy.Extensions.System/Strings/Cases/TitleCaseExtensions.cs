@@ -22,6 +22,8 @@
        SOFTWARE.
    */
 
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 // ReSharper disable RedundantBoolCompare
@@ -51,27 +53,33 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
         }
         
         /// <summary>
-        /// Converts a regular string to a Title Case String Like This.
+        /// Converts an enumerable of regular strings to an enumerable of Title Case String Like This.
         /// </summary>
         /// <param name="words">The array of strings to be converted.</param>
-        /// <returns>the converted title case string.</returns>
-        public static string ToTitleCase(this string[] words)
+        /// <returns>the converted title case string enumerable.</returns>
+        public static string ToTitleCase(this IEnumerable<string> words)
         {
             StringBuilder stringBuilder = new StringBuilder();
+
+            string[] enumerable = words as string[] ?? words.ToArray();
             
-            for (int index = 0; index < words.Length; index++)
+            for (int index = 0; index < enumerable.Length; index++)
             {
-                if (words[index].IsWordTitleCase())
-                {
-                    stringBuilder.Append(words[index]);
-                }
-                else
-                {
-                    stringBuilder.Append(words[index].CapitalizeFirstLetter());
-                }
+                stringBuilder.Append(enumerable[index].IsWordTitleCase() ? enumerable[index] : enumerable[index].CapitalizeFirstLetter());
             }
 
             return stringBuilder.ToString();
+        }
+        
+        /// <summary>
+        /// Converts an array of regular strings to an array of Title Case String Like This.
+        /// </summary>
+        /// <param name="words">The array of strings to be converted.</param>
+        /// <returns>the converted title case string array.</returns>
+        [Obsolete("This method is deprecated and will be removed in a future version. Please use TitleCase(IEnumerable<string> instead.")]
+        public static string ToTitleCase(this string[] words)
+        {
+            return ToTitleCase(words.ToList());
         }
         
         /// <summary>
