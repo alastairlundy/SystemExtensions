@@ -24,19 +24,20 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Strings.Indexes;
 
 public static class IndexesOfExtensions
 {
     /// <summary>
-    /// Gets the indexes of the specified char in a char array.
+    /// Gets the indexes of the specified char in a string.
     /// </summary>
     /// <param name="toBeSearched">The string to be searched.</param>
     /// <param name="expected">The char to look for.</param>
     /// <param name="ignoreCase">Whether to ignore the case of the expected char.</param>
     /// <returns>The indexes if the char is found; An array with a single element of -1 otherwise.</returns>
-    public static IEnumerable<int> IndexesOf(this char[] toBeSearched, char expected, bool ignoreCase)
+    public static IEnumerable<int> IndexesOf(this string toBeSearched, char expected, bool ignoreCase)
     {
         List<int> indexes = new List<int>();
 
@@ -50,18 +51,6 @@ public static class IndexesOfExtensions
         }
 
         return indexes;
-    }
-    
-    /// <summary>
-    /// Gets the indexes of the specified char in a string.
-    /// </summary>
-    /// <param name="toBeSearched">The string to be searched.</param>
-    /// <param name="expected">The char to look for.</param>
-    /// <param name="ignoreCase">Whether to ignore the case of the expected char.</param>
-    /// <returns>The indexes if the char is found; An array with a single element of -1 otherwise.</returns>
-    public static IEnumerable<int> IndexesOf(this string toBeSearched, char expected, bool ignoreCase)
-    {
-        return IndexesOf(toBeSearched.ToCharArray(), expected, ignoreCase);
     }
     
     /// <summary>
