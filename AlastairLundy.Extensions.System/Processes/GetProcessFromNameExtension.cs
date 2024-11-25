@@ -24,6 +24,9 @@
 
 using System;
 using System.Diagnostics;
+using System.Linq;
+
+using AlastairLundy.Extensions.System.Internal.Localizations;
 using AlastairLundy.Extensions.System.Strings.Contains;
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable RedundantIfElseBlock
@@ -64,21 +67,52 @@ namespace AlastairLundy.Extensions.System.Processes;
                 }
             }
 
+            bool isUpperCase = process.IsProcessRunning(processName.ToUpper());
+            bool isLowerCase = process.IsProcessRunning(processName.ToLower());
+
             if (process.IsProcessRunning(processName) ||
                 process.IsProcessRunning(processName.ToLower()) ||
                 process.IsProcessRunning(processName.ToUpper()))
             {
                 Process[] processes = Process.GetProcesses();
 
-                foreach (Process p in processes)
+                output = processes.Where(p => p.ProcessName.ToLower().Equals(processName.ToLower())).FirstOrDefault();
+
+                if (output == null)
                 {
-                    if (p.ProcessName.ToLower().Equals(processName.ToLower()))
+                    string similarName = string.Empty;
+                    if (isLowerCase)
                     {
-                        return p;
+                        similarName = processName.ToLower();
+                    }
+                    else if (isUpperCase)
+                    {
+                        similarName = processName.ToUpper();
+                    }
+                    else if(processes.Where(p => p.ProcessName.Contains(processName)).Any())
+                    {
+                        similarName = processes.Select(p => p.ProcessName.Contains(processName)).First().ToString();
+                    }
+
+                    if (similarName != string.Empty)
+                    {
+                        throw new ArgumentException(Resources.Exceptions_IncorrectProcessName
+                            .Replace("{x}", processName)
+                            .Replace("{y}", similarName));
+                    }
+                    else
+                    {
+                        throw new ArgumentException(Resources.Exceptions_ProcessNotRunning.Replace("{x}", processName));
                     }
                 }
+                else
+                {
+                    return output;
+                }
             }
-
-            throw new ArgumentException();
+            else
+            {
+                throw new ArgumentException(Resources.Exceptions_ProcessNotRunning.Replace("{x}", processName));
+            }
         }
     }
