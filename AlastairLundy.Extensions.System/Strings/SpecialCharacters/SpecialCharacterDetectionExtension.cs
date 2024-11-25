@@ -31,7 +31,7 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
     public static class SpecialCharacterDetectionExtension
     {
         private static readonly char[] _specialCharacters =
-            {',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+', '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'};
+            [',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+', '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'];
 
         /// <summary>
         /// Returns whether a string contains a special character or not.
