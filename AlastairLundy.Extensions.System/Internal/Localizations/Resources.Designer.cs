@@ -58,5 +58,23 @@ namespace AlastairLundy.Extensions.System.Internal.Localizations {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process {x} could not be found but a similarly named process {y} was found..
+        /// </summary>
+        internal static string Exceptions_IncorrectProcessName {
+            get {
+                return ResourceManager.GetString("Exceptions.IncorrectProcessName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process {x} is not currently running. Please try again later..
+        /// </summary>
+        internal static string Exceptions_ProcessNotRunning {
+            get {
+                return ResourceManager.GetString("Exceptions.ProcessNotRunning", resourceCulture);
+            }
+        }
     }
 }
