@@ -24,6 +24,9 @@
 
 using System;
 using System.Diagnostics;
+using AlastairLundy.Extensions.System.Strings.Contains;
+// ReSharper disable RedundantBoolCompare
+// ReSharper disable RedundantIfElseBlock
 
 namespace AlastairLundy.Extensions.System.Processes;
 
@@ -37,10 +40,28 @@ namespace AlastairLundy.Extensions.System.Processes;
         /// <returns>the Process object with the same name as the specified string.</returns>
         public static Process GetProcessFromName(this Process process, string processName)
         {
+            return process.GetProcessFromName(processName, true);
+        }
 
-            if (processName.Contains(".app"))
+        public static Process GetProcessFromName(this Process process, string processName, bool sanitizeProcessName)
+        {
+            #if NETSTANDARD2_1 || NET8_0_OR_GREATER
+            Process? output = null;
+#else
+            Process output;
+#endif
+            
+            string[] potentialProcessFileExtension = [".exe", ".app", ".msi", ".appx"];
+
+            if (sanitizeProcessName == true)
             {
-                processName = processName.Replace(".app", string.Empty);
+                if (processName.ContainsAnyOf(potentialProcessFileExtension))
+                {
+                    int finalDot = processName.LastIndexOf('.');
+                    int charsToRemove = processName.Length - finalDot;
+                
+                    processName = processName.Remove(finalDot, charsToRemove);
+                }
             }
 
             if (process.IsProcessRunning(processName) ||
