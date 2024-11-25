@@ -37,10 +37,6 @@ namespace AlastairLundy.Extensions.System.Processes;
         /// <returns>the Process object with the same name as the specified string.</returns>
         public static Process GetProcessFromName(this Process process, string processName)
         {
-            if (processName.Contains(".exe"))
-            {
-                processName = processName.Replace(".exe", string.Empty);
-            }
 
             if (processName.Contains(".app"))
             {
