@@ -25,6 +25,7 @@
 using System.Collections.Generic;
 using System.Linq;
 // ReSharper disable RedundantBoolCompare
+// ReSharper disable ConvertClosureToMethodGroup
 
 namespace AlastairLundy.Extensions.System.Strings.Contains;
 
@@ -38,7 +39,6 @@ public static class StringAllOfExtensions
     /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
     public static bool ContainsAllOf(this string source, IEnumerable<char> values)
     {
-        // ReSharper disable once ConvertClosureToMethodGroup
         return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
     }
     
