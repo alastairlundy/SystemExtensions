@@ -24,6 +24,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable ConvertClosureToMethodGroup
 
@@ -39,7 +40,7 @@ public static class StringAnyOfExtensions
     /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf(this string source, IEnumerable<char> possibleValues)
     {
-        return possibleValues.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
+        return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
     }
     
     /// <summary>
@@ -50,6 +51,6 @@ public static class StringAnyOfExtensions
     /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
     public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
     {
-        return possibleValues.Select(t => source.Contains(t)).Any(containsValue => containsValue == true);
+        return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
     }
 }
