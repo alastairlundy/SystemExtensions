@@ -60,12 +60,6 @@ namespace AlastairLundy.Extensions.System.Processes;
         /// <exception cref="ArgumentException">Thrown if the process is not running.</exception>
         public static Process GetProcessFromName(this Process process, string processName, bool sanitizeProcessName)
         {
-#if NETSTANDARD2_1 || NET8_0_OR_GREATER
-            Process? output = null;
-#else
-            Process output;
-#endif
-            
             string[] potentialProcessFileExtension = [".exe", ".app", ".msi", ".appx"];
 
             if (sanitizeProcessName == true)
@@ -88,6 +82,12 @@ namespace AlastairLundy.Extensions.System.Processes;
             {
                 Process[] processes = Process.GetProcesses();
 
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
+                Process? output = null;
+#else
+            Process output;
+#endif
+                
                 output = processes.Where(p => p.ProcessName.ToLower().Equals(processName.ToLower())).FirstOrDefault();
 
                 if (output == null)
