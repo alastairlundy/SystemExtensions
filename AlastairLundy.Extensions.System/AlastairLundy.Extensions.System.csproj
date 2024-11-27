@@ -8,17 +8,17 @@
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>### Changes since 5.4.0 Preview 1
-* Fix typos in XML doc comments
-* Added ``ToTitleCase(IEnumerable&lt;string&gt;)`` extension method
-* Deprecate ``ToTitleCase(string[] array)`` extension method - This has been replaced with ``ToTitleCase(IEnumerable&lt;string&gt;)`` extension method
-* Resolve some build warnings</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.4.0 Preview 3
+* Removed deprecation of ``ContainsSpaceSeparatedSubStrings``
+* Cleaned up code
+* Add additional overload for ``GetProcessFromName``
+* Improved exception handling for Process extensions</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.4.0</AssemblyVersion>
         <FileVersion>5.4.0</FileVersion>
-        <PackageVersion>5.4.0-preview.2</PackageVersion>
+        <PackageVersion>5.4.0-preview.3</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
