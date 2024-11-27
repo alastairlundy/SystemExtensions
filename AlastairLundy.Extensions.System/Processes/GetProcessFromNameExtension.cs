@@ -31,6 +31,10 @@ using AlastairLundy.Extensions.System.Strings.Contains;
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable RedundantIfElseBlock
 
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
+#nullable enable
+#endif
+
 namespace AlastairLundy.Extensions.System.Processes;
 
     public static class GetProcessFromNameExtension

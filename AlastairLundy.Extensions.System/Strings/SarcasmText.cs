@@ -26,6 +26,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
+#nullable enable
+#endif
+
 namespace AlastairLundy.Extensions.System.Strings;
 
     public static class SarcasmText
@@ -36,7 +40,11 @@ namespace AlastairLundy.Extensions.System.Strings;
         /// <param name="input">The string to be converted.</param>
         /// <param name="output">The converted string if successful; null otherwise.</param>
         /// <returns>true if the conversion was successful; returns false otherwise.</returns>
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
+        public static bool TryEncode(string input, out string? output)
+#else
         public static bool TryEncode(string input, out string output)
+#endif
         {
             try
             {
@@ -56,7 +64,11 @@ namespace AlastairLundy.Extensions.System.Strings;
         /// <param name="input">The string to be converted.</param>
         /// <param name="output">The converted string if successful; null otherwise.</param>
         /// <returns>true if the conversion was successful; returns false otherwise.</returns>
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
+        public static bool TryDecode(string input, out string? output)
+#else
         public static bool TryDecode(string input, out string output)
+#endif
         {
             try
             {
@@ -114,7 +126,7 @@ namespace AlastairLundy.Extensions.System.Strings;
             }
             else
             {
-                return Encode(word.ToCharArray()).ToString();
+                return Encode(word.ToCharArray()).ToString()!;
             }
         }
         
@@ -181,7 +193,7 @@ namespace AlastairLundy.Extensions.System.Strings;
             }
             else
             {
-                return Decode(word.ToCharArray()).ToString();
+                return Decode(word.ToCharArray()).ToString()!;
             }
         }
 
