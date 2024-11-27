@@ -22,13 +22,14 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Strings.LineEndings;
-
-public enum LineEndingFormat
+namespace AlastairLundy.Extensions.System.Strings.LineEndings
 {
-    CR,
-    LF,
-    CR_LF,
-    LF_CR,
-    NotDetected
+    public enum LineEndingFormat
+    {
+        CR,
+        LF,
+        CR_LF,
+        LF_CR,
+        NotDetected
+    }
 }

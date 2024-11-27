@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Dates;
-
+namespace AlastairLundy.Extensions.System.Dates
+{
     public static class DateOnlyToDateTimeExtension
     {
 #if NET6_0_OR_GREATER
@@ -42,3 +42,4 @@ namespace AlastairLundy.Extensions.System.Dates;
 #endif      
    
     }
+}

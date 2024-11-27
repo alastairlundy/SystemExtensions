@@ -24,32 +24,33 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Strings.Contains;
-
-public static class ContainsSpacesExtensions
+namespace AlastairLundy.Extensions.System.Strings.Contains
 {
-    /// <summary>
-    /// Determine if a string contains a space character.
-    /// </summary>
-    /// <param name="s">The string to search.</param>
-    /// <returns>true if a string contains a space character; false otherwise.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version.")]
-    public static bool ContainsSpace(this string s)
+    public static class ContainsSpacesExtensions
     {
-        #if NET6_0_OR_GREATER
+        /// <summary>
+        /// Determine if a string contains a space character.
+        /// </summary>
+        /// <param name="s">The string to search.</param>
+        /// <returns>true if a string contains a space character; false otherwise.</returns>
+        [Obsolete("This method is deprecated and will be removed in a future version.")]
+        public static bool ContainsSpace(this string s)
+        {
+#if NET6_0_OR_GREATER
             return s.Contains(' ') || s.Contains(" ");
-        #else
+#else
             return s.Contains(" ");
-        #endif
-    }
+#endif
+        }
     
-    /// <summary>
-    /// Determine if a string contains space separated substrings within it.
-    /// </summary>
-    /// <param name="s">The string to search.</param>
-    /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
-    public static bool ContainsSpaceSeparatedSubStrings(this string s)
-    {
-        return s.Split(' ').Length > 0;
+        /// <summary>
+        /// Determine if a string contains space separated substrings within it.
+        /// </summary>
+        /// <param name="s">The string to search.</param>
+        /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
+        public static bool ContainsSpaceSeparatedSubStrings(this string s)
+        {
+            return s.Split(' ').Length > 0;
+        }
     }
 }

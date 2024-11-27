@@ -25,43 +25,44 @@
 using System;
 using System.Globalization;
 
-namespace AlastairLundy.Extensions.System.Dates;
-
-public static class DayOfExtensions
+namespace AlastairLundy.Extensions.System.Dates
 {
-        
-    /// <summary>
-    /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
-    /// </summary>
-    /// <param name="date">The date </param>
-    /// <returns>the day of the week as a 32-Bit integer.</returns>
-    public static int DayOfWeekInt(this DateTime date)
+    public static class DayOfExtensions
     {
-        DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
         
-        int dayOfWeek;
+        /// <summary>
+        /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
+        /// </summary>
+        /// <param name="date">The date </param>
+        /// <returns>the day of the week as a 32-Bit integer.</returns>
+        public static int DayOfWeekInt(this DateTime date)
+        {
+            DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
         
-        if (DayOfWeek.Sunday == firstDayOfWeek)
-        {
-            dayOfWeek = (int)date.DayOfWeek + 1;
-        }
-        else if (DayOfWeek.Monday == firstDayOfWeek)
-        {
-            switch (date.DayOfWeek)
+            int dayOfWeek;
+        
+            if (DayOfWeek.Sunday == firstDayOfWeek)
             {
-                case DayOfWeek.Sunday:
-                    dayOfWeek = 7;
-                    break;
-                default:
-                    dayOfWeek = (int)date.DayOfWeek;
-                    break;
+                dayOfWeek = (int)date.DayOfWeek + 1;
             }
-        }
-        else
-        {
-            dayOfWeek = (int)date.DayOfWeek + 1;
-        }
+            else if (DayOfWeek.Monday == firstDayOfWeek)
+            {
+                switch (date.DayOfWeek)
+                {
+                    case DayOfWeek.Sunday:
+                        dayOfWeek = 7;
+                        break;
+                    default:
+                        dayOfWeek = (int)date.DayOfWeek;
+                        break;
+                }
+            }
+            else
+            {
+                dayOfWeek = (int)date.DayOfWeek + 1;
+            }
         
-        return dayOfWeek;
+            return dayOfWeek;
+        }
     }
 }

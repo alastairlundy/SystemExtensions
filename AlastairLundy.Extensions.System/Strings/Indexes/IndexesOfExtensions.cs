@@ -25,78 +25,79 @@
 using System;
 using System.Collections.Generic;
 
-namespace AlastairLundy.Extensions.System.Strings.Indexes;
-
-public static class IndexesOfExtensions
+namespace AlastairLundy.Extensions.System.Strings.Indexes
 {
-    /// <summary>
-    /// Gets the indexes of the specified char in a string.
-    /// </summary>
-    /// <param name="toBeSearched">The string to be searched.</param>
-    /// <param name="expected">The char to look for.</param>
-    /// <param name="ignoreCase">Whether to ignore the case of the expected char.</param>
-    /// <returns>The indexes if the char is found; An array with a single element of -1 otherwise.</returns>
-    public static IEnumerable<int> IndexesOf(this string toBeSearched, char expected, bool ignoreCase)
+    public static class IndexesOfExtensions
     {
-        List<int> indexes = new List<int>();
-
-        for(int index = 0; index < toBeSearched.Length; index++)
+        /// <summary>
+        /// Gets the indexes of the specified char in a string.
+        /// </summary>
+        /// <param name="toBeSearched">The string to be searched.</param>
+        /// <param name="expected">The char to look for.</param>
+        /// <param name="ignoreCase">Whether to ignore the case of the expected char.</param>
+        /// <returns>The indexes if the char is found; An array with a single element of -1 otherwise.</returns>
+        public static IEnumerable<int> IndexesOf(this string toBeSearched, char expected, bool ignoreCase)
         {
-            if (toBeSearched[index].Equals(expected) ||
-                (ignoreCase && toBeSearched[index].ToString().ToLower().Equals(expected.ToString().ToLower())))
+            List<int> indexes = new List<int>();
+
+            for(int index = 0; index < toBeSearched.Length; index++)
             {
-                indexes.Add(index);
-            }
-        }
-
-        return indexes;
-    }
-    
-    /// <summary>
-    /// Gets the indexes of the specified string within a string.
-    /// </summary>
-    /// <param name="toBeSearched">The string to be searched.</param>
-    /// <param name="expected">The string to look for.</param>
-    /// <param name="ignoreCase">Whether to ignore the case of the expected string.</param>
-    /// <returns>The indexes if the string is found; An array with a single element of -1 otherwise.</returns>
-    [Obsolete("This method is deprecated and will be removed in a future version. Please use IndexesOf(string, string, StringComparison) instead.")]
-    public static IEnumerable<int> IndexesOf(this string toBeSearched, string expected, bool ignoreCase)
-    {
-        StringComparison comparer = ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
-
-        return IndexesOf(toBeSearched, expected, comparer);
-    }
-    
-    /// <summary>
-    /// Gets the indexes of the specified string within a string.
-    /// </summary>
-    /// <param name="toBeSearched">The string to be searched.</param>
-    /// <param name="expected">The string to look for.</param>
-    /// <param name="comparer">The type of comparison to use when evaluating equality of strings.</param>
-    /// <returns>The indexes if the string is found; An array with a single element of -1 otherwise.</returns>
-    public static IEnumerable<int> IndexesOf(this string toBeSearched, string expected, StringComparison comparer)
-    {
-        List<int> indexes = new List<int>();
-        
-        bool ignoreCase = comparer == StringComparison.OrdinalIgnoreCase ||
-                          comparer == StringComparison.CurrentCultureIgnoreCase
-                          || comparer == StringComparison.InvariantCultureIgnoreCase;
-
-        if (toBeSearched.Contains(expected) || ignoreCase && toBeSearched.ToLower().Contains(expected.ToLower()))
-        {
-            int index = toBeSearched.IndexOf(expected, comparer);
-            
-            while (index != -1)
-            {
-                indexes.Add(index);
-                index = toBeSearched.IndexOf(expected, index + 1, comparer);
+                if (toBeSearched[index].Equals(expected) ||
+                    (ignoreCase && toBeSearched[index].ToString().ToLower().Equals(expected.ToString().ToLower())))
+                {
+                    indexes.Add(index);
+                }
             }
 
             return indexes;
         }
-        else
+    
+        /// <summary>
+        /// Gets the indexes of the specified string within a string.
+        /// </summary>
+        /// <param name="toBeSearched">The string to be searched.</param>
+        /// <param name="expected">The string to look for.</param>
+        /// <param name="ignoreCase">Whether to ignore the case of the expected string.</param>
+        /// <returns>The indexes if the string is found; An array with a single element of -1 otherwise.</returns>
+        [Obsolete("This method is deprecated and will be removed in a future version. Please use IndexesOf(string, string, StringComparison) instead.")]
+        public static IEnumerable<int> IndexesOf(this string toBeSearched, string expected, bool ignoreCase)
         {
-            return [-1];
+            StringComparison comparer = ignoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+
+            return IndexesOf(toBeSearched, expected, comparer);
+        }
+    
+        /// <summary>
+        /// Gets the indexes of the specified string within a string.
+        /// </summary>
+        /// <param name="toBeSearched">The string to be searched.</param>
+        /// <param name="expected">The string to look for.</param>
+        /// <param name="comparer">The type of comparison to use when evaluating equality of strings.</param>
+        /// <returns>The indexes if the string is found; An array with a single element of -1 otherwise.</returns>
+        public static IEnumerable<int> IndexesOf(this string toBeSearched, string expected, StringComparison comparer)
+        {
+            List<int> indexes = new List<int>();
+        
+            bool ignoreCase = comparer == StringComparison.OrdinalIgnoreCase ||
+                              comparer == StringComparison.CurrentCultureIgnoreCase
+                              || comparer == StringComparison.InvariantCultureIgnoreCase;
+
+            if (toBeSearched.Contains(expected) || ignoreCase && toBeSearched.ToLower().Contains(expected.ToLower()))
+            {
+                int index = toBeSearched.IndexOf(expected, comparer);
+            
+                while (index != -1)
+                {
+                    indexes.Add(index);
+                    index = toBeSearched.IndexOf(expected, index + 1, comparer);
+                }
+
+                return indexes;
+            }
+            else
+            {
+                return [-1];
+            }
         }
     }
 }

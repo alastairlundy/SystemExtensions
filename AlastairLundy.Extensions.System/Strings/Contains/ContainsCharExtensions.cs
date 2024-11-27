@@ -28,10 +28,10 @@ using System.Linq;
 // ReSharper disable RedundantIfElseBlock
 // ReSharper disable IntroduceOptionalParameters.Global
 
-namespace AlastairLundy.Extensions.System.Strings.Contains;
-
-public static class ContainsCharExtensions
+namespace AlastairLundy.Extensions.System.Strings.Contains
 {
+    public static class ContainsCharExtensions
+    {
 
 #if NETSTANDARD2_0
     /// <summary>
@@ -46,22 +46,23 @@ public static class ContainsCharExtensions
     }    
 #endif
     
-    /// <summary>
-    /// Returns whether a string contains the specified character.
-    /// </summary>
-    /// <param name="source">The string to be searched.</param>
-    /// <param name="c">The character to search for.</param>
-    /// <param name="ignoreCase">Whether to ignore the case of the char.</param>
-    /// <returns>True if the string contains the specified char; False otherwise.</returns>
-    public static bool Contains(this string source, char c, bool ignoreCase)
-    {
-        if (ignoreCase == true)
+        /// <summary>
+        /// Returns whether a string contains the specified character.
+        /// </summary>
+        /// <param name="source">The string to be searched.</param>
+        /// <param name="c">The character to search for.</param>
+        /// <param name="ignoreCase">Whether to ignore the case of the char.</param>
+        /// <returns>True if the string contains the specified char; False otherwise.</returns>
+        public static bool Contains(this string source, char c, bool ignoreCase)
         {
-            return source.ToLower().ToCharArray().Contains(char.Parse(c.ToString().ToLower()));
-        }
-        else
-        {
-            return source.Contains(c);
+            if (ignoreCase == true)
+            {
+                return source.ToLower().ToCharArray().Contains(char.Parse(c.ToString().ToLower()));
+            }
+            else
+            {
+                return source.Contains(c);
+            }
         }
     }
 }

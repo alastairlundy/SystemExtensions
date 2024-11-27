@@ -24,48 +24,49 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Dates;
-
-public static class DateNamesExtensions
+namespace AlastairLundy.Extensions.System.Dates
 {
+    public static class DateNamesExtensions
+    {
     
-    /// <summary>
-    /// Gets the short month name as a 3 character string.
-    /// </summary>
-    /// <param name="date">The dateTime object to be used.</param>
-    /// <returns>the short month name as a 3 character string.</returns>
-    public static string ShortMonthName(this DateTime date)
-    {
-        return date.ToString("MMM");
-    }
+        /// <summary>
+        /// Gets the short month name as a 3 character string.
+        /// </summary>
+        /// <param name="date">The dateTime object to be used.</param>
+        /// <returns>the short month name as a 3 character string.</returns>
+        public static string ShortMonthName(this DateTime date)
+        {
+            return date.ToString("MMM");
+        }
 
-    /// <summary>
-    /// Gets the normal long month name as a string.
-    /// </summary>
-    /// <param name="date">The dateTime object to be used.</param>
-    /// <returns>the long name of the month as a string.</returns>
-    public static string LongMonthName(this DateTime date)
-    {
-        return date.ToString("MMMM");
-    }
+        /// <summary>
+        /// Gets the normal long month name as a string.
+        /// </summary>
+        /// <param name="date">The dateTime object to be used.</param>
+        /// <returns>the long name of the month as a string.</returns>
+        public static string LongMonthName(this DateTime date)
+        {
+            return date.ToString("MMMM");
+        }
 
-    /// <summary>
-    /// Gets the full weekday name as a string.
-    /// </summary>
-    /// <param name="date">The dateTime to be used.</param>
-    /// <returns>the full weekday name.</returns>
-    public static string FullWeekDayName(this DateTime date)
-    {
-        return date.ToString("dddd");
-    }
+        /// <summary>
+        /// Gets the full weekday name as a string.
+        /// </summary>
+        /// <param name="date">The dateTime to be used.</param>
+        /// <returns>the full weekday name.</returns>
+        public static string FullWeekDayName(this DateTime date)
+        {
+            return date.ToString("dddd");
+        }
 
-    /// <summary>
-    /// Gets the short weekday name as a 3 or 4 character string.
-    /// </summary>
-    /// <param name="date">The dateTime to be used.</param>
-    /// <returns>the 3-4 character weekday name as a string.</returns>
-    public static string ShortWeekDayName(this DateTime date)
-    {
-        return date.ToString("ddd");
+        /// <summary>
+        /// Gets the short weekday name as a 3 or 4 character string.
+        /// </summary>
+        /// <param name="date">The dateTime to be used.</param>
+        /// <returns>the 3-4 character weekday name as a string.</returns>
+        public static string ShortWeekDayName(this DateTime date)
+        {
+            return date.ToString("ddd");
+        }
     }
 }

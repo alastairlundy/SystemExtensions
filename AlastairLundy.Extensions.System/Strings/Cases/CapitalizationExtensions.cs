@@ -22,8 +22,8 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.System.Strings.Cases;
-
+namespace AlastairLundy.Extensions.System.Strings.Cases
+{
     public static class CapitalizationExtensions
     {
         /// <summary>
@@ -51,3 +51,4 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
             return newWord;
         }
     }
+}

@@ -28,8 +28,8 @@ using System.Linq;
 using System.Text;
 // ReSharper disable RedundantBoolCompare
 
-namespace AlastairLundy.Extensions.System.Strings.Cases;
-
+namespace AlastairLundy.Extensions.System.Strings.Cases
+{
     public static class TitleCaseExtensions
     {
         /// <summary>
@@ -101,3 +101,4 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
             return results.All(x => x == true);
         }
     }
+}

@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System;
-
+namespace AlastairLundy.Extensions.System
+{
     public static class IsAtLeastExtension
     {
         /// <summary>
@@ -59,3 +59,4 @@ namespace AlastairLundy.Extensions.System;
             return false;
         }
     }
+}

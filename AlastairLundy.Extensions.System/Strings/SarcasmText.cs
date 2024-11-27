@@ -30,8 +30,8 @@ using System.Text;
 #nullable enable
 #endif
 
-namespace AlastairLundy.Extensions.System.Strings;
-
+namespace AlastairLundy.Extensions.System.Strings
+{
     public static class SarcasmText
     {
         /// <summary>
@@ -219,3 +219,4 @@ namespace AlastairLundy.Extensions.System.Strings;
             return newEnumerable;
         }
     }
+}

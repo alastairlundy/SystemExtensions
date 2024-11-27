@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Dates;
-
+namespace AlastairLundy.Extensions.System.Dates
+{
     public static class DateTimeSubtractExtensions
     {
 #if NET6_0_OR_GREATER
@@ -93,7 +93,7 @@ namespace AlastairLundy.Extensions.System.Dates;
         /// <returns>the modified DateTime object.</returns>
         public static DateTime SubtractDays(this DateTime dateTime, double days)
         {
-           return dateTime.Subtract(TimeSpan.FromDays(days));
+            return dateTime.Subtract(TimeSpan.FromDays(days));
         }
         
         /// <summary>
@@ -150,3 +150,4 @@ namespace AlastairLundy.Extensions.System.Dates;
             return dateTime.Subtract(TimeSpan.FromDays(daysToRemove));
         }
     }
+}

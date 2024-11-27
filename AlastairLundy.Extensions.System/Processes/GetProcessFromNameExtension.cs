@@ -35,8 +35,8 @@ using AlastairLundy.Extensions.System.Strings.Contains;
 #nullable enable
 #endif
 
-namespace AlastairLundy.Extensions.System.Processes;
-
+namespace AlastairLundy.Extensions.System.Processes
+{
     public static class GetProcessFromNameExtension
     {
         /// <summary>
@@ -128,3 +128,4 @@ namespace AlastairLundy.Extensions.System.Processes;
             }
         }
     }
+}

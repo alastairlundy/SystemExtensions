@@ -24,8 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Strings.Cases;
-
+namespace AlastairLundy.Extensions.System.Strings.Cases
+{
     public static class UpperCaseExtensions
     {
         /// <summary>
@@ -72,3 +72,4 @@ namespace AlastairLundy.Extensions.System.Strings.Cases;
             return s.Equals(s.ToUpper());
         }
     }
+}

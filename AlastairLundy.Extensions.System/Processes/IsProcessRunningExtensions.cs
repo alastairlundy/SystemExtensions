@@ -24,8 +24,8 @@
 
 using System.Diagnostics;
 
-namespace AlastairLundy.Extensions.System.Processes;
-
+namespace AlastairLundy.Extensions.System.Processes
+{
     public static class IsProcessRunningExtensions
     {
         /// <summary>
@@ -56,3 +56,4 @@ namespace AlastairLundy.Extensions.System.Processes;
             return false;
         }
     }
+}

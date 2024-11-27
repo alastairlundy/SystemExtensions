@@ -26,8 +26,8 @@ using System.Linq;
 
 using AlastairLundy.Extensions.System.Strings.Contains;
 
-namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
-
+namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters
+{
     public static class SpecialCharacterDetectionExtension
     {
         private static readonly char[] _specialCharacters =
@@ -53,3 +53,4 @@ namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters;
             return _specialCharacters.Where(sc => sc == c).Any();
         }
     }
+}

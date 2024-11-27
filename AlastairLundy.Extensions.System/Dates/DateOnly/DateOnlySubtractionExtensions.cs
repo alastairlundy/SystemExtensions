@@ -24,7 +24,8 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Dates;
+namespace AlastairLundy.Extensions.System.Dates
+{
     public static class DateOnlySubtractionExtensions
     {
 #if NET6_0_OR_GREATER
@@ -64,5 +65,6 @@ namespace AlastairLundy.Extensions.System.Dates;
             DateTime result = dateOnly.ToDateTime().SubtractYears(Convert.ToDouble(years));
             return DateOnly.FromDateTime(result);
         }
-     #endif   
+#endif   
     }
+}

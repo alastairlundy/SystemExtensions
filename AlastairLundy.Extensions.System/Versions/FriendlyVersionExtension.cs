@@ -26,8 +26,8 @@ using System;
 
 // ReSharper disable RedundantIfElseBlock
 
-namespace AlastairLundy.Extensions.System;
-
+namespace AlastairLundy.Extensions.System
+{
     public static class FriendlyVersionExtension
     {
         /// <summary>
@@ -63,3 +63,4 @@ namespace AlastairLundy.Extensions.System;
             }
         }
     }
+}

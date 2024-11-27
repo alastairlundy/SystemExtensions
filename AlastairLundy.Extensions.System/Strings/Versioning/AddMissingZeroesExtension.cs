@@ -26,8 +26,8 @@ using System;
 using System.Linq;
 using System.Text;
 
-namespace AlastairLundy.Extensions.System.Strings.Versioning;
-
+namespace AlastairLundy.Extensions.System.Strings.Versioning
+{
     public static class AddMissingZeroesExtensions
     {
         /// <summary>
@@ -83,3 +83,4 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
             return stringBuilder.ToString();
         }
     }
+}

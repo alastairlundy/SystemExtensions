@@ -24,8 +24,8 @@
 
 using System.Linq;
 
-namespace AlastairLundy.Extensions.System.Strings.Versioning;
-
+namespace AlastairLundy.Extensions.System.Strings.Versioning
+{
     public static class DotCountingExtensions
     {
         /// <summary>
@@ -35,6 +35,7 @@ namespace AlastairLundy.Extensions.System.Strings.Versioning;
         /// <returns>the number of periods/full stops/dots in a string</returns>
         public static int CountDotsInString(this string str)
         {
-           return str.ToCharArray().Where(x => x.Equals('.')).Count();
+            return str.ToCharArray().Where(x => x.Equals('.')).Count();
         }
     }
+}

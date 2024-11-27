@@ -29,68 +29,69 @@ using System.Reflection;
 
 using AlastairLundy.Extensions.System.Strings.Contains;
 
-namespace AlastairLundy.Extensions.System.Generics;
-
-public static class GenericsAllOfExtensions
+namespace AlastairLundy.Extensions.System.Generics
 {
-    /// <summary>
-    /// Returns whether an item of type T contains all the specified possible values
-    /// </summary>
-    /// <param name="source">The item to be searched.</param>
-    /// <param name="possibleValues">The possible values to search for.</param>
-    /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-    /// <returns>true if all the possibles values is contained in the source; returns false otherwise.</returns>
-    public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues)
+    public static class GenericsAllOfExtensions
     {
-        bool output = false;
-
-        bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
-
-        if (typeof(T) == typeof(string))
+        /// <summary>
+        /// Returns whether an item of type T contains all the specified possible values
+        /// </summary>
+        /// <param name="source">The item to be searched.</param>
+        /// <param name="possibleValues">The possible values to search for.</param>
+        /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
+        /// <returns>true if all the possibles values is contained in the source; returns false otherwise.</returns>
+        public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues)
         {
-            return StringAllOfExtensions.ContainsAllOf(source as string, possibleValues as IEnumerable<string>);
-        }
-        
-        foreach (T possibleValue in possibleValues)
-        {
-            if (source.Equals(possibleValue))
+            bool output = false;
+
+            bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
+
+            if (typeof(T) == typeof(string))
             {
-                return true;
+                return StringAllOfExtensions.ContainsAllOf(source as string, possibleValues as IEnumerable<string>);
             }
-            
-            if (hasContainsMethod == true)
+        
+            foreach (T possibleValue in possibleValues)
             {
-                try
+                if (source.Equals(possibleValue))
                 {
-                    bool result = (bool)typeof(T)!.InvokeMember("Contains",
-                        BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
-                        new object[] { source })!;
-
-                    if (result == true)
+                    return true;
+                }
+            
+                if (hasContainsMethod == true)
+                {
+                    try
                     {
-                        output = true;
+                        bool result = (bool)typeof(T)!.InvokeMember("Contains",
+                            BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
+                            new object[] { source })!;
+
+                        if (result == true)
+                        {
+                            output = true;
+                        }
+                    }
+                    catch
+                    {
+                    
                     }
                 }
-                catch
-                {
-                    
-                }
             }
-        }
         
-        return output;
-    }
+            return output;
+        }
     
-    /// <summary>
-    /// Returns whether an item of type T is equal to all the specified possible values
-    /// </summary>
-    /// <param name="source">The item to be searched.</param>
-    /// <param name="possibleValues">The possible values to search for.</param>
-    /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-    /// <returns>true if all the possibles values is equal to the source; returns false otherwise.</returns>
-    public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues)
-    {
-        // ReSharper disable once RedundantBoolCompare
-        return possibleValues.Select(t => source.Equals(t)).All(containsValue => containsValue == true);
+        /// <summary>
+        /// Returns whether an item of type T is equal to all the specified possible values
+        /// </summary>
+        /// <param name="source">The item to be searched.</param>
+        /// <param name="possibleValues">The possible values to search for.</param>
+        /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
+        /// <returns>true if all the possibles values is equal to the source; returns false otherwise.</returns>
+        public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues)
+        {
+            // ReSharper disable once RedundantBoolCompare
+            return possibleValues.Select(t => source.Equals(t)).All(containsValue => containsValue == true);
+        }
     }
 }

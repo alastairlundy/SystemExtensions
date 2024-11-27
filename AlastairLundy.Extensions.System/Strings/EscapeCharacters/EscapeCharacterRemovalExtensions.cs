@@ -24,8 +24,8 @@
 
 using AlastairLundy.Extensions.System.Strings.Contains;
 
-namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
-
+namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters
+{
     public static class EscapeCharacterRemovalExtensions
     {
         private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
@@ -63,3 +63,4 @@ namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters;
             return newStr;
         }
     }
+}

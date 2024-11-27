@@ -24,17 +24,18 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System.Dates;
-
-public static class GivenDateExtensions
+namespace AlastairLundy.Extensions.System.Dates
 {
-    /// <summary>
-    /// Gets the given date in the RFC 1123 format.
-    /// </summary>
-    /// <param name="date">The dateTime object to be used.</param>
-    /// <returns>The given date in the RFC 1123 format to string.</returns>
-    public static string GivenDateToString(this DateTime date)
+    public static class GivenDateExtensions
     {
-        return date.ToString("R");
+        /// <summary>
+        /// Gets the given date in the RFC 1123 format.
+        /// </summary>
+        /// <param name="date">The dateTime object to be used.</param>
+        /// <returns>The given date in the RFC 1123 format to string.</returns>
+        public static string GivenDateToString(this DateTime date)
+        {
+            return date.ToString("R");
+        }
     }
 }

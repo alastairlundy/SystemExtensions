@@ -26,8 +26,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AlastairLundy.Extensions.System;
-
+namespace AlastairLundy.Extensions.System
+{
     [Obsolete]
     public static class AllFalseExtensions
     {
@@ -42,3 +42,4 @@ namespace AlastairLundy.Extensions.System;
             return source.All(input => !input.Equals(true));
         }
     }
+}
