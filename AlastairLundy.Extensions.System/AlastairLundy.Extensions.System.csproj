@@ -26,6 +26,7 @@
         <TargetFrameworks>net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageTags>extension-methods</PackageTags>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>

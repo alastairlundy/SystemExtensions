@@ -46,9 +46,17 @@ namespace AlastairLundy.Extensions.System.Processes;
             return process.GetProcessFromName(processName, true);
         }
 
+        /// <summary>
+        /// Retrieves the Process object with the same name as the specified string.
+        /// </summary>
+        /// <param name="process">The process object</param>
+        /// <param name="processName">The name of the process to be retrieved.</param>
+        /// <param name="sanitizeProcessName">Whether to sanitize the process name </param>
+        /// <returns>the Process object with the same name as the specified string.</returns>
+        /// <exception cref="ArgumentException">Thrown if the process is not running.</exception>
         public static Process GetProcessFromName(this Process process, string processName, bool sanitizeProcessName)
         {
-            #if NETSTANDARD2_1 || NET8_0_OR_GREATER
+#if NETSTANDARD2_1 || NET8_0_OR_GREATER
             Process? output = null;
 #else
             Process output;
