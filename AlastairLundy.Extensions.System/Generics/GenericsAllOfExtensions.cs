@@ -28,6 +28,7 @@ using System.Linq;
 using System.Reflection;
 
 using AlastairLundy.Extensions.System.Strings.Contains;
+// ReSharper disable RedundantBoolCompare
 
 namespace AlastairLundy.Extensions.System.Generics
 {
@@ -71,6 +72,7 @@ namespace AlastairLundy.Extensions.System.Generics
                             output = true;
                         }
                     }
+                    // ReSharper disable once EmptyGeneralCatchClause
                     catch
                     {
                     

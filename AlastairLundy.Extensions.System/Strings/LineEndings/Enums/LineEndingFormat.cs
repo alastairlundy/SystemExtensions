@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+// ReSharper disable InconsistentNaming
 namespace AlastairLundy.Extensions.System.Strings.LineEndings
 {
     public enum LineEndingFormat

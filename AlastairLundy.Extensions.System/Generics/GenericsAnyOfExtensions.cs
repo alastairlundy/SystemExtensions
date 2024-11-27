@@ -71,6 +71,7 @@ namespace AlastairLundy.Extensions.System.Generics
                             output = true;
                         }
                     }
+                    // ReSharper disable once EmptyGeneralCatchClause
                     catch
                     {
                     
