@@ -36,64 +36,7 @@ namespace AlastairLundy.Extensions.System
         /// <returns>true if the specified compared version is newer than the current version, and returns false otherwise.</returns>
         public static bool IsNewerThan(this Version version, Version versionToBeCompared)
         {
-            if (version.Major > versionToBeCompared.Major)
-            {
-                if (version.Minor >= versionToBeCompared.Minor)
-                {
-                    if (version.Build >= versionToBeCompared.Build)
-                    {
-                        if (version.Revision > versionToBeCompared.Revision)
-                        {
-                            return true;
-                        }
-
-                        return false;
-                    }
-
-                    return false;
-                }
-                else
-                {
-                    if (version.Build > versionToBeCompared.Build)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        if (version.Revision > versionToBeCompared.Revision)
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (version.Minor > versionToBeCompared.Minor)
-                {
-                    return true;
-                }
-                else
-                {
-                    if (version.Build > versionToBeCompared.Build)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        if (version.Revision > versionToBeCompared.Revision)
-                        {
-                            return true;
-                        }
-
-                        return false;
-                    }
-                }
-            }
+            return version > versionToBeCompared;
         }
     }
 }

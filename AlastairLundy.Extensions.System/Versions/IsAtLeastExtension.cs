@@ -36,27 +36,7 @@ namespace AlastairLundy.Extensions.System
         /// <returns>true if the specified compared version is newer than or equal to the current version, and returns false otherwise.</returns>
         public static bool IsAtLeast(this Version version, Version versionToBeCompared)
         {
-            if (version.Major >= versionToBeCompared.Major)
-            {
-                if (version.Minor >= versionToBeCompared.Minor)
-                {
-                    if (version.Build >= versionToBeCompared.Build)
-                    {
-                        if (version.Revision >= versionToBeCompared.Revision)
-                        {
-                            return true;
-                        }
-
-                        return false;
-                    }
-
-                    return false;
-                }
-
-                return false;
-            }
-
-            return false;
+            return versionToBeCompared >= version;
         }
     }
 }
