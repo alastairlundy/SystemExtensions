@@ -38,7 +38,7 @@ namespace AlastairLundy.Extensions.System.Strings.LineEndings
         /// </summary>
         /// <param name="filePath">The file path of the file to be checked.</param>
         /// <returns>the line ending format of the string.</returns>
-        public static LineEndingFormat GetFileLineEnding(this string filePath)
+        public static LineEndingFormat GetLineEndingInFile(this string filePath)
         {
             try
             {
