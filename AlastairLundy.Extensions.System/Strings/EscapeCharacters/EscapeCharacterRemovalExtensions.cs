@@ -22,14 +22,14 @@
        SOFTWARE.
    */
 
+using AlastairLundy.Extensions.System.Chars.EscapeCharacters;
+
 using AlastairLundy.Extensions.System.Strings.Contains;
 
 namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters
 {
     public static class EscapeCharacterRemovalExtensions
     {
-        private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
-
         /// <summary>
         /// Returns whether the string contains an Escape Character.
         /// </summary>
@@ -37,7 +37,7 @@ namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters
         /// <returns>true if the string contains an Escape Character; returns false otherwise.</returns>
         public static bool ContainsEscapeCharacters(this string str)
         {
-            return str.ContainsAnyOf(EscapeChars);
+            return str.ContainsAnyOf(EscapeCharacterConstants.EscapeCharacters);
         }
         
         /// <summary>
@@ -51,7 +51,7 @@ namespace AlastairLundy.Extensions.System.Strings.EscapeCharacters
                 
             if (ContainsEscapeCharacters(str))
             {
-                foreach (string escapeChar in EscapeChars)
+                foreach (string escapeChar in EscapeCharacterConstants.EscapeCharacters)
                 {
                     if (newStr.Contains(escapeChar))
                     {

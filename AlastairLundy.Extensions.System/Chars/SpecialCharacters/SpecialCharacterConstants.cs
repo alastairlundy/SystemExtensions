@@ -22,32 +22,13 @@
        SOFTWARE.
    */
 
-using System.Linq;
-using AlastairLundy.Extensions.System.Chars.SpecialCharacters;
-using AlastairLundy.Extensions.System.Strings.Contains;
+namespace AlastairLundy.Extensions.System.Chars.SpecialCharacters;
 
-namespace AlastairLundy.Extensions.System.Strings.SpecialCharacters
+public static class SpecialCharacterConstants
 {
-    public static class SpecialCharacterDetectionExtension
-    {
-        /// <summary>
-        /// Returns whether a string contains a special character or not.
-        /// </summary>
-        /// <param name="s">The string to be checked.</param>
-        /// <returns>true if the string contains a special character; returns false otherwise.</returns>
-        public static bool ContainsSpecialCharacter(this string s)
-        {
-            return s.ContainsAnyOf(SpecialCharacterConstants.SpecialCharacters);
-        }
-        
-        /// <summary>
-        /// Returns whether a character is a special character or not.
-        /// </summary>
-        /// <param name="c">The character to be checked.</param>
-        /// <returns>true if the character is a special character; returns false otherwise.</returns>
-        public static bool IsSpecialCharacter(this char c)
-        {
-            return SpecialCharacterConstants.SpecialCharacters.Where(sc => sc == c).Any();
-        }
-    }
+    private static char[] _specialCharacters =
+        [',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
+            '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'];
+    
+    public static char[] SpecialCharacters => _specialCharacters;
 }
