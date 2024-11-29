@@ -22,11 +22,12 @@
        SOFTWARE.
    */
 
+// ReSharper disable ConvertToAutoProperty
 namespace AlastairLundy.Extensions.System.Chars.SpecialCharacters;
 
 public static class SpecialCharacterConstants
 {
-    private static char[] _specialCharacters =
+    private static readonly char[] _specialCharacters =
         [',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
             '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'];
     
