@@ -24,6 +24,7 @@
 
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 using AlastairLundy.Extensions.System.Internal.Localizations;
@@ -60,17 +61,10 @@ namespace AlastairLundy.Extensions.System.Processes
         /// <exception cref="ArgumentException">Thrown if the process is not running.</exception>
         public static Process GetProcessFromName(this Process process, string processName, bool sanitizeProcessName)
         {
-            string[] potentialProcessFileExtension = [".exe", ".app", ".msi", ".appx"];
 
             if (sanitizeProcessName == true)
             {
-                if (processName.ContainsAnyOf(potentialProcessFileExtension))
-                {
-                    int finalDot = processName.LastIndexOf('.');
-                    int charsToRemove = processName.Length - finalDot;
-                
-                    processName = processName.Remove(finalDot, charsToRemove);
-                }
+                processName = processName.Remove(processName.IndexOf(Path.GetExtension(processName), StringComparison.Ordinal));
             }
 
             bool isUpperCase = process.IsProcessRunning(processName.ToUpper());
