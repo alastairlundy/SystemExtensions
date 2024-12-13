@@ -27,7 +27,7 @@ using System.Linq;
 using System.Text;
 
 #if NETSTANDARD2_1 || NET8_0_OR_GREATER
-#nullable enable
+    #nullable enable
 #endif
 
 namespace AlastairLundy.Extensions.System.Strings
