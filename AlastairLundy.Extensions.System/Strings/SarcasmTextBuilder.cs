@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,7 +31,7 @@ namespace AlastairLundy.Extensions.System.Strings
     /// <summary>
     /// 
     /// </summary>
-    public class SarcasmTextBuilder
+    public class SarcasmTextBuilder : IDisposable
     {
         private readonly StringBuilder _builder;
 
@@ -82,6 +83,16 @@ namespace AlastairLundy.Extensions.System.Strings
         public override string ToString()
         {
             return _builder.ToString();
+        }
+
+        public void Clear()
+        {
+            _builder.Clear();
+        }
+        
+        public void Dispose()
+        {
+            _builder.Clear();
         }
     }
 }
