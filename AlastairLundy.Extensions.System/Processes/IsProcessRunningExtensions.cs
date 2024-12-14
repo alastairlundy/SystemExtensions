@@ -23,6 +23,7 @@
    */
 
 using System.Diagnostics;
+using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Processes
 {
@@ -36,12 +37,13 @@ namespace AlastairLundy.Extensions.System.Processes
         /// <returns>true if the specified process is running; returns false otherwise.</returns>
         public static bool IsProcessRunning(this Process process, string processName)
         {
-            foreach (Process proc in Process.GetProcesses())
+            string[] processes = Process.GetProcesses()
+                .Select(x => x.ProcessName.Replace("System.Diagnostics.Process (", string.Empty).Replace(")", string.Empty))
+                .Where(x => x.Contains(processName)).ToArray();
+            
+            foreach (string procName in processes)
             {
-                string procName =  proc.ProcessName.Replace("System.Diagnostics.Process (", string.Empty);
-                processName = processName.Replace(")", string.Empty);
-
-                if (processName.Contains(processName))
+                if (procName.Contains(processName))
                 {
                     processName = processName.Replace(".exe", string.Empty);
                 }
