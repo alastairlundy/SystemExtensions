@@ -34,28 +34,27 @@ namespace AlastairLundy.Extensions.System.Processes
         /// </summary>
         /// <param name="process">The process object.</param>
         /// <param name="processName">The name of the process to be checked.</param>
+        /// <param name="sanitizeProcessName"></param>
         /// <returns>true if the specified process is running; returns false otherwise.</returns>
-        public static bool IsProcessRunning(this Process process, string processName)
+        public static bool IsProcessRunning(this Process process, string processName, bool sanitizeProcessName = false)
         {
-            string[] processes = Process.GetProcesses()
-                .Select(x => x.ProcessName.Replace("System.Diagnostics.Process (", string.Empty).Replace(")", string.Empty))
-                .Where(x => x.Contains(processName)).ToArray();
-            
-            foreach (string procName in processes)
-            {
-                if (procName.Contains(processName))
-                {
-                    processName = processName.Replace(".exe", string.Empty);
-                }
-                
-                if (procName.ToLower().Equals(processName.ToLower()) ||
-                    procName.ToLower().Contains(processName.ToLower()))
-                {
-                    return true;
-                }
-            }
+            string[] processes;
 
-            return false;
+            if (sanitizeProcessName)
+            {
+                processes = Process.GetProcesses()
+                    .Select(x => x.ProcessName.Replace("System.Diagnostics.Process (", string.Empty)
+                        .Replace(")", string.Empty)
+                    .Replace(".exe", string.Empty)).ToArray();
+            }
+            else
+            {
+                processes = Process.GetProcesses().Select(x => x.ProcessName).ToArray();
+            }
+            
+            processes = processes.Where(x => x.Contains(processName)).ToArray();
+            
+            return processes.Any(x => x.ToLower().Equals(processName.ToLower()));
         }
     }
 }
