@@ -9,6 +9,8 @@
         <Title>AlastairLundy.Extensions.Processes</Title>
         <Authors>AlastairLundy</Authors>
         <IncludeSymbols>true</IncludeSymbols>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageReadmeFile>PROCESSES_README.md</PackageReadmeFile>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <Copyright>Copyright (c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
@@ -17,6 +19,8 @@
 Added WaitForExitAsync Process extension for .NET Standard 2 &amp; 2.1
 Added Process Name sanitization extension methods
 Optimized IsProcessRunning code</PackageReleaseNotes>
+        <Description>Adds WaitForExitAsync() method to Process class, and more.</Description>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>
