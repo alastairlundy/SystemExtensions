@@ -75,7 +75,6 @@ namespace AlastairLundy.Extensions.System.Urls
         {
             if (PortNumber != null)
             {
-                return $"{UrlPrefix}.{BaseUrl}:{PortNumber}";
                 if (UrlPrefix.Equals("https://") || UrlPrefix.Equals("http://") || UrlPrefix.Equals("file://"))
                 {
                     return $"{UrlPrefix}{BaseUrl}:{PortNumber}";
@@ -138,13 +137,7 @@ namespace AlastairLundy.Extensions.System.Urls
         /// <returns></returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                var hashCode = (UrlPrefix != null ? UrlPrefix.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (BaseUrl != null ? BaseUrl.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ PortNumber.GetHashCode();
-                return hashCode;
-            }
+            return ToString().GetHashCode();
         }
     }
 }
