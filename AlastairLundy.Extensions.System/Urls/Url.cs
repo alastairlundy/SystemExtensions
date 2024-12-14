@@ -32,7 +32,8 @@ namespace AlastairLundy.Extensions.System.Urls
     /// </summary>
     public class Url : IEquatable<Url>
     {
-        public string UrlPrefix { get; protected set; }
+        public string Scheme { get; protected set; }
+        public string Prefix { get; protected set; }
         public string BaseUrl { get; protected set; }
         public int? PortNumber { get; protected set; }
 
@@ -51,60 +52,72 @@ namespace AlastairLundy.Extensions.System.Urls
         /// <param name="baseUrl"></param>
         /// <param name="urlPrefix"></param>
         /// <param name="portNumber"></param>
-        public Url(string baseUrl, string urlPrefix, int? portNumber)
+        public Url(string baseUrl, string urlPrefix, string urlScheme, int? portNumber)
         {
             BaseUrl = baseUrl;
-            UrlPrefix = urlPrefix;
+            Prefix = urlPrefix;
+            Scheme = urlScheme;
             PortNumber = portNumber;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="baseUrl"></param>
+        /// <param name="baseUrl">A Uri to conver to a Url.</param>
         public Url(Uri baseUrl)
         {
-            BaseUrl = baseUrl.ToString();
-            PortNumber = baseUrl.Port;
-
-            UrlPrefix = baseUrl.Scheme;
+           var url = FromUri(baseUrl);
+           this.Scheme = url.Scheme;
+           this.Prefix = url.Prefix;
+           this.BaseUrl = url.BaseUrl;
+           this.PortNumber = url.PortNumber;
+        }
+        
+        /// <summary>
+        /// Converts a Uri to a Url.
+        /// </summary>
+        /// <param name="uri">The Uri object to be converted.</param>
+        /// <returns>The newly created Url object.</returns>
+        public static Url FromUri(Uri uri)
+        {
+           return new Url(uri.ToString(), string.Empty, uri.Scheme, uri.Port);
         }
 
         /// <summary>
-        /// 
+        /// Returns a string representation of this Url object.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a string representation of this Url object.</returns>
         public override string ToString()
         {
             if (PortNumber != null)
             {
-                if (UrlPrefix.Equals("https://") || UrlPrefix.Equals("http://") || UrlPrefix.Equals("file://"))
+                if (Prefix.Equals("https://") || Prefix.Equals("http://") || Prefix.Equals("file://") || string.IsNullOrEmpty(Prefix))
                 {
-                    return $"{UrlPrefix}{BaseUrl}:{PortNumber}";
+                    return $"{Scheme}{Prefix}{BaseUrl}:{PortNumber}";
                 }
                 else
                 {
-                    return $"{UrlPrefix}.{BaseUrl}:{PortNumber}";
+                    return $"{Scheme}{Prefix}.{BaseUrl}:{PortNumber}";
                 }
             }
             else
             {
-                if (UrlPrefix.Equals("https://") || UrlPrefix.Equals("http://") || UrlPrefix.Equals("file://"))
+                if (Prefix.Equals("https://") || Prefix.Equals("http://") || Prefix.Equals("file://") || string.IsNullOrEmpty(Prefix))
                 {
-                    return $"{UrlPrefix}{BaseUrl}";
+                    return $"{Scheme}{Prefix}{BaseUrl}";
                 }
                 else
                 {
-                    return $"{UrlPrefix}.{BaseUrl}";
+                    return $"{Scheme}{Prefix}.{BaseUrl}";
                 }
             }
         }
         
         /// <summary>
-        /// 
+        /// Returns whether a Url is equal to this Url.
         /// </summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        /// <returns>True if the Url is Equal to this Url; returns false otherwise.</returns>
         public bool Equals(Url other)
         {
             if (other is null)
@@ -112,14 +125,14 @@ namespace AlastairLundy.Extensions.System.Urls
                 return false;
             }
             
-            return UrlPrefix == other.UrlPrefix && BaseUrl == other.BaseUrl && PortNumber == other.PortNumber;
+            return Scheme == other.Scheme && Prefix == other.Prefix && BaseUrl == other.BaseUrl && PortNumber == other.PortNumber;
         }
 
         /// <summary>
-        /// 
+        /// Returns whether an object is equal to this Url.
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <param name="obj">The object to be compared.</param>
+        /// <returns>True if the object is a Url and is Equal to this Url; returns false otherwise.</returns>
         public override bool Equals(object obj)
         {
             if (obj is null)
@@ -135,9 +148,9 @@ namespace AlastairLundy.Extensions.System.Urls
         }
 
         /// <summary>
-        /// 
+        /// Returns the hashcode for this Url.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A 32-bit signed integer hashcode.</returns>
         public override int GetHashCode()
         {
             return ToString().GetHashCode();

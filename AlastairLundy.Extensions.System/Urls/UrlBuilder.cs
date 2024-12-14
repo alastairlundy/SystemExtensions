@@ -60,7 +60,7 @@ namespace AlastairLundy.Extensions.System.Urls
         {
             if (portNumber != null)
             {
-                _url = new Url(baseUrl, String.Empty, portNumber);
+                _url = new Url(baseUrl, string.Empty, string.Empty, portNumber);
             }
             else
             {
@@ -83,17 +83,17 @@ namespace AlastairLundy.Extensions.System.Urls
         /// <param name="baseUrl"></param>
         /// <param name="urlPrefix"></param>
         /// <param name="portNumber"></param>
-        private UrlBuilder(string baseUrl, string urlPrefix = null, int? portNumber = null)
+        private UrlBuilder(string baseUrl, string urlPrefix = null, string urlScheme = null, int? portNumber = null)
         {
             if (string.IsNullOrEmpty(urlPrefix) == false)
             {
                 if (portNumber != null)
                 {
-                    _url = new Url(baseUrl, urlPrefix, portNumber);
+                    _url = new Url(baseUrl, urlPrefix, urlScheme, portNumber);
                 }
                 else
                 {
-                    _url = new Url(baseUrl, urlPrefix, null);
+                    _url = new Url(baseUrl, urlPrefix, urlScheme, null);
                 }
             }
             else
@@ -109,7 +109,7 @@ namespace AlastairLundy.Extensions.System.Urls
         /// <returns></returns>
         public UrlBuilder AppendSegment(string segment)
         {
-            return new UrlBuilder(string.Concat(_url.BaseUrl, segment), _url.UrlPrefix, _url.PortNumber);
+            return new UrlBuilder(string.Concat(_url.BaseUrl, segment), _url.Prefix, _url.Scheme, _url.PortNumber);
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace AlastairLundy.Extensions.System.Urls
         /// <returns></returns>
         public UrlBuilder WithPrefix(string prefix)
         {
-            return new UrlBuilder(_url.BaseUrl, prefix, _url.PortNumber);
+            return new UrlBuilder(_url.BaseUrl, prefix, _url.Scheme, _url.PortNumber);
         }
 
         /// <summary>
@@ -136,16 +136,25 @@ namespace AlastairLundy.Extensions.System.Urls
         /// </summary>
         /// <param name="addWww"></param>
         /// <returns></returns>
-        public UrlBuilder WithHttpsPrefix(bool addWww)
+        public UrlBuilder WithHttpsScheme(bool addWww)
         {
             if (addWww)
             {
-                return WithPrefix("https://www");
+                return new UrlBuilder(_url.BaseUrl, _url.Prefix, "https://www.", _url.PortNumber);
             }
             else
             {
-                return WithPrefix("https://");
+                return new UrlBuilder(_url.BaseUrl, _url.Prefix, "https://", _url.PortNumber);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public UrlBuilder WithFileScheme()
+        {
+            return new UrlBuilder(_url.BaseUrl, _url.Prefix, "file://", _url.PortNumber);
         }
 
         /// <summary>
