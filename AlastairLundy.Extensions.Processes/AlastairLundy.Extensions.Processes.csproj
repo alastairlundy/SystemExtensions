@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <TargetFrameworks>net8.0;net9.0;netstandard2.1;netstandard2.0</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>5.5.0</Version>
