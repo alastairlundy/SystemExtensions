@@ -26,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AlastairLundy.Extensions.String
+namespace AlastairLundy.Extensions.Strings
 {
     /// <summary>
     /// 

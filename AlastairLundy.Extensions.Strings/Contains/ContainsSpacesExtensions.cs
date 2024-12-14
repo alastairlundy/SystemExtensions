@@ -22,20 +22,19 @@
        SOFTWARE.
    */
 
-using System.Linq;
-
-namespace AlastairLundy.Extensions.String.Versioning
+namespace AlastairLundy.Extensions.Strings.Contains
 {
-    public static class DotCountingExtensions
+    public static class ContainsSpacesExtensions
     {
+    
         /// <summary>
-        /// Counts the number of periods/full stops/dots in a string.
+        /// Determine if a string contains space separated substrings within it.
         /// </summary>
-        /// <param name="str">The string to be checked.</param>
-        /// <returns>the number of periods/full stops/dots in a string</returns>
-        public static int CountDotsInString(this string str)
+        /// <param name="s">The string to search.</param>
+        /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
+        public static bool ContainsSpaceSeparatedSubStrings(this string s)
         {
-            return str.ToCharArray().Where(x => x.Equals('.')).ToArray().Length;
+            return s.Split(' ').Length > 0;
         }
     }
 }

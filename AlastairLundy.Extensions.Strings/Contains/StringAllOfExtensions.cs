@@ -22,45 +22,36 @@
        SOFTWARE.
    */
 
-using AlastairLundy.Extensions.String.Constants;
+using System.Collections.Generic;
+using System.Linq;
 
-using AlastairLundy.Extensions.String.Contains;
+// ReSharper disable RedundantBoolCompare
+// ReSharper disable ConvertClosureToMethodGroup
 
-namespace AlastairLundy.Extensions.String.EscapeCharacters
+namespace AlastairLundy.Extensions.Strings.Contains
 {
-    public static class EscapeCharacterRemovalExtensions
+    public static class StringAllOfExtensions
     {
         /// <summary>
-        /// Returns whether the string contains an Escape Character.
+        /// Returns whether an item of type T contains all the specified values.
         /// </summary>
-        /// <param name="str">The string to be searched.</param>
-        /// <returns>true if the string contains an Escape Character; returns false otherwise.</returns>
-        public static bool ContainsEscapeCharacters(this string str)
+        /// <param name="source">The item to be searched.</param>
+        /// <param name="values">The values to search for.</param>
+        /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
+        public static bool ContainsAllOf(this string source, IEnumerable<char> values)
         {
-            return str.ContainsAnyOf(CharacterConstants.EscapeCharacters);
+            return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
         }
-        
+    
         /// <summary>
-        /// Removes escape characters from a string.
+        /// Returns whether an item of type T contains all the specified values.
         /// </summary>
-        /// <param name="str">The string to be searched.</param>
-        /// <returns>the modified string if one or more escape characters were found; returns the original string otherwise.</returns>
-        public static string RemoveEscapeCharacters(this string str)
+        /// <param name="source">The item to be searched.</param>
+        /// <param name="values">The values to search for.</param>
+        /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
+        public static bool ContainsAllOf(this string source, IEnumerable<string> values)
         {
-            string newStr = str;
-                
-            if (ContainsEscapeCharacters(str))
-            {
-                foreach (string escapeChar in CharacterConstants.EscapeCharacters)
-                {
-                    if (newStr.Contains(escapeChar))
-                    {
-                        newStr = newStr.Replace(escapeChar, string.Empty);
-                    }
-                }
-            }
-
-            return newStr;
+            return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
         }
     }
 }

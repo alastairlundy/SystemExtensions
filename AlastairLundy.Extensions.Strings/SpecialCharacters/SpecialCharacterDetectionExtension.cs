@@ -23,11 +23,10 @@
    */
 
 using System.Linq;
-using AlastairLundy.Extensions.String.Constants;
+using AlastairLundy.Extensions.Strings.Constants;
+using AlastairLundy.Extensions.Strings.Contains;
 
-using AlastairLundy.Extensions.String.Contains;
-
-namespace AlastairLundy.Extensions.String.SpecialCharacters
+namespace AlastairLundy.Extensions.Strings.SpecialCharacters
 {
     public static class SpecialCharacterDetectionExtension
     {

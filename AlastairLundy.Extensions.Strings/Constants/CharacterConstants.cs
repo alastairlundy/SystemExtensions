@@ -22,31 +22,22 @@
        SOFTWARE.
    */
 
-using System;
-
-namespace AlastairLundy.Extensions.String.Cases
+// ReSharper disable ConvertToAutoProperty
+namespace AlastairLundy.Extensions.Strings.Constants
 {
-    public static class UpperCaseExtensions
+    public static class CharacterConstants
     {
-        /// <summary>
-        /// Returns whether a character is an upper case character or not.
-        /// </summary>
-        /// <param name="c">The character to be checked.</param>
-        /// <returns>true if the character is an upper case character; returns false otherwise.</returns>
-        public static bool IsUpperCaseCharacter(this char c)
-        {
-            return c.ToString().Equals(c.ToString().ToUpper());
-        }
-        
-        /// <summary>
-        /// Returns whether a string is upper case or not.
-        /// </summary>
-        /// <param name="s">The string to be checked.</param>
-        /// <returns>true if the string is upper case; returns false otherwise.</returns>
-        // ReSharper disable once MemberCanBePrivate.Global
-        public static bool IsUpperCase(this string s)
-        { 
-            return s.Equals(s.ToUpper());
-        }
+        private static readonly char[] _specialCharacters =
+            new[]
+            {
+                ',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
+                '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
+            };
+    
+        public static char[] SpecialCharacters => _specialCharacters;
+    
+        private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
+
+        public static string[] EscapeCharacters => EscapeChars;
     }
 }

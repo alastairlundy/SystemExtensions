@@ -24,13 +24,11 @@
 
 
 using System.IO;
-using AlastairLundy.Extensions.String.LineEndings.Enums;
-#if NETSTANDARD2_1 || NET6_0_OR_GREATER
-using System;
-#endif
+using AlastairLundy.Extensions.Strings.LineEndings.Enums;
+
 // ReSharper disable RedundantBoolCompare
 
-namespace AlastairLundy.Extensions.String.LineEndings
+namespace AlastairLundy.Extensions.Strings.LineEndings
 {
     public static class GetLineEndingExtensions
     {

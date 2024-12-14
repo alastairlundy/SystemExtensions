@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <TargetFrameworks>net9.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <Version>5.5.0</Version>
         <Title>AlastairLundy.Extensions.String</Title>
@@ -16,6 +16,10 @@
         <PackageReleaseNotes>Initial Release as separate library
 Adjusted namespaces
 Removed Obsolete code</PackageReleaseNotes>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageTags>strings, string, </PackageTags>
+        <LangVersion>latest</LangVersion>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
 

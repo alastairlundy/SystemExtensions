@@ -22,22 +22,15 @@
        SOFTWARE.
    */
 
-// ReSharper disable ConvertToAutoProperty
-namespace AlastairLundy.Extensions.String.Constants
+// ReSharper disable InconsistentNaming
+namespace AlastairLundy.Extensions.Strings.LineEndings.Enums
 {
-    public static class CharacterConstants
+    public enum LineEndingFormat
     {
-        private static readonly char[] _specialCharacters =
-            new[]
-            {
-                ',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
-                '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
-            };
-    
-        public static char[] SpecialCharacters => _specialCharacters;
-    
-        private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
-
-        public static string[] EscapeCharacters => EscapeChars;
+        CR,
+        LF,
+        CR_LF,
+        LF_CR,
+        NotDetected
     }
 }

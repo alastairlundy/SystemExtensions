@@ -22,36 +22,28 @@
        SOFTWARE.
    */
 
-using System.Collections.Generic;
-using System.Linq;
-
-// ReSharper disable RedundantBoolCompare
-// ReSharper disable ConvertClosureToMethodGroup
-
-namespace AlastairLundy.Extensions.String.Contains
+namespace AlastairLundy.Extensions.Strings.Cases
 {
-    public static class StringAllOfExtensions
+    public static class LowerCaseExtensions
     {
         /// <summary>
-        /// Returns whether an item of type T contains all the specified values.
+        /// Returns whether a character is a lower case letter or not.
         /// </summary>
-        /// <param name="source">The item to be searched.</param>
-        /// <param name="values">The values to search for.</param>
-        /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
-        public static bool ContainsAllOf(this string source, IEnumerable<char> values)
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is a lower case character, returns false otherwise.</returns>
+        public static bool IsLowerCaseCharacter(this char c)
         {
-            return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
+            return c.ToString().Equals(c.ToString().ToLower());
         }
-    
+        
         /// <summary>
-        /// Returns whether an item of type T contains all the specified values.
+        /// Returns whether a string is lower case or not.
         /// </summary>
-        /// <param name="source">The item to be searched.</param>
-        /// <param name="values">The values to search for.</param>
-        /// <returns>true if all the values are found in the string; returns false otherwise.</returns>
-        public static bool ContainsAllOf(this string source, IEnumerable<string> values)
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if a string is lower case; returns false otherwise.</returns>
+        public static bool IsLowerCase(this string s)
         {
-            return values.Select(t => source.Contains(t)).All(containsSource => containsSource == true);
+            return s.Equals(s.ToLower());
         }
     }
 }

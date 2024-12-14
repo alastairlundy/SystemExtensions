@@ -22,15 +22,29 @@
        SOFTWARE.
    */
 
-// ReSharper disable InconsistentNaming
-namespace AlastairLundy.Extensions.String.LineEndings.Enums
+namespace AlastairLundy.Extensions.Strings.Cases
 {
-    public enum LineEndingFormat
+    public static class UpperCaseExtensions
     {
-        CR,
-        LF,
-        CR_LF,
-        LF_CR,
-        NotDetected
+        /// <summary>
+        /// Returns whether a character is an upper case character or not.
+        /// </summary>
+        /// <param name="c">The character to be checked.</param>
+        /// <returns>true if the character is an upper case character; returns false otherwise.</returns>
+        public static bool IsUpperCaseCharacter(this char c)
+        {
+            return c.ToString().Equals(c.ToString().ToUpper());
+        }
+        
+        /// <summary>
+        /// Returns whether a string is upper case or not.
+        /// </summary>
+        /// <param name="s">The string to be checked.</param>
+        /// <returns>true if the string is upper case; returns false otherwise.</returns>
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static bool IsUpperCase(this string s)
+        { 
+            return s.Equals(s.ToUpper());
+        }
     }
 }

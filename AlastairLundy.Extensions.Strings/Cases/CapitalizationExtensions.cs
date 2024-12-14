@@ -22,7 +22,7 @@
        SOFTWARE.
    */
 
-namespace AlastairLundy.Extensions.String.Cases
+namespace AlastairLundy.Extensions.Strings.Cases
 {
     public static class CapitalizationExtensions
     {

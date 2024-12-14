@@ -22,14 +22,13 @@
        SOFTWARE.
    */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 // ReSharper disable RedundantBoolCompare
 
-namespace AlastairLundy.Extensions.String.Cases
+namespace AlastairLundy.Extensions.Strings.Cases
 {
     public static class TitleCaseExtensions
     {

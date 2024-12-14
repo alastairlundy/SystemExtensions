@@ -22,36 +22,44 @@
        SOFTWARE.
    */
 
-using System.Collections.Generic;
-using System.Linq;
+using AlastairLundy.Extensions.Strings.Constants;
+using AlastairLundy.Extensions.Strings.Contains;
 
-// ReSharper disable RedundantBoolCompare
-// ReSharper disable ConvertClosureToMethodGroup
-
-namespace AlastairLundy.Extensions.String.Contains
+namespace AlastairLundy.Extensions.Strings.EscapeCharacters
 {
-    public static class StringAnyOfExtensions
+    public static class EscapeCharacterRemovalExtensions
     {
         /// <summary>
-        /// Returns whether an item of type T contains any of the specified possible values.
+        /// Returns whether the string contains an Escape Character.
         /// </summary>
-        /// <param name="source">The string to be searched.</param>
-        /// <param name="possibleValues">The possible values to search for.</param>
-        /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
-        public static bool ContainsAnyOf(this string source, IEnumerable<char> possibleValues)
+        /// <param name="str">The string to be searched.</param>
+        /// <returns>true if the string contains an Escape Character; returns false otherwise.</returns>
+        public static bool ContainsEscapeCharacters(this string str)
         {
-            return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
+            return str.ContainsAnyOf(CharacterConstants.EscapeCharacters);
         }
-    
+        
         /// <summary>
-        /// Returns whether an item of type T contains any of the specified possible values.
+        /// Removes escape characters from a string.
         /// </summary>
-        /// <param name="source">The string to be searched.</param>
-        /// <param name="possibleValues">The possible values to search for.</param>
-        /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
-        public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
+        /// <param name="str">The string to be searched.</param>
+        /// <returns>the modified string if one or more escape characters were found; returns the original string otherwise.</returns>
+        public static string RemoveEscapeCharacters(this string str)
         {
-            return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
+            string newStr = str;
+                
+            if (ContainsEscapeCharacters(str))
+            {
+                foreach (string escapeChar in CharacterConstants.EscapeCharacters)
+                {
+                    if (newStr.Contains(escapeChar))
+                    {
+                        newStr = newStr.Replace(escapeChar, string.Empty);
+                    }
+                }
+            }
+
+            return newStr;
         }
     }
 }

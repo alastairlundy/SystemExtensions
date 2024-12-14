@@ -22,48 +22,36 @@
        SOFTWARE.
    */
 
-// ReSharper disable RedundantBoolCompare
-
+using System.Collections.Generic;
 using System.Linq;
 
-// ReSharper disable RedundantIfElseBlock
-// ReSharper disable IntroduceOptionalParameters.Global
+// ReSharper disable RedundantBoolCompare
+// ReSharper disable ConvertClosureToMethodGroup
 
-namespace AlastairLundy.Extensions.String.Contains
+namespace AlastairLundy.Extensions.Strings.Contains
 {
-    public static class ContainsCharExtensions
+    public static class StringAnyOfExtensions
     {
-
-#if NETSTANDARD2_0
-    /// <summary>
-    /// Returns whether a string contains the specified character.
-    /// </summary>
-    /// <param name="source">The string to be searched for.</param>
-    /// <param name="c">The character to search for.</param>
-    /// <returns>True if the string contains the specified char; False otherwise.</returns>
-    public static bool Contains(this string source, char c)
-    {
-        return Contains(source, c, false);
-    }    
-#endif
-    
         /// <summary>
-        /// Returns whether a string contains the specified character.
+        /// Returns whether an item of type T contains any of the specified possible values.
         /// </summary>
         /// <param name="source">The string to be searched.</param>
-        /// <param name="c">The character to search for.</param>
-        /// <param name="ignoreCase">Whether to ignore the case of the char.</param>
-        /// <returns>True if the string contains the specified char; False otherwise.</returns>
-        public static bool Contains(this string source, char c, bool ignoreCase)
+        /// <param name="possibleValues">The possible values to search for.</param>
+        /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
+        public static bool ContainsAnyOf(this string source, IEnumerable<char> possibleValues)
         {
-            if (ignoreCase == true)
-            {
-                return source.ToLower().ToCharArray().Contains(char.Parse(c.ToString().ToLower()));
-            }
-            else
-            {
-                return source.Contains(c);
-            }
+            return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
+        }
+    
+        /// <summary>
+        /// Returns whether an item of type T contains any of the specified possible values.
+        /// </summary>
+        /// <param name="source">The string to be searched.</param>
+        /// <param name="possibleValues">The possible values to search for.</param>
+        /// <returns>true if any of the possible values is found; returns false otherwise.</returns>
+        public static bool ContainsAnyOf(this string source, IEnumerable<string> possibleValues)
+        {
+            return possibleValues.Select(c => source.Contains(c)).Any(containsValue => containsValue == true);
         }
     }
 }

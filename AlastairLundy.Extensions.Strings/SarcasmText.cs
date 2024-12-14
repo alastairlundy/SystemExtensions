@@ -30,7 +30,7 @@ using System.Text;
     #nullable enable
 #endif
 
-namespace AlastairLundy.Extensions.String
+namespace AlastairLundy.Extensions.Strings
 {
     public static class SarcasmText
     {
