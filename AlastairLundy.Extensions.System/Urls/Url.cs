@@ -76,10 +76,25 @@ namespace AlastairLundy.Extensions.System.Urls
             if (PortNumber != null)
             {
                 return $"{UrlPrefix}.{BaseUrl}:{PortNumber}";
+                if (UrlPrefix.Equals("https://") || UrlPrefix.Equals("http://") || UrlPrefix.Equals("file://"))
+                {
+                    return $"{UrlPrefix}{BaseUrl}:{PortNumber}";
+                }
+                else
+                {
+                    return $"{UrlPrefix}.{BaseUrl}:{PortNumber}";
+                }
             }
             else
             {
-                return $"{UrlPrefix}.{BaseUrl}";
+                if (UrlPrefix.Equals("https://") || UrlPrefix.Equals("http://") || UrlPrefix.Equals("file://"))
+                {
+                    return $"{UrlPrefix}{BaseUrl}";
+                }
+                else
+                {
+                    return $"{UrlPrefix}.{BaseUrl}";
+                }
             }
         }
         
