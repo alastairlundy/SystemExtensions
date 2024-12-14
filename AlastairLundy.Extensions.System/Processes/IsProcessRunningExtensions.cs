@@ -23,6 +23,7 @@
    */
 
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Processes
@@ -36,25 +37,25 @@ namespace AlastairLundy.Extensions.System.Processes
         /// <param name="processName">The name of the process to be checked.</param>
         /// <param name="sanitizeProcessName"></param>
         /// <returns>true if the specified process is running; returns false otherwise.</returns>
-        public static bool IsProcessRunning(this Process process, string processName, bool sanitizeProcessName = false)
+        public static bool IsProcessRunning(this Process process, string processName, bool sanitizeProcessName = true)
         {
             string[] processes;
 
+            string tempProcessName = processName;
+            
             if (sanitizeProcessName)
             {
-                processes = Process.GetProcesses()
-                    .Select(x => x.ProcessName.Replace("System.Diagnostics.Process (", string.Empty)
-                        .Replace(")", string.Empty)
-                    .Replace(".exe", string.Empty)).ToArray();
+                tempProcessName = Path.GetFileNameWithoutExtension(processName);
+                processes = Process.GetProcesses().SanitizeProcessNames(excludeFileExtensions: true).ToArray();
             }
             else
             {
                 processes = Process.GetProcesses().Select(x => x.ProcessName).ToArray();
             }
             
-            processes = processes.Where(x => x.Contains(processName)).ToArray();
+            processes = processes.Where(x => x.Contains(tempProcessName)).ToArray();
             
-            return processes.Any(x => x.ToLower().Equals(processName.ToLower()));
+            return processes.Any(x => x.ToLower().Equals(tempProcessName.ToLower()));
         }
     }
 }
