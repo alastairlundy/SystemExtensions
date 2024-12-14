@@ -65,6 +65,9 @@ namespace AlastairLundy.Extensions.System.Urls
         public Url(Uri baseUrl)
         {
             BaseUrl = baseUrl.ToString();
+            PortNumber = baseUrl.Port;
+
+            UrlPrefix = baseUrl.Scheme;
         }
 
         /// <summary>
