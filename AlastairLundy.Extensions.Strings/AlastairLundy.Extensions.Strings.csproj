@@ -9,7 +9,7 @@
         <Authors>AlastairLundy</Authors>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <Description>Extensions to C# strings to help improve them.</Description>
+        <Description>Extensions to C# strings to help improve them. Includes Escape Character detection, Special Character detection, Case detection, Line Ending detection, and more.</Description>
         <Copyright>Copyright (c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -17,6 +17,8 @@
 Adjusted namespaces
 Removed Obsolete code</PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageReadmeFile>STRINGS_README.md</PackageReadmeFile>
         <PackageTags>strings, string, </PackageTags>
         <LangVersion>latest</LangVersion>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
