@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <TargetFrameworks>net9.0;net8.0;netstandard2.0;netstandard2.1</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Version>5.5.0</Version>
@@ -10,6 +10,8 @@
         <Authors>AlastairLundy</Authors>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageReadmeFile>VERSIONS_README.md</PackageReadmeFile>
         <Copyright>Copyright (c) 2024 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
