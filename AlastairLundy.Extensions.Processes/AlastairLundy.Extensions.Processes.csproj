@@ -48,7 +48,7 @@ Optimized IsProcessRunning code</PackageReleaseNotes>
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="../PROCESSES_README.md" Pack="true" PackagePath="\" />
+        <None Include="../docs/PROCESSES_README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>

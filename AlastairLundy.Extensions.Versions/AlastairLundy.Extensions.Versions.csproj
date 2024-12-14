@@ -16,6 +16,8 @@
         <PackageReleaseNotes>Initial Release as separate library
 Adjusted namespaces</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Description>Version comparison extension methods and Version formatting methods.</Description>
+        <PackageTags>version, version comparison, extensions, </PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
