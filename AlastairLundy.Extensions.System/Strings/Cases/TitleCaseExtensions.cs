@@ -65,7 +65,7 @@ namespace AlastairLundy.Extensions.System
             
             for (int index = 0; index < enumerable.Length; index++)
             {
-                stringBuilder.Append(enumerable[index].IsWordTitleCase() ? enumerable[index] : Strings.Cases.CapitalizationExtensions.CapitalizeFirstLetter(enumerable[index]));
+                stringBuilder.Append(enumerable[index].IsWordTitleCase() ? enumerable[index] : enumerable[index].CapitalizeFirstLetter());
             }
 
             return stringBuilder.ToString();
