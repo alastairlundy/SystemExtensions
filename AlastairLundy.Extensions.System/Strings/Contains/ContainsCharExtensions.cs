@@ -33,19 +33,6 @@ namespace AlastairLundy.Extensions.System
 {
     public static class ContainsCharExtensions
     {
-
-#if NETSTANDARD2_0
-    /// <summary>
-    /// Returns whether a string contains the specified character.
-    /// </summary>
-    /// <param name="source">The string to be searched for.</param>
-    /// <param name="c">The character to search for.</param>
-    /// <returns>True if the string contains the specified char; False otherwise.</returns>
-    public static bool Contains(this string source, char c)
-    {
-        return Contains(source, c, false);
-    }    
-#endif
     
         /// <summary>
         /// Returns whether a string contains the specified character.
