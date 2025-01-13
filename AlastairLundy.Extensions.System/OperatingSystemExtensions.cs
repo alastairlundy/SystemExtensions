@@ -25,7 +25,9 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
+
 using AlastairLundy.Extensions.System.Localizations;
+
 #if NET5_0_OR_GREATER
 #endif
 
@@ -176,7 +178,16 @@ namespace AlastairLundy.Extensions.System
         /// <returns>true if the Operating System being run is Tizen based; returns false otherwise.</returns>
         public static bool IsTizen()
         {
-            return RuntimeInformation.OSDescription.ToLower().Contains("tizen");
+            try
+            {
+                string result = RunProcess(CreateProcess("cat", "/etc/os-release"));
+
+                return result.ToLower().Contains("tizen");
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         /// <summary>
