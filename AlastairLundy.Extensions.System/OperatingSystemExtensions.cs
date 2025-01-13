@@ -268,25 +268,6 @@ namespace AlastairLundy.Extensions.System
         }
 
         /// <summary>
-        /// Returns whether the operating system that is running is based on wearOS.
-        /// </summary>
-        /// <returns>true if the Operating System being run is based on Wear OS; returns false otherwise.</returns>
-        public static bool IsWearOS()
-        {
-            return RuntimeInformation.OSDescription.ToLower().Contains("wearos");
-        }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="operatingSystem"></param>
-        /// <returns>true if the Operating System being run is based on Wear OS; returns false otherwise.</returns>
-        public static bool IsWearOS(this OperatingSystem operatingSystem)
-        {
-            return IsWearOS();
-        }
-
-        /// <summary>
         /// Returns whether the operating system that is running is based on tvOS.
         /// </summary>
         /// <returns>true if the Operating System being run is based on tvOS; returns false otherwise.</returns>
