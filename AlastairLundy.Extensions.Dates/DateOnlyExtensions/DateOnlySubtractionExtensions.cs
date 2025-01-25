@@ -24,11 +24,10 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.Dates.DateOnly
+namespace AlastairLundy.Extensions.Dates
 {
     public static class DateOnlySubtractionExtensions
     {
-#if NET6_0_OR_GREATER
 
         /// <summary>
         /// Subtract a specified amount of days from a DateOnly object.
@@ -36,10 +35,10 @@ namespace AlastairLundy.Extensions.Dates.DateOnly
         /// <param name="dateOnly">The DateOnly object to be subtracted from.</param>
         /// <param name="days">The amount of days to subtract from the specified DateOnly object.</param>
         /// <returns>the modified DateOnly object.</returns>
-        public static System.DateOnly SubtractDays(this System.DateOnly dateOnly, int days)
+        public static DateOnly SubtractDays(this DateOnly dateOnly, int days)
         {
             DateTime fromDate = dateOnly.ToDateTime().SubtractDays(Convert.ToDouble(days));
-            return System.DateOnly.FromDateTime(fromDate);
+            return DateOnly.FromDateTime(fromDate);
         }
 
         /// <summary>
@@ -48,10 +47,10 @@ namespace AlastairLundy.Extensions.Dates.DateOnly
         /// <param name="dateOnly">The DateOnly object to be subtracted from.</param>
         /// <param name="months">The amount of months to subtract from the specified DateOnly.</param>
         /// <returns>the modified DateOnly object.</returns>
-        public static System.DateOnly SubtractMonths(this System.DateOnly dateOnly, int months)
+        public static DateOnly SubtractMonths(this DateOnly dateOnly, int months)
         {
             DateTime result = dateOnly.ToDateTime().SubtractMonths(Convert.ToDouble(months));
-            return System.DateOnly.FromDateTime(result);
+            return DateOnly.FromDateTime(result);
         }
 
         /// <summary>
@@ -60,11 +59,10 @@ namespace AlastairLundy.Extensions.Dates.DateOnly
         /// <param name="dateOnly">The DateOnly object to be subtracted from.</param>
         /// <param name="years">The amount of years to subtract from the specified DateOnly object.</param>
         /// <returns>the modified DateOnly object.</returns>
-        public static System.DateOnly SubtractYears(this System.DateOnly dateOnly, int years)
+        public static DateOnly SubtractYears(this DateOnly dateOnly, int years)
         {
             DateTime result = dateOnly.ToDateTime().SubtractYears(Convert.ToDouble(years));
-            return System.DateOnly.FromDateTime(result);
+            return DateOnly.FromDateTime(result);
         }
-#endif   
     }
 }
