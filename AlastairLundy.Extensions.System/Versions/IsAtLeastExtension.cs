@@ -34,7 +34,7 @@ namespace AlastairLundy.Extensions.System
         /// <param name="version">The current version object.</param>
         /// <param name="versionToBeCompared">The version to be compared.</param>
         /// <returns>true if the specified compared version is newer than or equal to the current version, and returns false otherwise.</returns>
-        public static bool IsAtLeast(this Version version, Version versionToBeCompared)
+        public static bool IsAtLeastVersion(this Version version, Version versionToBeCompared)
         {
             return versionToBeCompared >= version;
         }
