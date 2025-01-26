@@ -28,7 +28,7 @@ using System.Reflection;
 
 // ReSharper disable RedundantBoolCompare
 
-namespace AlastairLundy.Extensions.Generics
+namespace AlastairLundy.Extensions.System.Generics
 {
     public static class AnyOfExtensions
     {
