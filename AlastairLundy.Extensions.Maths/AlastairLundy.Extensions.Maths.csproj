@@ -16,7 +16,7 @@
         <RootNamespace>AlastairLundy.Extensions.Maths</RootNamespace>
         <Description>Extensions to C# Math classes and structs to help improve them.</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Copyright>Copyright (c) Alastair Lundy 2024</Copyright>
+        <Copyright>Copyright (c) Alastair Lundy 2024-2025</Copyright>
     </PropertyGroup>
 
 
