@@ -25,7 +25,7 @@
 using System;
 using System.Globalization;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
     public static class WeekOfExtensions
     {

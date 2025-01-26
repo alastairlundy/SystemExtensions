@@ -23,46 +23,19 @@
    */
 
 using System;
-using System.Globalization;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
-    public static class DayOfExtensions
+    public static class UnixDateStringExtension
     {
-        
         /// <summary>
-        /// Returns the day of the week as a number from 1 to 7 using the current culture to determine what day is considered the first day of the week.
+        /// Gets the current date in the format of the unix Date command.
         /// </summary>
-        /// <param name="date">The date </param>
-        /// <returns>the day of the week as a 32-Bit integer.</returns>
-        public static int DayOfWeekInt(this DateTime date)
+        /// <param name="dateTime">The dateTime object to be used.</param>
+        /// <returns>the current date in the format of the unix Date command.</returns>
+        public static string ToUnixDateString(this DateTime dateTime)
         {
-            DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
-        
-            int dayOfWeek;
-        
-            if (DayOfWeek.Sunday == firstDayOfWeek)
-            {
-                dayOfWeek = (int)date.DayOfWeek + 1;
-            }
-            else if (DayOfWeek.Monday == firstDayOfWeek)
-            {
-                switch (date.DayOfWeek)
-                {
-                    case DayOfWeek.Sunday:
-                        dayOfWeek = 7;
-                        break;
-                    default:
-                        dayOfWeek = (int)date.DayOfWeek;
-                        break;
-                }
-            }
-            else
-            {
-                dayOfWeek = (int)date.DayOfWeek + 1;
-            }
-        
-            return dayOfWeek;
+            return dateTime.ToString("R").Replace(",", string.Empty);
         }
     }
 }

@@ -24,18 +24,18 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
-    public static class DateOnlyToDateTimeExtension
+    public static class GivenDateExtensions
     {
         /// <summary>
-        /// Creates a new DateTime object with the Date from a DateOnly object.
+        /// Gets the given date in the RFC 1123 format.
         /// </summary>
-        /// <param name="dateOnly">The date to be converted to a DateTime object.</param>
-        /// <returns>the newly created DateTime object.</returns>
-        public static DateTime ToDateTime(this DateOnly dateOnly)
+        /// <param name="date">The dateTime object to be used.</param>
+        /// <returns>The given date in the RFC 1123 format to string.</returns>
+        public static string ToGivenDateString(this DateTime date)
         {
-            return DateTime.Parse(dateOnly.ToLongDateString());
+            return date.ToString("R");
         }
     }
 }

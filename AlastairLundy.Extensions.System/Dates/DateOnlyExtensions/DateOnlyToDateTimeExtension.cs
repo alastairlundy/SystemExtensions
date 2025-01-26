@@ -24,18 +24,21 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
-    public static class LongTodayDateExtension
+#if NET6_0_OR_GREATER
+
+    public static class DateOnlyToDateTimeExtension
     {
         /// <summary>
-        /// Gets the current date in the format of the unix Date command.
+        /// Creates a new DateTime object with the Date from a DateOnly object.
         /// </summary>
-        /// <param name="dateTime">The dateTime object to be used.</param>
-        /// <returns>the current date in the format of the unix Date command.</returns>
-        public static string LongToday(this DateTime dateTime)
+        /// <param name="dateOnly">The date to be converted to a DateTime object.</param>
+        /// <returns>the newly created DateTime object.</returns>
+        public static DateTime ToDateTime(this DateOnly dateOnly)
         {
-            return dateTime.ToString("R").Replace(",", string.Empty);
+            return DateTime.Parse(dateOnly.ToLongDateString());
         }
     }
+#endif
 }

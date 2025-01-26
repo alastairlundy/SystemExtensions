@@ -24,10 +24,11 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
     public static class DateTimeSubtractExtensions
     {
+        
 #if NET6_0_OR_GREATER
         /// <summary>
         /// Subtract a specified amount of microseconds from a DateTime.

@@ -45,7 +45,7 @@ namespace AlastairLundy.Extensions.Maths.SignificantFigures
         /// <param name="value">The value to be checked.</param>
         /// <param name="numberOfSignificantFigures">The number of significant figures to return the specified value to.</param>
         /// <returns>the specified value to the specified number of significant figures.</returns>
-        public static string ReturnToNSignificantFigures(this decimal value, int numberOfSignificantFigures)
+        public static string ToNSignificantFigures(this decimal value, int numberOfSignificantFigures)
         {
             return value.ToString($"G{numberOfSignificantFigures}", CultureInfo.InvariantCulture);
         }

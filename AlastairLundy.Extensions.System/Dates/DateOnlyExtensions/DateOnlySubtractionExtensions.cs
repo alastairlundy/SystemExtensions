@@ -24,11 +24,12 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.Dates
+namespace AlastairLundy.Extensions.System.Dates
 {
+#if NET6_0_OR_GREATER
+
     public static class DateOnlySubtractionExtensions
     {
-
         /// <summary>
         /// Subtract a specified amount of days from a DateOnly object.
         /// </summary>
@@ -37,8 +38,9 @@ namespace AlastairLundy.Extensions.Dates
         /// <returns>the modified DateOnly object.</returns>
         public static DateOnly SubtractDays(this DateOnly dateOnly, int days)
         {
-            DateTime fromDate = dateOnly.ToDateTime().SubtractDays(Convert.ToDouble(days));
-            return DateOnly.FromDateTime(fromDate);
+            TimeSpan timeSpan = TimeSpan.FromDays(days);
+            DateTime result = dateOnly.ToDateTime().Subtract(timeSpan);
+            return DateOnly.FromDateTime(result);
         }
 
         /// <summary>
@@ -63,6 +65,7 @@ namespace AlastairLundy.Extensions.Dates
         {
             DateTime result = dateOnly.ToDateTime().SubtractYears(Convert.ToDouble(years));
             return DateOnly.FromDateTime(result);
-        }
+        } 
     }
+#endif
 }
