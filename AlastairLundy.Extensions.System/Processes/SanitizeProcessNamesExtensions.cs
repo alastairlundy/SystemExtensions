@@ -28,7 +28,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace AlastairLundy.Extensions.Processes
+namespace AlastairLundy.Extensions.System.Processes
 {
     public static class SanitizeProcessNamesExtensions
     {

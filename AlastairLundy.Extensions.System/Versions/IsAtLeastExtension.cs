@@ -23,6 +23,7 @@
    */
 
 using System;
+// ReSharper disable ArrangeNamespaceBody
 
 namespace AlastairLundy.Extensions.System.Versions
 {
