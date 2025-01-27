@@ -25,6 +25,7 @@
 // ReSharper disable RedundantBoolCompare
 
 using System.Linq;
+// ReSharper disable CheckNamespace
 
 // ReSharper disable RedundantIfElseBlock
 // ReSharper disable IntroduceOptionalParameters.Global
