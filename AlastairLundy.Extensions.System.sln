@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.Processes", "AlastairLundy.Extensions.Processes\AlastairLundy.Extensions.Processes.csproj", "{528865E6-5EC1-4F04-AB3B-05BEAA3A9855}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.System", "AlastairLundy.Extensions.System\AlastairLundy.Extensions.System.csproj", "{87031789-C539-46D8-BCAD-9A2A6DD898E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlastairLundy.Extensions.Maths", "AlastairLundy.Extensions.Maths\AlastairLundy.Extensions.Maths.csproj", "{CCEDF88F-4260-456F-B770-AEDB7910E6DB}"
@@ -12,10 +10,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{528865E6-5EC1-4F04-AB3B-05BEAA3A9855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{528865E6-5EC1-4F04-AB3B-05BEAA3A9855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{528865E6-5EC1-4F04-AB3B-05BEAA3A9855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{528865E6-5EC1-4F04-AB3B-05BEAA3A9855}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87031789-C539-46D8-BCAD-9A2A6DD898E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87031789-C539-46D8-BCAD-9A2A6DD898E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87031789-C539-46D8-BCAD-9A2A6DD898E2}.Release|Any CPU.ActiveCfg = Release|Any CPU

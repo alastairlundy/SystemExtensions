@@ -26,14 +26,16 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using AlastairLundy.Extensions.Processes.Internal.Localizations;
+using AlastairLundy.Extensions.Processes;
+using AlastairLundy.Extensions.System.Localizations;
+// ReSharper disable RedundantNullableDirective
 
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable RedundantIfElseBlock
 
 #nullable enable
 
-namespace AlastairLundy.Extensions.Processes
+namespace AlastairLundy.Extensions.System.Processes
 {
     public static class GetProcessFromNameExtension
     {
@@ -93,13 +95,13 @@ namespace AlastairLundy.Extensions.Processes
 
                     if (similarName != string.Empty)
                     {
-                        throw new ArgumentException(Resources.Exceptions_IncorrectProcessName
+                        throw new ArgumentException(Resources.Processes_Exceptions_IncorrectProcessName
                             .Replace("{x}", processName)
                             .Replace("{y}", similarName));
                     }
                     else
                     {
-                        throw new ArgumentException(Resources.Exceptions_ProcessNotRunning.Replace("{x}", processName));
+                        throw new ArgumentException(Resources.Processes_Exceptions_ProcessNotRunning.Replace("{x}", processName));
                     }
                 }
                 else
@@ -109,7 +111,7 @@ namespace AlastairLundy.Extensions.Processes
             }
             else
             {
-                throw new ArgumentException(Resources.Exceptions_ProcessNotRunning.Replace("{x}", processName));
+                throw new ArgumentException(Resources.Processes_Exceptions_ProcessNotRunning.Replace("{x}", processName));
             }
         }
     }

@@ -18,4 +18,10 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="Processes.Exceptions.IncorrectProcessName" xml:space="preserve">
+        <value>Process {x} could not be found but a similarly named process {y} was found.</value>
+    </data>
+    <data name="Processes.Exceptions.ProcessNotRunning" xml:space="preserve">
+        <value>Process {x} is not currently running. Please try again later.</value>
+    </data>
 </root>
