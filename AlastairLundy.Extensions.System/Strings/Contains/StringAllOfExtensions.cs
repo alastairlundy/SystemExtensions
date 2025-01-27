@@ -28,7 +28,7 @@ using System.Linq;
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable ConvertClosureToMethodGroup
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Strings
 {
     public static class StringAllOfExtensions
     {

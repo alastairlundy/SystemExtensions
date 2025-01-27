@@ -24,7 +24,7 @@
 
 using System.Linq;
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Strings
 {
     public static class SpecialCharacterDetectionExtension
     {

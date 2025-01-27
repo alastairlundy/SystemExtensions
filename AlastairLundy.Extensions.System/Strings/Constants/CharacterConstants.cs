@@ -23,7 +23,7 @@
    */
 
 // ReSharper disable ConvertToAutoProperty
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Strings
 {
     public static class CharacterConstants
     {

@@ -26,7 +26,7 @@ using System;
 
 // ReSharper disable RedundantIfElseBlock
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Versions
 {
     public static class FriendlyVersionExtension
     {

@@ -28,7 +28,7 @@ using System.Text;
 
 // ReSharper disable RedundantBoolCompare
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Strings
 {
     public static class TitleCaseExtensions
     {

@@ -24,7 +24,7 @@
 
 using System;
 
-namespace AlastairLundy.Extensions.System
+namespace AlastairLundy.Extensions.System.Versions
 {
     public static class IsNewerThanExtensions
     {
