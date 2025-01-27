@@ -31,9 +31,7 @@ using AlastairLundy.Extensions.Processes.Internal.Localizations;
 // ReSharper disable RedundantBoolCompare
 // ReSharper disable RedundantIfElseBlock
 
-#if NETSTANDARD2_1 || NET8_0_OR_GREATER
 #nullable enable
-#endif
 
 namespace AlastairLundy.Extensions.Processes
 {
@@ -74,14 +72,8 @@ namespace AlastairLundy.Extensions.Processes
                 process.IsProcessRunning(processName.ToUpper()))
             {
                 Process[] processes = Process.GetProcesses();
-
-#if NETSTANDARD2_1 || NET8_0_OR_GREATER
-                Process? output = null;
-#else
-            Process output;
-#endif
                 
-                output = processes.FirstOrDefault(p => p.ProcessName.ToLower().Equals(processName.ToLower()));
+                Process? output = processes.FirstOrDefault(p => p.ProcessName.ToLower().Equals(processName.ToLower()));
 
                 if (output == null)
                 {
