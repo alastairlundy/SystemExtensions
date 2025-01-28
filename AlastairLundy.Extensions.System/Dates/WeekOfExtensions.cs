@@ -65,7 +65,7 @@ namespace AlastairLundy.Extensions.System.Dates
         /// <param name="date">The date to be used.</param>
         /// <param name="calendarWeekRule">The rule to use to determine what counts as the 1st week of the year.</param>
         /// <returns>The week number in a given year.</returns>
-        public static int WeekofYear(this DateTime date, CalendarWeekRule calendarWeekRule = CalendarWeekRule.FirstFullWeek)
+        public static int WeekOfYear(this DateTime date, CalendarWeekRule calendarWeekRule = CalendarWeekRule.FirstFullWeek)
         {
             DayOfWeek firstDayOfWeek = CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek;
             int daysInYear = CultureInfo.CurrentCulture.Calendar.IsLeapYear(date.Year) ? 366 : 365;
