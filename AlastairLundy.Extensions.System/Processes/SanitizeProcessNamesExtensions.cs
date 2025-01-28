@@ -44,7 +44,6 @@ namespace AlastairLundy.Extensions.System.Processes
         return SanitizeProcessNames([process], excludeFileExtension).First();
 #else
             return SanitizeProcessNames(new Process[]{process}, excludeFileExtension).First();
-
 #endif
         }
 
