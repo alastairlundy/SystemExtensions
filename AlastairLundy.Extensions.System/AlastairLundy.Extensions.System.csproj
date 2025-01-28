@@ -52,6 +52,7 @@
     
     <ItemGroup>
       <Content Include="..\README.md">
+          <PackagePath>README.md</PackagePath>
         <Link>README.md</Link>
       </Content>
     </ItemGroup>
