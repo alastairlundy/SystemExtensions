@@ -28,14 +28,14 @@ namespace AlastairLundy.Extensions.System.Strings
 {
     public static class CharacterConstants
     {
-        private static readonly char[] _specialCharacters =
+        private static readonly char[] SpecialChars =
             new[]
             {
                 ',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
                 '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
             };
     
-        public static char[] SpecialCharacters => _specialCharacters;
+        public static char[] SpecialCharacters => SpecialChars;
     
         private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
 
