@@ -23,6 +23,7 @@
    */
 
 // ReSharper disable ConvertToAutoProperty
+// ReSharper disable CheckNamespace
 namespace AlastairLundy.Extensions.System.Strings
 {
     public static class CharacterConstants

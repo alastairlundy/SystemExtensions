@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+// ReSharper disable CheckNamespace
 namespace AlastairLundy.Extensions.System.Strings
 {
     public static class UpperCaseExtensions

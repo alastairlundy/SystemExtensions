@@ -23,6 +23,7 @@
    */
 
 using System.Linq;
+// ReSharper disable CheckNamespace
 
 namespace AlastairLundy.Extensions.System.Strings
 {

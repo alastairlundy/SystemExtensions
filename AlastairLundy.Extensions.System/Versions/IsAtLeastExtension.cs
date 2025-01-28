@@ -24,6 +24,7 @@
 
 using System;
 // ReSharper disable ArrangeNamespaceBody
+// ReSharper disable CheckNamespace
 
 namespace AlastairLundy.Extensions.System.Versions
 {
