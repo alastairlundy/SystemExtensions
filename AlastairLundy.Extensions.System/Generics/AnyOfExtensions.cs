@@ -39,7 +39,7 @@ namespace AlastairLundy.Extensions.System.Generics
         /// <param name="possibleValues">The possible values to search for.</param>
         /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
         /// <returns>true if any of the possibles values is contained in the source; returns false otherwise.</returns>
-        public static bool ContainsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
+        public static bool ContainsAnyOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
         {
             bool output = false;
 
@@ -57,13 +57,13 @@ namespace AlastairLundy.Extensions.System.Generics
                     try
                     {
 #if NETSTANDARD2_1 || NET8_0_OR_GREATER
-                        bool result = (bool)typeof(T)!.InvokeMember("Contains",
+                        bool result = (bool)typeof(T).InvokeMember("Contains",
                             BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
                             new object[] { source })!;
 #else
                          bool result = (bool)typeof(T).InvokeMember("Contains",
                                                     BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
-                                                    new object[] { source });
+                                                    new object[] { source })!;
 #endif
 
                         if (result == true)
@@ -89,7 +89,7 @@ namespace AlastairLundy.Extensions.System.Generics
         /// <param name="possibleValues">The possible values to search for.</param>
         /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
         /// <returns>true if any of the possibles values is equal to the source; returns false otherwise.</returns>
-        public static bool EqualsAnyOf<T>(this T source, IEnumerable<T> possibleValues)
+        public static bool EqualsAnyOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
         {
             return possibleValues.Select(t => source.Equals(t)).Any(hasValue => hasValue == true);
         }

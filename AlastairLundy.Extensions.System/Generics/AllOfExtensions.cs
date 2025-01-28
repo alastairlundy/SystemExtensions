@@ -40,7 +40,7 @@ namespace AlastairLundy.Extensions.System.Generics
         /// <param name="possibleValues">The possible values to search for.</param>
         /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
         /// <returns>true if all the possibles values is contained in the source; returns false otherwise.</returns>
-        public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues)
+        public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
         {
             bool output = false;
 
@@ -64,7 +64,7 @@ namespace AlastairLundy.Extensions.System.Generics
 #else
                         bool result = (bool)typeof(T).InvokeMember("Contains",
                             BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
-                            new object[] { source });
+                            new object[] { source })!;
 #endif
 
                         if (result == true)
@@ -90,7 +90,7 @@ namespace AlastairLundy.Extensions.System.Generics
         /// <param name="possibleValues">The possible values to search for.</param>
         /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
         /// <returns>true if all the possibles values is equal to the source; returns false otherwise.</returns>
-        public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues)
+        public static bool EqualsAllOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
         {
             // ReSharper disable once RedundantBoolCompare
             return possibleValues.Select(t => source.Equals(t)).All(hasValue => hasValue == true);
