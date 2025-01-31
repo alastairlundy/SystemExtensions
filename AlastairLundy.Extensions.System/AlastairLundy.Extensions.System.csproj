@@ -8,38 +8,14 @@
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>## Changes since 5.3
-
-### Additions
-* Added some missing xml doc comments
-* Added new Process extension method
-* Added replacement for deprecated ``ToTitleCase`` string extension method
-* Added ``EqualsAnyOf`` and ``EqualsAllOf`` generic extensions
-
-### General Changes
-* Optimized Version comparison code
-* Optimized dot counting code performance
-* Improved Exception throwing within Process Extension methods
-* Removed deprecation of ``ContainsSpaceSeparatedSubStrings``
-* Added support for Line Ending related code to .NET Standard 2.1
-* Updated ``ContainsAnyOf`` code and ``ContainsAllOf`` code to use LINQ statements
-
-### Deprecations
-* Deprecated ``ContainsSpace`` extensions
-* Deprecated ``IsUpperCaseLetter(string)`` and ``IsUpperCaseLetter(char)`` extensions - ``IsUpperCaseCharacter(char)`` replaces the latter extension method
-* Deprecated ``IsLowerCaseLetter(string)`` extension - ``IsLowerCaseCharacter(char)`` replaces this extension method
-* Deprecated ``LineEnding(string)`` extension method - This has been replaced with ``GetLineEnding(string)`` and ``GetLineEndingInFile(string)``.
-* Deprecated ``IndexesOf(string, string, bool)`` extension method - This has been replaced with ``IndexesOf(string, string, StringComparison)`` extension method
-
-### Fixes
-* Fixed some existing xml doc comments
-* Fixed an issue where AddMissingZeroes(string, int) would not throw an Argument exception if an invalid integer value was provided</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 5.4.0
+* Fixed a bug with ``ContainsSpaceSeparatedSubStrings`` extension method</PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
         <AssemblyVersion>5.4.0</AssemblyVersion>
         <FileVersion>5.4.0</FileVersion>
-        <PackageVersion>5.4.0</PackageVersion>
+        <PackageVersion>5.4.1</PackageVersion>
         <RepositoryType>git</RepositoryType>
         <Authors>AlastairLundy</Authors>
         <LangVersion>default</LangVersion>
