@@ -7,6 +7,7 @@
 #### 6.0
 | Version | Release Date |
 |-|-|
+| 6.0.0 Preview 1.1 | January 31st 2025 | 
 | 6.0.0 Preview 1 | January 28th 2025 |
 
 ### Version 5.x

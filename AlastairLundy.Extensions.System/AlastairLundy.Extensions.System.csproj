@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>13</LangVersion>
         <TargetFrameworks>net8.0;net9.0;netstandard2.1;netstandard2.0</TargetFrameworks>
-        <Version>6.0.0-preview.1</Version>
+        <Version>6.0.0-preview.1.1</Version>
         <Title>AlastairLundy.Extensions.System</Title>
         <Authors>AlastairLundy</Authors>
         <Copyright>Copyright (c) Alastair Lundy 2020-2025</Copyright>
@@ -17,19 +17,8 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>## Changes since 5.5.0
-
-### Changes
-* Merged String Extensions, Version Extensions, Process Extensions, and Date Extensions back into 1 library.
-* Adjusted namespaces
-* Changed ``FriendlyVersionToString(this Version version)`` method signature to be ``ToString(this Version version)``
-
-### Removals
-* Removed deprecated code
-* Removed String ContainsChar extensions
-* Removed String indexing extensions
-* Removed Date Name extension methods
-* Renamed GivenDate method</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 6.0.0 Preview 1
+* Fixed a bug with String ``ContainsSpaceSeparatedSubStrings`` extensions.</PackageReleaseNotes>
         <Description>Extensions to C# System classes and structs to improve them.</Description>
         <PackageTags>string extensions, version extensions, system extensions, date extensions</PackageTags>
     </PropertyGroup>
