@@ -27,7 +27,7 @@ namespace AlastairLundy.Extensions.System.Strings
 {
     public static class ContainsSpacesExtensions
     {
-    
+
         /// <summary>
         /// Determine if a string contains space separated substrings within it.
         /// </summary>
@@ -35,7 +35,7 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
         public static bool ContainsSpaceSeparatedSubStrings(this string s)
         {
-            return s.Split(' ').Length > 0;
+            return s.Split(' ').Length > 1;
         }
     }
 }
