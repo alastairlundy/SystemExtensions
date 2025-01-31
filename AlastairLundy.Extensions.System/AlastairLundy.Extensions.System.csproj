@@ -4,7 +4,7 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>AlastairLundy.Extensions.System</Title>
         <Description>Extensions to C# System classes and structs to help improve them.</Description>
-        <Copyright>(c) 2024 Alastair Lundy</Copyright>
+        <Copyright>(c) 2020-2025 Alastair Lundy</Copyright>
         <RepositoryUrl>https://github.com/alastairlundy/SystemExtensions</RepositoryUrl>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
