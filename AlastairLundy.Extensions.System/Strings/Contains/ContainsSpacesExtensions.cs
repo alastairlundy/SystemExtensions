@@ -50,7 +50,7 @@ namespace AlastairLundy.Extensions.System.Strings.Contains
         /// <returns>true if the string contains space separated strings within it; false otherwise.</returns>
         public static bool ContainsSpaceSeparatedSubStrings(this string s)
         {
-            return s.Split(' ').Length > 0;
+            return s.Split(' ').Length > 1;
         }
     }
 }
