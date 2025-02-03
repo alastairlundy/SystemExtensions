@@ -29,6 +29,7 @@
 
     <ItemGroup>
       <Folder Include="Strings\Cases\" />
+      <Folder Include="TestData\" />
     </ItemGroup>
 
 </Project>
