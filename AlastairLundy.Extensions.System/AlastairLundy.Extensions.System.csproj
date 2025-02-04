@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <LangVersion>13</LangVersion>
         <TargetFrameworks>net8.0;net9.0;netstandard2.1;netstandard2.0</TargetFrameworks>
-        <Version>6.0.0-preview.1.1</Version>
+        <Version>6.0.0-preview.2</Version>
         <Title>AlastairLundy.Extensions.System</Title>
         <Authors>AlastairLundy</Authors>
         <Copyright>Copyright (c) Alastair Lundy 2020-2025</Copyright>
@@ -17,8 +17,11 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <PackageReleaseNotes>### Changes since 6.0.0 Preview 1
-* Fixed a bug with String ``ContainsSpaceSeparatedSubStrings`` extensions.</PackageReleaseNotes>
+        <PackageReleaseNotes>### Changes since 6.0.0 Preview 1.1
+* Added ``IsToStringImplemented(this T @this)`` extension method in Types sub-namespace
+* Minor tweaks and improvements
+* Renamed some string extension methods
+* Added and configured more unit tests</PackageReleaseNotes>
         <Description>Extensions to C# System classes and structs to improve them.</Description>
         <PackageTags>string extensions, version extensions, system extensions, date extensions</PackageTags>
     </PropertyGroup>
