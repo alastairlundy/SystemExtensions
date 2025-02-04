@@ -40,14 +40,12 @@ public class ContainsSpacesTests
         _testOutputHelper = testOutputHelper;
     }
 
-    [Fact]
-    public void UnspacedWordDetection()
+    [Theory]
+    [ClassData(typeof(LoremWordsTestData))]
+    public void UnSpacedWordDetection(string words)
     {
-        string text = _lorem.Word().Replace(" ", string.Empty).Replace(' ', 'a');
-
-        _testOutputHelper.WriteLine($"Text: {text}");
-        _testOutputHelper.WriteLine($"Text2: {text.Split(' ').ToString()}");
-
+        string text = words.Replace(" ", string.Empty);
+        
         bool actual = text.ContainsSpaceSeparatedSubStrings();
         
         Assert.False(actual);
