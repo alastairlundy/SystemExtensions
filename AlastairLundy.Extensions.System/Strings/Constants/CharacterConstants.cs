@@ -29,16 +29,29 @@ namespace AlastairLundy.Extensions.System.Strings
     public static class CharacterConstants
     {
         private static readonly char[] SpecialChars =
+#if NET8_0_OR_GREATER
+        [
+            ',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
+                '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
+        ];
+#else
             new[]
             {
                 ',', '.', '\\', '/', '^', '*', '&', '?', '!', '#', '~', '_', '+',
                 '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
-            };
+            };        
+#endif
     
         public static char[] SpecialCharacters => SpecialChars;
     
-        private static readonly string[] EscapeChars = new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
+        private static readonly string[] EscapeChars = 
+#if NET8_0_OR_GREATER
+            ["\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"];
+#else
+            new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
 
+#endif
+        
         public static string[] EscapeCharacters => EscapeChars;
     }
 }
