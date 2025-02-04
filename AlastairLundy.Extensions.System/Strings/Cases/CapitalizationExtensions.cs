@@ -45,11 +45,17 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <returns>the specified word with the specified letter made upper case.</returns>
         public static string CapitalizeChar(this string word, int index)
         {
-            char oldChar = word[index]; 
-            string newWord = word.Remove(index, 1);
-            newWord = newWord.Insert(index, oldChar.ToString().ToUpper());
+            char oldChar = word[index];
 
-            return newWord;
+            if (oldChar.ToString().Equals(oldChar.ToString().ToUpper()) == false)
+            {
+                string newWord = word.Remove(index, 1);
+                return newWord.Insert(index, oldChar.ToString().ToUpper());
+            }
+            else
+            {
+                return word;
+            }
         }
     }
 }
