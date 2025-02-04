@@ -34,7 +34,7 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <returns>the updated word with the first letter capitalized.</returns>
         public static string CapitalizeFirstLetter(this string word)
         {
-            return word.CapitalizeALetterInAWord(0);
+            return word.CapitalizeChar(0);
         }
         
         /// <summary>
@@ -43,7 +43,7 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <param name="index">The letter position to be made upper case.</param>
         /// <param name="word">The word to be modified.</param>
         /// <returns>the specified word with the specified letter made upper case.</returns>
-        public static string CapitalizeALetterInAWord(this string word, int index)
+        public static string CapitalizeChar(this string word, int index)
         {
             char oldChar = word[index]; 
             string newWord = word.Remove(index, 1);
