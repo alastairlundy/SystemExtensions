@@ -2,40 +2,35 @@
 using System.Linq;
 using AlastairLundy.Extensions.System.Strings;
 using Bogus;
+using SystemExtensions.Tests.TestData;
 
 namespace SystemExtensions.Tests.Strings.EscapeCharacters;
 
 public class EscapeCharacterRemovalTests
 {
-    [Fact]
-    public void ContainsEscapedCharactersTest()
+    [Theory]
+    [ClassData(typeof(EscapeCharacterTestData))]
+    public void ContainsEscapedCharactersTest(string escapeCharacters)
     {
-        string text = "Hello World\r\n";
-
-        bool actual = text.ContainsEscapeCharacters();
+        bool actual = escapeCharacters.ContainsEscapeCharacters();
         
         Assert.True(actual);
     }
 
-    [Fact]
-    public void DoesntContainEscapeCharactersTest()
+    [Theory]
+    [ClassData(typeof(LoremWordsTestData))]
+    public void DoesntContainEscapeCharactersTest(string word)
     {
-        char[] chars = Chars.UpperCase.ToCharArray();
-        Random.Shared.Shuffle(chars);
-        
-        chars = chars.Take(5).ToArray();
-        
-        string text = String.Join("", chars);
-
-        bool actual = text.ContainsEscapeCharacters();
+        bool actual = word.ContainsEscapeCharacters();
         
         Assert.False(actual);
     }
     
-    [Fact]
-    public void SuccessfullyRemoveEscapeCharsTests()
+    [Theory]
+    [ClassData(typeof(EscapeCharacterTestData))]
+    public void SuccessfullyRemoveEscapeCharsTests(string escapeCharacter)
     {
-        string text = "Hello World\r\n";
+        string text = $"Hello World {escapeCharacter}";
 
         string expected = "Hello World";
         

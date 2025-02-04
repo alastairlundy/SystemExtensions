@@ -1,14 +1,14 @@
 ﻿
 using AlastairLundy.Extensions.System.Strings;
 using Bogus;
+using SystemExtensions.Tests.TestData;
 
 namespace SystemExtensions.Tests.Strings.SpecialCharacters;
 
 public class SpecialCharacterDetectorTests
 {
-    public static char[] lowerCaseChars = Chars.LowerCase.ToCharArray();
-    
     [Theory]
+    [ClassData(typeof(AlphabeticalCharacterTestData))]   
     public void NotASpecialCharacter(char character)
     {
         bool actual = character.IsSpecialCharacter();
@@ -16,8 +16,12 @@ public class SpecialCharacterDetectorTests
         Assert.False(actual);
     }
 
-    public void IsASpecialCharacter()
+    [Theory]
+    [ClassData(typeof(SpecialCharacterTestData))]
+    public void IsASpecialCharacter(char character)
     {
+        bool actual = character.IsSpecialCharacter();
         
+        Assert.True(actual);
     }
 }

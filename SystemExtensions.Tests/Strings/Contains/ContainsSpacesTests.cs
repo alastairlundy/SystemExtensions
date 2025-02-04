@@ -22,12 +22,10 @@
        SOFTWARE.
    */
 
-using System;
-
 using AlastairLundy.Extensions.System.Strings;
 
 using Bogus.DataSets;
-
+using SystemExtensions.Tests.TestData;
 using Xunit.Abstractions;
 
 namespace SystemExtensions.Tests.Strings.Contains;
@@ -55,12 +53,11 @@ public class ContainsSpacesTests
         Assert.False(actual);
     }
     
-    [Fact]
-    public void SpacedWordsDetection()
+    [Theory]
+    [ClassData(typeof(LoremWordsTestData))]
+    public void SpacedWordsDetection(string words)
     {
-        string text = string.Join(' ', _lorem.Words(Random.Shared.Next(2, 4)));
-        
-        bool actual = text.ContainsSpaceSeparatedSubStrings();
+        bool actual = words.ContainsSpaceSeparatedSubStrings();
         
         Assert.True(actual);
     }
