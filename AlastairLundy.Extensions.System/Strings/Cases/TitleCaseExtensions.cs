@@ -40,14 +40,13 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <returns>true if the word is capitalized; returns false otherwise.</returns>
         public static bool IsWordTitleCase(this string word)
         {
-            char[] letters = word.ToCharArray();
-            bool[] letterCapitalization = new bool[letters.Length];
+            bool[] letterCapitalization = new bool[word.Length];
 
-            letterCapitalization[0] = letters[0].IsUpperCaseCharacter();
+            letterCapitalization[0] = word[0].IsUpperCaseCharacter();
             
-            for (int index = 1; index < letters.Length; index++)
+            for (int index = 1; index < word.Length; index++)
             {
-                letterCapitalization[index] = letters[index].IsLowerCaseCharacter();
+                letterCapitalization[index] = word[index].IsLowerCaseCharacter();
             }
 
             return letterCapitalization.All(x => x == true);
@@ -66,7 +65,8 @@ namespace AlastairLundy.Extensions.System.Strings
             
             for (int index = 0; index < enumerable.Length; index++)
             {
-                stringBuilder.Append(enumerable[index].IsWordTitleCase() ? enumerable[index] : enumerable[index].CapitalizeFirstLetter());
+                stringBuilder.Append(enumerable[index].IsWordTitleCase() ? enumerable[index] :
+                    enumerable[index].CapitalizeFirstLetter());
             }
 
             return stringBuilder.ToString();
