@@ -32,13 +32,7 @@ namespace SystemExtensions.Tests.Strings.Contains;
 
 public class ContainsSpacesTests
 {
-    private readonly ITestOutputHelper _testOutputHelper;
     private readonly Lorem _lorem = new();
-
-    public ContainsSpacesTests(ITestOutputHelper testOutputHelper)
-    {
-        _testOutputHelper = testOutputHelper;
-    }
 
     [Theory]
     [ClassData(typeof(LoremWordsTestData))]
