@@ -41,9 +41,7 @@ namespace AlastairLundy.Extensions.System.Strings
                 '-', '@', '<', '>', '=', '(', ')', '%', '$', '£', '"', ';', ':', '{', '}', '[', ']'
             };        
 #endif
-    
-        public static char[] SpecialCharacters => SpecialChars;
-    
+        
         private static readonly string[] EscapeChars = 
 #if NET8_0_OR_GREATER
             ["\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"];
@@ -51,6 +49,8 @@ namespace AlastairLundy.Extensions.System.Strings
             new[] { "\r", "\n", "\t", "\v", @"\c", @"\e", "\f", "\a", "\b", "\\", @"\NNN", @"\xHH"};
 
 #endif
+        
+        public static char[] SpecialCharacters => SpecialChars;
         
         public static string[] EscapeCharacters => EscapeChars;
     }
