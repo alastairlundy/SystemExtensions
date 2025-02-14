@@ -23,6 +23,9 @@
    */
 
 // ReSharper disable CheckNamespace
+
+using AlastairLundy.Extensions.System.Generics;
+
 namespace AlastairLundy.Extensions.System.Strings
 {
     public static class EscapeCharacterRemovalExtensions
