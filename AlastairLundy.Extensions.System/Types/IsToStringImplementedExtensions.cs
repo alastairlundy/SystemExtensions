@@ -39,6 +39,6 @@ public static class IsToStringImplementedExtensions
         return typeof(T).GetMethods().Any(m => m.Name == "ToString" &&
                                                m.ReturnType == typeof(string) &&
                                                m.GetParameters().Length == 0 &&
-                                               m is { IsPublic: true, IsStatic: false, IsVirtual: false });
+                                               m is { IsPublic: true, IsStatic: false});
     }
 }
