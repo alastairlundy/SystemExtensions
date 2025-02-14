@@ -25,7 +25,6 @@
 using System;
 using System.Linq;
 
-using AlastairLundy.Extensions.System.Generics;
 using AlastairLundy.Extensions.System.Strings;
 
 using Bogus;
