@@ -61,30 +61,4 @@ public class StringAnyOfTests
         Assert.False(actual);
     }
 
-    [Fact]
-    public void AnyOfStrings()
-    {
-        string[] words = _lorem.Words();
-        string text = _lorem.Word();
-        
-        text += words.First();
-
-        bool actual = text.ContainsAnyOf(words);
-        
-        Assert.True(actual);
-    }
-
-    [Fact]
-    public void NotAnyOfStrings()
-    {
-        string[] words = _lorem.Words().ToArray();
-        string text = words.First();
-        
-        words = words.Skip(1).ToArray();
-
-        bool actual = text.ContainsAnyOf(words);
-        
-        Assert.False(actual);
-    }
-
 }

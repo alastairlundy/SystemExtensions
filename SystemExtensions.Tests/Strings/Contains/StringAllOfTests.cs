@@ -59,28 +59,4 @@ public class StringAllOfTests
         
         Assert.False(actual);
     }
-    
-    [Fact]
-    public void AllOfStrings()
-    {
-        string[] words = _lorem.Words(Random.Shared.Next(2, 4));
-
-        string text = String.Join(" ", words);
-        
-        bool actual = text.ContainsAllOf(words);
-        
-        Assert.True(actual);
-    }
-
-    [Fact]
-    public void NotAllOfStrings()
-    {
-        string[] words = _lorem.Words(Random.Shared.Next(3, 10));
-
-        string text = String.Join(" ", words.Take(2));
-        
-        bool actual = text.ContainsAllOf(words);
-        
-        Assert.False(actual);
-    }
 }

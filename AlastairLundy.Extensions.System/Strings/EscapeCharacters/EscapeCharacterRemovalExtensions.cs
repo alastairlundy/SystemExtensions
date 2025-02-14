@@ -24,6 +24,7 @@
 
 // ReSharper disable CheckNamespace
 
+using System.Linq;
 using AlastairLundy.Extensions.System.Generics;
 
 namespace AlastairLundy.Extensions.System.Strings
@@ -37,7 +38,7 @@ namespace AlastairLundy.Extensions.System.Strings
         /// <returns>true if the string contains an Escape Character; returns false otherwise.</returns>
         public static bool ContainsEscapeCharacters(this string str)
         {
-            return str.ContainsAnyOf(CharacterConstants.EscapeCharacters);
+            return CharacterConstants.EscapeCharacters.Any(x => x.Equals(str));
         }
         
         /// <summary>

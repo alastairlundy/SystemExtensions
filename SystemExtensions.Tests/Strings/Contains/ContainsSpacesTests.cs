@@ -26,14 +26,14 @@ using AlastairLundy.Extensions.System.Strings;
 
 using Bogus.DataSets;
 using SystemExtensions.Tests.TestData;
-using Xunit.Abstractions;
+using Xunit;
 
 namespace SystemExtensions.Tests.Strings.Contains;
 
 public class ContainsSpacesTests
 {
     private readonly Lorem _lorem = new();
-
+    
     [Theory]
     [ClassData(typeof(LoremWordsTestData))]
     public void UnSpacedWordDetection(string words)
