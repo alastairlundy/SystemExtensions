@@ -29,14 +29,14 @@ using System;
 
 namespace AlastairLundy.Extensions.System.Versions
 {
-    public static class FriendlyVersionExtension
+    public static class FriendlyVersionStringExtensions
     {
         /// <summary>
         /// Returns the current version formatted in the specified formatting style.
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public static string ToFriendlyVersionString(this Version version)
+        public static string ToFriendlyString(this Version version)
         {
             bool showMinor = version.Minor != 0;
             bool showBuild = version.Build != 0;

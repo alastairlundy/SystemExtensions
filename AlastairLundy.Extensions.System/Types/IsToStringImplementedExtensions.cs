@@ -26,7 +26,7 @@ using System.Linq;
 
 namespace AlastairLundy.Extensions.System.Types;
 
-public static class ToStringIsImplementedExtensions
+public static class IsToStringImplementedExtensions
 {
     /// <summary>
     /// Returns whether a Type implements ToString such that a concrete non-virtual implementation is available.
