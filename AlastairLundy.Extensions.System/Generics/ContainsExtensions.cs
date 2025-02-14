@@ -83,7 +83,7 @@ namespace AlastairLundy.Extensions.System.Generics
             return output;
         }
         
-                /// <summary>
+        /// <summary>
         /// Returns whether an item of type T contains all the specified possible values
         /// </summary>
         /// <param name="source">The item to be searched.</param>
