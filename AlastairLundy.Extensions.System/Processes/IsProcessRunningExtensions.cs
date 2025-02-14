@@ -34,21 +34,33 @@ namespace AlastairLundy.Extensions.System.Processes
         /// Check to see if a specified process is running or not.
         /// </summary>
         /// <param name="process">The process to be checked.</param>
-        /// <param name="sanitizeProcessName"></param>
-        /// <returns>true if the specified process is running; returns false otherwise.</returns>
-        public static bool IsProcessRunning(this Process process, bool sanitizeProcessName = true)
+        /// <returns>True if the specified process is running; returns false otherwise.</returns>
+        public static bool IsRunning(this Process process)
         {
-            return IsProcessRunning(process, process.ProcessName, sanitizeProcessName);
+            if (process.HasStarted())
+            {
+                try
+                {
+                    return process.HasExited == false;
+                }
+                catch
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
         
         /// <summary>
         /// Check to see if a specified process is running or not.
         /// </summary>
-        /// <param name="process">The process object.</param>
         /// <param name="processName">The name of the process to be checked.</param>
         /// <param name="sanitizeProcessName"></param>
         /// <returns>true if the specified process is running; returns false otherwise.</returns>
-        public static bool IsProcessRunning(this Process process, string processName, bool sanitizeProcessName = true)
+        public static bool IsProcessRunning(this string processName, bool sanitizeProcessName = true)
         {
             string[] processes;
 
