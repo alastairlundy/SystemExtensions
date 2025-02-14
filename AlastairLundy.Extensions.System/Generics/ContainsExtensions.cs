@@ -22,6 +22,7 @@
        SOFTWARE.
    */
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -30,7 +31,7 @@ using System.Reflection;
 
 namespace AlastairLundy.Extensions.System.Generics
 {
-    public static class AnyOfExtensions
+    public static class ContainsExtensions
     {
         /// <summary>
         /// Returns whether an item of type T contains any of the specified possible values
@@ -74,24 +75,62 @@ namespace AlastairLundy.Extensions.System.Generics
                     // ReSharper disable once EmptyGeneralCatchClause
                     catch
                     {
-                    
+                        throw new ArgumentException($"Type {typeof(T)} does not implements a Contains method.");
                     }
                 }
             }
         
             return output;
         }
-
-        /// <summary>
-        /// Returns whether an item of type T is equal to any of the specified possible values
+        
+                /// <summary>
+        /// Returns whether an item of type T contains all the specified possible values
         /// </summary>
         /// <param name="source">The item to be searched.</param>
         /// <param name="possibleValues">The possible values to search for.</param>
         /// <typeparam name="T">The type of object of the item to be searched.</typeparam>
-        /// <returns>true if any of the possibles values is equal to the source; returns false otherwise.</returns>
-        public static bool EqualsAnyOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
+        /// <returns>true if all the possibles values is contained in the source; returns false otherwise.</returns>
+        public static bool ContainsAllOf<T>(this T source, IEnumerable<T> possibleValues) where T : notnull
         {
-            return possibleValues.Select(t => source.Equals(t)).Any(hasValue => hasValue == true);
+            bool output = false;
+
+            bool hasContainsMethod = typeof(T).GetMember("Contains").Any();
+        
+            foreach (T possibleValue in possibleValues)
+            {
+                if (source.Equals(possibleValue))
+                {
+                    return true;
+                }
+            
+                if (hasContainsMethod == true)
+                {
+                    try
+                    {
+#if NETSTANDARD2_1 || NET8_OR_GREATER
+                        bool result = (bool)typeof(T)!.InvokeMember("Contains",
+                            BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
+                            new object[] { source })!;
+#else
+                        bool result = (bool)typeof(T).InvokeMember("Contains",
+                            BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, possibleValue,
+                            new object[] { source })!;
+#endif
+
+                        if (result == true)
+                        {
+                            output = true;
+                        }
+                    }
+                    // ReSharper disable once EmptyGeneralCatchClause
+                    catch
+                    {
+                        throw new ArgumentException($"Type {typeof(T)} does not implements a Contains method.");
+                    }
+                }
+            }
+        
+            return output;
         }
     }
 }
